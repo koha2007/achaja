@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Achaja - News &amp; Car Information</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#602100",
+                        "primary-fixed": "#d9e2ff",
+                        "on-surface": "#191c1d",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#526772",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#003178",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "secondary-fixed-dim": "#b4cad6",
+                        "on-secondary-fixed-variant": "#354a53",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "tertiary-container": "#853100",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-primary-fixed-variant": "#00429c",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-container": "#cfe6f2",
+                        "on-tertiary-container": "#ffa781",
+                        "inverse-primary": "#b0c6ff",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed": "#cfe6f2",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#2b5bb5",
+                        "outline": "#737783",
+                        "primary-container": "#0d47a1",
+                        "on-primary-container": "#a1bbff",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-surface-variant": "#434652",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary-fixed": "#360f00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#4c616c",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c3c6d4",
+                        "on-secondary-fixed": "#071e27",
+                        "on-primary-fixed": "#001945"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body pb-24">
+<header class="fixed top-0 w-full z-50 bg-[#f8f9fa]/85 backdrop-blur-md shadow-[0px_4px_20px_rgba(25,28,29,0.04)] flex justify-between items-center px-6 py-4 h-16">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:bg-[#f3f4f5] p-1 rounded-full">
+<span class="material-symbols-outlined text-[#003178]">menu</span>
+</button>
+<h1 class="font-extrabold tracking-tighter text-[#003178] text-2xl uppercase">Achaja</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYD8NrQW3CxBE0e-dnO_x5kwdJo_kPSBTIlEjSf5oFk0phwd7iXAkYMXhgskCV2eYzNLHiQzBG827iwae1wHsCAPBcYxMuMK8kUoZtRztrks5eJk92KdxkPimzIqjC_cStby-pRjb2hj_huv5ndP5DWGcfq_oBK_Oa-cruG4Av5WflTQLRXcSNSZO9PjSkidPgQIo0cRPr_1XkrwTl0VR6MAqUxEvFzARRbNeNjN7kU8nHUIgyBgGwBMR8SpGwO8UeU57pTjwmug-J"/>
+</div>
+</header>
+<main class="pt-20 px-4 space-y-8">
+<section>
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-headline text-xl font-extrabold tracking-tight text-on-surface">NEW CARS</h2>
+<span class="text-xs font-medium text-primary">View All</span>
+</div>
+<div class="flex overflow-x-auto gap-4 no-scrollbar pb-2 -mx-4 px-4">
+<div class="flex-none w-72 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="relative h-44">
+<img alt="Genesis GV80 Coupe" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATFQxrW-J1W8Z-_a_3Zje5ZFvNimjzDbiUrUuEU3d94rxhV9dV_ypeTUIdfPI-1okg4N_dBCcmPZ5oUfVEzS7sHZvRRwnRDCWUnI3PFr8FSxnoGpd_KcVeaqNAe1imU4UMI2Igb3EsYVq2W_hn5WS4hadu_CVG4PNOKGypP4aShznsVB2BW3wTBpa7UeHz7Qsu5mB2ayiKna42o6jEsyCZ_hUqnt9PGGQocws61cXTjqvLqszfnWUSKhLk3vn9VXv9VSuMkAYHu5pH"/>
+<span class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">NEW 2024.11</span>
+</div>
+<div class="p-4">
+<p class="text-xs text-secondary font-medium uppercase tracking-wider">Genesis</p>
+<h3 class="font-headline font-bold text-lg">GV80 Coupe</h3>
+<p class="text-primary font-bold mt-1">₩82,500,000</p>
+</div>
+</div>
+<div class="flex-none w-72 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="relative h-44">
+<img alt="Hyundai Santa Fe Hybrid" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtkREm2hqhQq3oFRggDFPYQl4MJyYaazry8h7XbbbIHO7J0RJjb83CTXvJyIrjVWiCtlHvqJOB1hzqyIWMIqMZp73x41KyX6TYT1y_SgEJLbs1a8BSi5TWsmtMdI7aLt6eReFhoQ86kwfFtMncH_2JM2QALLVVWeYTgaKuzo0hc7Lxn7M5aAHF95fXaPMEb7BBjgmzBE31123hw7gjGgniN-21OlWTr1RtycrTVG3C13CK32BcyKXSqZuA6kBqJ2ux-gRh7l50pMWg"/>
+<span class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">NEW 2024.10</span>
+</div>
+<div class="p-4">
+<p class="text-xs text-secondary font-medium uppercase tracking-wider">Hyundai</p>
+<h3 class="font-headline font-bold text-lg">Santa Fe Hybrid</h3>
+<p class="text-primary font-bold mt-1">₩38,500,000</p>
+</div>
+</div>
+<div class="flex-none w-72 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="relative h-44">
+<img alt="Kia EV9 GT-Line" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeoK_69CDs28WdlBGHeXwzOrGCVWM5Yfyt4SIn0-5qxiMXPV1rCkH5ZvffHXt8Kj4lfnS1g3r_-CpvzNfozoeP6kp5ynmUYjnjW6Di-ViGl3EcyW9gn0yp6vdOFHY3m6MZL6Aq2ba9g6kFBwS4G_QFsuWINwY3i6HMvMk6osb1LQkQmbEj15g06P7RExCO2qFvAzi0svixmrNuo2DaYXrN2ouFVcgKzyPkJvhRea5dYErO-IF8l0zAr90sVrljlRaj9L8e1DoN7Fmp"/>
+<span class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded">NEW 2024.12</span>
+</div>
+<div class="p-4">
+<p class="text-xs text-secondary font-medium uppercase tracking-wider">Kia</p>
+<h3 class="font-headline font-bold text-lg">EV9 GT-Line</h3>
+<p class="text-primary font-bold mt-1">₩73,300,000</p>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h2 class="font-headline text-xl font-extrabold tracking-tight text-on-surface">USED CAR MARKET</h2>
+<div class="bg-secondary-container rounded-xl p-4 flex items-center justify-between">
+<div>
+<p class="text-xs font-semibold text-on-secondary-container mb-1">Market Price Trend</p>
+<p class="text-lg font-bold text-on-secondary-fixed">Prices are stabilizing</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">trending_down</span>
+<span class="font-bold text-primary">-2.4%</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex gap-4 p-3 bg-surface-container-lowest rounded-xl shadow-sm items-center">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Avante CN7" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_oWCUlpt2UroQVjp6k_KI3QLX_938BtgJzOriUQl49nQvaiqziZE4pxOh0rxOGQStMZlR1jFu6ItXeRcUGH3kp2_hdd2hRN2DqEoux_jhCDZVIQaXsIHHmuSnH3DQVfgqXWV0LSVC4gWMZCBrcXlSMYLydbzBSP15RT50Io6FUFgYDxOweA6Q93TZDiNnYC0Fkg53cqOgjuCt_W1BYo3S_abVTX73LHr0dbOMgCU9Xu87rlMhdC6MbPDu0J9ElqZAdKB-olo7MTM"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm">Avante (CN7) Smartstream</h3>
+<span class="bg-[#e7f5ed] text-[#1e7e34] text-[10px] font-bold px-1.5 py-0.5 rounded">무사고</span>
+</div>
+<p class="text-xs text-secondary mt-1">2021 | 34,200km</p>
+<p class="text-base font-extrabold text-on-surface mt-2">₩19,800,000</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 bg-surface-container-lowest rounded-xl shadow-sm items-center">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Grandeur IG" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9EPXSnH_rjpEfgr6jzQsQwSY33h7JPTqyPPGtkshcNojew5feAivpqpeg7UVa8v7r2s14-0PknM0JQxZeLN2zgYilAE9G3Tn5x-RktaIikS7j4sDj74imEeGtS50fjs5xayBKvsMutdI8TMXvFxXo0V--91pjOFLPumzw3rOjMZeaX0e96SrtZwEEx712YyPfQjJBuz_KR3lx-5LiOgEXu7a0Fg9TeY9jc2pvpl7y0MvToPn0TqMm3Gj5MrEVzUZFHqudEVVWt-ns"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-sm">Grandeur IG 2.4</h3>
+<span class="bg-[#fff4f2] text-[#d93025] text-[10px] font-bold px-1.5 py-0.5 rounded">사고있음</span>
+</div>
+<p class="text-xs text-secondary mt-1">2019 | 82,000km</p>
+<p class="text-base font-extrabold text-on-surface mt-2">₩21,500,000</p>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h2 class="font-headline text-xl font-extrabold tracking-tight text-on-surface">CAR NEWS &amp; TIPS</h2>
+<div class="space-y-4">
+<div class="group flex gap-4">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Maintenance Tip" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJdblL44d8-8tHkseXbbIINWEx1do0WcloncQOGz7Wf4a96lVw88xH4-WGl6fsoWLw15yNi4UJiZKGhz9xn9MwjzM2I0WqFh2T1Ui9tmFAxjiHHC9UBnwPg2jegdJGiotZdXDS9y7XiRjYxJASEqh1mK8VUBxNqpiJBc-Kk-B1CK2MSUbu4xdCIrV0OzsOb50EE4Ikt2Y4dDTIDQV9IZgesgGqacb1a0pCgTlN-GHzkK6M1iW1KJNZDj1ZPgQFa7ZyuCJCSzLPuYY"/>
+</div>
+<div class="flex flex-col justify-center border-b border-surface-container-highest pb-4 flex-1">
+<span class="text-[10px] font-bold text-primary mb-1">MAINTENANCE</span>
+<h3 class="font-headline text-sm font-bold line-clamp-2 leading-snug">5 Essential Winter Car Care Tips for Korean Sub-zero Temperatures</h3>
+<p class="text-[10px] text-secondary mt-2">2024.11.20 • 5 min read</p>
+</div>
+</div>
+<div class="group flex gap-4">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="EV Trends" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvcZUPHZYsskWjxb55wFHoqaRCNMHM2ZaRu_BxFvpBszXjKjhNWG82impBhWg-656dnuh4ur4i9u3ObT21KEUYKuUmu2nrO31O_g1FwViWrEaRDPF-ZB-PHONm5MfA8mQQdb-sBwxVDWflYN9sTs31kSykJsqxCUm2Eh0FlWrNF4n--DXJLjL0HFn0p_pe6lY33UqO8gnuHut5tUwIqJCyGt9FEC81-EBGWclACjkOh8LmEQ-c9HpN9y-tnK615ahR_0WpSMqp1xNu"/>
+</div>
+<div class="flex flex-col justify-center border-b border-surface-container-highest pb-4 flex-1">
+<span class="text-[10px] font-bold text-primary mb-1">TRENDS</span>
+<h3 class="font-headline text-sm font-bold line-clamp-2 leading-snug">The Rapid Expansion of Charging Infrastructure in 2025</h3>
+<p class="text-[10px] text-secondary mt-2">2024.11.18 • 3 min read</p>
+</div>
+</div>
+<div class="group flex gap-4">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Safety Tips" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHDm9PTaCwSUQpB3v1x7dBXeFuKlBARHzvp6VisrJIEb0wspGOlXTJJHYLAnibEp8Bni34tkgFwpjyCT-hN6ifhZoJQ4GD4-WsQ4LfeDsb6gQlWwlH8keskeqm8eZ_90xPaSuMNLTnWxId9PD30BWlZdK_RwCLe4aqqWPrQLXaU85VDHv2c6gXrEH3ImUN7ygddM6sO25eCNOkgSoDCtstCibCmHLHea06YABTGDbZZHvB2EdmbhpFMezKK9xasqQGu-0ORFS7AYAF-"/>
+</div>
+<div class="flex flex-col justify-center pb-4 flex-1">
+<span class="text-[10px] font-bold text-tertiary mb-1 uppercase">Safety</span>
+<h3 class="font-headline text-sm font-bold line-clamp-2 leading-snug">New Safety Recalls: Check If Your Vehicle is Affected This Month</h3>
+<p class="text-[10px] text-secondary mt-2">2024.11.15 • 8 min read</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-white shadow-[0px_-4px_24px_rgba(25,28,29,0.06)] z-50 rounded-t-xl">
+<a href="index.html" class="flex flex-col items-center justify-center text-slate-500 px-5 py-1.5 active:scale-90 transition-transform hover:text-[#003178]">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-medium text-[11px]">Home</span>
+</a>
+<a href="news.html" class="flex flex-col items-center justify-center bg-[#cfe6f2] text-[#003178] rounded-full px-5 py-1.5 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+<span class="font-medium text-[11px]">News</span>
+</a>
+<a href="index.html" class="flex flex-col items-center justify-center text-slate-500 px-5 py-1.5 active:scale-90 transition-transform hover:text-[#003178]">
+<span class="material-symbols-outlined text-2xl">settings_input_component</span>
+<span class="font-medium text-[11px]">Parts</span>
+</a>
+<div class="flex flex-col items-center justify-center text-slate-500 px-5 py-1.5 active:scale-90 transition-transform hover:text-[#003178]">
+<span class="material-symbols-outlined text-2xl">history</span>
+<span class="font-medium text-[11px]">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-5 py-1.5 active:scale-90 transition-transform hover:text-[#003178]">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="font-medium text-[11px]">My</span>
+</div>
+</nav>
+</body></html>
