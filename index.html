@@ -1,12 +1,309 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Achaja — 내 차의 모든 것</title>
-</head>
-<body>
-  <h1>Achaja</h1>
-  <p>내 차의 모든 것을 찾아드립니다</p>
-</body>
-</html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ACHAJA - Precision Parts Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f3f4f5",
+                      "surface": "#f8f9fa",
+                      "primary-fixed-dim": "#b0c6ff",
+                      "secondary-container": "#cfe6f2",
+                      "secondary-fixed-dim": "#b4cad6",
+                      "surface-dim": "#d9dadb",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#00429c",
+                      "tertiary": "#602100",
+                      "error-container": "#ffdad6",
+                      "primary-container": "#0d47a1",
+                      "on-tertiary-fixed": "#360f00",
+                      "background": "#f8f9fa",
+                      "on-surface": "#191c1d",
+                      "surface-container-high": "#e7e8e9",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c3c6d4",
+                      "tertiary-container": "#853100",
+                      "on-background": "#191c1d",
+                      "primary-fixed": "#d9e2ff",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#cfe6f2",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-fixed": "#071e27",
+                      "tertiary-fixed": "#ffdbcd",
+                      "surface-variant": "#e1e3e4",
+                      "inverse-primary": "#b0c6ff",
+                      "on-tertiary-container": "#ffa781",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "surface-container-highest": "#e1e3e4",
+                      "error": "#ba1a1a",
+                      "surface-container": "#edeeef",
+                      "on-surface-variant": "#434652",
+                      "on-secondary-fixed-variant": "#354a53",
+                      "on-primary-container": "#a1bbff",
+                      "surface-tint": "#2b5bb5",
+                      "on-primary-fixed": "#001945",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#526772",
+                      "secondary": "#4c616c",
+                      "surface-bright": "#f8f9fa",
+                      "primary": "#003178",
+                      "outline": "#737783",
+                      "on-secondary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #003178 0%, #0d47a1 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate-50/85 dark:bg-slate-900/85 backdrop-blur-xl transition-all duration-300 ease-in-out flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 p-2 rounded-lg transition-all duration-300">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-200">menu</span>
+</button>
+<h1 class="text-xl font-black tracking-tighter text-blue-900 dark:text-white font-['Manrope']">ACHAJA</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="#">History</a>
+<a class="text-blue-900 dark:text-blue-400 font-bold font-['Inter'] text-[10px] uppercase tracking-widest px-3 py-2 rounded transition-all" href="#">Parts</a>
+</nav>
+<div class="flex items-center gap-3">
+<span class="hidden md:block text-xs font-semibold text-on-surface-variant">User Profile</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-container">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4XnygOYHL6lY_GtSz1Iz65eTYlPgmBYtRBbaG1PacL2WbimkVtMItAK0zKLymEhQQXZOLEnY96nsM3AmktvI_XYtehzMXtgWoda7zvRrvrv3vzOQobhLskfBzQMMLfMaqpfuh3qXbEGc-76RYc0TmOdWD0OfMx4CpcxUEl0s0pOpi2gj5yrK9mU9x4_iJDfHEsYgnYJnbnr4asWQ_bN2k60ndYr_rhHJ11VGe344cOJyqh-5-1Plj-p_kkpM962UlGmnP0Ow6tYh3"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Search Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-widest uppercase text-[10px] mb-2 block">Catalog Explorer</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-4">Precision Parts Lookup</h2>
+<p class="text-secondary font-medium leading-relaxed">Search through 2.4 million genuine and certified aftermarket components with real-time VIN compatibility mapping.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline px-3 py-1 bg-surface-container-low rounded-full">Last Synced: 2m ago</span>
+</div>
+</div>
+<!-- Enhanced Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary">search</span>
+</div>
+<input class="w-full pl-14 pr-32 py-5 bg-surface-container-lowest border-none rounded-xl text-lg font-medium focus:ring-2 focus:ring-primary/20 shadow-sm transition-all placeholder:text-outline-variant" placeholder="Enter Part Name, Number, or VIN..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm shadow-lg hover:scale-[1.02] transition-transform">
+                    Search
+                </button>
+</div>
+</section>
+<!-- Category Horizontal Scroll -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline font-bold text-sm uppercase tracking-widest text-secondary">Major Categories</h3>
+<button class="text-xs font-bold text-primary hover:underline">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4">
+<button class="flex items-center gap-3 px-5 py-4 bg-primary text-on-primary rounded-xl shrink-0 shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">earth_engine</span>
+<span class="font-bold text-sm">Engine</span>
+</button>
+<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="font-bold text-sm">Transmission</span>
+</button>
+<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-bold text-sm">Exterior</span>
+</button>
+<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-bold text-sm">Lighting</span>
+</button>
+<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">toys</span>
+<span class="font-bold text-sm">Interior</span>
+</button>
+<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-bold text-sm">Electrical</span>
+</button>
+</div>
+</section>
+<!-- Filters and Results Meta -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-2 p-1 bg-surface-container-high rounded-lg w-fit">
+<button class="px-4 py-2 bg-surface-container-lowest text-primary font-bold text-xs rounded-md shadow-sm">All Parts</button>
+<button class="px-4 py-2 text-on-surface-variant font-bold text-xs rounded-md hover:bg-surface-container-low transition-all">Genuine Parts</button>
+<button class="px-4 py-2 text-on-surface-variant font-bold text-xs rounded-md hover:bg-surface-container-low transition-all">OEM / Aftermarket</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-medium text-outline">Showing 24 of 1,280 results</span>
+<button class="flex items-center gap-2 text-xs font-bold text-on-surface px-3 py-2 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm">sort</span>
+                    Sort by: Relevance
+                </button>
+</div>
+</section>
+<!-- Parts Grid (Asymmetric Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Part (Large Card) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow">
+<div class="md:w-1/2 relative group bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up of a high-performance silver engine turbocharger on a clean grey background with professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkuKKdxe01iGGZq6uWRDa2I-BHIqL6NACKsPN-08ubnGrcXXBaXU59CbpdnvXKpOLP3c6zRrIvL0pwjFlcdf7kp_z7eQy7qjPw1sBD8eO9EaFnkLmn1K07x5upKLLVU3BROHwumz4Kw9Vz2ZgvN2Q9dideEJ1v0y812fMBNps05RGpA17kIoa5XmV_YFGMLBfNaGJhO_xqmPOgmH0MPEW_oqnHs_4iJUFzGuWK4s_DG5NQ6tz4B8ns_ae9bofPSe4REurOH6c8_Te7"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Featured</span>
+<span class="bg-surface-container-lowest/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">In Stock</span>
+</div>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline font-bold text-2xl text-on-surface">V8 Turbocharger Unit</h4>
+<span class="text-primary font-black text-xl tracking-tight">$2,499.00</span>
+</div>
+<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-tighter mb-4">SKU: ACH-992-ENG-TRB</p>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Genuine manufacturer specification high-flow turbocharger. Engineered for maximum thermal efficiency and reduced lag.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">BMW M5/M8 Compatible</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">2018 - 2023 Models</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-[10px] font-bold">Certified Genuine</span>
+</div>
+</div>
+<button class="w-full primary-gradient text-on-primary py-4 rounded-xl font-bold tracking-widest text-sm uppercase shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                        Add to Procurement
+                    </button>
+</div>
+</div>
+<!-- Standard Part 1 -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<div class="h-40 bg-surface-container-low rounded-lg mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High quality carbon ceramic brake disc with bright red caliper on a minimalist dark studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyqFd4IA6_CrukqlS2KXtPRCxWHS8EVqrqg6L5LI_QvqUghRrKHt47kR9ko42NnjXvVI8B5488zkmzCxP6VILiIN3Fg_wmYl8xq-Q-BZuZqMKOI2D5S8aYMICNGEN77ekwr2ViHOoHZnJrt1oj7AzU5N6kWjIKHcK_nuW2s3lKk5wiTWG_MOJ-TFyrDBMn4g9T71Ccxo2-VTM8ksMCH_885Gwp8A7exkgoOcBRaWpGQ1gQPe51btyweSKtXcIzItfqIh1wAxcxNwoU"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-headline font-bold text-lg text-on-surface">Ceramic Brake Kit</h4>
+<span class="text-primary font-bold">$1,250.00</span>
+</div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-3">OEM Performance</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-green-600 uppercase">Exact Fit Guaranteed</span>
+</div>
+</div>
+<button class="w-full bg-surface-container-high text-primary py-3 rounded-lg font-bold text-xs uppercase hover:bg-primary hover:text-on-primary transition-all">
+                    View Specs
+                </button>
+</div>
+<!-- Standard Part 2 -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+<div class="h-40 bg-surface-container-low rounded-lg mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed view of a modern LED car headlight assembly showing intricate internal reflectors and glass textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRw3gWJbNiK8ObcJ15gOvMHxA5sMz0b1GHi7xOJp_nBtQDXSMSvT09uVUooZK5ZYekwJCS0K6pmJ-sK_nB0aa7cMtOPbQ0qvj9Qh2ctoLbiQZN5yoy9Mn6IEy3C7wY7CfkW1bOBNAEbpLb9kNL_wWZXKWBNi6p2I4aH-77KiktkH8ya3Lug-0LHMx0F6lNL4Vm_EAWq3jD6t6KO-n6H4Jp0T-jxu-VDn8YF6KwRQ5MSN3yxBrNxTSTn2-1H7iOluXR-Vw6d22OUn8f"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-headline font-bold text-lg text-on-surface">Matrix LED Headlight</h4>
+<span class="text-primary font-bold">$840.00</span>
+</div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-3">Aftermarket Premium</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-green-600 uppercase">Plug &amp; Play Ready</span>
+</div>
+</div>
+<button class="w-full bg-surface-container-high text-primary py-3 rounded-lg font-bold text-xs uppercase hover:bg-primary hover:text-on-primary transition-all">
+                    View Specs
+                </button>
+</div>
+<!-- List Style Part (Asymmetric Row) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex items-center gap-6">
+<div class="w-32 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Sleek black three-spoke leather car steering wheel with metal accents in a bright modern aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdjxb_Tle6GryZv9UEl91JkxvWTsll_s0_YI9BWofI8bSiI_1wtW2DZRGyatLtwABEgQjmECjIbriBgNp6z86T1uElvqGyacGZy2MUatbgzIrvRcipC2MXl2WJDnkDRZlhNxBQz9lG_qRUkJvwA0wWlnlO-2vhtjp2BNyvKM32zDt7MTrBiO-DmQ1DuD17D6n-4rkZOYv5XMKm0ViHwQPdws48h7ICQgjZDZ4FXWWkGwpEQGCR-nJrFsS3Z_nonr4-0BWCu-ZoqS0A"/>
+</div>
+<div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h4 class="font-headline font-bold text-xl text-on-surface">Sport Leather Steering Wheel</h4>
+<p class="text-xs font-medium text-on-surface-variant mb-2">Perforated Nappa leather with contrast stitching.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container-high text-[10px] font-bold rounded">Interior</span>
+<span class="px-2 py-0.5 bg-surface-container-high text-[10px] font-bold rounded">Genuine</span>
+</div>
+</div>
+<div class="text-right flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-4">
+<div>
+<span class="text-primary font-black text-2xl tracking-tighter block">$650.00</span>
+<span class="text-[10px] font-bold text-outline">Excl. Shipping</span>
+</div>
+<button class="p-3 bg-surface-container-high text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-4">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-900 dark:text-blue-400 scale-110 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Parts</span>
+</a>
+</nav>
+<!-- FAB (Suppressed based on context: Details screens, but showing here as main landing is Parts Search) -->
+<button class="fixed right-6 bottom-24 md:bottom-10 primary-gradient w-14 h-14 rounded-full flex items-center justify-center text-on-primary shadow-xl shadow-primary/30 active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</body></html>
