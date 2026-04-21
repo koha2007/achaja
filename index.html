@@ -1,329 +1,243 @@
 <!DOCTYPE html>
-<html class="light" lang="ko">
-<head>
+
+<html lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ACHAJA - 내 차의 모든 것</title>
+<title>Achaja - Vehicle History Check</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-container-low": "#f3f4f5",
-                      "surface": "#f8f9fa",
-                      "primary-fixed-dim": "#b0c6ff",
-                      "secondary-container": "#cfe6f2",
-                      "secondary-fixed-dim": "#b4cad6",
-                      "surface-dim": "#d9dadb",
-                      "on-primary": "#ffffff",
-                      "on-primary-fixed-variant": "#00429c",
-                      "tertiary": "#602100",
-                      "error-container": "#ffdad6",
-                      "primary-container": "#0d47a1",
-                      "on-tertiary-fixed": "#360f00",
-                      "background": "#f8f9fa",
-                      "on-surface": "#191c1d",
-                      "surface-container-high": "#e7e8e9",
-                      "on-tertiary": "#ffffff",
-                      "outline-variant": "#c3c6d4",
-                      "tertiary-container": "#853100",
-                      "on-background": "#191c1d",
-                      "primary-fixed": "#d9e2ff",
-                      "tertiary-fixed-dim": "#ffb596",
-                      "surface-container-lowest": "#ffffff",
-                      "inverse-on-surface": "#f0f1f2",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#cfe6f2",
-                      "inverse-surface": "#2e3132",
-                      "on-secondary-fixed": "#071e27",
-                      "tertiary-fixed": "#ffdbcd",
-                      "surface-variant": "#e1e3e4",
-                      "inverse-primary": "#b0c6ff",
-                      "on-tertiary-container": "#ffa781",
-                      "on-tertiary-fixed-variant": "#7d2d00",
-                      "surface-container-highest": "#e1e3e4",
-                      "error": "#ba1a1a",
-                      "surface-container": "#edeeef",
-                      "on-surface-variant": "#434652",
-                      "on-secondary-fixed-variant": "#354a53",
-                      "on-primary-container": "#a1bbff",
-                      "surface-tint": "#2b5bb5",
-                      "on-primary-fixed": "#001945",
-                      "on-error-container": "#93000a",
-                      "on-secondary-container": "#526772",
-                      "secondary": "#4c616c",
-                      "surface-bright": "#f8f9fa",
-                      "primary": "#003178",
-                      "outline": "#737783",
-                      "on-secondary": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "fontFamily": {
-                      "headline": ["Manrope"],
-                      "body": ["Inter"],
-                      "label": ["Inter"]
-              }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#2b5bb5",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001945",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#d9e2ff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#edeeef",
+                    "secondary-fixed-dim": "#b4cad6",
+                    "inverse-surface": "#2e3132",
+                    "surface-variant": "#e1e3e4",
+                    "on-secondary-container": "#526772",
+                    "surface-bright": "#f8f9fa",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-container": "#ffa781",
+                    "on-tertiary-fixed": "#360f00",
+                    "secondary-container": "#cfe6f2",
+                    "on-primary-fixed-variant": "#00429c",
+                    "surface-container-low": "#f3f4f5",
+                    "outline": "#737783",
+                    "background": "#f8f9fa",
+                    "secondary-fixed": "#cfe6f2",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary": "#003178",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#853100",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#b0c6ff",
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1d",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "tertiary": "#602100",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#4c616c",
+                    "on-secondary-fixed-variant": "#354a53",
+                    "on-primary-container": "#a1bbff",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "primary-fixed-dim": "#b0c6ff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-secondary-fixed": "#071e27",
+                    "primary-container": "#0d47a1",
+                    "on-surface-variant": "#434652",
+                    "surface-container-high": "#e7e8e9",
+                    "outline-variant": "#c3c6d4"
             },
-          }
-        }
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .primary-gradient {
-            background: linear-gradient(135deg, #003178 0%, #0d47a1 100%);
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-header { backdrop-filter: blur(12px); }
+        .bg-primary-gradient { background: linear-gradient(135deg, #003178 0%, #0d47a1 100%); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 <style>
     body {
       min-height: max(884px, 100dvh);
     }
-</style>
-</head>
-<body class="bg-surface font-body text-on-surface">
-
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
 <!-- TopAppBar -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-slate-50/85 dark:bg-slate-900/85 backdrop-blur-xl transition-all duration-300 ease-in-out flex justify-between items-center w-full px-6 py-4">
+<header class="fixed top-0 w-full z-50 bg-slate-50/85 backdrop-blur-lg shadow-sm shadow-blue-900/5 h-16">
+<div class="flex items-center justify-between px-6 h-full w-full max-w-screen-2xl mx-auto">
 <div class="flex items-center gap-4">
-<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 p-2 rounded-lg transition-all duration-300">
-<span class="material-symbols-outlined text-blue-900 dark:text-blue-200">menu</span>
-</button>
-<h1 class="text-xl font-black tracking-tighter text-blue-900 dark:text-white font-['Manrope']">ACHAJA</h1>
+<span class="material-symbols-outlined text-blue-900">menu</span>
+<h1 class="font-headline font-bold tracking-tight text-lg text-blue-900">차량 이력조회</h1>
 </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="/">홈</a>
-<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="/news">뉴스</a>
-<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="/history">이력조회</a>
-<a class="text-blue-900 dark:text-blue-400 font-bold font-['Inter'] text-[10px] uppercase tracking-widest px-3 py-2 rounded transition-all" href="/">부품조회</a>
-</nav>
-<div class="flex items-center gap-3">
-<span class="hidden md:block text-xs font-semibold text-on-surface-variant">내 프로필</span>
-<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-container">
-<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4XnygOYHL6lY_GtSz1Iz65eTYlPgmBYtRBbaG1PacL2WbimkVtMItAK0zKLymEhQQXZOLEnY96nsM3AmktvI_XYtehzMXtgWoda7zvRrvrv3vzOQobhLskfBzQMMLfMaqpfuh3qXbEGc-76RYc0TmOdWD0OfMx4CpcxUEl0s0pOpi2gj5yrK9mU9x4_iJDfHEsYgnYJnbnr4asWQ_bN2k60ndYr_rhHJ11VGe344cOJyqh-5-1Plj-p_kkpM962UlGmnP0Ow6tYh3"/>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-blue-900">account_circle</span>
 </div>
 </div>
 </header>
-
-<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
-<!-- Hero Search Section -->
-<section class="mb-12">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-<div class="max-w-2xl">
-<span class="text-primary font-bold tracking-widest uppercase text-[10px] mb-2 block">부품 카탈로그</span>
-<h2 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-4">부품 조회</h2>
-<p class="text-secondary font-medium leading-relaxed">240만 개의 순정 및 인증 애프터마켓 부품을 실시간 VIN 호환성 매핑으로 검색하세요.</p>
+<main class="pt-20 pb-28 px-4 max-w-4xl mx-auto space-y-6">
+<!-- Search Section -->
+<section class="bg-surface-container-low p-6 rounded-full shadow-sm">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="relative flex-grow">
+<input class="w-full h-14 px-6 rounded-full border-none bg-surface-container-lowest text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary shadow-inner font-medium" placeholder="차대번호 또는 차량번호 입력" type="text"/>
 </div>
-<div class="flex items-center gap-2">
-<span class="text-[10px] font-bold uppercase tracking-wider text-outline px-3 py-1 bg-surface-container-low rounded-full">최근 업데이트: 2분 전</span>
-</div>
-</div>
-<!-- Enhanced Search Bar -->
-<div class="relative group">
-<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-primary">search</span>
-</div>
-<input class="w-full pl-14 pr-32 py-5 bg-surface-container-lowest border-none rounded-xl text-lg font-medium focus:ring-2 focus:ring-primary/20 shadow-sm transition-all placeholder:text-outline-variant" placeholder="부품명, 품번, 또는 차대번호 입력..." type="text"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm shadow-lg hover:scale-[1.02] transition-transform">
-검색
-</button>
+<button class="bg-primary-gradient text-on-primary font-headline font-bold h-14 px-10 rounded-full transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                    조회하기
+                </button>
 </div>
 </section>
-
-<!-- Category Horizontal Scroll -->
-<section class="mb-10">
-<div class="flex items-center justify-between mb-4">
-<h3 class="font-headline font-bold text-sm uppercase tracking-widest text-secondary">주요 카테고리</h3>
-<button class="text-xs font-bold text-primary hover:underline">전체보기</button>
+<!-- Result Section: Basic Info -->
+<section class="relative overflow-hidden bg-surface-container-lowest rounded-full p-8 shadow-[0_4px_24px_rgba(0,49,120,0.04)]">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2 aspect-[16/10] relative rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern luxury black sedan parked in a clean minimalist studio with soft overhead lighting reflecting off the metallic paint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB18Gdf7Hxhdr2xefO9aFXAB2hj4uDwEWfUQX12MzDkNtOiOtUD-hyEghaEGzQQRnMHK-9W4YE4kih_on-pKnDr9lpPs0tqBKgH7IbrWAJgds5YkbE5KHl9VmDyEw7V4hBLsF_uKOkQTXvSq1mhM7UIA7g790Og-bsjlQKiQDoH8Qh1UnDdv49ZoXexcolt1-9ji06N8guKEtuaZzDoMiZjH-RxGBl77ktm7e1FqUEBm0S94Mwxn6WQHS9XbNvd-687a7DDIko-_u3"/>
 </div>
-<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4">
-<button class="flex items-center gap-3 px-5 py-4 bg-primary text-on-primary rounded-xl shrink-0 shadow-md">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">earth_engine</span>
-<span class="font-bold text-sm">엔진</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">settings_input_component</span>
-<span class="font-bold text-sm">변속기</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">directions_car</span>
-<span class="font-bold text-sm">외장</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">lightbulb</span>
-<span class="font-bold text-sm">조명</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">toys</span>
-<span class="font-bold text-sm">내장</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">bolt</span>
-<span class="font-bold text-sm">전기</span>
-</button>
+<div class="w-full md:w-1/2 space-y-4">
+<div class="space-y-1">
+<p class="text-secondary font-semibold text-sm tracking-wider uppercase">Achaja Verified</p>
+<h2 class="font-headline text-3xl font-extrabold text-primary leading-tight">Hyundai Grandeur</h2>
+</div>
+<div class="grid grid-cols-2 gap-y-4 pt-2">
+<div>
+<p class="text-outline text-xs mb-1">연식 (Year)</p>
+<p class="font-headline font-bold text-on-surface">2022</p>
+</div>
+<div>
+<p class="text-outline text-xs mb-1">색상 (Color)</p>
+<p class="font-headline font-bold text-on-surface">Abyss Black Pearl</p>
+</div>
+<div>
+<p class="text-outline text-xs mb-1">주행거리 (Mileage)</p>
+<p class="font-headline font-bold text-on-surface">34,500 km</p>
+</div>
+<div>
+<p class="text-outline text-xs mb-1">연료 (Fuel)</p>
+<p class="font-headline font-bold text-on-surface">Gasoline</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-
-<!-- Filters and Results Meta -->
-<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-<div class="flex items-center gap-2 p-1 bg-surface-container-high rounded-lg w-fit">
-<button class="px-4 py-2 bg-surface-container-lowest text-primary font-bold text-xs rounded-md shadow-sm">전체 부품</button>
-<button class="px-4 py-2 text-on-surface-variant font-bold text-xs rounded-md hover:bg-surface-container-low transition-all">순정 부품</button>
-<button class="px-4 py-2 text-on-surface-variant font-bold text-xs rounded-md hover:bg-surface-container-low transition-all">OEM / 애프터마켓</button>
+<!-- History Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Accident -->
+<div class="bg-error-container/20 p-6 rounded-full border border-error/5 flex flex-col justify-between aspect-square md:aspect-auto h-40">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">report</span>
+<span class="bg-error text-on-error text-[10px] font-bold px-2 py-0.5 rounded-full">ALERT</span>
 </div>
-<div class="flex items-center gap-4">
-<span class="text-xs font-medium text-outline">1,280개 중 24개 표시</span>
-<button class="flex items-center gap-2 text-xs font-bold text-on-surface px-3 py-2 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
-<span class="material-symbols-outlined text-sm">sort</span>
-관련순 정렬
-</button>
+<div>
+<p class="text-on-error-container text-sm font-semibold">사고이력</p>
+<p class="text-error font-headline text-2xl font-extrabold">0건</p>
+</div>
+</div>
+<!-- Flood -->
+<div class="bg-secondary-container/30 p-6 rounded-full flex flex-col justify-between aspect-square md:aspect-auto h-40">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<div>
+<p class="text-on-secondary-container text-sm font-semibold">침수이력</p>
+<p class="text-primary font-headline text-2xl font-extrabold">없음</p>
+</div>
+</div>
+<!-- Maintenance -->
+<div class="bg-green-50 p-6 rounded-full border border-green-100 flex flex-col justify-between aspect-square md:aspect-auto h-40">
+<span class="material-symbols-outlined text-green-700" style="font-variation-settings: 'FILL' 1;">handyman</span>
+<div>
+<p class="text-green-800 text-sm font-semibold">정비이력</p>
+<p class="text-green-700 font-headline text-2xl font-extrabold">15건</p>
+</div>
+</div>
+<!-- Ownership -->
+<div class="bg-surface-container-high p-6 rounded-full flex flex-col justify-between aspect-square md:aspect-auto h-40">
+<span class="material-symbols-outlined text-secondary">person_search</span>
+<div>
+<p class="text-on-secondary-fixed-variant text-sm font-semibold">소유자 변경</p>
+<p class="text-on-surface font-headline text-2xl font-extrabold">1회</p>
+</div>
+</div>
+</div>
+<!-- Premium Subscription Section -->
+<section class="bg-primary text-on-primary rounded-full p-8 overflow-hidden relative shadow-2xl shadow-primary/30">
+<!-- Background Decorative Texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-container rounded-full -ml-20 -mb-20 blur-3xl"></div>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-6 text-center md:text-left">
+<div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-md border border-white/20">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold">상세 사고이력은 유료</h3>
+<p class="text-blue-100/70 text-sm mt-1">보험 처리되지 않은 정밀 내역까지 완벽하게 확인하세요</p>
+</div>
+</div>
+<button class="w-full md:w-auto bg-surface-container-lowest text-primary font-headline font-extrabold py-4 px-12 rounded-full shadow-lg hover:bg-primary-fixed transition-colors active:scale-95">
+                    구독하기
+                </button>
 </div>
 </section>
-
-<!-- Parts Grid -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Featured Part -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow">
-<div class="md:w-1/2 relative group bg-surface-container-low">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkuKKdxe01iGGZq6uWRDa2I-BHIqL6NACKsPN-08ubnGrcXXBaXU59CbpdnvXKpOLP3c6zRrIvL0pwjFlcdf7kp_z7eQy7qjPw1sBD8eO9EaFnkLmn1K07x5upKLLVU3BROHwumz4Kw9Vz2ZgvN2Q9dideEJ1v0y812fMBNps05RGpA17kIoa5XmV_YFGMLBfNaGJhO_xqmPOgmH0MPEW_oqnHs_4iJUFzGuWK4s_DG5NQ6tz4B8ns_ae9bofPSe4REurOH6c8_Te7" alt="터보차저"/>
-<div class="absolute top-4 left-4 flex gap-2">
-<span class="bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">추천</span>
-<span class="bg-surface-container-lowest/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">재고있음</span>
-</div>
-</div>
-<div class="p-8 md:w-1/2 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-headline font-bold text-2xl text-on-surface">V8 터보차저 유닛</h4>
-<span class="text-primary font-black text-xl tracking-tight">₩3,200,000</span>
-</div>
-<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-tighter mb-4">품번: ACH-992-ENG-TRB</p>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">순정 사양의 고유량 터보차저. 최대 열효율과 터보랙 감소를 위해 설계되었습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">BMW M5/M8 호환</span>
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">2018 - 2023 모델</span>
-<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-[10px] font-bold">정품 인증</span>
-</div>
-</div>
-<button class="w-full primary-gradient text-on-primary py-4 rounded-xl font-bold tracking-widest text-sm uppercase shadow-lg shadow-primary/20 active:scale-95 transition-all">
-구매하기
-</button>
-</div>
-</div>
-
-<!-- Standard Part 1 -->
-<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-<div class="h-40 bg-surface-container-low rounded-lg mb-4 overflow-hidden">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyqFd4IA6_CrukqlS2KXtPRCxWHS8EVqrqg6L5LI_QvqUghRrKHt47kR9ko42NnjXvVI8B5488zkmzCxP6VILiIN3Fg_wmYl8xq-Q-BZuZqMKOI2D5S8aYMICNGEN77ekwr2ViHOoHZnJrt1oj7AzU5N6kWjIKHcK_nuW2s3lKk5wiTWG_MOJ-TFyrDBMn4g9T71Ccxo2-VTM8ksMCH_885Gwp8A7exkgoOcBRaWpGQ1gQPe51btyweSKtXcIzItfqIh1wAxcxNwoU" alt="브레이크 킷"/>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-center mb-1">
-<h4 class="font-headline font-bold text-lg text-on-surface">세라믹 브레이크 킷</h4>
-<span class="text-primary font-bold">₩1,600,000</span>
-</div>
-<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-3">OEM 퍼포먼스</p>
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-[10px] font-bold text-green-600 uppercase">완벽 호환 보장</span>
-</div>
-</div>
-<button class="w-full bg-surface-container-high text-primary py-3 rounded-lg font-bold text-xs uppercase hover:bg-primary hover:text-on-primary transition-all">
-상세보기
-</button>
-</div>
-
-<!-- Standard Part 2 -->
-<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-<div class="h-40 bg-surface-container-low rounded-lg mb-4 overflow-hidden">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRw3gWJbNiK8ObcJ15gOvMHxA5sMz0b1GHi7xOJp_nBtQDXSMSvT09uVUooZK5ZYekwJCS0K6pmJ-sK_nB0aa7cMtOPbQ0qvj9Qh2ctoLbiQZN5yoy9Mn6IEy3C7wY7CfkW1bOBNAEbpLb9kNL_wWZXKWBNi6p2I4aH-77KiktkH8ya3Lug-0LHMx0F6lNL4Vm_EAWq3jD6t6KO-n6H4Jp0T-jxu-VDn8YF6KwRQ5MSN3yxBrNxTSTn2-1H7iOluXR-Vw6d22OUn8f" alt="LED 헤드라이트"/>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-center mb-1">
-<h4 class="font-headline font-bold text-lg text-on-surface">매트릭스 LED 헤드라이트</h4>
-<span class="text-primary font-bold">₩1,080,000</span>
-</div>
-<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-3">애프터마켓 프리미엄</p>
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-[10px] font-bold text-green-600 uppercase">플러그 앤 플레이</span>
-</div>
-</div>
-<button class="w-full bg-surface-container-high text-primary py-3 rounded-lg font-bold text-xs uppercase hover:bg-primary hover:text-on-primary transition-all">
-상세보기
-</button>
-</div>
-
-<!-- List Style Part -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex items-center gap-6">
-<div class="w-32 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdjxb_Tle6GryZv9UEl91JkxvWTsll_s0_YI9BWofI8bSiI_1wtW2DZRGyatLtwABEgQjmECjIbriBgNp6z86T1uElvqGyacGZy2MUatbgzIrvRcipC2MXl2WJDnkDRZlhNxBQz9lG_qRUkJvwA0wWlnlO-2vhtjp2BNyvKM32zDt7MTrBiO-DmQ1DuD17D6n-4rkZOYv5XMKm0ViHwQPdws48h7ICQgjZDZ4FXWWkGwpEQGCR-nJrFsS3Z_nonr4-0BWCu-ZoqS0A" alt="스티어링 휠"/>
-</div>
-<div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-4">
-<div>
-<h4 class="font-headline font-bold text-xl text-on-surface">스포츠 가죽 스티어링 휠</h4>
-<p class="text-xs font-medium text-on-surface-variant mb-2">퍼포레이티드 나파 가죽, 콘트라스트 스티칭.</p>
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-surface-container-high text-[10px] font-bold rounded">내장</span>
-<span class="px-2 py-0.5 bg-surface-container-high text-[10px] font-bold rounded">정품</span>
-</div>
-</div>
-<div class="text-right flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-4">
-<div>
-<span class="text-primary font-black text-2xl tracking-tighter block">₩830,000</span>
-<span class="text-[10px] font-bold text-outline">배송비 별도</span>
-</div>
-<button class="p-3 bg-surface-container-high text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined">shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
+<!-- Brand Footer / Disclaimer -->
+<div class="text-center pt-8 opacity-40">
+<img alt="Achaja Logo" class="h-6 mx-auto mb-2 grayscale brightness-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgn0CVAp-ekLXxb0_law27yKr9PbqtYm1FIXQWlQl3sTjva9myDWcyG2uhx9EgLL1OqzxopACooVs2AIzuxiuavh91aBGxyYFcmSymDwTgmPXYlXSgMSlVaqWhg_dJ_rPsHz9zfn9lg-_N5Cu5XkSxOntMn_yHRck0vSx6a6f6-H_jue33NnUsq_9YKOOUnA_CKNM2dbGJXWYJoYOuZb2xcDPTCn0qUVe96tMyH1TkfVBN4D3qOqyJiBh2nIU9NdXkgMoC2aFOWLNo"/>
+<p class="text-xs">데이터는 국토교통부 및 보험개발원 제공 정보를 바탕으로 합니다.</p>
 </div>
 </main>
-
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-4">
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/">
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,49,120,0.06)] pb-safe">
+<div class="flex justify-around items-center h-20 px-4 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-700 transition-colors rounded-lg">
 <span class="material-symbols-outlined">home</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">홈</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/news">
+<span class="font-body text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-700 transition-colors rounded-lg">
 <span class="material-symbols-outlined">newspaper</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">뉴스</span>
-</a>
-<a class="flex flex-col items-center justify-center text-blue-900 dark:text-blue-400 scale-110 transition-transform duration-150 active:scale-90" href="/">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">부품</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/history">
-<span class="material-symbols-outlined">history</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">이력조회</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/my">
+<span class="font-body text-[10px] font-semibold uppercase tracking-wider mt-1">News</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-700 transition-colors rounded-lg">
+<span class="material-symbols-outlined">build</span>
+<span class="font-body text-[10px] font-semibold uppercase tracking-wider mt-1">Parts</span>
+</div>
+<!-- Active State: History -->
+<div class="flex flex-col items-center justify-center text-blue-900 bg-blue-50/50 rounded-xl px-3 py-1.5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-body text-[10px] font-bold uppercase tracking-wider mt-1">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-700 transition-colors rounded-lg">
 <span class="material-symbols-outlined">person</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">마이</span>
-</a>
+<span class="font-body text-[10px] font-semibold uppercase tracking-wider mt-1">My</span>
+</div>
+</div>
 </nav>
-
-<!-- FAB -->
-<button class="fixed right-6 bottom-24 md:bottom-10 primary-gradient w-14 h-14 rounded-full flex items-center justify-center text-on-primary shadow-xl shadow-primary/30 active:scale-90 transition-transform z-40">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-</body>
-</html>
+</body></html>
