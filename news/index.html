@@ -1,7 +1,7 @@
   <!DOCTYPE html>                             
   <html lang="ko"><head>                  
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>                                                                                                                                                              
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>ACHAJA — 자동차 뉴스</title>         
   <script>                                                                                                                                                                                                                             
   (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();
@@ -35,7 +35,8 @@
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}                                                                                                                                          
   .hide-scrollbar::-webkit-scrollbar{display:none;}                                                                                                                                                                                    
   .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}                                                                                                                                                                       
-  body{min-height:max(884px,100dvh);}                                                                                                                                                                                                  
+  body{min-height:100dvh;}
+  .pb-safe{padding-bottom:env(safe-area-inset-bottom);}                                                                                                                                                                                                  
   </style>                                                                                                                                                                                                                             
   <script id="tailwind-config">                                                                                                                                                                                                        
   tailwind.config={darkMode:"class",theme:{extend:{                                                                                                                                                                                    
@@ -233,19 +234,31 @@
                                                                                                                                                                                                                                        
   </main>                                                                                                                                                                                                                              
                                                                                                                                                                                                                                        
-  <!-- BottomNav -->                                                                                                                                                                                                                   
-  <nav class="fixed bottom-0 left-0 w-full z-50 bg-nav-bg/95 backdrop-blur-md border-t border-app-border rounded-t-3xl shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">                                                                         
-    <div class="flex justify-around items-center px-4 py-3 pb-safe max-w-2xl mx-auto">
-      <a href="/" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">home</span><span class="font-headline text-[10px] font-medium">홈</span></a>         
-      <a href="/news" class="flex flex-col items-center bg-active-bg/60 dark:bg-active-bg/20 text-primary-container dark:text-primary rounded-xl px-4 py-1 active:scale-90 transition-transform"><span class="material-symbols-outlined
-   mb-1" style="font-variation-settings:'FILL' 1;">newspaper</span><span class="font-headline text-[10px] font-bold">뉴스</span></a>                                                                                                   
-      <a href="/history" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">history</span><span class="font-headline text-[10px]                          
-  font-medium">이력조회</span></a>                                                                                                                                                                                                     
-      <a href="/parts" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">settings_input_component</span><span class="font-headline text-[10px]           
-  font-medium">부품</span></a>                                                                                                                                                                                                         
-      <a href="/my" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">person</span><span class="font-headline text-[10px] font-medium">마이</span></a>   
-    </div>                                                  
-  </nav>                                                                                                                                                                                                                               
+  <!-- BottomNav -->
+  <nav class="fixed bottom-0 left-0 w-full z-50 bg-nav-bg/95 backdrop-blur-md border-t border-app-border shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+    <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
+      <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">홈</span>
+      </a>
+      <a href="/news" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">newspaper</span>
+        <span class="font-headline text-[10px] font-bold mt-0.5">뉴스</span>
+      </a>
+      <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">history</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span>
+      </a>
+      <a href="/parts" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">build</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">부품</span>
+      </a>
+      <a href="/my" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">마이</span>
+      </a>
+    </div>
+  </nav>
                                                             
   <script>                                                                                                                                                                                                                             
   function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}

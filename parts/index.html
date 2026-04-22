@@ -1,7 +1,7 @@
   <!DOCTYPE html>                                                                                                                                                                                                                      
   <html lang="ko"><head>                                    
   <meta charset="utf-8"/>                                                                                                                                                                                                              
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>ACHAJA — 부품 조회</title>                                                                                                                                                                                                    
   <script>                                                                                                                                                                                                                             
   (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();
@@ -38,7 +38,8 @@
   .primary-gradient{background:linear-gradient(135deg,#003178 0%,#0d47a1 100%);}                                                                                                                                                       
   .hide-scrollbar::-webkit-scrollbar{display:none;}                                                                                                                                                                                    
   .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}                                                                                                                                                                       
-  body{min-height:max(884px,100dvh);}                                                                                                                                                                                                  
+  body{min-height:100dvh;}
+  .pb-safe{padding-bottom:env(safe-area-inset-bottom);}                                                                                                                                                                                                  
   </style>                                                                                                                                                                                                                             
   <script id="tailwind-config">                                                                                                                                                                                                        
   tailwind.config={darkMode:"class",theme:{extend:{                                                                                                                                                                                    
@@ -241,22 +242,34 @@
                                                                                                                                                                                                                                        
   </main>                                                   
 
-  <!-- BottomNav -->                                                                                                                                                                                                                   
-  <nav class="fixed bottom-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-4">
-    <a class="flex flex-col items-center justify-center text-muted active:scale-90 transition-transform" href="/"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-semibold uppercase tracking-widest  
-  mt-1">홈</span></a>                                       
-    <a class="flex flex-col items-center justify-center text-muted active:scale-90 transition-transform" href="/news"><span class="material-symbols-outlined">newspaper</span><span class="text-[10px] font-semibold uppercase 
-  tracking-widest mt-1">뉴스</span></a>                                                                                                                                                                                                
-    <a class="flex flex-col items-center justify-center text-muted active:scale-90 transition-transform" href="/history"><span class="material-symbols-outlined">history</span><span class="text-[10px] font-semibold uppercase        
-  tracking-widest mt-1">이력조회</span></a>                                                                                                                                                                                            
-    <a class="flex flex-col items-center justify-center text-primary-container dark:text-primary scale-110" href="/parts"><span class="material-symbols-outlined" style="font-variation-settings:'FILL'                                
-  1;">settings_input_component</span><span class="text-[10px] font-bold uppercase tracking-widest mt-1">부품</span></a>
-    <a class="flex flex-col items-center justify-center text-muted active:scale-90 transition-transform" href="/my"><span class="material-symbols-outlined">person</span><span class="text-[10px] font-semibold uppercase              
-  tracking-widest mt-1">마이</span></a>                     
-  </nav>                                                                                                                                                                                                                               
+  <!-- BottomNav -->
+  <nav class="fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)]">
+    <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
+      <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">홈</span>
+      </a>
+      <a href="/news" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">newspaper</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">뉴스</span>
+      </a>
+      <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">history</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span>
+      </a>
+      <a href="/parts" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">build</span>
+        <span class="font-headline text-[10px] font-bold mt-0.5">부품</span>
+      </a>
+      <a href="/my" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">마이</span>
+      </a>
+    </div>
+  </nav>
                                                             
   <!-- FAB -->                                                                                                                                                                                                                         
-  <button class="fixed right-6 bottom-20 md:bottom-10 primary-gradient w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl active:scale-90 transition-transform z-40">
+  <button class="fixed right-6 bottom-24 primary-gradient w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl active:scale-90 transition-transform z-40">
     <span class="material-symbols-outlined">filter_list</span>                                                                                                                                                                         
   </button>                                                                                                                                                                                                                            
                                               
