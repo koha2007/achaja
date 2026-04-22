@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /my
+Disallow: /my/
+
+Sitemap: https://achaja.net/sitemap.xml
