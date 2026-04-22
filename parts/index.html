@@ -79,32 +79,30 @@
   </head>                                                                                                                                                                                                                              
   <body class="bg-background font-body text-on-surface">                                                                                                                                                                               
                                                                                                                                                                                                                                        
-  <!-- TopAppBar -->                                                                                                                                                                                                                   
-  <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-xl flex justify-between items-center w-full px-6 py-4 border-b border-app-border">                                                                      
-    <div class="flex items-center gap-4">                   
-      <button class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined">menu</span></button>                                                                                                                           
-      <a href="/" class="text-xl font-black tracking-tighter text-primary-container dark:text-primary font-headline">ACHAJA</a>
-    </div>                                                                                                                                                                                                                             
-    <nav class="hidden md:flex items-center gap-6">         
-      <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/">홈</a>                                                                                                                              
-      <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/news">뉴스</a>                                                                                                                        
-      <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/history">이력조회</a>                                                                                                                 
-      <a class="text-primary-container dark:text-primary font-bold text-[10px] uppercase tracking-widest px-3 py-2" href="/parts">부품조회</a>                                                                                         
-      <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/my">마이</a>                                                                                                                          
-    </nav>                                                                                                                                                                                                                             
-    <div class="flex items-center gap-2">                                                                                                                                                                                              
-      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted">                                                                                                                                        
-        <span class="material-symbols-outlined dark:hidden">dark_mode</span>                                                                                                                                                           
-        <span class="material-symbols-outlined hidden dark:inline">light_mode</span>                                                                                                                                                   
-      </button>                                                                                                                                                                                                                        
-      <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-container">                                                                                
-        <img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4XnygOYHL6lY_GtSz1Iz65eTYlPgmBYtRBbaG1PacL2WbimkVtMItAK0zKLymEhQQXZOLEnY96nsM3AmktvI_XYtehzMXtgWoda7zvRrvrv3vzOQ
-  obhLskfBzQMMLfMaqpfuh3qXbEGc-76RYc0TmOdWD0OfMx4CpcxUEl0s0pOpi2gj5yrK9mU9x4_iJDfHEsYgnYJnbnr4asWQ_bN2k60ndYr_rhHJ11VGe344cOJyqh-5-1Plj-p_kkpM962UlGmnP0Ow6tYh3"/>                                                                     
-      </div>                                                
-    </div>                                                                                                                                                                                                                             
-  </header>                                                                                                                                                                                                                            
+  <!-- TopAppBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+      <a href="/" class="flex items-center gap-2">
+        <span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">홈</a>
+        <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">뉴스</a>
+        <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">이력조회</a>
+        <a href="/parts" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">부품</a>
+        <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">마이</a>
+      </nav>
+      <div class="flex items-center gap-1">
+        <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted active:scale-95 transition-transform">
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+        </button>
+        <a href="/my" aria-label="내 프로필" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined">account_circle</span></a>
+      </div>
+    </div>
+  </header>
                                                                                                                                                                                                                                        
-  <main class="pt-24 pb-24 px-6 max-w-7xl mx-auto">                                                                                                                                                                                    
+  <main class="pt-20 pb-28 px-6 max-w-7xl mx-auto">
                                                                                                                                                                                                                                        
   <!-- Hero Search -->
   <section class="mb-12">                                                                                                                                                                                                              

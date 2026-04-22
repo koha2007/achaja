@@ -82,19 +82,27 @@
   <body class="bg-background text-on-surface font-body min-h-screen pb-24">
                                                                                                                                                                                                                                        
   <!-- TopAppBar -->
-  <header class="fixed top-0 w-full z-50 flex items-center justify-between px-4 h-14 bg-header-bg/85 border-b border-app-border glass-header">                                                                                         
-    <div class="flex items-center gap-2">                                                                                                                                                                                              
-      <button class="p-2 text-muted active:scale-95 transition-transform"><span class="material-symbols-outlined">menu</span></button>
-      <span class="font-headline text-base font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>                                                                                                            
-    </div>                                                                                                                                                                                                                             
-    <div class="flex items-center gap-1">                                                                                                                                                                                              
-      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 text-muted active:scale-95 transition-transform">                                                                                                              
-        <span class="material-symbols-outlined dark:hidden">dark_mode</span>                                                                                                                                                           
-        <span class="material-symbols-outlined hidden dark:inline">light_mode</span>                                                                                                                                                   
-      </button>                                                                                                                                                                                                                        
-      <button class="p-2 text-muted active:scale-95 transition-transform"><span class="material-symbols-outlined">account_circle</span></button>
-    </div>                                                                                                                                                                                                                             
-  </header>                                                 
+  <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+      <a href="/" class="flex items-center gap-2">
+        <span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="/" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">홈</a>
+        <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">뉴스</a>
+        <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">이력조회</a>
+        <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">부품</a>
+        <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">마이</a>
+      </nav>
+      <div class="flex items-center gap-1">
+        <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted active:scale-95 transition-transform">
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+        </button>
+        <a href="/my" aria-label="내 프로필" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined">account_circle</span></a>
+      </div>
+    </div>
+  </header>
                                                                                                                                                                                                                                        
   <main class="pt-14 max-w-2xl mx-auto">
 

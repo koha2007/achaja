@@ -71,22 +71,36 @@
   </head>                                                                                                                                                                                                                              
   <body class="bg-background text-on-surface font-body pb-24">                                                                                                                                                                         
                                                                                                                                                                                                                                        
-  <!-- TopAppBar -->                                                                                                                                                                                                                   
-  <header class="fixed top-0 z-50 w-full h-16 flex justify-between items-center px-5 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
-    <div class="flex items-center gap-3">                                                                                                                                                                                              
-      <span class="material-symbols-outlined text-primary-container dark:text-primary">directions_car</span>                                                                                                                           
-      <h1 class="font-headline font-semibold text-lg tracking-tight text-on-surface">마이</h1>                                                                                                                                         
-    </div>                                                                                                                                                                                                                             
-    <div class="flex items-center gap-2">                                                                                                                                                                                              
-      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-full text-muted active:scale-95 transition-all">                                                                                                       
-        <span class="material-symbols-outlined dark:hidden">dark_mode</span>                                                                                                                                                           
-        <span class="material-symbols-outlined hidden dark:inline">light_mode</span>                                                                                                                                                   
-      </button>                                                                                                                                                                                                                        
-      <button class="p-2 rounded-full text-muted active:scale-95 transition-all"><span class="material-symbols-outlined">settings</span></button>                                                                                      
-    </div>                                                                                                                                                                                                                             
-  </header>                                                                                                                                                                                                                            
+  <!-- TopAppBar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+      <a href="/" class="flex items-center gap-2">
+        <span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">홈</a>
+        <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">뉴스</a>
+        <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">이력조회</a>
+        <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">부품</a>
+        <a href="/my" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">마이</a>
+      </nav>
+      <div class="flex items-center gap-1">
+        <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted active:scale-95 transition-transform">
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+        </button>
+        <a href="/my" aria-label="내 프로필" class="p-2 rounded-lg text-primary-container dark:text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">account_circle</span></a>
+      </div>
+    </div>
+  </header>
                                                                                                                                                                                                                                        
-  <main class="pt-24 px-5 max-w-md md:max-w-xl mx-auto space-y-lg">
+  <main class="pt-20 px-5 max-w-md md:max-w-xl mx-auto space-y-lg">
+
+  <!-- Page Title -->
+  <section class="pt-xs">
+    <h1 class="text-on-surface font-headline font-semibold text-2xl">마이</h1>
+    <p class="text-muted text-sm mt-1">프로필·구독·결제·알림 관리</p>
+  </section>
                                           
   <!-- Profile Card -->                                                                                                                                                                                                                
   <section class="glass-card rounded-3xl p-lg flex flex-col items-center">                                                                                                                                                             
