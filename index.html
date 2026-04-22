@@ -1,326 +1,214 @@
-<!DOCTYPE html>
+  GitHub에서 index.html 전체 덮어쓰기:                                                                                                                                                                                                 
+                                                                                                                                                                                                                                       
+  <!DOCTYPE html>                                           
+  <html lang="ko"><head>                                                                                                                                                                                                               
+  <meta charset="utf-8"/>                                   
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>                                                                                                                                                              
+  <title>ACHAJA — 중고차 사고이력 · 침수 · 정비 · 시세 조회</title>                                                                                                                                                                    
+  <script>                                                                                                                                                                                                                             
+  (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();                                          
+  </script>                                                                                                                                                                                                                            
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>                                                                                          
+  <style>                                                                                                                                                                                                                              
+  :root{                                                                                                                                                                                                                               
+    --c-primary:0 49 120;--c-primary-container:13 71 161;--c-on-primary:255 255 255;--c-on-primary-container:13 71 161;                                                                                                                
+    --c-background:248 249 250;--c-surface:248 249 250;                                                                                                                                                                                
+    --c-surface-container:237 238 239;--c-surface-container-low:243 244 245;--c-surface-container-high:231 232 233;                                                                                                                    
+    --c-on-surface:25 28 29;--c-on-surface-variant:67 70 82;                                                                                                                                                                           
+    --c-outline:115 119 131;--c-outline-variant:195 198 212;
+    --c-error-container:255 218 214;--c-on-error-container:147 0 10;                                                                                                                                                                   
+    --c-header-bg:248 249 250;--c-nav-bg:255 255 255;--c-card-alt:255 255 255;
+    --c-app-border:225 227 228;--c-muted:100 116 139;--c-muted-strong:71 85 105;                                                                                                                                                       
+    --c-active-bg:219 234 254;                                                                                                                                                                                                         
+  }                                                                                                                                                                                                                                    
+  html.dark{                                                                                                                                                                                                                           
+    --c-primary:176 198 255;--c-primary-container:0 49 120;--c-on-primary:0 45 111;--c-on-primary-container:124 156 233;                                                                                                               
+    --c-background:18 19 24;--c-surface:18 19 24;                                                                                                                                                                                      
+    --c-surface-container:30 31 36;--c-surface-container-low:26 27 32;--c-surface-container-high:40 42 47;
+    --c-on-surface:226 226 232;--c-on-surface-variant:196 198 210;                                                                                                                                                                     
+    --c-outline:142 144 156;--c-outline-variant:67 70 81;                                                                                                                                                                              
+    --c-error-container:147 0 10;--c-on-error-container:255 218 214;                                                                                                                                                                   
+    --c-header-bg:2 6 23;--c-nav-bg:15 23 42;--c-card-alt:30 31 36;                                                                                                                                                                    
+    --c-app-border:39 39 42;--c-muted:161 161 170;--c-muted-strong:82 82 91;                                                                                                                                                           
+    --c-active-bg:30 58 138;                                                                                                                                                                                                           
+  }                                                                                                                                                                                                                                    
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+  .glass-header{backdrop-filter:blur(8px);}                                                                                                                                                                                            
+  .hide-scrollbar::-webkit-scrollbar{display:none;}                                                                                                                                                                                    
+  .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}                                                                                                                                                                       
+  body{min-height:max(884px,100dvh);}                                                                                                                                                                                                  
+  </style>                                                                                                                                                                                                                             
+  <script id="tailwind-config">                             
+  tailwind.config={darkMode:"class",theme:{extend:{                                                                                                                                                                                    
+    colors:{                                                                                                                                                                                                                           
+      "primary":"rgb(var(--c-primary)/<alpha-value>)",
+      "primary-container":"rgb(var(--c-primary-container)/<alpha-value>)",                                                                                                                                                             
+      "on-primary":"rgb(var(--c-on-primary)/<alpha-value>)",                                                                                                                                                                           
+      "on-primary-container":"rgb(var(--c-on-primary-container)/<alpha-value>)",
+      "background":"rgb(var(--c-background)/<alpha-value>)",                                                                                                                                                                           
+      "surface":"rgb(var(--c-surface)/<alpha-value>)",      
+      "surface-container":"rgb(var(--c-surface-container)/<alpha-value>)",                                                                                                                                                             
+      "surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)",
+      "surface-container-high":"rgb(var(--c-surface-container-high)/<alpha-value>)",                                                                                                                                                   
+      "on-surface":"rgb(var(--c-on-surface)/<alpha-value>)",                                                                                                                                                                           
+      "on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)",                                                                                                                                                           
+      "outline":"rgb(var(--c-outline)/<alpha-value>)",                                                                                                                                                                                 
+      "outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)",
+      "error-container":"rgb(var(--c-error-container)/<alpha-value>)",                                                                                                                                                                 
+      "on-error-container":"rgb(var(--c-on-error-container)/<alpha-value>)",
+      "header-bg":"rgb(var(--c-header-bg)/<alpha-value>)",                                                                                                                                                                             
+      "nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)",        
+      "card-alt":"rgb(var(--c-card-alt)/<alpha-value>)",                                                                                                                                                                               
+      "app-border":"rgb(var(--c-app-border)/<alpha-value>)",
+      "muted":"rgb(var(--c-muted)/<alpha-value>)",                                                                                                                                                                                     
+      "muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)",
+      "active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"                                                                                                                                                                              
+    },                                                      
+    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},                                                                                                                                                   
+    spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","gutter":"16px","margin":"20px","xl":"32px"},                                                                                                                               
+    fontFamily:{"headline":["Manrope"],"body":["Inter"]},                                                                                                                                                                              
+    fontSize:{                                                                                                                                                                                                                         
+      "headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],                                                                                                                                                                 
+      "headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],                                                                                                                                       
+      "title-lg":["20px",{"lineHeight":"28px","fontWeight":"600"}],                                                                                                                                                                    
+      "body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],                                                                                                                                                                     
+      "body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],                                                                                                                                                                     
+      "label-md":["11px",{"lineHeight":"16px","fontWeight":"500"}]                                                                                                                                                                     
+    }                                                                                                                                                                                                                                  
+  }}};                                                      
+  </script>                                                                                                                                                                                                                            
+  </head>                                                   
+  <body class="bg-background text-on-surface font-body min-h-screen pb-20">
+                                                                                                                                                                                                                                       
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 flex items-center justify-between px-4 h-14 bg-header-bg/85 border-b border-app-border glass-header">                                                                                         
+    <div class="flex items-center gap-2">                                                                                                                                                                                              
+      <button class="p-2 text-muted active:scale-95 transition-transform"><span class="material-symbols-outlined">menu</span></button>
+      <span class="font-headline text-base font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>                                                                                                            
+    </div>                                                                                                                                                                                                                             
+    <div class="flex items-center gap-1">                                                                                                                                                                                              
+      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 text-muted active:scale-95 transition-transform">                                                                                                              
+        <span class="material-symbols-outlined dark:hidden">dark_mode</span>                                                                                                                                                           
+        <span class="material-symbols-outlined hidden dark:inline">light_mode</span>                                                                                                                                                   
+      </button>                                                                                                                                                                                                                        
+      <button class="p-2 text-muted active:scale-95 transition-transform"><span class="material-symbols-outlined">account_circle</span></button>
+    </div>                                                                                                                                                                                                                             
+  </header>                                                 
+                                                                                                                                                                                                                                       
+  <main class="pt-14">                                      
 
-<html class="dark" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-container": "#003178",
-                        "on-secondary-container": "#abb9d2",
-                        "inverse-primary": "#3a5ca4",
-                        "primary": "#b0c6ff",
-                        "on-tertiary": "#2f3038",
-                        "secondary-fixed": "#d5e3fd",
-                        "surface-dim": "#121318",
-                        "on-secondary-fixed-variant": "#3a485c",
-                        "surface-tint": "#b0c6ff",
-                        "on-surface-variant": "#c4c6d2",
-                        "surface-container-highest": "#33343a",
-                        "surface-container-high": "#282a2f",
-                        "on-error-container": "#ffdad6",
-                        "error": "#ffb4ab",
-                        "secondary-container": "#3c4a5e",
-                        "tertiary-fixed-dim": "#c6c5cf",
-                        "error-container": "#93000a",
-                        "tertiary-fixed": "#e3e1ec",
-                        "primary-fixed-dim": "#b0c6ff",
-                        "on-tertiary-fixed-variant": "#46464e",
-                        "on-primary-container": "#7c9ce9",
-                        "surface-bright": "#38393e",
-                        "secondary-fixed-dim": "#b9c7e0",
-                        "on-tertiary-container": "#9d9ca6",
-                        "surface": "#121318",
-                        "on-error": "#690005",
-                        "surface-variant": "#33343a",
-                        "surface-container": "#1e1f24",
-                        "on-secondary-fixed": "#0d1c2f",
-                        "inverse-on-surface": "#2f3035",
-                        "surface-container-low": "#1a1b20",
-                        "background": "#121318",
-                        "on-surface": "#e2e2e8",
-                        "on-primary-fixed-variant": "#1e448b",
-                        "on-primary-fixed": "#001945",
-                        "secondary": "#b9c7e0",
-                        "outline": "#8e909c",
-                        "on-primary": "#002d6f",
-                        "primary-fixed": "#d9e2ff",
-                        "surface-container-lowest": "#0d0e13",
-                        "on-secondary": "#233144",
-                        "on-background": "#e2e2e8",
-                        "on-tertiary-fixed": "#1a1b22",
-                        "outline-variant": "#434651",
-                        "tertiary-container": "#33343c",
-                        "inverse-surface": "#e2e2e8",
-                        "tertiary": "#c6c5cf"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "lg": "24px",
-                        "xs": "4px",
-                        "unit": "4px",
-                        "md": "16px",
-                        "sm": "8px",
-                        "gutter": "16px",
-                        "margin": "20px",
-                        "xl": "32px"
-                    },
-                    "fontFamily": {
-                        "label-md": ["Inter"],
-                        "display-lg": ["Manrope"],
-                        "label-lg": ["Inter"],
-                        "headline-md": ["Manrope"],
-                        "headline-lg": ["Manrope"],
-                        "title-lg": ["Manrope"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-md": ["11px", {"lineHeight": "16px", "fontWeight": "500"}],
-                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-header {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(8px);
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background text-on-surface font-body-lg min-h-screen pb-20">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex items-center justify-between px-4 h-14 bg-slate-950 border-b border-zinc-800 glass-header">
-<div class="flex items-center gap-2">
-<button class="p-2 text-zinc-400 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-<span class="font-manrope text-base font-bold tracking-tight text-blue-900 dark:text-blue-500">ACHAJA</span>
-</div>
-<button class="p-2 text-zinc-400 active:scale-95 transition-transform">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</header>
-<main class="pt-14">
-<!-- Hero Section -->
-<section class="relative px-margin py-xl flex flex-col items-center text-center overflow-hidden bg-gradient-to-b from-primary-container to-[#0d47a1]">
-<div class="absolute inset-0 opacity-10 pointer-events-none" data-alt="faint cinematic background of a modern sleek car parked in a dark high-tech garage with atmospheric lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrBvz0ftrrIooq3MjQfm_PEkAmGBQorLcicqwhMJ4rfp2CcegGGbZg1QutxWHdmgT_ikoqkEFvweMdJ8FPeI5vSMgy7rRmnoRV3_bD6QxXA9s6g8t_eartdt3RH57xfSUNqEThb5nVQoyoF3n6XIo2LHI8G02Uo977GsJIz9FU4xgU_d24zw1fehhtpzL3oIZqa3eqIxgxS5CczWRQsiNTjitxldfpmZGEbA4Rt_Rbb7qdnC-7Pv0bK3uDfS64Mhpjd4S3BGEaoVlU'); background-size: cover; background-position: center;"></div>
-<h1 class="font-headline-lg text-white mb-sm z-10 leading-tight">중고차 살 때,<br/>안 속는 가장 확실한 방법</h1>
-<p class="font-body-md text-on-primary-container mb-lg z-10">차량번호 하나로 사고·침수·정비 이력까지 한 번에</p>
-<div class="w-full max-w-md bg-white rounded-full p-1.5 flex items-center shadow-xl z-10">
-<input class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md font-body-lg" placeholder="차량번호 또는 VIN을 입력하세요" type="text"/>
-<button class="bg-primary-container text-white px-lg py-3 rounded-full font-bold active:scale-95 transition-transform">
-                    조회하기
-                </button>
-</div>
-<p class="mt-md font-label-md text-on-primary-container/80 z-10">기본 조회는 무료 · 상세 리포트는 4,900원부터</p>
-</section>
-<!-- Free Features Grid (Bento Style) -->
-<section class="px-margin py-lg grid grid-cols-2 gap-md">
-<div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-primary" data-icon="directions_car">directions_car</span>
-<span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span>
-</div>
-<h3 class="font-title-lg text-sm mt-xs">차량 기본정보</h3>
-<p class="text-on-surface-variant text-[11px]">연식·색상·주행거리</p>
-</div>
-<div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-primary" data-icon="water_drop">water_drop</span>
-<span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span>
-</div>
-<h3 class="font-title-lg text-sm mt-xs">침수 여부</h3>
-<p class="text-on-surface-variant text-[11px]">보험개발원 공식데이터</p>
-</div>
-<div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-primary" data-icon="warning">warning</span>
-<span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span>
-</div>
-<h3 class="font-title-lg text-sm mt-xs">리콜 정보</h3>
-<p class="text-on-surface-variant text-[11px]">국토부 공공데이터</p>
-</div>
-<div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-<div class="flex justify-between items-start">
-<span class="material-symbols-outlined text-primary" data-icon="format_list_numbered">format_list_numbered</span>
-<span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span>
-</div>
-<h3 class="font-title-lg text-sm mt-xs">이력 건수 확인</h3>
-<p class="text-on-surface-variant text-[11px]">사고·정비 몇 건 있는지</p>
-</div>
-</section>
-<!-- Comprehensive Report Highlight Card -->
-<section class="px-margin py-md">
-<div class="bg-primary-container rounded-3xl p-lg relative overflow-hidden">
-<div class="absolute top-0 right-0 p-lg opacity-20 pointer-events-none">
-<span class="material-symbols-outlined text-[120px]" data-icon="verified">verified</span>
-</div>
-<div class="inline-flex items-center bg-error-container text-on-error-container px-2 py-1 rounded-lg text-xs font-bold mb-md">
-<span class="material-symbols-outlined text-xs mr-1" data-icon="local_fire_department" data-weight="fill">local_fire_department</span>
-                    BEST
-                </div>
-<h2 class="font-headline-md text-white mb-xs">종합 리포트</h2>
-<div class="flex items-baseline gap-2 mb-lg">
-<span class="text-3xl font-bold text-white">₩4,900</span>
-<span class="text-sm text-on-primary-container line-through">₩6,300</span>
-<span class="text-xs bg-white/20 text-white px-2 py-0.5 rounded-full font-bold">22% 할인</span>
-</div>
-<ul class="space-y-sm mb-xl">
-<li class="flex items-center text-sm text-on-primary-container">
-<span class="material-symbols-outlined text-sm mr-2 text-primary" data-icon="check_circle">check_circle</span>
-                        사고이력 상세 (수리부위·수리비)
-                    </li>
-<li class="flex items-center text-sm text-on-primary-container">
-<span class="material-symbols-outlined text-sm mr-2 text-primary" data-icon="check_circle">check_circle</span>
-                        정비이력 상세 (어디서 뭘 교환했는지)
-                    </li>
-<li class="flex items-center text-sm text-on-primary-container">
-<span class="material-symbols-outlined text-sm mr-2 text-primary" data-icon="check_circle">check_circle</span>
-                        시세 정밀분석 (적정 구매가)
-                    </li>
-<li class="flex items-center text-sm text-on-primary-container">
-<span class="material-symbols-outlined text-sm mr-2 text-primary" data-icon="check_circle">check_circle</span>
-                        구매 추천 점수 (A~F등급)
-                    </li>
-<li class="flex items-center text-sm text-on-primary-container">
-<span class="material-symbols-outlined text-sm mr-2 text-primary" data-icon="check_circle">check_circle</span>
-                        향후 3년 예상 수리비
-                    </li>
-</ul>
-<button class="w-full bg-white text-primary-container py-md rounded-2xl font-bold font-title-lg active:scale-95 transition-transform">
-                    지금 확인하기
-                </button>
-</div>
-</section>
-<!-- Individual Item Section (Horizontal Scroll) -->
-<section class="py-lg">
-<h2 class="px-margin font-headline-md text-lg mb-md">필요한 정보만 골라보기</h2>
-<div class="flex overflow-x-auto gap-md px-margin hide-scrollbar">
-<div class="min-w-[160px] bg-surface-container-low border border-outline-variant p-md rounded-2xl flex flex-col">
-<span class="material-symbols-outlined text-primary mb-md" data-icon="car_crash">car_crash</span>
-<h3 class="text-sm font-bold mb-xs">사고이력 상세</h3>
-<span class="text-primary font-bold mb-md">₩2,900</span>
-<button class="mt-auto bg-surface-container-high py-2 rounded-xl text-xs font-semibold active:opacity-70">개별 보기</button>
-</div>
-<div class="min-w-[160px] bg-surface-container-low border border-outline-variant p-md rounded-2xl flex flex-col">
-<span class="material-symbols-outlined text-primary mb-md" data-icon="build">build</span>
-<h3 class="text-sm font-bold mb-xs">정비이력 상세</h3>
-<span class="text-primary font-bold mb-md">₩1,500</span>
-<button class="mt-auto bg-surface-container-high py-2 rounded-xl text-xs font-semibold active:opacity-70">개별 보기</button>
-</div>
-<div class="min-w-[160px] bg-surface-container-low border border-outline-variant p-md rounded-2xl flex flex-col">
-<span class="material-symbols-outlined text-primary mb-md" data-icon="monitoring">monitoring</span>
-<h3 class="text-sm font-bold mb-xs">시세 정밀분석</h3>
-<span class="text-primary font-bold mb-md">₩1,900</span>
-<button class="mt-auto bg-surface-container-high py-2 rounded-xl text-xs font-semibold active:opacity-70">개별 보기</button>
-</div>
-</div>
-</section>
-<!-- Subscription Plans -->
-<section class="px-margin py-lg mb-xl">
-<h2 class="font-headline-md text-lg mb-lg text-center">자주 조회하면 구독이 더 저렴해요</h2>
-<div class="space-y-md">
-<!-- Basic -->
-<div class="bg-surface-container-low border border-outline-variant p-lg rounded-2xl flex justify-between items-center">
-<div>
-<h3 class="font-bold text-on-surface">Basic</h3>
-<p class="text-xs text-on-surface-variant">월 5회 리포트 제공</p>
-</div>
-<div class="text-right">
-<span class="block font-bold text-on-surface">₩4,900</span>
-<span class="text-[10px] text-on-surface-variant">/월</span>
-</div>
-</div>
-<!-- Premium -->
-<div class="bg-primary/5 border-2 border-primary p-lg rounded-2xl relative">
-<div class="absolute -top-3 right-4 bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">추천</div>
-<div class="flex justify-between items-center">
-<div>
-<h3 class="font-bold text-primary">Premium</h3>
-<p class="text-xs text-on-surface-variant">무제한 리포트 + 알림 + 저장</p>
-</div>
-<div class="text-right">
-<span class="block font-bold text-primary">₩9,900</span>
-<span class="text-[10px] text-on-surface-variant">/월</span>
-</div>
-</div>
-</div>
-<!-- Dealer -->
-<div class="bg-surface-container-low border border-outline-variant p-lg rounded-2xl flex justify-between items-center">
-<div>
-<h3 class="font-bold text-on-surface">Dealer</h3>
-<p class="text-xs text-on-surface-variant">API 연동 + 대량 조회 최적화</p>
-</div>
-<div class="text-right">
-<span class="block font-bold text-on-surface">₩29,900</span>
-<span class="text-[10px] text-on-surface-variant">/월</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="px-margin py-lg border-t border-zinc-800 text-center">
-<p class="text-[10px] text-zinc-500">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
-<p class="mt-xs text-[10px] text-zinc-600">© 2024 ACHAJA Corp. All Rights Reserved.</p>
-</footer>
-</main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-16 bg-slate-900 border-t border-zinc-800 shadow-lg rounded-t-lg">
-<a class="flex flex-col items-center justify-center text-blue-800 dark:text-blue-400 bg-blue-900/10 rounded-xl px-3 py-1 active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
-<span class="font-manrope text-[10px] font-medium mt-0.5">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-blue-700 active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="newspaper">newspaper</span>
-<span class="font-manrope text-[10px] font-medium mt-0.5">News</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-blue-700 active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="history">history</span>
-<span class="font-manrope text-[10px] font-medium mt-0.5">History</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-blue-700 active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
-<span class="font-manrope text-[10px] font-medium mt-0.5">Parts</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-blue-700 active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-manrope text-[10px] font-medium mt-0.5">Profile</span>
-</a>
-</nav>
-</body></html>
+  <!-- Hero -->
+  <section class="relative px-margin py-xl flex flex-col items-center text-center overflow-hidden bg-gradient-to-b from-primary-container to-[#0d47a1]">
+    <div class="absolute inset-0 opacity-10 pointer-events-none"                                                                                                                                                                       
+  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrBvz0ftrrIooq3MjQfm_PEkAmGBQorLcicqwhMJ4rfp2CcegGGbZg1QutxWHdmgT_ikoqkEFvweMdJ8FPeI5vSMgy7rRmnoRV3_bD6QxXA9s6g8t_eartdt3RH57xfSUNqEThb5nVQoyoF3n6XI
+  o2LHI8G02Uo977GsJIz9FU4xgU_d24zw1fehhtpzL3oIZqa3eqIxgxS5CczWRQsiNTjitxldfpmZGEbA4Rt_Rbb7qdnC-7Pv0bK3uDfS64Mhpjd4S3BGEaoVlU');background-size:cover;background-position:center;"></div>                                               
+    <h1 class="text-[32px] leading-tight font-headline font-semibold tracking-tight text-white mb-sm z-10">중고차 살 때,<br/>안 속는 가장 확실한 방법</h1>                                                                             
+    <p class="text-sm text-blue-100 mb-lg z-10">차량번호 하나로 사고·침수·정비 이력까지 한 번에</p>                                                                                                                                    
+    <div class="w-full max-w-md bg-white rounded-full p-1.5 flex items-center shadow-xl z-10">                                                                                                                                         
+      <input class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md" placeholder="차량번호 또는 VIN을 입력하세요" type="text"/>                                                         
+      <button class="bg-primary-container text-white px-lg py-3 rounded-full font-bold active:scale-95 transition-transform">조회하기</button>                                                                                         
+    </div>                                                                                                                                                                                                                             
+    <p class="mt-md text-[11px] text-blue-100/80 z-10">기본 조회는 무료 · 상세 리포트는 4,900원부터</p>                                                                                                                                
+  </section>                                                                                                                                                                                                                           
+                                                            
+  <!-- Free Features -->                                                                                                                                                                                                               
+  <section class="px-margin py-lg grid grid-cols-2 gap-md"> 
+    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">                                                                                                                             
+      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">directions_car</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400        
+  text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span></div>                                                                                                                                                                  
+      <h3 class="font-headline font-semibold text-sm mt-xs">차량 기본정보</h3><p class="text-on-surface-variant text-[11px]">연식·색상·주행거리</p>                                                                                    
+    </div>                                                                                                                                                                                                                             
+    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
+      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">water_drop</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px]
+   px-1.5 py-0.5 rounded-full font-bold">무료</span></div>                                                                                                                                                                             
+      <h3 class="font-headline font-semibold text-sm mt-xs">침수 여부</h3><p class="text-on-surface-variant text-[11px]">보험개발원 공식데이터</p>
+    </div>                                                                                                                                                                                                                             
+    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">                                                                                                                             
+      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">warning</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px]   
+  px-1.5 py-0.5 rounded-full font-bold">무료</span></div>                                                                                                                                                                              
+      <h3 class="font-headline font-semibold text-sm mt-xs">리콜 정보</h3><p class="text-on-surface-variant text-[11px]">국토부 공공데이터</p>
+    </div>                                                                                                                                                                                                                             
+    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
+      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">format_list_numbered</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400  
+  text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span></div>                                                                                                                                                                  
+      <h3 class="font-headline font-semibold text-sm mt-xs">이력 건수 확인</h3><p class="text-on-surface-variant text-[11px]">사고·정비 몇 건 있는지</p>                                                                               
+    </div>                                                                                                                                                                                                                             
+  </section>                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                       
+  <!-- Comprehensive Report -->                                                                                                                                                                                                        
+  <section class="px-margin py-md">                         
+    <div class="bg-primary-container rounded-3xl p-lg relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-lg opacity-20 pointer-events-none"><span class="material-symbols-outlined text-[120px] text-white">verified</span></div>                                                                    
+      <div class="inline-flex items-center bg-error-container text-on-error-container px-2 py-1 rounded-lg text-xs font-bold mb-md"><span class="material-symbols-outlined text-xs mr-1">local_fire_department</span>BEST</div>        
+      <h2 class="font-headline text-2xl font-semibold text-white mb-xs">종합 리포트</h2>                                                                                                                                               
+      <div class="flex items-baseline gap-2 mb-lg"><span class="text-3xl font-bold text-white">₩4,900</span><span class="text-sm text-blue-200 line-through">₩6,300</span><span class="text-xs bg-white/20 text-white px-2 py-0.5      
+  rounded-full font-bold">22% 할인</span></div>                                                                                                                                                                                        
+      <ul class="space-y-sm mb-xl text-sm text-blue-100">                                                                                                                                                                              
+        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 text-blue-200">check_circle</span>사고이력 상세 (수리부위·수리비)</li>                                                                       
+        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 text-blue-200">check_circle</span>정비이력 상세 (어디서 뭘 교환했는지)</li>                                                                  
+        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 text-blue-200">check_circle</span>시세 정밀분석 (적정 구매가)</li>                                                                           
+        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 text-blue-200">check_circle</span>구매 추천 점수 (A~F등급)</li>                                                                              
+        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 text-blue-200">check_circle</span>향후 3년 예상 수리비</li>                                                                                  
+      </ul>                                                                                                                                                                                                                            
+      <button class="w-full bg-white text-primary-container py-md rounded-2xl font-bold text-lg active:scale-95 transition-transform">지금 확인하기</button>                                                                           
+    </div>                                                                                                                                                                                                                             
+  </section>                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                       
+  <!-- Individual Items -->                                 
+  <section class="py-lg">
+    <h2 class="px-margin font-headline text-lg font-semibold mb-md">필요한 정보만 골라보기</h2>
+    <div class="flex overflow-x-auto gap-md px-margin hide-scrollbar">                                                                                                                                                                 
+      <div class="min-w-[160px] bg-surface-container-low border border-outline-variant p-md rounded-2xl flex flex-col"><span class="material-symbols-outlined text-primary-container dark:text-primary mb-md">car_crash</span><h3      
+  class="text-sm font-bold mb-xs">사고이력 상세</h3><span class="text-primary-container dark:text-primary font-bold mb-md">₩2,900</span><button class="mt-auto bg-surface-container-high py-2 rounded-xl text-xs font-semibold         
+  active:opacity-70">개별 보기</button></div>                                                                                                                                                                                          
+      <div class="min-w-[160px] bg-surface-container-low border border-outline-variant p-md rounded-2xl flex flex-col"><span class="material-symbols-outlined text-primary-container dark:text-primary mb-md">build</span><h3          
+  class="text-sm font-bold mb-xs">정비이력 상세</h3><span class="text-primary-container dark:text-primary font-bold mb-md">₩1,500</span><button class="mt-auto bg-surface-container-high py-2 rounded-xl text-xs font-semibold         
+  active:opacity-70">개별 보기</button></div>
+      <div class="min-w-[160px] bg-surface-container-low border border-outline-variant p-md rounded-2xl flex flex-col"><span class="material-symbols-outlined text-primary-container dark:text-primary mb-md">monitoring</span><h3     
+  class="text-sm font-bold mb-xs">시세 정밀분석</h3><span class="text-primary-container dark:text-primary font-bold mb-md">₩1,900</span><button class="mt-auto bg-surface-container-high py-2 rounded-xl text-xs font-semibold         
+  active:opacity-70">개별 보기</button></div>
+    </div>                                                                                                                                                                                                                             
+  </section>                                                
+
+  <!-- Subscription -->
+  <section class="px-margin py-lg mb-xl">
+    <h2 class="font-headline text-lg font-semibold mb-lg text-center">자주 조회하면 구독이 더 저렴해요</h2>                                                                                                                            
+    <div class="space-y-md">                                                                                                                                                                                                           
+      <div class="bg-surface-container-low border border-outline-variant p-lg rounded-2xl flex justify-between items-center"><div><h3 class="font-bold">Basic</h3><p class="text-xs text-on-surface-variant">월 5회 리포트             
+  제공</p></div><div class="text-right"><span class="block font-bold">₩4,900</span><span class="text-[10px] text-on-surface-variant">/월</span></div></div>                                                                            
+      <div class="bg-primary/5 border-2 border-primary-container dark:border-primary p-lg rounded-2xl relative"><div class="absolute -top-3 right-4 bg-primary-container dark:bg-primary text-white dark:text-on-primary text-[10px]   
+  font-bold px-2 py-0.5 rounded-full">추천</div><div class="flex justify-between items-center"><div><h3 class="font-bold text-primary-container dark:text-primary">Premium</h3><p class="text-xs text-on-surface-variant">무제한 리포트
+   + 알림 + 저장</p></div><div class="text-right"><span class="block font-bold text-primary-container dark:text-primary">₩9,900</span><span class="text-[10px] text-on-surface-variant">/월</span></div></div></div>
+      <div class="bg-surface-container-low border border-outline-variant p-lg rounded-2xl flex justify-between items-center"><div><h3 class="font-bold">Dealer</h3><p class="text-xs text-on-surface-variant">API 연동 + 대량 조회     
+  최적화</p></div><div class="text-right"><span class="block font-bold">₩29,900</span><span class="text-[10px] text-on-surface-variant">/월</span></div></div>                                                                         
+    </div>
+  </section>                                                                                                                                                                                                                           
+                                                            
+  <footer class="px-margin py-lg border-t border-app-border text-center">                                                                                                                                                              
+    <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
+    <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>                                                                                                                                               
+  </footer>                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                       
+  </main>                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                       
+  <!-- BottomNav -->                                        
+  <nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-16 bg-nav-bg border-t border-app-border shadow-lg">
+    <a class="flex flex-col items-center justify-center text-primary-container dark:text-primary bg-active-bg/60 dark:bg-active-bg/20 rounded-xl px-3 py-1" href="/"><span class="material-symbols-outlined">home</span><span          
+  class="font-headline text-[10px] font-medium mt-0.5">홈</span></a>                                                                                                                                                                   
+    <a class="flex flex-col items-center justify-center text-muted active:opacity-80 transition-opacity" href="/news"><span class="material-symbols-outlined">newspaper</span><span class="font-headline text-[10px] font-medium       
+  mt-0.5">뉴스</span></a>                                                                                                                                                                                                              
+    <a class="flex flex-col items-center justify-center text-muted active:opacity-80 transition-opacity" href="/history"><span class="material-symbols-outlined">history</span><span class="font-headline text-[10px] font-medium 
+  mt-0.5">이력조회</span></a>                                                                                                                                                                                                          
+    <a class="flex flex-col items-center justify-center text-muted active:opacity-80 transition-opacity" href="/parts"><span class="material-symbols-outlined">settings_suggest</span><span class="font-headline text-[10px] 
+  font-medium mt-0.5">부품</span></a>                                                                                                                                                                                                  
+    <a class="flex flex-col items-center justify-center text-muted active:opacity-80 transition-opacity" href="/my"><span class="material-symbols-outlined">person</span><span class="font-headline text-[10px] font-medium 
+  mt-0.5">마이</span></a>                                                                                                                                                                                                              
+  </nav>                                                    
+                                                                                                                                                                                                                                       
+  <script>                                                                                                                                                                                                                             
+  function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
+  </script>                                                                                                                                                                                                                            
+                                                            
+  </body></html>                                                                       
