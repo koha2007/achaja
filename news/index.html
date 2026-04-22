@@ -1,329 +1,254 @@
-<!DOCTYPE html>
-<html class="light" lang="ko">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ACHAJA - 내 차의 모든 것</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-container-low": "#f3f4f5",
-                      "surface": "#f8f9fa",
-                      "primary-fixed-dim": "#b0c6ff",
-                      "secondary-container": "#cfe6f2",
-                      "secondary-fixed-dim": "#b4cad6",
-                      "surface-dim": "#d9dadb",
-                      "on-primary": "#ffffff",
-                      "on-primary-fixed-variant": "#00429c",
-                      "tertiary": "#602100",
-                      "error-container": "#ffdad6",
-                      "primary-container": "#0d47a1",
-                      "on-tertiary-fixed": "#360f00",
-                      "background": "#f8f9fa",
-                      "on-surface": "#191c1d",
-                      "surface-container-high": "#e7e8e9",
-                      "on-tertiary": "#ffffff",
-                      "outline-variant": "#c3c6d4",
-                      "tertiary-container": "#853100",
-                      "on-background": "#191c1d",
-                      "primary-fixed": "#d9e2ff",
-                      "tertiary-fixed-dim": "#ffb596",
-                      "surface-container-lowest": "#ffffff",
-                      "inverse-on-surface": "#f0f1f2",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#cfe6f2",
-                      "inverse-surface": "#2e3132",
-                      "on-secondary-fixed": "#071e27",
-                      "tertiary-fixed": "#ffdbcd",
-                      "surface-variant": "#e1e3e4",
-                      "inverse-primary": "#b0c6ff",
-                      "on-tertiary-container": "#ffa781",
-                      "on-tertiary-fixed-variant": "#7d2d00",
-                      "surface-container-highest": "#e1e3e4",
-                      "error": "#ba1a1a",
-                      "surface-container": "#edeeef",
-                      "on-surface-variant": "#434652",
-                      "on-secondary-fixed-variant": "#354a53",
-                      "on-primary-container": "#a1bbff",
-                      "surface-tint": "#2b5bb5",
-                      "on-primary-fixed": "#001945",
-                      "on-error-container": "#93000a",
-                      "on-secondary-container": "#526772",
-                      "secondary": "#4c616c",
-                      "surface-bright": "#f8f9fa",
-                      "primary": "#003178",
-                      "outline": "#737783",
-                      "on-secondary": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "fontFamily": {
-                      "headline": ["Manrope"],
-                      "body": ["Inter"],
-                      "label": ["Inter"]
-              }
-            },
-          }
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .primary-gradient {
-            background: linear-gradient(135deg, #003178 0%, #0d47a1 100%);
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-</style>
-</head>
-<body class="bg-surface font-body text-on-surface">
-
-<!-- TopAppBar -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-slate-50/85 dark:bg-slate-900/85 backdrop-blur-xl transition-all duration-300 ease-in-out flex justify-between items-center w-full px-6 py-4">
-<div class="flex items-center gap-4">
-<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 p-2 rounded-lg transition-all duration-300">
-<span class="material-symbols-outlined text-blue-900 dark:text-blue-200">menu</span>
-</button>
-<h1 class="text-xl font-black tracking-tighter text-blue-900 dark:text-white font-['Manrope']">ACHAJA</h1>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="/">홈</a>
-<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="/news">뉴스</a>
-<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hover:bg-slate-200/50 dark:hover:bg-slate-800/50 px-3 py-2 rounded transition-all" href="/history">이력조회</a>
-<a class="text-blue-900 dark:text-blue-400 font-bold font-['Inter'] text-[10px] uppercase tracking-widest px-3 py-2 rounded transition-all" href="/">부품조회</a>
-</nav>
-<div class="flex items-center gap-3">
-<span class="hidden md:block text-xs font-semibold text-on-surface-variant">내 프로필</span>
-<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-container">
-<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4XnygOYHL6lY_GtSz1Iz65eTYlPgmBYtRBbaG1PacL2WbimkVtMItAK0zKLymEhQQXZOLEnY96nsM3AmktvI_XYtehzMXtgWoda7zvRrvrv3vzOQobhLskfBzQMMLfMaqpfuh3qXbEGc-76RYc0TmOdWD0OfMx4CpcxUEl0s0pOpi2gj5yrK9mU9x4_iJDfHEsYgnYJnbnr4asWQ_bN2k60ndYr_rhHJ11VGe344cOJyqh-5-1Plj-p_kkpM962UlGmnP0Ow6tYh3"/>
-</div>
-</div>
-</header>
-
-<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
-<!-- Hero Search Section -->
-<section class="mb-12">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-<div class="max-w-2xl">
-<span class="text-primary font-bold tracking-widest uppercase text-[10px] mb-2 block">부품 카탈로그</span>
-<h2 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-4">부품 조회</h2>
-<p class="text-secondary font-medium leading-relaxed">240만 개의 순정 및 인증 애프터마켓 부품을 실시간 VIN 호환성 매핑으로 검색하세요.</p>
-</div>
-<div class="flex items-center gap-2">
-<span class="text-[10px] font-bold uppercase tracking-wider text-outline px-3 py-1 bg-surface-container-low rounded-full">최근 업데이트: 2분 전</span>
-</div>
-</div>
-<!-- Enhanced Search Bar -->
-<div class="relative group">
-<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-primary">search</span>
-</div>
-<input class="w-full pl-14 pr-32 py-5 bg-surface-container-lowest border-none rounded-xl text-lg font-medium focus:ring-2 focus:ring-primary/20 shadow-sm transition-all placeholder:text-outline-variant" placeholder="부품명, 품번, 또는 차대번호 입력..." type="text"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm shadow-lg hover:scale-[1.02] transition-transform">
-검색
-</button>
-</div>
-</section>
-
-<!-- Category Horizontal Scroll -->
-<section class="mb-10">
-<div class="flex items-center justify-between mb-4">
-<h3 class="font-headline font-bold text-sm uppercase tracking-widest text-secondary">주요 카테고리</h3>
-<button class="text-xs font-bold text-primary hover:underline">전체보기</button>
-</div>
-<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4">
-<button class="flex items-center gap-3 px-5 py-4 bg-primary text-on-primary rounded-xl shrink-0 shadow-md">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">earth_engine</span>
-<span class="font-bold text-sm">엔진</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">settings_input_component</span>
-<span class="font-bold text-sm">변속기</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">directions_car</span>
-<span class="font-bold text-sm">외장</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">lightbulb</span>
-<span class="font-bold text-sm">조명</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">toys</span>
-<span class="font-bold text-sm">내장</span>
-</button>
-<button class="flex items-center gap-3 px-5 py-4 bg-surface-container-lowest text-on-surface-variant rounded-xl shrink-0 hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">bolt</span>
-<span class="font-bold text-sm">전기</span>
-</button>
-</div>
-</section>
-
-<!-- Filters and Results Meta -->
-<section class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-<div class="flex items-center gap-2 p-1 bg-surface-container-high rounded-lg w-fit">
-<button class="px-4 py-2 bg-surface-container-lowest text-primary font-bold text-xs rounded-md shadow-sm">전체 부품</button>
-<button class="px-4 py-2 text-on-surface-variant font-bold text-xs rounded-md hover:bg-surface-container-low transition-all">순정 부품</button>
-<button class="px-4 py-2 text-on-surface-variant font-bold text-xs rounded-md hover:bg-surface-container-low transition-all">OEM / 애프터마켓</button>
-</div>
-<div class="flex items-center gap-4">
-<span class="text-xs font-medium text-outline">1,280개 중 24개 표시</span>
-<button class="flex items-center gap-2 text-xs font-bold text-on-surface px-3 py-2 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
-<span class="material-symbols-outlined text-sm">sort</span>
-관련순 정렬
-</button>
-</div>
-</section>
-
-<!-- Parts Grid -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Featured Part -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow">
-<div class="md:w-1/2 relative group bg-surface-container-low">
-<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkuKKdxe01iGGZq6uWRDa2I-BHIqL6NACKsPN-08ubnGrcXXBaXU59CbpdnvXKpOLP3c6zRrIvL0pwjFlcdf7kp_z7eQy7qjPw1sBD8eO9EaFnkLmn1K07x5upKLLVU3BROHwumz4Kw9Vz2ZgvN2Q9dideEJ1v0y812fMBNps05RGpA17kIoa5XmV_YFGMLBfNaGJhO_xqmPOgmH0MPEW_oqnHs_4iJUFzGuWK4s_DG5NQ6tz4B8ns_ae9bofPSe4REurOH6c8_Te7" alt="터보차저"/>
-<div class="absolute top-4 left-4 flex gap-2">
-<span class="bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">추천</span>
-<span class="bg-surface-container-lowest/90 backdrop-blur text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">재고있음</span>
-</div>
-</div>
-<div class="p-8 md:w-1/2 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-headline font-bold text-2xl text-on-surface">V8 터보차저 유닛</h4>
-<span class="text-primary font-black text-xl tracking-tight">₩3,200,000</span>
-</div>
-<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-tighter mb-4">품번: ACH-992-ENG-TRB</p>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">순정 사양의 고유량 터보차저. 최대 열효율과 터보랙 감소를 위해 설계되었습니다.</p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">BMW M5/M8 호환</span>
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">2018 - 2023 모델</span>
-<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-[10px] font-bold">정품 인증</span>
-</div>
-</div>
-<button class="w-full primary-gradient text-on-primary py-4 rounded-xl font-bold tracking-widest text-sm uppercase shadow-lg shadow-primary/20 active:scale-95 transition-all">
-구매하기
-</button>
-</div>
-</div>
-
-<!-- Standard Part 1 -->
-<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-<div class="h-40 bg-surface-container-low rounded-lg mb-4 overflow-hidden">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyqFd4IA6_CrukqlS2KXtPRCxWHS8EVqrqg6L5LI_QvqUghRrKHt47kR9ko42NnjXvVI8B5488zkmzCxP6VILiIN3Fg_wmYl8xq-Q-BZuZqMKOI2D5S8aYMICNGEN77ekwr2ViHOoHZnJrt1oj7AzU5N6kWjIKHcK_nuW2s3lKk5wiTWG_MOJ-TFyrDBMn4g9T71Ccxo2-VTM8ksMCH_885Gwp8A7exkgoOcBRaWpGQ1gQPe51btyweSKtXcIzItfqIh1wAxcxNwoU" alt="브레이크 킷"/>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-center mb-1">
-<h4 class="font-headline font-bold text-lg text-on-surface">세라믹 브레이크 킷</h4>
-<span class="text-primary font-bold">₩1,600,000</span>
-</div>
-<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-3">OEM 퍼포먼스</p>
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-[10px] font-bold text-green-600 uppercase">완벽 호환 보장</span>
-</div>
-</div>
-<button class="w-full bg-surface-container-high text-primary py-3 rounded-lg font-bold text-xs uppercase hover:bg-primary hover:text-on-primary transition-all">
-상세보기
-</button>
-</div>
-
-<!-- Standard Part 2 -->
-<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-<div class="h-40 bg-surface-container-low rounded-lg mb-4 overflow-hidden">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRw3gWJbNiK8ObcJ15gOvMHxA5sMz0b1GHi7xOJp_nBtQDXSMSvT09uVUooZK5ZYekwJCS0K6pmJ-sK_nB0aa7cMtOPbQ0qvj9Qh2ctoLbiQZN5yoy9Mn6IEy3C7wY7CfkW1bOBNAEbpLb9kNL_wWZXKWBNi6p2I4aH-77KiktkH8ya3Lug-0LHMx0F6lNL4Vm_EAWq3jD6t6KO-n6H4Jp0T-jxu-VDn8YF6KwRQ5MSN3yxBrNxTSTn2-1H7iOluXR-Vw6d22OUn8f" alt="LED 헤드라이트"/>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-center mb-1">
-<h4 class="font-headline font-bold text-lg text-on-surface">매트릭스 LED 헤드라이트</h4>
-<span class="text-primary font-bold">₩1,080,000</span>
-</div>
-<p class="text-[10px] font-bold text-outline uppercase tracking-wider mb-3">애프터마켓 프리미엄</p>
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-green-600 text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-[10px] font-bold text-green-600 uppercase">플러그 앤 플레이</span>
-</div>
-</div>
-<button class="w-full bg-surface-container-high text-primary py-3 rounded-lg font-bold text-xs uppercase hover:bg-primary hover:text-on-primary transition-all">
-상세보기
-</button>
-</div>
-
-<!-- List Style Part -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex items-center gap-6">
-<div class="w-32 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdjxb_Tle6GryZv9UEl91JkxvWTsll_s0_YI9BWofI8bSiI_1wtW2DZRGyatLtwABEgQjmECjIbriBgNp6z86T1uElvqGyacGZy2MUatbgzIrvRcipC2MXl2WJDnkDRZlhNxBQz9lG_qRUkJvwA0wWlnlO-2vhtjp2BNyvKM32zDt7MTrBiO-DmQ1DuD17D6n-4rkZOYv5XMKm0ViHwQPdws48h7ICQgjZDZ4FXWWkGwpEQGCR-nJrFsS3Z_nonr4-0BWCu-ZoqS0A" alt="스티어링 휠"/>
-</div>
-<div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-4">
-<div>
-<h4 class="font-headline font-bold text-xl text-on-surface">스포츠 가죽 스티어링 휠</h4>
-<p class="text-xs font-medium text-on-surface-variant mb-2">퍼포레이티드 나파 가죽, 콘트라스트 스티칭.</p>
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-surface-container-high text-[10px] font-bold rounded">내장</span>
-<span class="px-2 py-0.5 bg-surface-container-high text-[10px] font-bold rounded">정품</span>
-</div>
-</div>
-<div class="text-right flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-4">
-<div>
-<span class="text-primary font-black text-2xl tracking-tighter block">₩830,000</span>
-<span class="text-[10px] font-bold text-outline">배송비 별도</span>
-</div>
-<button class="p-3 bg-surface-container-high text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined">shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</main>
-
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-4">
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/">
-<span class="material-symbols-outlined">home</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">홈</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/news">
-<span class="material-symbols-outlined">newspaper</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">뉴스</span>
-</a>
-<a class="flex flex-col items-center justify-center text-blue-900 dark:text-blue-400 scale-110 transition-transform duration-150 active:scale-90" href="/">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">부품</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/history">
-<span class="material-symbols-outlined">history</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">이력조회</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 transition-transform duration-150 active:scale-90" href="/my">
-<span class="material-symbols-outlined">person</span>
-<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">마이</span>
-</a>
-</nav>
-
-<!-- FAB -->
-<button class="fixed right-6 bottom-24 md:bottom-10 primary-gradient w-14 h-14 rounded-full flex items-center justify-center text-on-primary shadow-xl shadow-primary/30 active:scale-90 transition-transform z-40">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-</body>
-</html>
+  <!DOCTYPE html>                             
+  <html lang="ko"><head>                  
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>                                                                                                                                                              
+  <title>ACHAJA — 자동차 뉴스</title>         
+  <script>                                                                                                                                                                                                                             
+  (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();
+  </script>                                                                                                                                                                                                                            
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>                                                                                                                                                  
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>                                                                                          
+  <style>                                                   
+  :root{                                                                                                                                                                                                                               
+    --c-primary:0 49 120;--c-primary-container:13 71 161;--c-on-primary:255 255 255;--c-on-primary-container:161 187 255;                                                                                                              
+    --c-background:248 249 250;--c-surface:248 249 250;                                                                                                                                                                                
+    --c-surface-container:237 238 239;--c-surface-container-low:243 244 245;--c-surface-container-high:231 232 233;--c-surface-container-highest:225 227 228;--c-surface-container-lowest:255 255 255;                                 
+    --c-on-surface:25 28 29;--c-on-surface-variant:67 70 82;                                                                                                                                                                           
+    --c-outline:115 119 131;--c-outline-variant:195 198 212;                                                                                                                                                                           
+    --c-header-bg:255 255 255;--c-nav-bg:255 255 255;--c-app-border:231 232 233;                                                                                                                                                       
+    --c-muted:100 116 139;--c-muted-strong:71 85 105;--c-active-bg:219 234 254;                                                                                                                                                        
+    --c-secondary:76 97 108;--c-secondary-container:207 230 242;--c-on-secondary-container:82 103 114;                                                                                                                                 
+    --c-tertiary:96 33 0;                                                                                                                                                                                                              
+  }                                                                                                                                                                                                                                    
+  html.dark{                                                                                                                                                                                                                           
+    --c-primary:176 198 255;--c-primary-container:0 49 120;--c-on-primary:0 45 111;--c-on-primary-container:124 156 233;                                                                                                               
+    --c-background:18 19 24;--c-surface:18 19 24;                                                                                                                                                                                      
+    --c-surface-container:30 31 36;--c-surface-container-low:26 27 32;--c-surface-container-high:40 42 47;--c-surface-container-highest:51 52 58;--c-surface-container-lowest:13 14 19;                                                
+    --c-on-surface:226 226 232;--c-on-surface-variant:196 198 210;                                                                                                                                                                     
+    --c-outline:142 144 156;--c-outline-variant:67 70 81;                                                                                                                                                                              
+    --c-header-bg:15 23 42;--c-nav-bg:15 23 42;--c-app-border:39 39 42;                                                                                                                                                                
+    --c-muted:161 161 170;--c-muted-strong:82 82 91;--c-active-bg:30 58 138;                                                                                                                                                           
+    --c-secondary:185 199 224;--c-secondary-container:60 74 94;--c-on-secondary-container:171 185 210;                                                                                                                                 
+    --c-tertiary:198 197 207;                                                                                                                                                                                                          
+  }                                                                                                                                                                                                                                    
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}                                                                                                                                          
+  .hide-scrollbar::-webkit-scrollbar{display:none;}                                                                                                                                                                                    
+  .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}                                                                                                                                                                       
+  body{min-height:max(884px,100dvh);}                                                                                                                                                                                                  
+  </style>                                                                                                                                                                                                                             
+  <script id="tailwind-config">                                                                                                                                                                                                        
+  tailwind.config={darkMode:"class",theme:{extend:{                                                                                                                                                                                    
+    colors:{                                                                                                                                                                                                                           
+      "primary":"rgb(var(--c-primary)/<alpha-value>)",      
+      "primary-container":"rgb(var(--c-primary-container)/<alpha-value>)",                                                                                                                                                             
+      "on-primary":"rgb(var(--c-on-primary)/<alpha-value>)",
+      "on-primary-container":"rgb(var(--c-on-primary-container)/<alpha-value>)",                                                                                                                                                       
+      "background":"rgb(var(--c-background)/<alpha-value>)",                                                                                                                                                                           
+      "surface":"rgb(var(--c-surface)/<alpha-value>)",                                                                                                                                                                                 
+      "surface-container":"rgb(var(--c-surface-container)/<alpha-value>)",                                                                                                                                                             
+      "surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)",                                                                                                                                                     
+      "surface-container-high":"rgb(var(--c-surface-container-high)/<alpha-value>)",
+      "surface-container-highest":"rgb(var(--c-surface-container-highest)/<alpha-value>)",                                                                                                                                             
+      "surface-container-lowest":"rgb(var(--c-surface-container-lowest)/<alpha-value>)",
+      "on-surface":"rgb(var(--c-on-surface)/<alpha-value>)",                                                                                                                                                                           
+      "on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)",
+      "outline":"rgb(var(--c-outline)/<alpha-value>)",                                                                                                                                                                                 
+      "outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)",                                                                                                                                                                 
+      "header-bg":"rgb(var(--c-header-bg)/<alpha-value>)",                                                                                                                                                                             
+      "nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)",                                                                                                                                                                                   
+      "app-border":"rgb(var(--c-app-border)/<alpha-value>)",
+      "muted":"rgb(var(--c-muted)/<alpha-value>)",                                                                                                                                                                                     
+      "muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)",
+      "active-bg":"rgb(var(--c-active-bg)/<alpha-value>)",                                                                                                                                                                             
+      "secondary":"rgb(var(--c-secondary)/<alpha-value>)",  
+      "secondary-container":"rgb(var(--c-secondary-container)/<alpha-value>)",                                                                                                                                                         
+      "on-secondary-container":"rgb(var(--c-on-secondary-container)/<alpha-value>)",
+      "tertiary":"rgb(var(--c-tertiary)/<alpha-value>)",                                                                                                                                                                               
+      "error":"rgb(239 68 68 / <alpha-value>)"              
+    },                                                                                                                                                                                                                                 
+    borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+    fontFamily:{"headline":["Manrope"],"body":["Inter"]}                                                                                                                                                                               
+  }}};                                                                                                                                                                                                                                 
+  </script>                                                                                                                                                                                                                            
+  </head>                                                                                                                                                                                                                              
+  <body class="bg-background text-on-surface font-body">                                                                                                                                                                               
+                                                                                                                                                                                                                                       
+  <!-- TopAppBar -->                                                                                                                                                                                                                   
+  <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/90 backdrop-blur border-b border-app-border">
+    <div class="flex justify-between items-center w-full px-4 h-16 md:px-8 max-w-7xl mx-auto">                                                                                                                                         
+      <div class="flex items-center gap-4">   
+        <button class="p-2 rounded-full text-muted"><span class="material-symbols-outlined">menu</span></button>                                                                                                                       
+        <a href="/" class="text-xl font-extrabold tracking-tighter text-primary-container dark:text-primary font-headline">ACHAJA</a>                                                                                                  
+      </div>                                                                                                                                                                                                                           
+      <nav class="hidden md:flex items-center gap-6">                                                                                                                                                                                  
+        <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/">홈</a>                                                                                                                            
+        <a class="text-primary-container dark:text-primary font-bold text-[10px] uppercase tracking-widest px-3 py-2" href="/news">뉴스</a>                                                                                            
+        <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/history">이력조회</a>                                                                                                               
+        <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/parts">부품조회</a>                                                                                                                 
+        <a class="text-muted text-[10px] font-semibold uppercase tracking-widest px-3 py-2" href="/my">마이</a>                                                                                                                        
+      </nav>                                                                                                                                                                                                                           
+      <div class="flex items-center gap-1">                                                                                                                                                                                            
+        <button class="p-2 rounded-full text-muted"><span class="material-symbols-outlined">search</span></button>                                                                                                                     
+        <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-full text-muted">                                                                                                                                    
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>                                                                                                                                                         
+          <span class="material-symbols-outlined hidden dark:inline">light_mode</span>                                                                                                                                                 
+        </button>                                                                                                                                                                                                                      
+        <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ml-1"><span class="material-symbols-outlined text-white text-sm">person</span></div>                                                    
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+  </header>                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                       
+  <main class="pt-20 pb-32 max-w-7xl mx-auto px-4 md:px-8">
+                                                                                                                                                                                                                                       
+  <!-- Hero -->                                             
+  <section class="mb-6">                                                                                                                                                                                                               
+    <div class="flex flex-col gap-2 mb-4">    
+      <h2 class="font-headline text-3xl font-semibold text-on-surface">자동차 뉴스</h2>                                                                                                                                                
+      <p class="text-on-surface-variant">신차 출시·리콜 공지·중고차 동향 한곳에서</p>
+    </div>                                                                                                                                                                                                                             
+    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+      <button class="px-5 py-2 rounded-full bg-primary-container text-white text-xs font-semibold whitespace-nowrap">전체</button>                                                                                                     
+      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">신차</button>                                                                                   
+      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">중고차</button>                                                                                 
+      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">리콜</button>                                                                                   
+      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">산업</button>                                                                                   
+      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">정책</button>                                                                                   
+    </div>                                                                                                                                                                                                                             
+  </section>                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                       
+  <!-- Main Feature -->                                                                                                                                                                                                                
+  <section class="mb-8">                                                                                                                                                                                                               
+    <div class="relative w-full h-[400px] md:h-[520px] rounded-3xl overflow-hidden border border-outline-variant/20 shadow-xl">                                                                                                        
+      <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh7b9Mj9_1i0vAqvsI3WSfDJwH5XRRTUobiTwdY1zjRMXtCfdabQx97LIfGsCjxqyN1Nc5g5PpHwh1CC0FR8TMC4ezipcEjNjtVq-XodYMjcGBJ
+  Zn8NocVO804jl7GOAnvBkyLQZBnBTM6-_IgtTyx4pzJlEaztOICWU9WKjNwlZiJwor5UBKUBXXXziOlmFXOo8iLN-_4hwsBMiXDvJ6ffeejpON0kX71xjTN9Ddv4Dl2TmwnBzHjBNepVONt0WqJ9nGvYFyD2ARA" alt="아이오닉9"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>                                                                                                                                  
+      <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full max-w-3xl">                                                                                                                                                              
+        <span class="inline-block px-3 py-1 mb-4 rounded-lg bg-primary-container text-white text-[11px] font-semibold">HOT NEWS</span>                                                                                                 
+        <h3 class="font-headline text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">기대를 뛰어넘는 진화,<br/>현대 아이오닉 9 글로벌 출시</h3>                                                                              
+        <p class="text-slate-200 line-clamp-2 mb-6">현대자동차가 대형 전기 SUV 아이오닉 9을 정식 공개했습니다. 압도적인 실내 공간과 혁신적인 E-GMP 플랫폼의 완성도를 지금 확인하세요.</p>                                              
+        <div class="flex items-center gap-3 text-xs"><span class="text-slate-300">2026.04.22</span><span class="w-1 h-1 rounded-full bg-slate-500"></span><span class="text-slate-300">조회수 12.4k</span></div>                       
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+  </section>                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                       
+  <!-- News Grid -->                                                                                                                                                                                                                   
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">                                                                                                                                                                              
+                                                            
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMk0zJG8rHCwYE1SzkTi0WBiICiwpXEZikid9SA5MUZziHjZgrVoY3z_Yp3pjC0
+  XCsHTfekZABZ8N-z448IjL7HoJXtjOQwdJnW1mqK00EMTn0ZAveKYO0fKW8oEyBq-FnYPbrzLNpUlItnScde1jLi9MWYMZBY8R06xtbx1anvUs4w4e2h1fGkXnbZFVkVeq5-5kd2kFLW202XT7N7B1-UIXS8jcDdzjpRr3tByBIaGcsR_q5KtRMEt-73u-NpoWoaMBg0Iy_h-Jx" alt=""/></div>      
+      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
+        <span class="text-red-500 dark:text-red-400 text-[11px] font-semibold">리콜 공지</span>                                                                                                                                        
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">기아 EV6 소프트웨어 업데이트 리콜 실시</h4>                                                                                                     
+        <p class="text-on-surface-variant text-sm line-clamp-1">통합 충전 제어 장치(ICCU) 결함 수정을 위한 무상 수리...</p>
+        <span class="text-outline text-[11px] mt-1">방금 전</span>                                                                                                                                                                     
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw4HQvdv-3rxHlvyGp3aaZXcVDbrdz35O6aucR27--El97DIjQqEEEBcXEpmdge
+  a7hF68IPVgp0F1w6X17_pqYU4XwJ-UXyeRo_45SPTJB7mbW9ZW2S-xJW_uutRQugUv1Ztf-QtDHhM6jZkk5ePkw0tm_iseRxMh2xbF47WPp1UV2yZNrv8iJuXF-XbiGeU4L2Ye41438rW8Pjrr98Exck6BuD85MPL79j-pAe9Q43xuGVOxBrq141m8YUw-MnqRRJKCezg0Mr-4t" alt=""/></div>      
+      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
+        <span class="text-primary-container dark:text-primary text-[11px] font-semibold">시장 동향</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">중고차 시장 봄철 거래 활성화, 시세 동향은</h4>                                                                                                  
+        <p class="text-on-surface-variant text-sm line-clamp-1">연식 변경 이슈와 금리 영향으로 거래량 변화...</p>
+        <span class="text-outline text-[11px] mt-1">2시간 전</span>                                                                                                                                                                    
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO5S6Os9oHYgiw2U_8keLB-WVz_tybsm_HUG_O0y-kGwJucmtSsXam3LKbEivH1
+  8sLyEfEF07rRdXUnlmG9V2DUTRpD3iEKAmAWsVsUvAE7F08LY8unpAB_-kc9z3QNaD3q77gKeEAWkVz41qtEJz-oCh8xNNsoNN3i0wxe7zjKlIiX-Nwj-Eod8VfkskElVGQ82eOAQpvAXmC4tEdPsQzLNOATzx9T-n6w4webDhD-Hxk9-ipjGgqlrbHp0AsZve7NnN01ZKgizOJ" alt=""/></div>
+      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
+        <span class="text-amber-600 dark:text-amber-400 text-[11px] font-semibold">정부 정책</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">2026 전기차 보조금 개편안 가이드라인 발표</h4>                                                                                                  
+        <p class="text-on-surface-variant text-sm line-clamp-1">배터리 효율 및 재활용 가치에 따른 차등 지급 강화...</p>
+        <span class="text-outline text-[11px] mt-1">5시간 전</span>                                                                                                                                                                    
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZAdw2jHoYJWH7R-SRbRwqFYK9SiYDyzt-VbbISM-L-8GFIh2IceCLCqat0Rhwn
+  3L1Sh0OWyG6O6HpJfZGKU6fFCfd9L4Hy-E5HqYS-9QIj7bttnr9zZtdcIEIXU_kjs-wfidEPksjT9ZwPCq9PwAacNZ4atjF2EfJtaDFsddkPFWMh-f5au4Wj3SscWyL9VnVDiyf6jj5BsQRewVSpy06z086eL72d7H-usIgO-RX4ebHxbVR7ThyynykYMogervnOvnfLEAfHhM2" alt=""/></div>      
+      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
+        <span class="text-on-secondary-container text-[11px] font-semibold">스파이샷</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">메르세데스-벤츠 S클래스 페이스리프트 포착</h4>                                                                                                  
+        <p class="text-on-surface-variant text-sm line-clamp-1">새로운 헤드램프 디자인과 강화된 자율주행 센서 탑재...</p>
+        <span class="text-outline text-[11px] mt-1">8시간 전</span>                                                                                                                                                                    
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgxTQha67CzwfQjev64W6TC-Voam9Iq5hstw2afFQkgGVBbgHeI7AXPBPwHn709
+  c0wcrGEA3vTG9dcTQ8U0z0-4JYUbTmm0Ow6bgwek2dTVsyVuFRkxmZjQRYJdF7vuckkoKvugbvBb09HjW7SiZrypxOKckVJd8lfOTfgceO6mC9IH_u2R0WVZLNvt89CJaSrqOYJnFRnrHiZzwt1Xutq2GtPtTL8ywa7J_vutRsAdSYFlURGNtL2hzVLtEtGi9e91lrI9pK4WW5e" alt=""/></div>      
+      <div class="flex flex-col justify-center gap-1">      
+        <span class="text-primary-container dark:text-primary text-[11px] font-semibold">신차 소식</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">BMW M5 하이브리드, 역대 최강의 성능 공개</h4>                                                                                                   
+        <p class="text-on-surface-variant text-sm line-clamp-1">727마력의 파워트레인과 압도적인 가속력 실현...</p>
+        <span class="text-outline text-[11px] mt-1">어제</span>                                                                                                                                                                        
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhlYRl8_dWP8g6rhTACAtM_TznyGub2jDCD4QM-e1bHEJttVZe6dF0ULh07bufg
+  Cdbnsc3ECh_EMeFDq2vcm0NCnpwVgokkS28VdedTPD8S-Je5q8bUX85Ke9Y4hSnHAy-2DbLy34ZJHLb22-Fo_vJUm216W-s5jj9siv6Ru59t07eEw9zsqK29kc3xgWO8mNtWFCHSK658NSTPy1MTVfRAYc2e5u5sO-KAmlVgdTFY5pfA5csJnd4pq20cIfcGchspj_Lukhtw5-B" alt=""/></div>
+      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
+        <span class="text-amber-600 dark:text-amber-400 text-[11px] font-semibold">테크</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">차세대 차량용 OS 경쟁, 구글 vs 애플 가속화</h4>                                                                                                 
+        <p class="text-on-surface-variant text-sm line-clamp-1">인포테인먼트 시스템의 주도권을 잡기 위한 플랫폼 전쟁...</p>
+        <span class="text-outline text-[11px] mt-1">어제</span>                                                                                                                                                                        
+      </div>                                                
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_cIHXUHgKbBbbaC9hoEj9A1MNQLsnO4Ydzy_4tB7LATU9gFsxLzTCMvJiGLLU
+  5SRxZJPzJLAlWaCdk8tjk9E3aaCO1z0B-oW_Fw4q8H4NqVEqBAmDZ6Ti8l_qBe7LiuA3Z1oKAeg6MdNx8EdlPd42fm1yKS8299Vk7Q96bMWelbNTt6wgbfCLAdwmb0843uPvHBGgbca8_J6DHNCjpQqrNOeaYKPBDcbA87yXc32L2aYnHxW65XEQ_q1kssh3yvdgA4WRjisDQns" alt=""/></div>
+      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
+        <span class="text-on-secondary-container text-[11px] font-semibold">산업 정보</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">국내 자동차 생산량 500만대 회복 눈앞</h4>                                                                                                       
+        <p class="text-on-surface-variant text-sm line-clamp-1">수출 호조와 하이브리드 수요 폭발로 생산 기지 활기...</p>
+        <span class="text-outline text-[11px] mt-1">2일 전</span>                                                                                                                                                                      
+      </div>                                                                                                                                                                                                                           
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
+      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSThl8ivV_CJ6n7osRn8WT4PnyfRjZCNnE0ccOUFpBnWMt6s9ZByKEt_Y8tXfaL
+  TF8MZVC82102q0LG3OFxjysT_eJeQhsAuln-_sjN6GL3wzfGUHSYePhDAAizWZ3kpDVtc3OTdQxYN_4q28-ybwZg-gZqA61sZinV2kC7UcQjUxrPRPxDKTmJsnWadKOOWt_jj4pOkXXpcEBuwW0OvSdYIUFIRLjMIPLzyoBdGtj7vJQGPYJJ9KPLpPh6SY1pe5urltXB18jdE_D" alt=""/></div>      
+      <div class="flex flex-col justify-center gap-1">      
+        <span class="text-primary-container dark:text-primary text-[11px] font-semibold">컬처</span>
+        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">헤리티지 클래식 카 페스티벌 성료</h4>                                                                                                           
+        <p class="text-on-surface-variant text-sm line-clamp-1">전설적인 명차들이 한자리에, 자동차 애호가들의 축제...</p>
+        <span class="text-outline text-[11px] mt-1">2일 전</span>                                                                                                                                                                      
+      </div>                                                
+    </div>                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                       
+  </section>                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                       
+  <!-- Footer -->                                                                                                                                                                                                                      
+  <footer class="mt-12 pb-md border-t border-app-border pt-8 flex flex-col items-center gap-4">
+    <p class="text-[11px] text-muted text-center">본 서비스에서 제공되는 뉴스 데이터는 각 제조사 공지 및 공공 데이터 포털, 제휴 언론사의 정보를 바탕으로 구성됩니다.</p>                                                               
+    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA Corp.</span><span>이용약관</span><span>개인정보처리방침</span></div>
+  </footer>                                   
+                                                                                                                                                                                                                                       
+  </main>                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                       
+  <!-- BottomNav -->                                                                                                                                                                                                                   
+  <nav class="fixed bottom-0 left-0 w-full z-50 bg-nav-bg/95 backdrop-blur-md border-t border-app-border rounded-t-3xl shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">                                                                         
+    <div class="flex justify-around items-center px-4 py-3 pb-safe max-w-2xl mx-auto">
+      <a href="/" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">home</span><span class="font-headline text-[10px] font-medium">홈</span></a>         
+      <a href="/news" class="flex flex-col items-center bg-active-bg/60 dark:bg-active-bg/20 text-primary-container dark:text-primary rounded-xl px-4 py-1 active:scale-90 transition-transform"><span class="material-symbols-outlined
+   mb-1" style="font-variation-settings:'FILL' 1;">newspaper</span><span class="font-headline text-[10px] font-bold">뉴스</span></a>                                                                                                   
+      <a href="/history" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">history</span><span class="font-headline text-[10px]                          
+  font-medium">이력조회</span></a>                                                                                                                                                                                                     
+      <a href="/parts" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">settings_input_component</span><span class="font-headline text-[10px]           
+  font-medium">부품</span></a>                                                                                                                                                                                                         
+      <a href="/my" class="flex flex-col items-center text-muted active:scale-90 transition-transform"><span class="material-symbols-outlined mb-1">person</span><span class="font-headline text-[10px] font-medium">마이</span></a>   
+    </div>                                                  
+  </nav>                                                                                                                                                                                                                               
+                                                            
+  <script>                                                                                                                                                                                                                             
+  function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
+  </script>                                                                                                                                                                                                                            
+                                                            
+  </body></html>    
