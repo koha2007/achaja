@@ -1,8 +1,10 @@
-{                                                         
-    "name": "achaja",                                                                                                                                                                                                                  
-    "compatibility_date": "2026-04-22",                     
-    "assets": {                        
-      "directory": "./",
-      "not_found_handling": "404-page"                                                                                                                                                                                                 
-    }                                 
-  }               
+{
+  "name": "achaja",
+  "compatibility_date": "2026-04-22",
+  "main": "src/index.js",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page",
+    "binding": "ASSETS"
+  }
+}

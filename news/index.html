@@ -128,123 +128,27 @@
       <h1 class="font-headline text-3xl font-semibold text-on-surface">자동차 뉴스</h1>
       <p class="text-on-surface-variant">신차 출시·리콜 공지·중고차 동향 한곳에서</p>
     </div>                                                                                                                                                                                                                             
-    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
-      <button class="px-5 py-2 rounded-full bg-primary-container text-white text-xs font-semibold whitespace-nowrap">전체</button>                                                                                                     
-      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">신차</button>                                                                                   
-      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">중고차</button>                                                                                 
-      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">리콜</button>                                                                                   
-      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">산업</button>                                                                                   
-      <button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">정책</button>                                                                                   
+    <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2" id="category-filters">
+      <button data-category="all" class="px-5 py-2 rounded-full bg-primary-container text-white text-xs font-semibold whitespace-nowrap">전체</button>
+      <button data-category="new" class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">신차</button>
+      <button data-category="used" class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">중고차</button>
+      <button data-category="recall" class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">리콜</button>
+      <button data-category="industry" class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">산업</button>
+      <button data-category="policy" class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold whitespace-nowrap">정책</button>
     </div>                                                                                                                                                                                                                             
   </section>                                                                                                                                                                                                                           
                                                                                                                                                                                                                                        
-  <!-- Main Feature -->                                                                                                                                                                                                                
-  <section class="mb-8">                                                                                                                                                                                                               
-    <div class="relative w-full h-[400px] md:h-[520px] rounded-3xl overflow-hidden border border-outline-variant/20 shadow-xl">                                                                                                        
-      <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh7b9Mj9_1i0vAqvsI3WSfDJwH5XRRTUobiTwdY1zjRMXtCfdabQx97LIfGsCjxqyN1Nc5g5PpHwh1CC0FR8TMC4ezipcEjNjtVq-XodYMjcGBJ
-  Zn8NocVO804jl7GOAnvBkyLQZBnBTM6-_IgtTyx4pzJlEaztOICWU9WKjNwlZiJwor5UBKUBXXXziOlmFXOo8iLN-_4hwsBMiXDvJ6ffeejpON0kX71xjTN9Ddv4Dl2TmwnBzHjBNepVONt0WqJ9nGvYFyD2ARA" alt="현대 아이오닉 9 글로벌 출시 메인 이미지"/>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>                                                                                                                                  
-      <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full max-w-3xl">                                                                                                                                                              
-        <span class="inline-block px-3 py-1 mb-4 rounded-lg bg-primary-container text-white text-[11px] font-semibold">HOT NEWS</span>                                                                                                 
-        <h3 class="font-headline text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">기대를 뛰어넘는 진화,<br/>현대 아이오닉 9 글로벌 출시</h3>                                                                              
-        <p class="text-slate-200 line-clamp-2 mb-6">현대자동차가 대형 전기 SUV 아이오닉 9을 정식 공개했습니다. 압도적인 실내 공간과 혁신적인 E-GMP 플랫폼의 완성도를 지금 확인하세요.</p>                                              
-        <div class="flex items-center gap-3 text-xs"><span class="text-slate-300">2026.04.22</span><span class="w-1 h-1 rounded-full bg-slate-500"></span><span class="text-slate-300">조회수 12.4k</span></div>                       
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-  </section>                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                       
-  <!-- News Grid -->                                                                                                                                                                                                                   
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">                                                                                                                                                                              
-                                                            
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMk0zJG8rHCwYE1SzkTi0WBiICiwpXEZikid9SA5MUZziHjZgrVoY3z_Yp3pjC0
-  XCsHTfekZABZ8N-z448IjL7HoJXtjOQwdJnW1mqK00EMTn0ZAveKYO0fKW8oEyBq-FnYPbrzLNpUlItnScde1jLi9MWYMZBY8R06xtbx1anvUs4w4e2h1fGkXnbZFVkVeq5-5kd2kFLW202XT7N7B1-UIXS8jcDdzjpRr3tByBIaGcsR_q5KtRMEt-73u-NpoWoaMBg0Iy_h-Jx" alt="기아 EV6 소프트웨어 업데이트 리콜 실시 기사 썸네일"/></div>      
-      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
-        <span class="text-red-500 dark:text-red-400 text-[11px] font-semibold">리콜 공지</span>                                                                                                                                        
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">기아 EV6 소프트웨어 업데이트 리콜 실시</h4>                                                                                                     
-        <p class="text-on-surface-variant text-sm line-clamp-1">통합 충전 제어 장치(ICCU) 결함 수정을 위한 무상 수리...</p>
-        <span class="text-outline text-[11px] mt-1">방금 전</span>                                                                                                                                                                     
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw4HQvdv-3rxHlvyGp3aaZXcVDbrdz35O6aucR27--El97DIjQqEEEBcXEpmdge
-  a7hF68IPVgp0F1w6X17_pqYU4XwJ-UXyeRo_45SPTJB7mbW9ZW2S-xJW_uutRQugUv1Ztf-QtDHhM6jZkk5ePkw0tm_iseRxMh2xbF47WPp1UV2yZNrv8iJuXF-XbiGeU4L2Ye41438rW8Pjrr98Exck6BuD85MPL79j-pAe9Q43xuGVOxBrq141m8YUw-MnqRRJKCezg0Mr-4t" alt="중고차 시장 봄철 거래 활성화 기사 썸네일"/></div>      
-      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
-        <span class="text-primary-container dark:text-primary text-[11px] font-semibold">시장 동향</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">중고차 시장 봄철 거래 활성화, 시세 동향은</h4>                                                                                                  
-        <p class="text-on-surface-variant text-sm line-clamp-1">연식 변경 이슈와 금리 영향으로 거래량 변화...</p>
-        <span class="text-outline text-[11px] mt-1">2시간 전</span>                                                                                                                                                                    
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO5S6Os9oHYgiw2U_8keLB-WVz_tybsm_HUG_O0y-kGwJucmtSsXam3LKbEivH1
-  8sLyEfEF07rRdXUnlmG9V2DUTRpD3iEKAmAWsVsUvAE7F08LY8unpAB_-kc9z3QNaD3q77gKeEAWkVz41qtEJz-oCh8xNNsoNN3i0wxe7zjKlIiX-Nwj-Eod8VfkskElVGQ82eOAQpvAXmC4tEdPsQzLNOATzx9T-n6w4webDhD-Hxk9-ipjGgqlrbHp0AsZve7NnN01ZKgizOJ" alt="2026 전기차 보조금 개편안 가이드라인 기사 썸네일"/></div>
-      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
-        <span class="text-amber-600 dark:text-amber-400 text-[11px] font-semibold">정부 정책</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">2026 전기차 보조금 개편안 가이드라인 발표</h4>                                                                                                  
-        <p class="text-on-surface-variant text-sm line-clamp-1">배터리 효율 및 재활용 가치에 따른 차등 지급 강화...</p>
-        <span class="text-outline text-[11px] mt-1">5시간 전</span>                                                                                                                                                                    
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZAdw2jHoYJWH7R-SRbRwqFYK9SiYDyzt-VbbISM-L-8GFIh2IceCLCqat0Rhwn
-  3L1Sh0OWyG6O6HpJfZGKU6fFCfd9L4Hy-E5HqYS-9QIj7bttnr9zZtdcIEIXU_kjs-wfidEPksjT9ZwPCq9PwAacNZ4atjF2EfJtaDFsddkPFWMh-f5au4Wj3SscWyL9VnVDiyf6jj5BsQRewVSpy06z086eL72d7H-usIgO-RX4ebHxbVR7ThyynykYMogervnOvnfLEAfHhM2" alt="메르세데스-벤츠 S클래스 페이스리프트 스파이샷 썸네일"/></div>      
-      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
-        <span class="text-on-secondary-container text-[11px] font-semibold">스파이샷</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">메르세데스-벤츠 S클래스 페이스리프트 포착</h4>                                                                                                  
-        <p class="text-on-surface-variant text-sm line-clamp-1">새로운 헤드램프 디자인과 강화된 자율주행 센서 탑재...</p>
-        <span class="text-outline text-[11px] mt-1">8시간 전</span>                                                                                                                                                                    
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgxTQha67CzwfQjev64W6TC-Voam9Iq5hstw2afFQkgGVBbgHeI7AXPBPwHn709
-  c0wcrGEA3vTG9dcTQ8U0z0-4JYUbTmm0Ow6bgwek2dTVsyVuFRkxmZjQRYJdF7vuckkoKvugbvBb09HjW7SiZrypxOKckVJd8lfOTfgceO6mC9IH_u2R0WVZLNvt89CJaSrqOYJnFRnrHiZzwt1Xutq2GtPtTL8ywa7J_vutRsAdSYFlURGNtL2hzVLtEtGi9e91lrI9pK4WW5e" alt="BMW M5 하이브리드 성능 공개 기사 썸네일"/></div>      
-      <div class="flex flex-col justify-center gap-1">      
-        <span class="text-primary-container dark:text-primary text-[11px] font-semibold">신차 소식</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">BMW M5 하이브리드, 역대 최강의 성능 공개</h4>                                                                                                   
-        <p class="text-on-surface-variant text-sm line-clamp-1">727마력의 파워트레인과 압도적인 가속력 실현...</p>
-        <span class="text-outline text-[11px] mt-1">어제</span>                                                                                                                                                                        
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhlYRl8_dWP8g6rhTACAtM_TznyGub2jDCD4QM-e1bHEJttVZe6dF0ULh07bufg
-  Cdbnsc3ECh_EMeFDq2vcm0NCnpwVgokkS28VdedTPD8S-Je5q8bUX85Ke9Y4hSnHAy-2DbLy34ZJHLb22-Fo_vJUm216W-s5jj9siv6Ru59t07eEw9zsqK29kc3xgWO8mNtWFCHSK658NSTPy1MTVfRAYc2e5u5sO-KAmlVgdTFY5pfA5csJnd4pq20cIfcGchspj_Lukhtw5-B" alt="차세대 차량용 OS 경쟁 기사 썸네일"/></div>
-      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
-        <span class="text-amber-600 dark:text-amber-400 text-[11px] font-semibold">테크</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">차세대 차량용 OS 경쟁, 구글 vs 애플 가속화</h4>                                                                                                 
-        <p class="text-on-surface-variant text-sm line-clamp-1">인포테인먼트 시스템의 주도권을 잡기 위한 플랫폼 전쟁...</p>
-        <span class="text-outline text-[11px] mt-1">어제</span>                                                                                                                                                                        
-      </div>                                                
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_cIHXUHgKbBbbaC9hoEj9A1MNQLsnO4Ydzy_4tB7LATU9gFsxLzTCMvJiGLLU
-  5SRxZJPzJLAlWaCdk8tjk9E3aaCO1z0B-oW_Fw4q8H4NqVEqBAmDZ6Ti8l_qBe7LiuA3Z1oKAeg6MdNx8EdlPd42fm1yKS8299Vk7Q96bMWelbNTt6wgbfCLAdwmb0843uPvHBGgbca8_J6DHNCjpQqrNOeaYKPBDcbA87yXc32L2aYnHxW65XEQ_q1kssh3yvdgA4WRjisDQns" alt="국내 자동차 생산량 500만대 회복 기사 썸네일"/></div>
-      <div class="flex flex-col justify-center gap-1">                                                                                                                                                                                 
-        <span class="text-on-secondary-container text-[11px] font-semibold">산업 정보</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">국내 자동차 생산량 500만대 회복 눈앞</h4>                                                                                                       
-        <p class="text-on-surface-variant text-sm line-clamp-1">수출 호조와 하이브리드 수요 폭발로 생산 기지 활기...</p>
-        <span class="text-outline text-[11px] mt-1">2일 전</span>                                                                                                                                                                      
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-    <div class="flex gap-4 p-4 rounded-3xl bg-surface-container border border-outline-variant/10">                                                                                                                                     
-      <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSThl8ivV_CJ6n7osRn8WT4PnyfRjZCNnE0ccOUFpBnWMt6s9ZByKEt_Y8tXfaL
-  TF8MZVC82102q0LG3OFxjysT_eJeQhsAuln-_sjN6GL3wzfGUHSYePhDAAizWZ3kpDVtc3OTdQxYN_4q28-ybwZg-gZqA61sZinV2kC7UcQjUxrPRPxDKTmJsnWadKOOWt_jj4pOkXXpcEBuwW0OvSdYIUFIRLjMIPLzyoBdGtj7vJQGPYJJ9KPLpPh6SY1pe5urltXB18jdE_D" alt="헤리티지 클래식 카 페스티벌 성료 기사 썸네일"/></div>      
-      <div class="flex flex-col justify-center gap-1">      
-        <span class="text-primary-container dark:text-primary text-[11px] font-semibold">컬처</span>
-        <h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">헤리티지 클래식 카 페스티벌 성료</h4>                                                                                                           
-        <p class="text-on-surface-variant text-sm line-clamp-1">전설적인 명차들이 한자리에, 자동차 애호가들의 축제...</p>
-        <span class="text-outline text-[11px] mt-1">2일 전</span>                                                                                                                                                                      
-      </div>                                                
-    </div>                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                       
-  </section>                                                                                                                                                                                                                           
+  <!-- Main Feature (dynamic) -->
+  <section class="mb-8" id="news-hero-wrap">
+    <div id="news-hero" class="relative w-full h-[280px] md:h-[380px] rounded-3xl overflow-hidden border border-outline-variant/20 shadow-xl bg-gradient-to-br from-primary-container to-slate-900">
+      <div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">불러오는 중…</div>
+    </div>
+  </section>
+
+  <!-- News Grid (dynamic) -->                                                                                                                                                                                                                   
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4" id="news-grid">
+    <div class="col-span-full text-center py-8 text-muted text-sm">불러오는 중…</div>
+  </section>
                                                                                                                                                                                                                                        
   <!-- Footer -->                                                                                                                                                                                                                      
   <footer class="mt-12 pb-md border-t border-app-border pt-8 flex flex-col items-center gap-4">
@@ -280,8 +184,71 @@
     </div>
   </nav>
                                                             
-  <script>                                                                                                                                                                                                                             
+  <script>
   function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
+
+  function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fmtDate(pubDate){try{var d=new Date(pubDate);var diff=Date.now()-d.getTime();var h=diff/1000/60/60;if(h<1)return '방금 전';if(h<24)return Math.floor(h)+'시간 전';var days=Math.floor(h/24);if(days<7)return days+'일 전';return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');}catch(e){return '';}}
+
+  function renderHero(item){
+    var hero=document.getElementById('news-hero');
+    if(!item){hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">표시할 기사가 없습니다.</div>';return;}
+    hero.innerHTML=
+      '<a href="'+escapeHtml(item.link)+'" target="_blank" rel="noopener" class="block h-full relative">'+
+        '<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.35),transparent_60%)]"></div>'+
+        '<div class="relative h-full flex flex-col justify-end p-6 md:p-10 max-w-3xl">'+
+          '<span class="inline-block self-start px-3 py-1 mb-4 rounded-lg bg-white/15 text-white text-[11px] font-semibold backdrop-blur">HOT NEWS</span>'+
+          '<h3 class="font-headline text-2xl md:text-4xl font-bold text-white mb-3 leading-tight line-clamp-3">'+escapeHtml(item.title)+'</h3>'+
+          '<p class="text-slate-200 line-clamp-2 mb-4 text-sm md:text-base">'+escapeHtml(item.description)+'</p>'+
+          '<div class="flex items-center gap-3 text-xs"><span class="text-slate-300">'+escapeHtml(item.source)+'</span><span class="w-1 h-1 rounded-full bg-slate-500"></span><span class="text-slate-300">'+fmtDate(item.pubDate)+'</span></div>'+
+        '</div>'+
+      '</a>';
+  }
+
+  function renderGrid(items){
+    var grid=document.getElementById('news-grid');
+    if(!items||items.length===0){grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">기사가 없습니다.</div>';return;}
+    grid.innerHTML=items.map(function(item){
+      return '<a href="'+escapeHtml(item.link)+'" target="_blank" rel="noopener" class="flex flex-col gap-2 p-5 rounded-3xl bg-surface-container border border-outline-variant/10 hover:border-outline-variant/30 transition-colors">'+
+        '<span class="text-primary-container dark:text-primary text-[11px] font-semibold">'+escapeHtml(item.source||'NEWS')+'</span>'+
+        '<h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">'+escapeHtml(item.title)+'</h4>'+
+        '<p class="text-on-surface-variant text-sm line-clamp-2">'+escapeHtml(item.description)+'</p>'+
+        '<span class="text-outline text-[11px] mt-1">'+fmtDate(item.pubDate)+'</span>'+
+      '</a>';
+    }).join('');
+  }
+
+  async function loadNews(category){
+    var grid=document.getElementById('news-grid');
+    var hero=document.getElementById('news-hero');
+    grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">불러오는 중…</div>';
+    hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">불러오는 중…</div>';
+    try{
+      var resp=await fetch('/api/news?category='+encodeURIComponent(category));
+      var data=await resp.json();
+      if(!resp.ok){throw new Error(data.error||'fetch_failed');}
+      renderHero(data.items[0]);
+      renderGrid(data.items.slice(1));
+    }catch(e){
+      var msg = (e&&e.message==='API_KEY_MISSING')?'뉴스 API 키가 설정되지 않았습니다. 관리자 설정을 확인해주세요.':'뉴스 불러오기에 실패했습니다. 잠시 후 다시 시도해주세요.';
+      grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">'+msg+'</div>';
+      hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">'+msg+'</div>';
+    }
+  }
+
+  function setupCategories(){
+    var buttons=document.querySelectorAll('#category-filters [data-category]');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        buttons.forEach(function(b){b.classList.remove('bg-primary-container','text-white');b.classList.add('bg-surface-container-high','text-on-surface-variant');});
+        btn.classList.remove('bg-surface-container-high','text-on-surface-variant');
+        btn.classList.add('bg-primary-container','text-white');
+        loadNews(btn.dataset.category);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){setupCategories();loadNews('all');});
   </script>                                                                                                                                                                                                                            
                                                             
   </body></html>    
