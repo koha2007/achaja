@@ -3,13 +3,14 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>ACHAJA — 중고차 사고이력·침수·정비 조회 | 차량번호로 한 번에</title>
-<meta name="description" content="차량번호 하나로 사고·침수·정비 이력, 리콜 정보, 시세까지 한 번에 확인. 기본 조회 무료, 상세 리포트 4,900원부터. 국토교통부·보험개발원 공식 데이터 기반."/>
+<meta name="description" content="차량번호로 사고·침수·정비이력, 리콜, 시세를 한 번에 조회. 공공 데이터 기반. 기본 조회 무료, 상세 리포트 4,900원부터."/>
 <meta name="author" content="ACHAJA"/>
 <meta name="theme-color" content="#003178"/>
 <meta name="robots" content="index,follow"/>
 <meta name="google-site-verification" content="wr6CB-y_KaC038exQV-V8j56nhK8R7W-jg63YZSd_U8" />
 <meta name="naver-site-verification" content="1e39ff92cba7c69270ba89d91ed36828248a442c" />
 <link rel="canonical" href="https://achaja.net/"/>
+<link rel="alternate" type="application/rss+xml" title="ACHAJA 자동차 뉴스 RSS" href="https://achaja.net/rss.xml"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -33,6 +34,13 @@
 {"@type":"Offer","name":"Basic 구독","price":"4900","priceCurrency":"KRW","priceSpecification":{"@type":"UnitPriceSpecification","price":"4900","priceCurrency":"KRW","unitText":"MONTH"}},
 {"@type":"Offer","name":"Premium 구독","price":"9900","priceCurrency":"KRW","priceSpecification":{"@type":"UnitPriceSpecification","price":"9900","priceCurrency":"KRW","unitText":"MONTH"}},
 {"@type":"Offer","name":"Dealer 구독","price":"29900","priceCurrency":"KRW","priceSpecification":{"@type":"UnitPriceSpecification","price":"29900","priceCurrency":"KRW","unitText":"MONTH"}}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"중고차 사고이력은 어떻게 조회하나요?","acceptedAnswer":{"@type":"Answer","text":"차량번호 또는 차대번호(VIN) 한 번 입력으로 사고이력, 침수이력, 정비이력을 조회할 수 있습니다. 기본 이력 건수 확인은 무료이며, 수리부위·수리비 등 상세 리포트는 4,900원부터입니다."}},
+{"@type":"Question","name":"침수차 여부는 확인할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네, 보험개발원 공식 데이터를 기반으로 침수 여부를 무료로 확인할 수 있습니다. 중고차 구매 전 반드시 확인해야 하는 핵심 정보입니다."}},
+{"@type":"Question","name":"자동차 리콜 조회는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 완전 무료입니다. 한국교통안전공단 자동차리콜센터의 공식 공공데이터를 기반으로 제조사와 차명으로 리콜 여부를 확인할 수 있습니다."}},
+{"@type":"Question","name":"데이터는 어디서 오나요?","acceptedAnswer":{"@type":"Answer","text":"국토교통부, 보험개발원, 한국교통안전공단 등 공식 공공 기관의 데이터를 활용합니다. 뉴스는 네이버 뉴스 검색 API 기반으로 신차·리콜·정책 소식을 매일 업데이트합니다."}},
+{"@type":"Question","name":"상세 리포트에는 어떤 정보가 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"종합 리포트(4,900원)는 사고이력 상세(수리부위·수리비), 정비이력 상세, 시세 정밀분석, 구매 추천 점수(A~F등급), 향후 3년 예상 수리비를 모두 포함합니다."}}
 ]}
 ]}
 </script>                                                                                                                                                                    
@@ -226,7 +234,34 @@
     </div>
   </section>                                                                                                                                                                                                                           
                                                             
-  <footer class="px-margin py-lg border-t border-app-border text-center">                                                                                                                                                              
+  <!-- FAQ -->
+  <section class="px-margin py-lg mb-xl" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="font-headline text-lg font-semibold mb-lg text-center">자주 묻는 질문</h2>
+    <div class="space-y-md">
+      <details class="bg-surface-container-low border border-outline-variant rounded-2xl p-md group">
+        <summary class="cursor-pointer font-headline font-semibold text-sm flex items-center justify-between">중고차 사고이력은 어떻게 조회하나요?<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <p class="mt-sm text-xs text-on-surface-variant leading-relaxed">차량번호 또는 차대번호(VIN) 한 번 입력으로 사고이력, 침수이력, 정비이력을 조회할 수 있습니다. 기본 이력 건수 확인은 무료이며, 수리부위·수리비 등 상세 리포트는 4,900원부터입니다.</p>
+      </details>
+      <details class="bg-surface-container-low border border-outline-variant rounded-2xl p-md group">
+        <summary class="cursor-pointer font-headline font-semibold text-sm flex items-center justify-between">침수차 여부는 확인할 수 있나요?<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <p class="mt-sm text-xs text-on-surface-variant leading-relaxed">네, 보험개발원 공식 데이터를 기반으로 침수 여부를 무료로 확인할 수 있습니다. 중고차 구매 전 반드시 확인해야 하는 핵심 정보입니다.</p>
+      </details>
+      <details class="bg-surface-container-low border border-outline-variant rounded-2xl p-md group">
+        <summary class="cursor-pointer font-headline font-semibold text-sm flex items-center justify-between">자동차 리콜 조회는 무료인가요?<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <p class="mt-sm text-xs text-on-surface-variant leading-relaxed">네, 완전 무료입니다. 한국교통안전공단 자동차리콜센터의 공식 공공데이터를 기반으로 제조사와 차명으로 리콜 여부를 확인할 수 있습니다.</p>
+      </details>
+      <details class="bg-surface-container-low border border-outline-variant rounded-2xl p-md group">
+        <summary class="cursor-pointer font-headline font-semibold text-sm flex items-center justify-between">데이터는 어디서 오나요?<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <p class="mt-sm text-xs text-on-surface-variant leading-relaxed">국토교통부, 보험개발원, 한국교통안전공단 등 공식 공공 기관의 데이터를 활용합니다. 뉴스는 네이버 뉴스 검색 API 기반으로 신차·리콜·정책 소식을 매일 업데이트합니다.</p>
+      </details>
+      <details class="bg-surface-container-low border border-outline-variant rounded-2xl p-md group">
+        <summary class="cursor-pointer font-headline font-semibold text-sm flex items-center justify-between">상세 리포트에는 어떤 정보가 포함되나요?<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <p class="mt-sm text-xs text-on-surface-variant leading-relaxed">종합 리포트(4,900원)는 사고이력 상세(수리부위·수리비), 정비이력 상세, 시세 정밀분석, 구매 추천 점수(A~F등급), 향후 3년 예상 수리비를 모두 포함합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="px-margin py-lg border-t border-app-border text-center">
     <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
     <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>                                                                                                                                               
   </footer>                                                                                                                                                                                                                            

@@ -2,5 +2,19 @@ User-agent: *
 Allow: /
 Disallow: /my
 Disallow: /my/
+Disallow: /api/
+
+User-agent: Yeti
+Allow: /
+Disallow: /my
+Disallow: /my/
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Disallow: /my
+Disallow: /my/
+Disallow: /api/
 
 Sitemap: https://achaja.net/sitemap.xml
