@@ -125,20 +125,27 @@ tailwind.config={darkMode:"class",theme:{extend:{
 
 <main class="pt-20 pb-28 max-w-5xl mx-auto px-4 md:px-8">
 
-  <!-- Hero -->
+  <!-- Hero with prominent search -->
   <section class="mb-6">
-    <div class="max-w-2xl mb-5">
-      <span class="text-primary-container dark:text-primary font-bold tracking-widest uppercase text-[10px] mb-2 block">자동차리콜센터 공식 데이터</span>
-      <h1 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-3">리콜 조회</h1>
-      <p class="text-on-surface-variant leading-relaxed">제조사·차명·결함 내용으로 내 차의 리콜 여부를 확인하세요. 출처: 한국교통안전공단 자동차리콜센터</p>
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-container to-[#0d47a1] p-6 md:p-8 mb-4 shadow-xl">
+      <div class="absolute -top-16 -right-16 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-white/90 text-lg">verified</span>
+          <span class="text-white/90 font-bold tracking-widest uppercase text-[10px]">자동차리콜센터 공식 데이터</span>
+        </div>
+        <h1 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-2">리콜 조회</h1>
+        <p class="text-white/80 text-sm leading-relaxed mb-5 max-w-xl">제조사·차명·결함 내용으로 내 차의 리콜 여부를 확인하세요.</p>
+        <div class="relative">
+          <div class="absolute inset-y-0 left-5 flex items-center pointer-events-none"><span class="material-symbols-outlined text-primary-container">search</span></div>
+          <input id="recall-search" class="w-full pl-14 pr-12 py-4 md:py-5 bg-white dark:bg-surface-container-lowest border-2 border-transparent rounded-2xl text-base md:text-lg font-semibold focus:ring-4 focus:ring-white/30 focus:outline-none placeholder:text-slate-400 placeholder:font-normal text-slate-900 dark:text-on-surface shadow-lg" placeholder="제조사·차명·결함 검색 (예: 현대, 포터, 브레이크)" type="search" autocomplete="off" aria-autocomplete="list" aria-controls="recall-autocomplete" aria-expanded="false"/>
+          <button id="recall-clear" class="hidden absolute inset-y-0 right-4 flex items-center text-slate-400 hover:text-slate-700 dark:hover:text-on-surface" aria-label="검색어 지우기" type="button"><span class="material-symbols-outlined">close</span></button>
+          <ul id="recall-autocomplete" class="hidden absolute z-30 left-0 right-0 mt-2 bg-white dark:bg-surface-container-lowest border border-app-border rounded-2xl shadow-2xl max-h-72 overflow-y-auto" role="listbox"></ul>
+        </div>
+        <div id="quick-filters" class="flex flex-wrap gap-2 mt-4"></div>
+      </div>
     </div>
-    <div class="relative">
-      <div class="absolute inset-y-0 left-5 flex items-center pointer-events-none"><span class="material-symbols-outlined text-primary-container dark:text-primary">search</span></div>
-      <input id="recall-search" class="w-full pl-14 pr-12 py-4 bg-surface-container-lowest border border-app-border rounded-xl text-base font-medium focus:ring-2 focus:ring-primary-container/20 focus:outline-none placeholder:text-outline-variant text-on-surface" placeholder="제조사, 차명, 결함 내용 (예: 현대, 포터, 브레이크)" type="search" autocomplete="off" aria-autocomplete="list" aria-controls="recall-autocomplete" aria-expanded="false"/>
-      <button id="recall-clear" class="hidden absolute inset-y-0 right-4 flex items-center text-muted hover:text-on-surface" aria-label="검색어 지우기" type="button"><span class="material-symbols-outlined">close</span></button>
-      <ul id="recall-autocomplete" class="hidden absolute z-30 left-0 right-0 mt-1 bg-surface-container-lowest border border-app-border rounded-xl shadow-lg max-h-72 overflow-y-auto" role="listbox"></ul>
-    </div>
-    <div id="quick-filters" class="flex flex-wrap gap-2 mt-3"></div>
   </section>
 
   <!-- Stats -->
@@ -377,9 +384,9 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
     var available=POPULAR.filter(function(p){
       return ALL.some(function(r){return r.maker.indexOf(p)>=0;});
     });
-    container.innerHTML='<span class="text-[11px] text-muted-strong self-center mr-1">인기</span>'+
+    container.innerHTML='<span class="text-[11px] text-white/70 font-semibold self-center mr-1 uppercase tracking-wider">인기</span>'+
       available.map(function(p){
-        return '<button class="quick-chip px-3 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-semibold hover:bg-primary-container/10 hover:text-primary-container dark:hover:text-primary transition-colors" data-maker="'+esc(p)+'">'+esc(p)+'</button>';
+        return '<button class="quick-chip px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white rounded-full text-xs font-semibold backdrop-blur-sm transition-colors" data-maker="'+esc(p)+'">'+esc(p)+'</button>';
       }).join('');
     Array.prototype.forEach.call(container.querySelectorAll('.quick-chip'),function(btn){
       btn.addEventListener('click',function(){
