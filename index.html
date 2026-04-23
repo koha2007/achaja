@@ -131,6 +131,7 @@
       <nav class="hidden md:flex items-center gap-1">
         <a href="/" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">홈</a>
         <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">뉴스</a>
+        <a href="/blog/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">블로그</a>
         <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">이력조회</a>
         <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">리콜</a>
         <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">마이</a>
@@ -235,6 +236,28 @@
     </div>
   </section>                                                                                                                                                                                                                           
                                                             
+  <!-- Blog Preview -->
+  <section class="px-margin py-lg" aria-labelledby="blog-heading">
+    <div class="flex items-center justify-between mb-md">
+      <h2 id="blog-heading" class="font-headline text-lg font-semibold">중고차 가이드</h2>
+      <a href="/blog/" class="text-xs font-bold text-primary-container dark:text-primary hover:underline">전체 보기 →</a>
+    </div>
+    <div class="space-y-sm">
+      <a href="/blog/flood-damaged-car/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">water_drop</span><span class="text-[10px] text-muted font-semibold">침수차 판별</span></div>
+        <h3 class="font-headline font-semibold text-sm">중고차 침수 여부 확인하는 5가지 방법</h3>
+      </a>
+      <a href="/blog/accident-history-check/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">car_crash</span><span class="text-[10px] text-muted font-semibold">사고이력</span></div>
+        <h3 class="font-headline font-semibold text-sm">중고차 사고이력 조회 무료로 하는 법</h3>
+      </a>
+      <a href="/blog/used-car-checklist/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">checklist</span><span class="text-[10px] text-muted font-semibold">구매 체크리스트</span></div>
+        <h3 class="font-headline font-semibold text-sm">중고차 살 때 꼭 확인해야 할 10가지</h3>
+      </a>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="px-margin py-lg mb-xl" aria-labelledby="faq-heading">
     <h2 id="faq-heading" class="font-headline text-lg font-semibold mb-lg text-center">자주 묻는 질문</h2>
@@ -280,6 +303,10 @@
         <span class="material-symbols-outlined">newspaper</span>
         <span class="font-headline text-[10px] font-medium mt-0.5">뉴스</span>
       </a>
+      <a href="/blog/" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">article</span>
+        <span class="font-headline text-[10px] font-medium mt-0.5">블로그</span>
+      </a>
       <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
         <span class="material-symbols-outlined">history</span>
         <span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span>
@@ -287,10 +314,6 @@
       <a href="/parts" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
         <span class="material-symbols-outlined">campaign</span>
         <span class="font-headline text-[10px] font-medium mt-0.5">리콜</span>
-      </a>
-      <a href="/my" class="flex-1 flex flex-col items-center justify-center text-muted active:opacity-70 transition-opacity">
-        <span class="material-symbols-outlined">person</span>
-        <span class="font-headline text-[10px] font-medium mt-0.5">마이</span>
       </a>
     </div>
   </nav>

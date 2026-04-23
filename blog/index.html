@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>중고차 가이드 블로그 — ACHAJA | 침수·사고이력·리콜·VIN 조회법</title>
+<meta name="description" content="중고차 구매 전 꼭 알아야 할 침수 판별법, 사고이력 무료 조회, 리콜 확인, VIN 조회 가이드. 전문가 팁 모음."/>
+<meta name="author" content="ACHAJA"/>
+<meta name="theme-color" content="#003178"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://achaja.net/blog/"/>
+<link rel="alternate" type="application/rss+xml" title="ACHAJA 자동차 뉴스 RSS" href="https://achaja.net/rss.xml"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="ACHAJA"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta property="og:url" content="https://achaja.net/blog/"/>
+<meta property="og:title" content="중고차 가이드 블로그 — ACHAJA"/>
+<meta property="og:description" content="침수·사고이력·리콜·VIN 조회 가이드 모음. 중고차 구매 전 꼭 알아야 할 전문가 팁."/>
+<meta property="og:image" content="https://achaja.net/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="중고차 가이드 블로그 — ACHAJA"/>
+<meta name="twitter:description" content="침수·사고이력·리콜·VIN 조회 가이드. 중고차 구매 필수 정보."/>
+<meta name="twitter:image" content="https://achaja.net/og-image.png"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Blog","@id":"https://achaja.net/blog/#blog","name":"ACHAJA 중고차 가이드 블로그","url":"https://achaja.net/blog/","inLanguage":"ko-KR","publisher":{"@type":"Organization","name":"ACHAJA","url":"https://achaja.net/"}},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
+{"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"}
+]},
+{"@type":"ItemList","itemListElement":[
+{"@type":"ListItem","position":1,"url":"https://achaja.net/blog/flood-damaged-car/","name":"중고차 침수 여부 확인하는 5가지 방법"},
+{"@type":"ListItem","position":2,"url":"https://achaja.net/blog/accident-history-check/","name":"중고차 사고이력 조회 무료로 하는 법"},
+{"@type":"ListItem","position":3,"url":"https://achaja.net/blog/recall-check-guide/","name":"자동차 리콜 조회하는 법"},
+{"@type":"ListItem","position":4,"url":"https://achaja.net/blog/used-car-checklist/","name":"중고차 살 때 꼭 확인해야 할 10가지 체크리스트"},
+{"@type":"ListItem","position":5,"url":"https://achaja.net/blog/vin-lookup/","name":"차량번호로 차대번호(VIN) 확인하는 방법"}
+]}
+]}
+</script>
+<script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--c-primary:0 49 120;--c-primary-container:13 71 161;--c-on-primary:255 255 255;--c-background:248 249 250;--c-surface:248 249 250;--c-surface-container:237 238 239;--c-surface-container-low:243 244 245;--c-surface-container-high:231 232 233;--c-on-surface:25 28 29;--c-on-surface-variant:67 70 82;--c-outline:115 119 131;--c-outline-variant:195 198 212;--c-header-bg:248 249 250;--c-nav-bg:255 255 255;--c-app-border:225 227 228;--c-muted:100 116 139;--c-muted-strong:71 85 105;--c-active-bg:219 234 254;}
+html.dark{--c-primary:176 198 255;--c-primary-container:0 49 120;--c-on-primary:0 45 111;--c-background:18 19 24;--c-surface:18 19 24;--c-surface-container:30 31 36;--c-surface-container-low:26 27 32;--c-surface-container-high:40 42 47;--c-on-surface:226 226 232;--c-on-surface-variant:196 198 210;--c-outline:142 144 156;--c-outline-variant:67 70 81;--c-header-bg:2 6 23;--c-nav-bg:15 23 42;--c-app-border:39 39 42;--c-muted:161 161 170;--c-muted-strong:82 82 91;--c-active-bg:30 58 138;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+body{min-height:100dvh;}
+.pb-safe{padding-bottom:env(safe-area-inset-bottom);}
+</style>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"rgb(var(--c-primary)/<alpha-value>)","primary-container":"rgb(var(--c-primary-container)/<alpha-value>)","on-primary":"rgb(var(--c-on-primary)/<alpha-value>)","background":"rgb(var(--c-background)/<alpha-value>)","surface":"rgb(var(--c-surface)/<alpha-value>)","surface-container":"rgb(var(--c-surface-container)/<alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)","surface-container-high":"rgb(var(--c-surface-container-high)/<alpha-value>)","on-surface":"rgb(var(--c-on-surface)/<alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)","outline":"rgb(var(--c-outline)/<alpha-value>)","outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)","header-bg":"rgb(var(--c-header-bg)/<alpha-value>)","nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)","app-border":"rgb(var(--c-app-border)/<alpha-value>)","muted":"rgb(var(--c-muted)/<alpha-value>)","muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)","active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"},fontFamily:{"headline":["Manrope"],"body":["Inter"]},spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","xl":"32px","margin":"20px"}}}};</script>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-24">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+    <a href="/" class="flex items-center gap-2"><span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span></a>
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">홈</a>
+      <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">뉴스</a>
+      <a href="/blog/" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">블로그</a>
+      <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">이력조회</a>
+      <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">리콜</a>
+      <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">마이</a>
+    </nav>
+    <div class="flex items-center gap-1">
+      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined dark:hidden">dark_mode</span><span class="material-symbols-outlined hidden dark:inline">light_mode</span></button>
+      <a href="/my" aria-label="내 프로필" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined">account_circle</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-14 max-w-3xl mx-auto px-margin">
+
+<nav aria-label="breadcrumb" class="pt-lg text-xs text-muted">
+  <a href="/" class="hover:underline">홈</a> / <span class="text-on-surface">블로그</span>
+</nav>
+
+<section class="py-lg">
+  <h1 class="font-headline text-3xl font-semibold tracking-tight mb-sm">중고차 가이드 블로그</h1>
+  <p class="text-sm text-on-surface-variant">중고차 구매 전 꼭 알아야 할 침수 판별법, 사고이력 무료 조회, 리콜 확인, VIN 조회까지 — 전문가 팁 모음.</p>
+</section>
+
+<section class="pb-xl space-y-md">
+  <article class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg hover:border-primary-container dark:hover:border-primary transition-colors">
+    <a href="/blog/flood-damaged-car/" class="block">
+      <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary text-lg">water_drop</span><span class="text-xs text-muted">침수차 판별</span></div>
+      <h2 class="font-headline text-lg font-semibold mb-xs">중고차 침수 여부 확인하는 5가지 방법</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">침수차는 외관상 멀쩡해 보여도 수개월 후 전기 계통 고장이 잇따라 발생합니다. 트렁크 바닥, 시트 고정 볼트, 안전벨트 끝부분 등 숙련된 감별사도 활용하는 5가지 포인트를 정리했습니다.</p>
+    </a>
+  </article>
+
+  <article class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg hover:border-primary-container dark:hover:border-primary transition-colors">
+    <a href="/blog/accident-history-check/" class="block">
+      <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary text-lg">car_crash</span><span class="text-xs text-muted">사고이력</span></div>
+      <h2 class="font-headline text-lg font-semibold mb-xs">중고차 사고이력 조회 무료로 하는 법</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">카히스토리 유료 결제 없이 무료로 사고이력을 조회하는 공식 경로를 소개합니다. 보험개발원 카히스토리와 공공 데이터 활용법을 비교해 꼭 필요한 정보만 얻는 방법을 알려드립니다.</p>
+    </a>
+  </article>
+
+  <article class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg hover:border-primary-container dark:hover:border-primary transition-colors">
+    <a href="/blog/recall-check-guide/" class="block">
+      <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary text-lg">campaign</span><span class="text-xs text-muted">리콜 조회</span></div>
+      <h2 class="font-headline text-lg font-semibold mb-xs">자동차 리콜 조회하는 법 — 내 차도 대상인지 확인</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">리콜 대상인데도 모르고 운행하면 안전사고 위험과 시정 비용 청구 리스크가 있습니다. 자동차리콜센터·제작사 공식 경로로 리콜 여부를 확인하고 무상수리 받는 절차를 단계별로 정리했습니다.</p>
+    </a>
+  </article>
+
+  <article class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg hover:border-primary-container dark:hover:border-primary transition-colors">
+    <a href="/blog/used-car-checklist/" class="block">
+      <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary text-lg">checklist</span><span class="text-xs text-muted">구매 체크리스트</span></div>
+      <h2 class="font-headline text-lg font-semibold mb-xs">중고차 살 때 꼭 확인해야 할 10가지 체크리스트</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">주행거리 조작, 허위 매물, 명의 분쟁 등 중고차 구매 시 만나는 위험 요소를 10가지 체크 항목으로 정리. 계약 전·시운전·서류 확인 단계별 점검 포인트를 모두 담았습니다.</p>
+    </a>
+  </article>
+
+  <article class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg hover:border-primary-container dark:hover:border-primary transition-colors">
+    <a href="/blog/vin-lookup/" class="block">
+      <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary text-lg">qr_code_2</span><span class="text-xs text-muted">VIN 조회</span></div>
+      <h2 class="font-headline text-lg font-semibold mb-xs">차량번호로 차대번호(VIN) 확인하는 방법</h2>
+      <p class="text-sm text-on-surface-variant leading-relaxed">차대번호는 차량의 주민등록번호에 해당하는 17자리 고유번호입니다. 해외 수입 이력, 연식, 제조국 등을 확인할 때 필수. VIN을 확인하는 다섯 가지 방법과 해석 요령을 정리했습니다.</p>
+    </a>
+  </article>
+</section>
+
+<footer class="px-margin py-lg border-t border-app-border text-center mt-xl">
+  <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
+  <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>
+</footer>
+
+</main>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">
+  <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
+    <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">home</span><span class="font-headline text-[10px] font-medium mt-0.5">홈</span></a>
+    <a href="/news" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">newspaper</span><span class="font-headline text-[10px] font-medium mt-0.5">뉴스</span></a>
+    <a href="/blog/" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">article</span><span class="font-headline text-[10px] font-bold mt-0.5">블로그</span></a>
+    <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">history</span><span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span></a>
+    <a href="/parts" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">campaign</span><span class="font-headline text-[10px] font-medium mt-0.5">리콜</span></a>
+  </div>
+</nav>
+
+<script>function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}</script>
+</body></html>
