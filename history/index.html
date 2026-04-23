@@ -125,7 +125,7 @@
   <!-- Page Title -->
   <section class="pt-xs">
     <h1 class="text-on-surface font-headline font-semibold text-2xl">차량 이력조회</h1>
-    <p class="text-muted text-sm mt-1">차량번호·차대번호 하나로 사고/침수/정비 확인</p>
+    <p class="text-muted text-sm mt-1">차량번호·차대번호로 제조사·연식·리콜 즉시 확인</p>
   </section>
 
   <!-- Search -->
@@ -133,111 +133,125 @@
     <div class="flex-1 px-4 flex items-center gap-2">
       <span class="material-symbols-outlined text-outline">search</span>
       <label for="history-q" class="sr-only">차량번호 또는 차대번호</label>
-      <input id="history-q" name="q" class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-outline" placeholder="차량번호 또는 차대번호 입력" type="text" autocomplete="off" minlength="4" maxlength="17"/>
+      <input id="history-q" name="q" class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-outline" placeholder="차량번호 또는 VIN 17자리 입력" type="text" autocomplete="off" minlength="4" maxlength="17"/>
     </div>
-    <button type="submit" class="bg-primary-container text-white px-6 py-2.5 rounded-full text-xs font-semibold">재조회</button>
+    <button type="submit" class="bg-primary-container text-white px-6 py-2.5 rounded-full text-xs font-semibold">조회</button>
   </form>
-  <p id="history-err" class="hidden text-xs text-red-600 dark:text-red-400 mt-2 px-4">올바른 차량번호(예: 12가1234) 또는 VIN 17자리를 입력해주세요.</p>                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                       
-  <!-- Vehicle Basic Info -->                                                                                                                                                                                                          
-  <section class="bg-surface-container-high rounded-3xl p-lg border border-outline-variant/30 flex gap-lg">
-    <div class="w-1/3 flex items-center">                                                                                                                                                                                              
-      <img alt="현대 팰리세이드 2022년식 예시 차량 이미지" class="w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR2tsO12NPTFo8qVfijvtuVz7uq-wQSnyh_T4rdB2cNtfflDdOi4LpJwzuxDtXpEIB9s4HuLjd_vWszGCJKyH6_PieJXKq2Gu50ASp07nPSVujjnQNWPgqC-gD
-  MFIvwjkXbtH-s2tObxlf2dB4Pz3by6kz4F7NqzMWuA4agx7tblOuQ7oyviuljvRIKbPQ2aJFToyEN5VxUinax9jV7JEXw-D4gHxMOqwerD4od9Rf2DZsEGggh8DAax0nKO0_FPnJfhHxNPhwxO_-"/>                                                                              
-    </div>                                                                                                                                                                                                                             
-    <div class="flex-1 space-y-md">                                                                                                                                                                                                    
-      <div class="flex justify-between items-start">        
-        <div>                                                                                                                                                                                                                          
-          <p class="text-primary-container dark:text-primary text-[11px] uppercase tracking-wider mb-xs font-semibold">현대 팰리세이드</p>
-          <h2 class="text-on-surface font-headline font-semibold text-base leading-tight">가솔린 3.8 2WD<br/>프레스티지</h2>                                                                                                           
-        </div>                                                                                                                                                                                                                         
-        <div class="bg-primary-container/10 border border-primary-container/30 dark:border-primary/30 px-2 py-1 rounded-md flex items-center gap-1">                                                                                   
-          <span class="material-symbols-outlined text-[14px] text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">verified</span>                                                                       
-          <span class="text-[10px] font-bold text-primary-container dark:text-primary">인증</span>                                                                                                                                     
-        </div>                                                                                                                                                                                                                         
-      </div>                                                                                                                                                                                                                           
-      <div class="grid grid-cols-2 gap-y-3 gap-x-2 border-t border-outline-variant/40 pt-md">                                                                                                                                          
-        <div><p class="text-outline text-[11px]">연식</p><p class="text-on-surface text-sm">2022년</p></div>                                                                                                                           
-        <div><p class="text-outline text-[11px]">색상</p><p class="text-on-surface text-sm">어비스 블랙</p></div>                                                                                                                      
-        <div><p class="text-outline text-[11px]">주행거리</p><p class="text-on-surface text-sm">34,500km</p></div>                                                                                                                     
-        <div><p class="text-outline text-[11px]">연료</p><p class="text-on-surface text-sm">가솔린</p></div>                                                                                                                           
-        <div><p class="text-outline text-[11px]">최초등록</p><p class="text-on-surface text-sm">2021.12.15</p></div>                                                                                                                   
-        <div><p class="text-outline text-[11px]">소유자 변경</p><p class="text-on-surface text-sm">1회</p></div>                                                                                                                       
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-  </section>                                                                                                                                                                                                                           
-                                                            
-  <!-- Summary Grid -->                                                                                                                                                                                                                
-  <section class="grid grid-cols-2 gap-gutter">
-    <div class="bg-surface-container rounded-3xl p-md border border-outline-variant/20 relative">                                                                                                                                      
-      <div class="flex justify-between items-start mb-sm"><span class="text-outline text-xs font-medium">사고이력</span><span class="bg-red-500/10 text-red-500 dark:text-red-400 text-[10px] px-2 py-0.5 rounded-full border          
-  border-red-500/20 font-semibold">상세 ₩2,900</span></div>                                                                                                                                                                            
-      <div class="relative py-2"><p class="text-red-500 dark:text-red-400 font-headline text-2xl font-semibold blur-sm select-none">3건</p><div class="absolute inset-0 flex items-center justify-center"><span                        
-  class="material-symbols-outlined text-outline/70">lock</span></div></div>                                                                                                                                                            
-    </div>                                                  
-    <div class="bg-surface-container rounded-3xl p-md border border-outline-variant/20">                                                                                                                                               
-      <div class="flex justify-between items-start mb-sm"><span class="text-outline text-xs font-medium">침수이력</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-2 py-0.5 rounded-full 
-  border border-emerald-500/20 font-bold">무료</span></div>                                                                                                                                                                            
-      <div class="py-2"><p class="text-emerald-600 dark:text-emerald-400 font-headline text-2xl font-semibold">없음</p></div>
-    </div>                                                                                                                                                                                                                             
-    <div class="bg-surface-container rounded-3xl p-md border border-outline-variant/20 relative">
-      <div class="flex justify-between items-start mb-sm"><span class="text-outline text-xs font-medium">정비이력</span><span class="bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] px-2 py-0.5 rounded-full border       
-  border-blue-500/20 font-semibold">상세 ₩1,500</span></div>                                                                                                                                                                           
-      <div class="relative py-2"><p class="text-blue-600 dark:text-blue-400 font-headline text-2xl font-semibold blur-sm select-none">15건</p><div class="absolute inset-0 flex items-center justify-center"><span                     
-  class="material-symbols-outlined text-outline/70">lock</span></div></div>                                                                                                                                                            
-    </div>                                                  
-    <div class="bg-surface-container rounded-3xl p-md border border-outline-variant/20 relative">                                                                                                                                      
-      <div class="flex justify-between items-start mb-sm"><span class="text-outline text-xs font-medium">시세조회</span><span class="bg-slate-500/10 text-slate-600 dark:text-slate-400 text-[10px] px-2 py-0.5 rounded-full border 
-  border-slate-500/20 font-semibold">정밀 ₩1,900</span></div>                                                                                                                                                                          
-      <div class="relative py-2"><p class="text-slate-600 dark:text-slate-400 font-headline text-base font-semibold blur-sm select-none">약 2,400만원대</p><div class="absolute inset-0 flex items-center justify-center"><span 
-  class="material-symbols-outlined text-outline/70">lock</span></div></div>                                                                                                                                                            
-    </div>                                                  
-  </section>                                                                                                                                                                                                                           
-                                                            
-  <!-- Comprehensive Report Banner -->                                                                                                                                                                                                 
-  <section class="bg-primary-container rounded-3xl p-lg shadow-xl overflow-hidden relative">
-    <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-3xl"></div>                                                                                                                                           
-    <div class="flex justify-between items-start mb-md">                                                                                                                                                                               
-      <div class="bg-white text-primary-container font-black text-[10px] px-2 py-0.5 rounded">BEST</div>                                                                                                                               
-      <div class="text-right">                                                                                                                                                                                                         
-        <p class="text-blue-200 text-[11px] line-through">개별 ₩6,300</p>                                                                                                                                                              
-        <p class="text-white font-headline text-2xl font-bold">₩4,900</p>                                                                                                                                                              
-      </div>                                                                                                                                                                                                                           
-    </div>                                                                                                                                                                                                                             
-    <h3 class="text-white font-headline text-lg font-semibold mb-sm leading-snug">사고 + 정비 + 시세분석<br/>종합리포트 한 번에</h3>                                                                                                   
-    <p class="text-blue-100 text-xs mb-lg">1,400원 절약 + 구매 추천 점수 + 3년 수리비 예측 포함</p>                                                                                                                                    
-    <button class="w-full bg-white text-primary-container font-semibold py-4 rounded-xl active:scale-95 transition-all">종합리포트 받기 ₩4,900</button>                                                                                
-  </section>                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                       
-  <!-- Individual Payment -->                                                                                                                                                                                                          
-  <section class="space-y-md">                              
-    <h4 class="text-outline text-xs font-medium px-xs">개별 항목 결제</h4>                                                                                                                                                             
-    <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">                                                                                                             
-      <div class="flex items-center gap-md">                                                                                                                                                                                           
-        <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-red-500 dark:text-red-400">car_crash</span></div>                                                 
-        <div><p class="text-on-surface">사고 이력 상세</p><p class="text-outline text-[11px]">수리부위·수리비·부품교환</p></div>                                                                                                       
-      </div>                                                                                                                                                                                                                           
-      <button class="bg-surface-container-highest px-4 py-2 rounded-lg text-on-surface text-xs font-semibold">₩2,900</button>                                                                                                          
-    </div>                                                                                                                                                                                                                             
+  <p id="history-err" class="hidden text-xs text-red-600 dark:text-red-400 mt-2 px-4">올바른 차량번호(예: 12가1234) 또는 VIN 17자리를 입력해주세요.</p>
+
+  <!-- Empty state (초기 안내) -->
+  <section id="history-empty" class="bg-surface-container rounded-3xl p-lg border border-outline-variant/20 text-center">
+    <span class="material-symbols-outlined text-4xl text-outline/60">directions_car</span>
+    <p class="text-on-surface font-headline font-semibold mt-sm">조회할 차량을 입력해주세요</p>
+    <p class="text-muted text-xs mt-xs leading-relaxed">
+      <strong class="text-on-surface">VIN 17자리</strong>를 입력하면 제조사·원산지·연식·해당 차량 리콜을 바로 확인할 수 있습니다.<br/>
+      <strong class="text-on-surface">차량번호</strong>는 번호판 용도·등록시기만 확인 가능하며 상세 정보는 VIN 입력이 필요합니다.
+    </p>
+  </section>
+
+  <!-- Loading -->
+  <section id="history-loading" class="hidden bg-surface-container rounded-3xl p-lg border border-outline-variant/20 text-center">
+    <span class="material-symbols-outlined text-3xl text-primary-container dark:text-primary animate-spin">progress_activity</span>
+    <p class="text-muted text-sm mt-sm">조회 중…</p>
+  </section>
+
+  <!-- VIN 결과 -->
+  <section id="history-vin-result" class="hidden space-y-lg">
+    <!-- Vehicle Basic Info from VIN -->
+    <div class="bg-surface-container-high rounded-3xl p-lg border border-outline-variant/30">
+      <div class="flex items-start justify-between mb-md">
+        <div>
+          <p class="text-primary-container dark:text-primary text-[11px] uppercase tracking-wider mb-xs font-semibold" id="vin-maker">—</p>
+          <h2 class="text-on-surface font-headline font-semibold text-lg leading-tight" id="vin-model-year">—</h2>
+        </div>
+        <div id="vin-verified-badge" class="bg-primary-container/10 border border-primary-container/30 dark:border-primary/30 px-2 py-1 rounded-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px] text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">verified</span>
+          <span class="text-[10px] font-bold text-primary-container dark:text-primary">VIN 유효</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-y-3 gap-x-2 border-t border-outline-variant/40 pt-md">
+        <div><p class="text-outline text-[11px]">원산지</p><p class="text-on-surface text-sm" id="vin-country">—</p></div>
+        <div><p class="text-outline text-[11px]">연식(추정)</p><p class="text-on-surface text-sm" id="vin-year">—</p></div>
+        <div><p class="text-outline text-[11px]">제조사 코드(WMI)</p><p class="text-on-surface text-sm font-mono" id="vin-wmi">—</p></div>
+        <div><p class="text-outline text-[11px]">VIN</p><p class="text-on-surface text-[11px] font-mono break-all" id="vin-full">—</p></div>
+      </div>
+      <p class="text-muted text-[11px] mt-md leading-relaxed">※ VIN 표준(ISO 3779) 기반 공개 정보입니다. 모델·트림·색상 등 세부 정보는 제조사 또는 유료 조회가 필요합니다.</p>
+    </div>
+
+    <!-- 리콜 매칭 -->
+    <div class="bg-surface-container rounded-3xl p-md border border-outline-variant/20">
+      <div class="flex justify-between items-center mb-sm">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-orange-500 dark:text-orange-400">campaign</span>
+          <span class="text-on-surface font-semibold text-sm">제조사 리콜 이력</span>
+        </div>
+        <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/20 font-bold">무료</span>
+      </div>
+      <div id="recall-summary" class="py-2">
+        <p class="text-muted text-sm">리콜 데이터 확인 중…</p>
+      </div>
+      <div id="recall-list" class="hidden space-y-2 mt-md max-h-80 overflow-y-auto"></div>
+      <button id="recall-toggle" class="hidden w-full mt-md text-xs text-primary-container dark:text-primary font-semibold py-2 rounded-lg bg-active-bg/30">전체 펼치기</button>
+    </div>
+  </section>
+
+  <!-- 차량번호 결과 -->
+  <section id="history-plate-result" class="hidden space-y-lg">
+    <div class="bg-surface-container-high rounded-3xl p-lg border border-outline-variant/30">
+      <div class="flex items-center justify-between mb-md">
+        <div>
+          <p class="text-primary-container dark:text-primary text-[11px] uppercase tracking-wider mb-xs font-semibold">차량번호 분석</p>
+          <h2 class="text-on-surface font-headline font-semibold text-2xl tracking-wider" id="plate-display">—</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-y-3 gap-x-2 border-t border-outline-variant/40 pt-md">
+        <div><p class="text-outline text-[11px]">용도</p><p class="text-on-surface text-sm" id="plate-type">—</p></div>
+        <div><p class="text-outline text-[11px]">등록체계</p><p class="text-on-surface text-sm" id="plate-era">—</p></div>
+        <div><p class="text-outline text-[11px]">지역분류</p><p class="text-on-surface text-sm" id="plate-prefix">—</p></div>
+        <div><p class="text-outline text-[11px]">식별자</p><p class="text-on-surface text-sm font-mono" id="plate-suffix">—</p></div>
+      </div>
+    </div>
+    <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-2xl p-md">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-amber-600 dark:text-amber-400">info</span>
+        <div>
+          <p class="text-on-surface font-semibold text-sm">상세 정보 확인에는 VIN이 필요합니다</p>
+          <p class="text-muted text-xs mt-xs leading-relaxed">현행법상 차량번호만으로 제조사·연식·사고·정비 이력을 자동 조회할 수는 없습니다. 차량등록증에서 <strong>차대번호(VIN) 17자리</strong>를 확인해 입력해주세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 유료 섹션 (본인인증·결제 필요) -->
+  <section id="history-paid" class="hidden space-y-md">
+    <h4 class="text-outline text-xs font-medium px-xs">추가 조회 (본인인증 필요)</h4>
     <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">
-      <div class="flex items-center gap-md">                                                                                                                                                                                           
+      <div class="flex items-center gap-md">
+        <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-red-500 dark:text-red-400">car_crash</span></div>
+        <div><p class="text-on-surface text-sm">사고·침수 이력</p><p class="text-outline text-[11px]">보험개발원 데이터 (준비 중)</p></div>
+      </div>
+      <button class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-muted text-[11px] font-semibold cursor-not-allowed" disabled>준비 중</button>
+    </div>
+    <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">
+      <div class="flex items-center gap-md">
         <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-blue-600 dark:text-blue-400">build</span></div>
-        <div><p class="text-on-surface">정비 이력 상세</p><p class="text-outline text-[11px]">공식·사설 센터 합산</p></div>                                                                                                            
-      </div>                                                                                                                                                                                                                           
-      <button class="bg-surface-container-highest px-4 py-2 rounded-lg text-on-surface text-xs font-semibold">₩1,500</button>                                                                                                          
-    </div>                                                                                                                                                                                                                             
+        <div><p class="text-on-surface text-sm">정비 이력 상세</p><p class="text-outline text-[11px]">공식·사설 센터 (준비 중)</p></div>
+      </div>
+      <button class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-muted text-[11px] font-semibold cursor-not-allowed" disabled>준비 중</button>
+    </div>
     <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">
-      <div class="flex items-center gap-md">                                                                                                                                                                                           
+      <div class="flex items-center gap-md">
         <div class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-slate-600 dark:text-slate-400">analytics</span></div>
-        <div><p class="text-on-surface">정밀 시세 분석</p><p class="text-outline text-[11px]">향후 3년 잔존가치 예측</p></div>                                                                                                         
-      </div>                                                                                                                                                                                                                           
-      <button class="bg-surface-container-highest px-4 py-2 rounded-lg text-on-surface text-xs font-semibold">₩1,900</button>                                                                                                          
-    </div>                                                                                                                                                                                                                             
-  </section>                                                                                                                                                                                                                           
-  
-  <footer class="pt-xl pb-12 text-center">                                                                                                                                                                                             
+        <div><p class="text-on-surface text-sm">정밀 시세 분석</p><p class="text-outline text-[11px]">향후 3년 잔존가치 (준비 중)</p></div>
+      </div>
+      <button class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-muted text-[11px] font-semibold cursor-not-allowed" disabled>준비 중</button>
+    </div>
+    <p class="text-muted text-[11px] leading-relaxed px-xs">※ 사고·정비·시세는 본인인증(NICE/KCB)과 유료 API 연동이 필요합니다. 서비스 준비가 완료되는 대로 오픈됩니다.</p>
+  </section>
+
+  <footer class="pt-xl pb-12 text-center">
     <p class="text-muted-strong text-[11px] font-medium">정보제공처</p>
-    <p class="text-muted text-[10px] mt-xs">국토교통부 · 보험개발원 · 한국교통안전공단</p>                                                                                                                                             
+    <p class="text-muted text-[10px] mt-xs">ISO 3779(VIN 표준) · 한국교통안전공단 자동차리콜센터 · 공공데이터포털</p>
   </footer>                                                                                                                                                                                                                            
                                                                                                                                                                                                                                        
   </main>                                                                                                                                                                                                                              
@@ -268,32 +282,201 @@
     </div>
   </nav>
                                                                                                                                                                                                                                        
+  <script src="/js/vin-decoder.js"></script>
   <script>
   function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
   (function(){
-    // 차량번호(예: 12가1234, 123가4567) 또는 VIN(17자리) 검증
-    var PLATE=/^[0-9]{2,3}[가-힣][0-9]{4}$/;
-    var VIN=/^[A-HJ-NPR-Z0-9]{17}$/i;
-    function validate(v){v=v.replace(/\s/g,'');if(!v)return false;return PLATE.test(v)||VIN.test(v);}
-    document.addEventListener('DOMContentLoaded',function(){
-      var form=document.getElementById('history-form');
-      var input=document.getElementById('history-q');
-      var err=document.getElementById('history-err');
-      if(!form||!input)return;
-      // URL의 q 파라미터를 input에 반영
-      var urlQ=new URLSearchParams(location.search).get('q');
-      if(urlQ){input.value=urlQ;}
-      else if(!input.value){input.value='12가3456';}
+    var $ = function(id){ return document.getElementById(id); };
+    var sections = ['history-empty','history-loading','history-vin-result','history-plate-result','history-paid'];
+    function show(id){
+      sections.forEach(function(s){ var el=$(s); if(!el) return; if(s===id) el.classList.remove('hidden'); else el.classList.add('hidden'); });
+      // 유료 섹션은 VIN/plate 결과와 함께 표시
+      if(id==='history-vin-result' || id==='history-plate-result'){ $('history-paid').classList.remove('hidden'); }
+    }
+
+    // 리콜 데이터 캐시
+    var recallsCache = null;
+    function loadRecalls(){
+      if (recallsCache) return Promise.resolve(recallsCache);
+      return fetch('/data/recalls.json').then(function(r){return r.json();}).then(function(j){ recallsCache=j; return j; });
+    }
+
+    // 제조사명(VIN WMI 디코딩 결과) → 리콜 데이터의 maker 필드 매칭 키워드
+    var MAKER_ALIAS = {
+      '현대자동차':['현대자동차'],
+      '기아':['기아 주식회사'],
+      '제네시스':['현대자동차','기아 주식회사'],
+      'KG모빌리티(쌍용)':['케이지모빌리티','KG Mobility','쌍용'],
+      '한국지엠(쉐보레)':['한국지엠'],
+      '한국지엠(대우)':['한국지엠'],
+      '한국지엠(다마스)':['한국지엠'],
+      '르노코리아':['르노코리아'],
+      'BMW':['비엠더블유'],
+      'BMW M':['비엠더블유'],
+      'BMW i':['비엠더블유'],
+      '미니(BMW)':['비엠더블유'],
+      '메르세데스벤츠':['메르세데스벤츠코리아'],
+      '메르세데스벤츠(ML/GL)':['메르세데스벤츠코리아'],
+      '메르세데스벤츠(밴)':['메르세데스벤츠코리아'],
+      '아우디':['폭스바겐그룹코리아'],
+      '폭스바겐':['폭스바겐그룹코리아'],
+      '폭스바겐(상용)':['폭스바겐그룹코리아'],
+      '포르쉐':['포르쉐코리아'],
+      '포르쉐(SUV)':['포르쉐코리아'],
+      '도요타':['한국토요타자동차'],
+      '렉서스':['한국토요타자동차'],
+      '혼다':['혼다코리아'],
+      '혼다(아큐라)':['혼다코리아'],
+      '닛산':['한국닛산'],
+      '닛산(인피니티)':['한국닛산'],
+      '포드':['포드세일즈서비스코리아'],
+      '포드(트럭)':['포드세일즈서비스코리아'],
+      '포드(캐나다)':['포드세일즈서비스코리아'],
+      '재규어':['재규어랜드로버코리아'],
+      '랜드로버':['재규어랜드로버코리아'],
+      '볼보':['볼보자동차코리아'],
+      '볼보트럭':['볼보트럭코리아'],
+      '테슬라':['테슬라코리아'],
+      '스즈키':['스즈키','바이크'],
+      '미니':['비엠더블유'],
+      '스마트':['메르세데스벤츠코리아'],
+      '롤스로이스':['비엠더블유'],
+      '벤틀리':['폭스바겐그룹코리아'],
+      '람보르기니':['폭스바겐그룹코리아'],
+      '페라리':['에프엠케이'],
+      '마쓰다':[],
+      '스바루':[],
+      '알파로메오':['스텔란티스'],
+      '피아트':['스텔란티스'],
+      '피아트(밴)':['스텔란티스'],
+      '푸조':['스텔란티스'],
+      '시트로엥':['스텔란티스'],
+      '르노':['르노코리아']
+    };
+    function matchRecalls(makerLabel){
+      if (!recallsCache || !recallsCache.records || !makerLabel) return [];
+      var aliases = MAKER_ALIAS[makerLabel] || [makerLabel];
+      return recallsCache.records.filter(function(r){
+        return aliases.some(function(a){ return r.maker && r.maker.indexOf(a) >= 0; });
+      });
+    }
+
+    function fmtDate(d){ return d ? d.replace(/-/g,'.') : ''; }
+
+    function renderRecalls(list){
+      var summary = $('recall-summary');
+      var listEl = $('recall-list');
+      var toggle = $('recall-toggle');
+      if (!list || list.length === 0){
+        summary.innerHTML = '<p class="text-emerald-600 dark:text-emerald-400 font-headline text-xl font-semibold">0건</p><p class="text-muted text-xs mt-xs">2023년 리콜 기록에서 해당 제조사 이력이 없습니다.</p>';
+        listEl.classList.add('hidden'); toggle.classList.add('hidden');
+        return;
+      }
+      summary.innerHTML = '<p class="text-orange-500 dark:text-orange-400 font-headline text-2xl font-semibold">'+list.length+'건</p><p class="text-muted text-xs mt-xs">제조사 기준 2023년 리콜 공고 (최근순).</p>';
+      listEl.innerHTML = '';
+      var sorted = list.slice().sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
+      var initial = sorted.slice(0, 3);
+      initial.forEach(function(r){ listEl.appendChild(renderRecallItem(r)); });
+      listEl.classList.remove('hidden');
+      if (sorted.length > 3){
+        toggle.classList.remove('hidden');
+        toggle.textContent = '나머지 '+(sorted.length-3)+'건 더 보기';
+        toggle.onclick = function(){
+          sorted.slice(3).forEach(function(r){ listEl.appendChild(renderRecallItem(r)); });
+          toggle.classList.add('hidden');
+          if (window.gtag){ gtag('event', 'recall_expand', { count: sorted.length }); }
+        };
+      } else {
+        toggle.classList.add('hidden');
+      }
+    }
+    function renderRecallItem(r){
+      var div = document.createElement('div');
+      div.className = 'border border-outline-variant/30 rounded-xl p-sm bg-surface-container-low';
+      var reason = (r.reason || '').length > 140 ? r.reason.substr(0,140)+'…' : (r.reason || '');
+      div.innerHTML =
+        '<div class="flex justify-between items-start gap-2 mb-1">'+
+          '<p class="text-on-surface text-sm font-semibold">'+escapeHtml(r.model || '')+'</p>'+
+          '<span class="text-muted text-[10px] whitespace-nowrap">'+escapeHtml(fmtDate(r.date))+'</span>'+
+        '</div>'+
+        '<p class="text-muted text-xs mb-1">대상: '+escapeHtml(fmtDate(r.from))+' ~ '+escapeHtml(fmtDate(r.to))+'</p>'+
+        '<p class="text-on-surface-variant text-xs leading-relaxed">'+escapeHtml(reason)+'</p>';
+      return div;
+    }
+    function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+    function renderVin(d){
+      $('vin-maker').textContent = d.maker || '제조사 미상';
+      $('vin-model-year').textContent = (d.year ? d.year + '년식(추정)' : '연식 판별 불가');
+      $('vin-country').textContent = d.country;
+      $('vin-year').textContent = d.year ? d.year + '년' : '—';
+      $('vin-wmi').textContent = d.makerCode;
+      $('vin-full').textContent = d.vin;
+      var badge = $('vin-verified-badge');
+      if (d.checkDigitStrict && !d.checkDigitValid){
+        badge.className = 'bg-red-500/10 border border-red-500/30 px-2 py-1 rounded-md flex items-center gap-1';
+        badge.innerHTML = '<span class="material-symbols-outlined text-[14px] text-red-500">error</span><span class="text-[10px] font-bold text-red-500">체크디지트 불일치</span>';
+      }
+      show('history-vin-result');
+    }
+    function renderPlate(d){
+      $('plate-display').textContent = d.plate;
+      $('plate-type').textContent = d.type;
+      $('plate-era').textContent = d.cc;
+      $('plate-prefix').textContent = d.prefix + ' (' + (d.prefix.length===3?'3자리':'2자리') + ')';
+      $('plate-suffix').textContent = d.suffix;
+      show('history-plate-result');
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      var form=$('history-form');
+      var input=$('history-q');
+      var err=$('history-err');
+      if(!form||!input) return;
+
+      function doLookup(raw){
+        err.classList.add('hidden');
+        var det = AchajaVin.detect(raw);
+        if (det.kind === 'invalid' || det.kind === 'empty'){
+          err.classList.remove('hidden');
+          input.focus();
+          if (window.gtag){ gtag('event','plate_invalid',{value:String(raw||'').slice(0,20)}); }
+          return;
+        }
+        show('history-loading');
+        if (det.kind === 'vin'){
+          if (window.gtag){ gtag('event','vin_decode',{maker:det.result.maker||'unknown',country:det.result.country}); }
+          renderVin(det.result);
+          loadRecalls().then(function(){
+            var matches = matchRecalls(det.result.maker);
+            renderRecalls(matches);
+            if (window.gtag){ gtag('event','recall_match',{maker:det.result.maker||'unknown',count:matches.length}); }
+          }).catch(function(){
+            $('recall-summary').innerHTML = '<p class="text-muted text-sm">리콜 데이터 불러오기 실패</p>';
+          });
+        } else {
+          renderPlate(det.result);
+        }
+        if (window.gtag){ gtag('event','lookup_vehicle',{kind:det.kind}); }
+        var url=new URL(location.href);
+        url.searchParams.set('q', det.kind==='vin' ? det.result.vin : det.result.plate);
+        history.replaceState(null,'',url);
+      }
+
       form.addEventListener('submit',function(e){
         e.preventDefault();
-        var v=input.value.trim();
-        if(!validate(v)){err.classList.remove('hidden');input.focus();if(window.gtag){gtag('event','plate_invalid',{value:v});}return;}
-        err.classList.add('hidden');
-        if(window.gtag){gtag('event','lookup_vehicle',{value:v});}
-        var url=new URL(location.href);url.searchParams.set('q',v);history.replaceState(null,'',url);
-        // 실제 조회 로직은 추후 백엔드 연동, 현재는 샘플 표시 유지
+        doLookup(input.value.trim());
       });
-      input.addEventListener('input',function(){if(!err.classList.contains('hidden'))err.classList.add('hidden');});
+      input.addEventListener('input',function(){
+        if(!err.classList.contains('hidden')) err.classList.add('hidden');
+      });
+
+      // URL q 파라미터가 있으면 자동 조회
+      var urlQ = new URLSearchParams(location.search).get('q');
+      if (urlQ){
+        input.value = urlQ;
+        doLookup(urlQ);
+      }
     });
   })();
   </script>
