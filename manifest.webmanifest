@@ -1,0 +1,55 @@
+{
+  "name": "ACHAJA - 중고차 사고이력·침수·정비 조회",
+  "short_name": "ACHAJA",
+  "description": "차량번호 하나로 사고·침수·정비 이력, 리콜 정보, 시세를 한 번에 조회. 공공 데이터 기반.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8f9fa",
+  "theme_color": "#003178",
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "shortcuts": [
+    {
+      "name": "이력조회",
+      "url": "/history",
+      "description": "차량 이력 조회"
+    },
+    {
+      "name": "리콜",
+      "url": "/parts",
+      "description": "자동차 리콜 조회"
+    },
+    {
+      "name": "뉴스",
+      "url": "/news",
+      "description": "자동차 뉴스"
+    },
+    {
+      "name": "블로그",
+      "url": "/blog/",
+      "description": "중고차 가이드"
+    }
+  ]
+}
