@@ -36,7 +36,9 @@
   (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();
   </script>                                                                                                                                                                                                                            
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>                                                                                                                                                  
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>                                                                                          
   <style>                                                   
   :root{                                                                                                                                                                                                                               
@@ -102,7 +104,8 @@
   }}};                                                                                                                                                                                                                                 
   </script>                                                                                                                                                                                                                            
   </head>                                                                                                                                                                                                                              
-  <body class="bg-background text-on-surface font-body">                                                                                                                                                                               
+  <body class="bg-background text-on-surface font-body">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>                                                                                                                                                                               
                                                                                                                                                                                                                                        
   <!-- TopAppBar -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
@@ -128,7 +131,7 @@
     </div>
   </header>
                                                                                                                                                                                                                                        
-  <main class="pt-20 pb-28 max-w-7xl mx-auto px-4 md:px-8">
+  <main id="main" class="pt-20 pb-28 max-w-7xl mx-auto px-4 md:px-8">
                                                                                                                                                                                                                                        
   <!-- Hero -->                                             
   <section class="mb-6">                                                                                                                                                                                                               
@@ -153,15 +156,19 @@
     </div>
   </section>
 
-  <!-- News Grid (dynamic) -->                                                                                                                                                                                                                   
+  <!-- News Grid (dynamic) -->
   <section class="grid grid-cols-1 md:grid-cols-2 gap-4" id="news-grid">
     <div class="col-span-full text-center py-8 text-muted text-sm">불러오는 중…</div>
   </section>
+
+  <div class="text-center mt-8">
+    <button id="news-more" class="hidden px-8 py-3 bg-surface-container-high text-on-surface font-semibold rounded-lg hover:bg-surface-container transition-colors" type="button">더 보기</button>
+  </div>
                                                                                                                                                                                                                                        
   <!-- Footer -->                                                                                                                                                                                                                      
   <footer class="mt-12 pb-md border-t border-app-border pt-8 flex flex-col items-center gap-4">
     <p class="text-[11px] text-muted text-center">본 서비스에서 제공되는 뉴스 데이터는 각 제조사 공지 및 공공 데이터 포털, 제휴 언론사의 정보를 바탕으로 구성됩니다.</p>                                                               
-    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA Corp.</span><span>이용약관</span><span>개인정보처리방침</span></div>
+    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA Corp.</span><a href="/terms/" class="hover:underline">이용약관</a><a href="/privacy/" class="hover:underline">개인정보처리방침</a></div>
   </footer>                                   
                                                                                                                                                                                                                                        
   </main>                                                                                                                                                                                                                              
@@ -226,21 +233,66 @@
     }).join('');
   }
 
-  async function loadNews(category){
+  var CURRENT_CATEGORY='all', CURRENT_START=1, CURRENT_TOTAL=0, LOADED_ITEMS=[];
+  var PAGE_SIZE=20;
+
+  function appendGrid(items){
+    var grid=document.getElementById('news-grid');
+    var html=items.map(function(item){
+      return '<a href="'+escapeHtml(item.link)+'" target="_blank" rel="noopener" class="news-item flex flex-col gap-2 p-5 rounded-3xl bg-surface-container border border-outline-variant/10 hover:border-outline-variant/30 transition-colors">'+
+        '<span class="text-primary-container dark:text-primary text-[11px] font-semibold">'+escapeHtml(item.source||'NEWS')+'</span>'+
+        '<h4 class="font-headline text-base font-semibold text-on-surface line-clamp-2">'+escapeHtml(item.title)+'</h4>'+
+        '<p class="text-on-surface-variant text-sm line-clamp-2">'+escapeHtml(item.description)+'</p>'+
+        '<span class="text-outline text-[11px] mt-1">'+fmtDate(item.pubDate)+'</span>'+
+      '</a>';
+    }).join('');
+    grid.insertAdjacentHTML('beforeend', html);
+  }
+
+  function updateLoadMore(){
+    var btn=document.getElementById('news-more');
+    if(!btn) return;
+    var hasMore = CURRENT_START + PAGE_SIZE - 1 < CURRENT_TOTAL && CURRENT_START + PAGE_SIZE - 1 < 1000;
+    btn.classList.toggle('hidden', !hasMore);
+  }
+
+  async function loadNews(category, append){
     var grid=document.getElementById('news-grid');
     var hero=document.getElementById('news-hero');
-    grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">불러오는 중…</div>';
-    hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">불러오는 중…</div>';
+    var btn=document.getElementById('news-more');
+    if(!append){
+      CURRENT_CATEGORY=category;CURRENT_START=1;LOADED_ITEMS=[];
+      grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">불러오는 중…</div>';
+      hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">불러오는 중…</div>';
+      if(btn) btn.classList.add('hidden');
+    } else {
+      if(btn){btn.disabled=true;btn.textContent='불러오는 중…';}
+    }
     try{
-      var resp=await fetch('/api/news?category='+encodeURIComponent(category));
+      var resp=await fetch('/api/news?category='+encodeURIComponent(category)+'&display='+PAGE_SIZE+'&start='+CURRENT_START);
       var data=await resp.json();
       if(!resp.ok){throw new Error(data.error||'fetch_failed');}
-      renderHero(data.items[0]);
-      renderGrid(data.items.slice(1));
+      CURRENT_TOTAL = data.total || 0;
+      LOADED_ITEMS = LOADED_ITEMS.concat(data.items);
+      if(!append){
+        renderHero(data.items[0]);
+        grid.innerHTML='';
+        renderGrid(data.items.slice(1));
+        if(window.gtag){gtag('event','news_load',{category:category});}
+      } else {
+        appendGrid(data.items);
+        if(window.gtag){gtag('event','news_load_more',{category:category,start:CURRENT_START});}
+      }
+      CURRENT_START += PAGE_SIZE;
+      updateLoadMore();
     }catch(e){
       var msg = (e&&e.message==='API_KEY_MISSING')?'뉴스 API 키가 설정되지 않았습니다. 관리자 설정을 확인해주세요.':'뉴스 불러오기에 실패했습니다. 잠시 후 다시 시도해주세요.';
-      grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">'+msg+'</div>';
-      hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">'+msg+'</div>';
+      if(!append){
+        grid.innerHTML='<div class="col-span-full text-center py-8 text-muted text-sm">'+msg+'</div>';
+        hero.innerHTML='<div class="absolute inset-0 flex items-center justify-center text-slate-300 text-sm">'+msg+'</div>';
+      }
+    } finally {
+      if(btn){btn.disabled=false;btn.textContent='더 보기';}
     }
   }
 
@@ -251,12 +303,17 @@
         buttons.forEach(function(b){b.classList.remove('bg-primary-container','text-white');b.classList.add('bg-surface-container-high','text-on-surface-variant');});
         btn.classList.remove('bg-surface-container-high','text-on-surface-variant');
         btn.classList.add('bg-primary-container','text-white');
-        loadNews(btn.dataset.category);
+        loadNews(btn.dataset.category,false);
       });
     });
   }
 
-  document.addEventListener('DOMContentLoaded',function(){setupCategories();loadNews('all');});
+  document.addEventListener('DOMContentLoaded',function(){
+    setupCategories();
+    loadNews('all',false);
+    var more=document.getElementById('news-more');
+    if(more){more.addEventListener('click',function(){loadNews(CURRENT_CATEGORY,true);});}
+  });
   </script>                                                                                                                                                                                                                            
                                                             
   </body></html>    

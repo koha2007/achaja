@@ -33,7 +33,8 @@ export async function onRequest({ request, env }) {
   const url = new URL(request.url);
   const category = url.searchParams.get('category') || 'all';
   const query = CATEGORY_QUERIES[category] || CATEGORY_QUERIES.all;
-  const display = Math.min(parseInt(url.searchParams.get('display') || '20', 10), 30);
+  const display = Math.min(parseInt(url.searchParams.get('display') || '20', 10), 100);
+  const start = Math.min(Math.max(parseInt(url.searchParams.get('start') || '1', 10), 1), 1000);
 
   if (!env.NAVER_CLIENT_ID || !env.NAVER_CLIENT_SECRET) {
     return new Response(JSON.stringify({ error: 'API_KEY_MISSING' }), {
@@ -42,7 +43,7 @@ export async function onRequest({ request, env }) {
     });
   }
 
-  const apiUrl = `https://openapi.naver.com/v1/search/news.json?query=${encodeURIComponent(query)}&display=${display}&sort=date`;
+  const apiUrl = `https://openapi.naver.com/v1/search/news.json?query=${encodeURIComponent(query)}&display=${display}&start=${start}&sort=date`;
 
   let upstream;
   try {
@@ -76,7 +77,13 @@ export async function onRequest({ request, env }) {
     pubDate: item.pubDate,
   }));
 
-  return new Response(JSON.stringify({ category, items }), {
+  return new Response(JSON.stringify({
+    category,
+    items,
+    total: data.total || items.length,
+    start: data.start || start,
+    display: data.display || items.length,
+  }), {
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       'Cache-Control': 'public, max-age=600',

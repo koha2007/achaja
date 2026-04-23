@@ -35,6 +35,8 @@
 (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();
 </script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -98,6 +100,7 @@ tailwind.config={darkMode:"class",theme:{extend:{
 </script>
 </head>
 <body class="bg-background text-on-surface font-body">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
 
 <!-- TopAppBar -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
@@ -123,7 +126,7 @@ tailwind.config={darkMode:"class",theme:{extend:{
   </div>
 </header>
 
-<main class="pt-20 pb-28 max-w-5xl mx-auto px-4 md:px-8">
+<main id="main" class="pt-20 pb-28 max-w-5xl mx-auto px-4 md:px-8">
 
   <!-- Hero with prominent search -->
   <section class="mb-6">
@@ -187,7 +190,7 @@ tailwind.config={darkMode:"class",theme:{extend:{
   <!-- Data source -->
   <footer class="mt-12 pt-8 border-t border-app-border flex flex-col items-center gap-3">
     <p class="text-[11px] text-muted text-center max-w-xl leading-relaxed">데이터 출처: <a href="https://www.data.go.kr" class="underline" rel="noopener" target="_blank">공공데이터포털</a> 한국교통안전공단 자동차결함 리콜현황 (2023년 기준). 개별 리콜 상세·무상수리 여부는 <a href="https://car.go.kr" class="underline" rel="noopener" target="_blank">자동차리콜센터</a>에서 확인하세요.</p>
-    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA</span></div>
+    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA</span><a href="/terms/" class="hover:underline">이용약관</a><a href="/privacy/" class="hover:underline">개인정보처리방침</a></div>
   </footer>
 
 </main>
@@ -246,6 +249,7 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
     var title='['+r.maker+'] '+r.model+' 리콜 정보';
     var text=r.model+' (생산 '+r.from+' ~ '+r.to+')\n리콜개시: '+r.date+'\n\n'+r.reason+'\n\n출처: ACHAJA';
     var url='https://achaja.net/parts';
+    if(window.gtag){gtag('event','share',{method:navigator.share?'web_share':'clipboard',content_type:'recall',item_id:r.maker+':'+r.model});}
     if(navigator.share){
       navigator.share({title:title,text:text,url:url}).catch(function(){});
     } else if(navigator.clipboard){

@@ -54,7 +54,9 @@
   (function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();                                          
   </script>                                                                                                                                                                                                                            
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>                                                                                          
   <style>                                                                                                                                                                                                                              
   :root{                                                                                                                                                                                                                               
@@ -127,6 +129,7 @@
   </script>                                                                                                                                                                                                                            
   </head>                                                   
   <body class="bg-background text-on-surface font-body min-h-screen pb-24">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
                                                                                                                                                                                                                                        
   <!-- TopAppBar -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
@@ -152,17 +155,18 @@
     </div>
   </header>
                                                                                                                                                                                                                                        
-  <main class="pt-14 max-w-2xl mx-auto">
+  <main id="main" class="pt-14 max-w-2xl mx-auto">
 
   <!-- Hero -->
   <section class="relative px-margin py-xl flex flex-col items-center text-center overflow-hidden bg-gradient-to-b from-primary-container to-[#0d47a1]">
     <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrBvz0ftrrIooq3MjQfm_PEkAmGBQorLcicqwhMJ4rfp2CcegGGbZg1QutxWHdmgT_ikoqkEFvweMdJ8FPeI5vSMgy7rRmnoRV3_bD6QxXA9s6g8t_eartdt3RH57xfSUNqEThb5nVQoyoF3n6XIo2LHI8G02Uo977GsJIz9FU4xgU_d24zw1fehhtpzL3oIZqa3eqIxgxS5CczWRQsiNTjitxldfpmZGEbA4Rt_Rbb7qdnC-7Pv0bK3uDfS64Mhpjd4S3BGEaoVlU');background-size:cover;background-position:center;"></div>                                               
     <h1 class="text-[32px] leading-tight font-headline font-semibold tracking-tight text-white mb-sm z-10">중고차 살 때,<br/>안 속는 가장 확실한 방법</h1>                                                                             
     <p class="text-sm text-blue-100 mb-lg z-10">차량번호 하나로 사고·침수·정비 이력까지 한 번에</p>                                                                                                                                    
-    <div class="w-full max-w-md bg-white rounded-full p-1.5 flex items-center shadow-xl z-10">                                                                                                                                         
-      <input class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md" placeholder="차량번호 또는 VIN을 입력하세요" type="text"/>                                                         
-      <button class="bg-primary-container text-white px-lg py-3 rounded-full font-bold active:scale-95 transition-transform">조회하기</button>                                                                                         
-    </div>                                                                                                                                                                                                                             
+    <form id="hero-form" class="w-full max-w-md bg-white rounded-full p-1.5 flex items-center shadow-xl z-10" action="/history" method="get" role="search" aria-label="차량 조회">
+      <label for="hero-q" class="sr-only">차량번호 또는 VIN</label>
+      <input id="hero-q" name="q" class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md" placeholder="차량번호 또는 VIN을 입력하세요" type="text" autocomplete="off" required minlength="6" maxlength="17"/>
+      <button type="submit" class="bg-primary-container text-white px-lg py-3 rounded-full font-bold active:scale-95 transition-transform">조회하기</button>
+    </form>                                                                                                                                                                                                                             
     <p class="mt-md text-[11px] text-blue-100/80 z-10">기본 조회는 무료 · 상세 리포트는 4,900원부터</p>                                                                                                                                
   </section>                                                                                                                                                                                                                           
                                                             
@@ -293,7 +297,8 @@
 
   <footer class="px-margin py-lg border-t border-app-border text-center">
     <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
-    <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>                                                                                                                                               
+    <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>
+    <p class="mt-xs text-[10px] text-muted"><a href="/terms/" class="hover:underline">이용약관</a> · <a href="/privacy/" class="hover:underline">개인정보처리방침</a></p>                                                                                                                                               
   </footer>                                                                                                                                                                                                                            
                                                                                                                                                                                                                                        
   </main>                                                                                                                                                                                                                              
@@ -324,8 +329,16 @@
     </div>
   </nav>
                                                                                                                                                                                                                                        
-  <script>                                                                                                                                                                                                                             
+  <script>
   function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
-  </script>                                                                                                                                                                                                                            
+  document.addEventListener('DOMContentLoaded',function(){
+    var f=document.getElementById('hero-form');
+    if(f){f.addEventListener('submit',function(e){
+      var v=document.getElementById('hero-q').value.trim();
+      if(!v){e.preventDefault();return;}
+      if(window.gtag){gtag('event','search',{search_term:v,location:'home_hero'});}
+    });}
+  });
+  </script>
                                                             
   </body></html>                                                                       
