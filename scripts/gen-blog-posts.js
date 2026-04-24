@@ -48,6 +48,8 @@ const SHARED_HEAD = (p) => `<!DOCTYPE html>
 </script>
 <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -72,6 +74,7 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
 <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"rgb(var(--c-primary)/<alpha-value>)","primary-container":"rgb(var(--c-primary-container)/<alpha-value>)","background":"rgb(var(--c-background)/<alpha-value>)","surface":"rgb(var(--c-surface)/<alpha-value>)","surface-container":"rgb(var(--c-surface-container)/<alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)","on-surface":"rgb(var(--c-on-surface)/<alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)","outline":"rgb(var(--c-outline)/<alpha-value>)","outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)","header-bg":"rgb(var(--c-header-bg)/<alpha-value>)","nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)","app-border":"rgb(var(--c-app-border)/<alpha-value>)","muted":"rgb(var(--c-muted)/<alpha-value>)","muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)","active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"},fontFamily:{"headline":["Manrope"],"body":["Inter"]},spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","xl":"32px","margin":"20px"}}}};</script>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen pb-24">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
@@ -91,7 +94,7 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   </div>
 </header>
 
-<main class="pt-14 max-w-3xl mx-auto px-margin">
+<main id="main" class="pt-14 max-w-3xl mx-auto px-margin">
 
 <nav aria-label="breadcrumb" class="pt-lg text-xs text-muted">
   <a href="/" class="hover:underline">홈</a> / <a href="/blog/" class="hover:underline">블로그</a> / <span class="text-on-surface">${p.breadcrumb}</span>
@@ -126,6 +129,7 @@ ${p.related.map(r => `    <a href="${r.href}" class="block bg-surface-container-
 <footer class="px-margin py-lg border-t border-app-border text-center mt-xl">
   <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
   <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>
+  <p class="mt-xs text-[10px] text-muted"><a href="/about/" class="hover:underline">소개</a> · <a href="/terms/" class="hover:underline">이용약관</a> · <a href="/privacy/" class="hover:underline">개인정보처리방침</a></p>
 </footer>
 
 </main>
@@ -502,6 +506,367 @@ const posts = [
     <li><strong>주행거리 제한</strong>: 운용리스는 연 2만 km 등 제한 있음. 초과 시 km당 100~300원 추가.</li>
     <li><strong>원상복구 비용</strong>: 반납 시 스크래치·찍힘은 본인 부담. 생각보다 크게 나올 수 있음.</li>
   </ol>`,
+  },
+
+  {
+    slug: 'car-insurance-first-time',
+    title: '자동차 보험 첫 가입 가이드 — 보장·특약·할인 전부 정리',
+    breadcrumb: '자동차 보험',
+    description: '자동차 보험 첫 가입 시 꼭 알아야 할 의무·임의 보장, 자기차량손해, 자기신체사고, 마일리지·블랙박스 할인까지 실전 정리.',
+    ogDesc: '자동차 보험 초보자용 보장·특약·할인 완전 정리.',
+    category: '자동차 보험',
+    icon: 'shield',
+    readTime: 6,
+    ctaTitle: 'ACHAJA 이력조회로 내 차 리콜·침수 확인',
+    ctaText: '보험 가입 전 차량 이력을 확인하면 사고 할증 요인을 미리 파악할 수 있습니다.',
+    ctaBtn: '이력조회 바로가기',
+    ctaHref: '/history',
+    related: [
+      { href: '/blog/car-loan-vs-lease/', cat: '구매 방법', title: '자동차 할부 vs 리스 비교' },
+      { href: '/blog/car-tax-calculator/', cat: '세금·공채', title: '자동차 취득세·등록세 계산법' },
+    ],
+    body: `  <p>처음 차를 사면 바로 마주치는 숙제가 <strong>자동차 보험</strong>입니다. 보험사 7~8곳이 비슷한 상품을 팔고, 특약만 수십 개라 처음 보면 무엇을 넣고 빼야 할지 막막합니다. 이 글은 자동차 보험의 기본 구조와 특약 선택, 실제로 효과 있는 할인까지 한 번에 정리합니다.</p>
+
+  <h2>자동차 보험의 3가지 층위</h2>
+  <p>자동차 보험은 크게 <strong>의무보험 + 임의보험 + 특약</strong>으로 구성됩니다. 순서대로 이해하면 쉽습니다.</p>
+  <h3>1) 의무보험 — 법으로 강제 (미가입 시 운전 불가)</h3>
+  <ul>
+    <li><strong>대인배상Ⅰ</strong>: 사고로 타인이 사망·부상 시 법정 한도까지 보상.</li>
+    <li><strong>대물배상</strong>: 타인의 차·물건을 파손한 경우 2천만 원까지 의무 보장 (부족하므로 임의로 상향).</li>
+  </ul>
+  <h3>2) 임의보험 — 사실상 모두 가입</h3>
+  <ul>
+    <li><strong>대인배상Ⅱ (무한)</strong>: 대인Ⅰ 한도 초과분. <strong>반드시 "무한"</strong>으로 설정. 수억 원대 배상 판례가 많아 한도 설정은 위험합니다.</li>
+    <li><strong>대물배상 (1~10억 원)</strong>: 고급차·버스 사고 대비 최소 3억, 가능하면 10억 권장. 월 1~2천 원 차이.</li>
+    <li><strong>자기신체사고/자동차상해</strong>: 본인·가족 부상 보상. 자동차상해가 보장이 더 폭넓어 추천.</li>
+    <li><strong>무보험차상해</strong>: 무보험 차량에 당했을 때 나와 가족 보상.</li>
+    <li><strong>자기차량손해 (자차)</strong>: 내 차 수리비. 차량가액 500만 원 이상이면 거의 필수. 자차를 빼면 보험료가 30~40% 싸지지만 사고 시 수리비 전액 자비.</li>
+  </ul>
+
+  <h2>자차 보험 — 필수인가 선택인가</h2>
+  <p>자차는 보험료의 상당 부분을 차지하므로 합리적 판단이 필요합니다.</p>
+  <ul>
+    <li><strong>자차 가입 권장</strong>: 신차·준신차, 차량가액 1,000만 원 이상, 주차 환경이 노출된 경우.</li>
+    <li><strong>자차 제외 고려</strong>: 10년 이상 구형, 차량가액 300만 원 이하, 수리비를 자비 부담할 여력이 있는 경우.</li>
+  </ul>
+  <p>자차 보험에서도 자기부담금(예: 20만 원~50만 원)을 설정할 수 있습니다. 부담금을 높이면 보험료가 내려가지만 소액 사고 시 직접 부담이 커집니다.</p>
+
+  <h2>꼭 챙겨야 할 특약 5가지</h2>
+  <ol>
+    <li><strong>긴급출동 서비스</strong>: 배터리 방전·타이어 펑크·잠금 해제·견인. 연 2~3만 원에 10회 내외 무료 출동. 가성비 최고.</li>
+    <li><strong>자동차사고변호사 선임비용</strong>: 중상해 사고로 형사처벌 우려 있을 때 변호사 비용 보장. 월 1천 원 수준.</li>
+    <li><strong>다른 자동차 운전 특약</strong>: 렌터카·지인 차 운전 시 보장. 연 1~2만 원.</li>
+    <li><strong>법률비용지원</strong>: 차량 보수 분쟁 소송비 보장.</li>
+    <li><strong>형사합의금 지원</strong>: 사고로 상대방 중상해·사망 시 합의금 일부 보장.</li>
+  </ol>
+
+  <h2>보험료를 낮추는 실질 할인 7가지</h2>
+  <ul>
+    <li><strong>마일리지 할인</strong>: 연간 주행거리가 1만 km 이하면 최대 38% 할인. 출퇴근 없는 차는 큰 혜택.</li>
+    <li><strong>블랙박스 할인</strong>: 3~5%. 대부분 기본 적용.</li>
+    <li><strong>안전운전 할인 (T맵·DB운전습관)</strong>: 앱으로 운전 습관 측정 후 최대 10%.</li>
+    <li><strong>온라인 가입 (다이렉트)</strong>: 대면 대비 10~15% 저렴. 보장 내용 동일.</li>
+    <li><strong>자녀 할인</strong>: 만 12세 이하 자녀 있으면 3~8%.</li>
+    <li><strong>사고무경력 할인</strong>: 3년간 무사고 시 자동 적용. 보험사 변경해도 승계됨.</li>
+    <li><strong>대중교통 이용 할인</strong>: 후불형 교통카드 실적 연계, 5% 내외.</li>
+  </ul>
+
+  <h2>생애 첫 가입자가 흔히 하는 실수</h2>
+  <ul>
+    <li><strong>최저가만 보고 가입</strong>: 대인Ⅱ를 "한도"로 잡거나 대물을 2천만 원으로 두는 경우. 사고 한 번에 억대 배상 발생 가능.</li>
+    <li><strong>특약 다 빼기</strong>: 긴급출동·자상·무보험차상해까지 빼면 막상 필요할 때 전혀 도움 안 됨.</li>
+    <li><strong>자차 자기부담금 최저로</strong>: 작은 수리마다 보험 처리하면 다음 해 보험료 할증이 더 큼. 자부담금은 30~50만 원대 권장.</li>
+    <li><strong>운전자 범위 "누구나"</strong>: 본인·부부·가족으로 좁힐수록 싸집니다. 꼭 필요한 사람만 지정.</li>
+  </ul>
+
+  <h2>연령·운전자 범위 설정 팁</h2>
+  <p>보험료는 <strong>최연소 운전자의 연령</strong>으로 결정됩니다. 만 30세 부모가 본인만 설정하면 저렴하지만, 21세 자녀를 포함하면 크게 올라갑니다. 자녀가 가끔만 운전한다면 <strong>임시운전자 확대특약</strong>(일 단위) 고려.</p>
+  <p>운전자 범위 옵션은 크게: "1인 한정" → "부부한정" → "가족한정" → "누구나" 순으로 보장이 넓어지며 보험료도 올라갑니다. 실제 운전자만 포함하세요.</p>
+
+  <h2>갱신 전 체크리스트</h2>
+  <ol>
+    <li>보험료 비교 사이트(보험다모아, 굿모아 등)에서 3~4곳 견적 비교.</li>
+    <li>올해 주행거리 10,000 km 이하면 마일리지 특약 사전 등록.</li>
+    <li>사고가 있었다면 할증율 확인 (보험개발원 포털에서 조회 가능).</li>
+    <li>자녀가 성인이 되면 운전자 범위에서 제외해 보험료 절감.</li>
+  </ol>
+
+  <p>자동차 보험은 매년 갱신되므로 한 번 잘 설계해두면 긴 시간 혜택이 누적됩니다. 첫 가입에서 위 체크리스트만 따라가도 연 수십만 원 절감이 가능합니다.</p>`,
+  },
+
+  {
+    slug: 'tire-replacement-guide',
+    title: '타이어 교체 시기와 선택법 — 제조일·트레드·사계절 vs 스노우',
+    breadcrumb: '타이어 교체',
+    description: '타이어 교체 주기, DOT 제조일 해석, 트레드 마모 측정, 사계절·스노우·서머 타이어 선택 기준까지 실전 타이어 가이드.',
+    ogDesc: '타이어 교체 타이밍과 종류 선택 실전 가이드.',
+    category: '정비·관리',
+    icon: 'trip',
+    readTime: 5,
+    ctaTitle: '타이어 관련 리콜도 한 번에 확인',
+    ctaText: '과거 타이어 공기압 경고·TPMS 관련 리콜이 종종 발생합니다. 내 차도 대상인지 확인.',
+    ctaBtn: '리콜 조회',
+    ctaHref: '/parts',
+    related: [
+      { href: '/blog/used-car-checklist/', cat: '구매 체크리스트', title: '중고차 살 때 꼭 확인해야 할 10가지' },
+      { href: '/blog/mileage-fraud/', cat: '미터기 조작', title: '중고차 주행거리 조작 의심 7가지 신호' },
+    ],
+    body: `  <p>타이어는 차량에서 유일하게 <strong>지면과 접촉하는 부품</strong>이라 안전과 직결됩니다. 교체 시기를 놓치면 제동거리가 급격히 길어지고 빗길·눈길에서 사고 위험이 커집니다. 이 글은 타이어 교체 타이밍과 선택 기준을 한 번에 정리합니다.</p>
+
+  <h2>타이어 교체 시기 — 3가지 판단 기준</h2>
+  <h3>1) 트레드 깊이 (홈 깊이)</h3>
+  <p>신품 타이어의 트레드는 일반적으로 7~8 mm입니다. <strong>1.6 mm 이하</strong>로 줄어들면 법적으로 교체 대상이며, 실제 안전을 위해서는 <strong>3 mm</strong>에서 교체를 권장합니다.</p>
+  <p>홈 안쪽에 있는 <strong>마모 한계 표시(삼각형 ▲)</strong>와 같은 높이가 되면 1.6 mm에 도달한 것입니다. 100원 동전을 트레드에 거꾸로 끼웠을 때 이순신 장군의 감투가 보이면 3 mm 이하로 볼 수 있습니다.</p>
+
+  <h3>2) 제조일 (DOT 코드)</h3>
+  <p>타이어 옆면에 있는 <strong>DOT 코드</strong> 끝 4자리가 제조 연·주입니다. 예: "DOT XXXX XXXX <strong>2423</strong>"이면 <strong>2023년 24주 (6월 중순)</strong> 제조.</p>
+  <p>사용 기간이 <strong>5년 이상</strong>이면 주행거리가 적더라도 고무 경화로 그립이 떨어집니다. 10년 이상 된 타이어는 즉시 교체해야 합니다.</p>
+
+  <h3>3) 눈에 보이는 손상</h3>
+  <ul>
+    <li>측면 부풀어오름(belt 손상): 폭발 위험, 즉시 교체.</li>
+    <li>못·이물질 박힘: 트레드 중앙에 지름 6 mm 이하면 펑크 수리 가능, 측면은 반드시 교체.</li>
+    <li>균열(crack): 표면 잔주름은 노화 신호, 깊은 크랙은 교체.</li>
+    <li>편마모: 정렬(얼라인먼트) 문제. 원인 수정 후 교체.</li>
+  </ul>
+
+  <h2>타이어 종류 — 3가지 기본 카테고리</h2>
+  <p>국내 승용차는 대부분 <strong>사계절(All-Season)</strong> 타이어가 기본 장착됩니다. 하지만 주행 환경에 따라 선택지가 다릅니다.</p>
+  <ul>
+    <li><strong>사계절 타이어</strong>: 여름·겨울 모두 무난. 영하 7도 이하에서는 그립 급락. 서울·수도권 가벼운 겨울 기준 OK.</li>
+    <li><strong>서머 타이어 (퍼포먼스)</strong>: 그립·핸들링 최고, 연비 좋음. 영하에서 사실상 사용 불가. 스포츠카 소유자 권장.</li>
+    <li><strong>윈터(스노우) 타이어</strong>: 영하에서 고무가 부드러워 설상·빙판 그립 확보. 강원·산간·스키장 이용자 필수. 여름에 쓰면 마모 가속.</li>
+  </ul>
+
+  <h2>사이즈와 속도·하중 지수 읽는 법</h2>
+  <p>타이어 옆면의 "<strong>225/55R17 97V</strong>" 표기는 다음과 같이 해석합니다.</p>
+  <ul>
+    <li><strong>225</strong>: 단면 폭(mm)</li>
+    <li><strong>55</strong>: 편평비(%) — 폭의 55% 높이</li>
+    <li><strong>R</strong>: 래디얼 구조</li>
+    <li><strong>17</strong>: 휠 지름(inch)</li>
+    <li><strong>97</strong>: 하중 지수 (730 kg/개)</li>
+    <li><strong>V</strong>: 속도 지수 (240 km/h 허용)</li>
+  </ul>
+  <p>차량등록증·운전석 도어 프레임 안쪽 스티커에 <strong>권장 사이즈·공기압</strong>이 적혀 있습니다. 사이즈 변경 시 하중 지수는 원본 이상으로 맞춰야 안전합니다.</p>
+
+  <h2>교체 시 주의사항 4가지</h2>
+  <ol>
+    <li><strong>4짝 동시 교체 권장</strong>: 2짝만 교체하면 좌우 그립 차이로 눈·빗길 스핀 위험. 비용 문제라면 <strong>같은 축(앞 또는 뒤) 2짝</strong>을 함께 교체하고, 새 타이어를 뒤축에 장착하세요.</li>
+    <li><strong>휠 얼라인먼트 재조정</strong>: 교체 후 편마모 예방을 위해 얼라인먼트 측정이 필요합니다. 평균 3~5만 원.</li>
+    <li><strong>휠밸런스</strong>: 고속에서 핸들·차체 떨림을 잡아주는 필수 작업. 타이어 교체 시 함께 진행.</li>
+    <li><strong>제조일 확인</strong>: "새 타이어"라고 해도 창고 보관 2~3년 된 제품일 수 있음. 결제 전 DOT 코드 확인.</li>
+  </ol>
+
+  <h2>공기압 관리 — 가장 쉬운 안전·연비 개선</h2>
+  <p>타이어 공기압은 매달 또는 장거리 주행 전 체크하는 것이 좋습니다. 권장값보다 <strong>20% 낮으면 연비가 3~5% 악화</strong>되고 측면 마모가 급격히 증가합니다.</p>
+  <p>주유소에 대부분 무료 공기주입기가 있고, 차량에 TPMS(공기압 센서)가 장착된 경우 계기판에 알림이 뜹니다. 여름 주행 전·가을 냉각 후에 특히 재측정하세요.</p>
+
+  <h2>수명 연장 팁 5가지</h2>
+  <ul>
+    <li>8,000~10,000 km마다 <strong>앞뒤 타이어 위치 교체(rotation)</strong>: 마모 균일화로 수명 20~30% 연장.</li>
+    <li>과도한 급제동·급가속 자제.</li>
+    <li>최소 월 1회 공기압 점검.</li>
+    <li>연석 주행·깊은 포트홀 진입 피하기.</li>
+    <li>주차 시 직사광선 피해 고무 노화 지연.</li>
+  </ul>
+
+  <p>타이어 교체 비용은 준중형 승용차 기준 1개당 8~15만 원, 4짝 교체 시 공임 포함 40~70만 원 수준입니다. 가격만 보고 저가 모델을 선택하기보다, <strong>제조일·평판·DOT 코드</strong>를 확인해 품질을 확보하는 것이 장기적으로 더 경제적입니다.</p>`,
+  },
+
+  {
+    slug: 'engine-oil-interval',
+    title: '엔진오일 교환 주기와 종류 선택 — 광유·부분합성·합성유 차이',
+    breadcrumb: '엔진오일',
+    description: '엔진오일 교환 주기(km·개월), 광유·부분합성·합성유의 차이, 점도(SAE) 해석, API·ILSAC 규격까지 실전 정리.',
+    ogDesc: '엔진오일 교환 주기와 선택 기준을 한 번에 정리.',
+    category: '정비·관리',
+    icon: 'oil_barrel',
+    readTime: 5,
+    ctaTitle: '내 차 리콜 이력 확인',
+    ctaText: '엔진 관련 리콜이 있는지 확인해 무상 수리를 놓치지 마세요.',
+    ctaBtn: '리콜 조회',
+    ctaHref: '/parts',
+    related: [
+      { href: '/blog/tire-replacement-guide/', cat: '정비·관리', title: '타이어 교체 시기와 선택법' },
+      { href: '/blog/used-car-checklist/', cat: '구매 체크리스트', title: '중고차 살 때 꼭 확인해야 할 10가지' },
+    ],
+    body: `  <p>엔진오일은 엔진 내부 윤활·냉각·청정·밀봉을 담당하는 자동차의 "혈액"입니다. 교환 주기를 놓치면 엔진 마모가 가속되고, 반대로 너무 자주 갈면 불필요한 비용이 듭니다. 이 글은 엔진오일 교환의 현실적 기준과 선택 요령을 정리합니다.</p>
+
+  <h2>교환 주기 — 제조사 공식 vs 현실</h2>
+  <p>제조사 매뉴얼은 대부분 <strong>가솔린 10,000~15,000 km / 1년, 디젤 10,000 km / 1년, 가혹조건 5,000~7,500 km</strong>를 권장합니다. 그러나 한국 주행 환경은 "가혹조건"에 해당하는 경우가 많습니다.</p>
+  <h3>가혹조건 정의 (매뉴얼에 명시)</h3>
+  <ul>
+    <li>짧은 거리 반복 주행 (10 km 이하)</li>
+    <li>잦은 공회전·정체 구간</li>
+    <li>먼지·모래 많은 환경</li>
+    <li>영하 기온에서 잦은 시동</li>
+    <li>산길·급경사 주행</li>
+  </ul>
+  <p>출퇴근이 시내 위주이고 거리가 짧다면 대부분 가혹조건에 해당합니다. <strong>7,000~10,000 km 또는 8~10개월</strong>을 권장합니다.</p>
+
+  <h2>엔진오일 3가지 종류와 가격대</h2>
+  <ul>
+    <li><strong>광유(Mineral)</strong>: 원유 정제 기본 오일. 저렴하지만 열·마찰에 약함. 구형 차량용. 1L 3~7천 원.</li>
+    <li><strong>부분합성유(Semi-Synthetic)</strong>: 광유 + 합성유 혼합. 가성비 최고. 1L 7천~1만 원. 일반 준중형·중형 세단에 충분.</li>
+    <li><strong>합성유(Fully Synthetic)</strong>: 분자 설계 오일. 열·마찰 저항 최고, 엔진 보호 우수. 1L 1.5만~3만 원. 터보·고성능·고연식 차량 권장.</li>
+  </ul>
+  <p>대부분의 최신 가솔린 엔진은 합성유가 표준입니다. 매뉴얼에 "Fully Synthetic Only"라고 명시되어 있으면 반드시 합성유 사용.</p>
+
+  <h2>점도(SAE) 해석 — "5W-30"의 의미</h2>
+  <p>엔진오일 용기에 적힌 "<strong>5W-30</strong>" 같은 표기는 점도 지수입니다.</p>
+  <ul>
+    <li><strong>5W</strong>: 저온(Winter) 점도. 숫자 낮을수록 영하에서 잘 흐름.</li>
+    <li><strong>30</strong>: 고온 점도 (100℃ 기준). 숫자 높을수록 고온에서 점도 유지.</li>
+  </ul>
+  <p>한국 일반 승용차는 <strong>0W-20, 5W-30, 5W-40</strong>이 주류입니다. <strong>차량 매뉴얼에 적힌 권장 점도를 무조건 따르세요.</strong> 엉뚱한 점도를 넣으면 연비·엔진 수명에 악영향을 줍니다.</p>
+
+  <h2>API·ILSAC 규격 — 품질 등급</h2>
+  <p>SAE는 점도, <strong>API·ILSAC</strong>는 품질 규격입니다.</p>
+  <ul>
+    <li><strong>API SP</strong>: 2020년 이후 현행 최신 가솔린 규격. LSPI(저속조기점화) 방지.</li>
+    <li><strong>API SN+</strong>: 그 전 세대. 터보 GDI 엔진은 SP 이상이 안전.</li>
+    <li><strong>ILSAC GF-6</strong>: 북미 기준. 연비·엔진 보호 강화. SP와 세트로 표기되는 경우 많음.</li>
+    <li><strong>ACEA A/B, C</strong>: 유럽 규격. 디젤·수입차는 이 규격 요구 사례 많음.</li>
+  </ul>
+  <p>매뉴얼에 "API SP 이상" 또는 "ACEA C3" 같은 요구 스펙이 적혀 있습니다. 그 미만 등급은 피하세요.</p>
+
+  <h2>직접 교환 vs 정비소 — 비용과 리스크</h2>
+  <p>직접 교환은 부품값만 들어서 저렴하지만, 폐유 처리·볼트 토크·오일필터 장착 오류 등 초보에게는 리스크가 있습니다.</p>
+  <h3>비용 비교 (준중형 세단 4.5L 기준)</h3>
+  <ul>
+    <li><strong>직접 교환</strong>: 합성유 4.5L 5~8만 원 + 오일필터 5천 원 + 드레인 플러그 와셔 1천 원 = 6~9만 원.</li>
+    <li><strong>블루핸즈·공식 서비스센터</strong>: 합성유 기준 12~18만 원 (공임 포함, 순정 오일·필터).</li>
+    <li><strong>사설 카센터</strong>: 8~13만 원 (오일 브랜드 선택 가능).</li>
+    <li><strong>엔진오일 전문점(스피드메이트 등)</strong>: 10~15만 원 (빠르고 깔끔).</li>
+  </ul>
+  <p>중형 SUV·수입차는 30% 이상 비싸집니다. 오일량이 많고 필터가 복잡한 경우가 있기 때문입니다.</p>
+
+  <h2>함께 교체하는 소모품</h2>
+  <ul>
+    <li><strong>오일필터</strong>: 엔진오일과 함께 매번 교체가 원칙.</li>
+    <li><strong>에어필터</strong>: 1~2만 km 또는 1년. 검게 오염되면 교체.</li>
+    <li><strong>에어컨필터</strong>: 1~2만 km. 겨울 직전 교체 권장.</li>
+    <li><strong>미션오일</strong>: 자동변속기 오일. 60,000~100,000 km마다. 교체 잘못하면 변속기 손상 위험이 있어 정비소 권장.</li>
+  </ul>
+
+  <h2>오일 상태 직접 체크 (게이지 확인)</h2>
+  <ol>
+    <li>평지에 주차 후 시동 끄고 10분 대기 (오일이 오일팬으로 떨어지도록).</li>
+    <li>엔진룸의 노란색 손잡이 게이지 뽑아 휴지로 닦음.</li>
+    <li>다시 끝까지 꽂았다 뽑음.</li>
+    <li>게이지 끝의 MIN~MAX 표시 중 오일이 어디쯤 묻었는지 확인.</li>
+    <li>색상 — 황금색/갈색이면 정상, <strong>검은색·점도 없음</strong>이면 교체 시기.</li>
+  </ol>
+
+  <h2>주의사항 — 흔한 실수</h2>
+  <ul>
+    <li><strong>"더 비싼 오일 = 더 좋다"는 오해</strong>: 매뉴얼 스펙을 지키는 것이 먼저. 스펙 넘는 고가 오일은 낭비.</li>
+    <li><strong>과주입</strong>: MAX 이상 넣으면 크랭크축이 오일을 저어 저항↑, 오일 거품 발생. 반드시 MIN~MAX 사이.</li>
+    <li><strong>오래된 재고</strong>: 엔진오일도 개봉 전 5년 이상 지나면 품질 저하. 구입 날짜 확인.</li>
+    <li><strong>주행 직후 교환</strong>: 고온 오일이 위험. 30분~1시간 냉각 후 작업.</li>
+  </ul>
+
+  <p>엔진오일은 주기·종류·점도만 제대로 지키면 큰 돈이 들지 않는 관리입니다. 반대로 관리를 소홀히 하면 엔진 오버홀(수백만 원) 원인이 되므로 <strong>차량 매뉴얼 + 본인의 주행 패턴</strong>을 기준으로 교환 일정을 세워두세요.</p>`,
+  },
+
+  {
+    slug: 'hybrid-vs-ev',
+    title: '하이브리드 vs 전기차 — 총 소유비용·연비·유지비 비교',
+    breadcrumb: '하이브리드 vs 전기차',
+    description: '하이브리드(HEV·PHEV)와 전기차(BEV)의 실제 연비, 보조금, 유지비, 감가까지 5년 총 소유비용(TCO) 관점에서 비교.',
+    ogDesc: '하이브리드와 전기차의 5년 총비용을 숫자로 비교.',
+    category: '친환경차',
+    icon: 'eco',
+    readTime: 6,
+    ctaTitle: '친환경차 리콜도 확인',
+    ctaText: '전기차·하이브리드는 배터리·고전압 관련 리콜 빈도가 높습니다. 내 차 대상 여부 확인.',
+    ctaBtn: '리콜 조회',
+    ctaHref: '/parts',
+    related: [
+      { href: '/blog/ev-battery-life/', cat: '전기차', title: '전기차 배터리 수명과 중고 구매 팁' },
+      { href: '/blog/car-tax-calculator/', cat: '세금·공채', title: '자동차 취득세·등록세 계산법' },
+    ],
+    body: `  <p>신차 구매 시 "하이브리드로 갈까, 전기차로 갈까" 고민하는 분이 많습니다. 단순히 연비만 비교하면 답이 안 나옵니다. 차량가, 보조금, 충전·주유비, 유지비, 5년 후 중고가(감가)까지 모두 넣은 <strong>총 소유비용(TCO)</strong> 관점에서 비교해야 정확합니다.</p>
+
+  <h2>먼저 용어 정리 — HEV·PHEV·BEV·FCEV</h2>
+  <ul>
+    <li><strong>HEV (하이브리드)</strong>: 엔진 + 작은 배터리. 외부 충전 불가. 연비 향상 목적. 예: 쏘나타 하이브리드, 그랜저 하이브리드.</li>
+    <li><strong>PHEV (플러그인 하이브리드)</strong>: HEV + 외부 충전 가능한 큰 배터리. 30~80 km는 전기만으로 주행 가능. 예: BMW 530e, 볼보 XC60 T8.</li>
+    <li><strong>BEV (순수 전기차)</strong>: 배터리 + 전기 모터. 엔진 없음. 예: 아이오닉5, EV6, 테슬라 모델3.</li>
+    <li><strong>FCEV (수소연료전지)</strong>: 수소 + 전기. 국내 현대 넥쏘. 인프라 제약 커서 이 글에서는 제외.</li>
+  </ul>
+
+  <h2>1. 차량가 + 보조금 비교 (2026년 기준)</h2>
+  <p>동급 중형 SUV 기준 대략적인 구매가를 비교하면 다음과 같습니다.</p>
+  <ul>
+    <li><strong>가솔린 SUV</strong>: 3,500만 원.</li>
+    <li><strong>하이브리드 SUV</strong>: 3,900만 원 (취득세 혜택 200만 원 한도).</li>
+    <li><strong>PHEV SUV</strong>: 5,500만 원 (보조금 단계적 폐지, 취득세 감면만).</li>
+    <li><strong>BEV SUV</strong>: 5,800만 원 - 국고보조금 300만~690만 + 지자체 200만~500만 = <strong>실구매가 4,800~5,300만 원</strong>.</li>
+  </ul>
+  <p>초기 비용은 가솔린이 가장 저렴하고, 전기차는 보조금으로 격차를 좁힙니다. 하이브리드는 중간 위치.</p>
+
+  <h2>2. 연료비 비교 (연 15,000 km 기준)</h2>
+  <p>2026년 유가·전기요금을 가정해 계산합니다.</p>
+  <ul>
+    <li><strong>가솔린 12 km/L × 1,700원/L × 15,000 km = 212만 원</strong></li>
+    <li><strong>하이브리드 18 km/L × 1,700원/L × 15,000 km = 142만 원</strong></li>
+    <li><strong>전기차 5.2 km/kWh, 완속 기준 200원/kWh × 2,884 kWh = 58만 원</strong></li>
+    <li><strong>전기차 급속 중심 350원/kWh × 2,884 kWh = 101만 원</strong></li>
+  </ul>
+  <p>전기차는 완속(가정) 충전 비중에 따라 연료비가 크게 차이납니다. 아파트 지하·직장 완속 충전기 사용이 가능하면 가솔린 대비 <strong>연 150만 원 이상 절약</strong>.</p>
+
+  <h2>3. 유지비 — 정비·소모품</h2>
+  <ul>
+    <li><strong>가솔린</strong>: 엔진오일·필터·점화플러그·변속기오일. 연 30~40만 원.</li>
+    <li><strong>하이브리드</strong>: 엔진 소모품은 가솔린과 동일, 배터리 수명 문제로 10년 후 교체 비용(400~800만 원) 고려.</li>
+    <li><strong>전기차</strong>: 엔진 자체가 없어 엔진오일·점화플러그·변속기오일 불필요. 브레이크 패드도 회생제동으로 수명 2배. 연 15~20만 원.</li>
+  </ul>
+  <p>전기차는 정기 정비 비용이 가장 낮지만, <strong>배터리 교체 리스크</strong>가 있습니다. 8년/16만 km 제조사 보증 내에서는 대부분 교체 없이 사용 가능.</p>
+
+  <h2>4. 세제 혜택 — 취득세·자동차세</h2>
+  <ul>
+    <li><strong>가솔린</strong>: 취득세 7%.</li>
+    <li><strong>하이브리드</strong>: 취득세 40만 원 감면(2026년), 연간 자동차세는 배기량 기준으로 일반과 동일.</li>
+    <li><strong>전기차</strong>: 취득세 최대 140만 원 감면, 자동차세 <strong>연 13만 원 정액</strong> (대형 세단도 동일).</li>
+  </ul>
+  <p>대형 SUV·세단일수록 전기차의 자동차세 혜택이 커집니다. 배기량 3,000 cc 가솔린은 연 자동차세만 80만 원 수준인데 전기차는 13만 원입니다.</p>
+
+  <h2>5. 감가 — 5년 후 중고가</h2>
+  <ul>
+    <li><strong>가솔린</strong>: 원가 대비 5년 후 <strong>55~60%</strong> 잔존가치.</li>
+    <li><strong>하이브리드</strong>: 원가 대비 <strong>60~65%</strong>. 연비 선호로 중고 수요 안정적.</li>
+    <li><strong>전기차</strong>: 원가 대비 <strong>40~55%</strong>. 신차 보조금 때문에 원가에서 차감된 실구매가 기준으로 보면 감가가 더 큼. 배터리 수명 불확실성이 중고시장에서 할인 요인.</li>
+  </ul>
+  <p>감가는 전기차가 가장 큽니다. 단, 모델별 편차가 커서 테슬라·아이오닉5·EV6 같은 인기 모델은 가솔린 수준의 감가율을 보이기도 합니다.</p>
+
+  <h2>5년 TCO(총 소유비용) 종합 비교</h2>
+  <p>중형 SUV 기준, 5년간 15,000 km/년 가정:</p>
+  <table>
+    <thead>
+      <tr><th>항목</th><th>가솔린</th><th>하이브리드</th><th>전기차(완속)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>초기 비용 (보조금 차감)</td><td>3,500만</td><td>3,700만</td><td>4,900만</td></tr>
+      <tr><td>5년 연료비</td><td>1,060만</td><td>710만</td><td>290만</td></tr>
+      <tr><td>5년 정비비</td><td>175만</td><td>175만</td><td>85만</td></tr>
+      <tr><td>5년 자동차세·보험</td><td>600만</td><td>550만</td><td>450만</td></tr>
+      <tr><td>5년 후 중고 추정가</td><td>-2,050만</td><td>-2,300만</td><td>-2,450만</td></tr>
+      <tr><td><strong>실부담 TCO</strong></td><td><strong>3,285만</strong></td><td><strong>2,835만</strong></td><td><strong>3,275만</strong></td></tr>
+    </tbody>
+  </table>
+  <p>이 가정에서는 <strong>하이브리드가 가장 저렴</strong>합니다. 다만 전기차는 완속 충전 인프라 유무에 따라 TCO가 수백만 원 움직입니다. 급속만 사용한다면 가솔린과 비슷해지고, 아파트 완속 사용이 원활하면 하이브리드보다 저렴해질 수 있습니다.</p>
+
+  <h2>누가 어떤 차를 선택해야 하나</h2>
+  <ul>
+    <li><strong>하이브리드 추천</strong>: 아파트 완속 충전 불가, 장거리 출장·여행 잦음, 연 2만 km 이상, 5년 이상 보유 예정.</li>
+    <li><strong>전기차 추천</strong>: 아파트·직장 완속 확보, 출퇴근 50 km 이내, 중형급 이상 세단·SUV로 자동차세 혜택 극대화.</li>
+    <li><strong>PHEV 추천</strong>: 단거리 출퇴근 + 주말 장거리 병행, 충전 인프라 모호, 가솔린→전기 징검다리.</li>
+    <li><strong>가솔린 추천</strong>: 초기 비용 부담 최소화, 소형차, 연 1만 km 이하로 연료비 비중 낮음.</li>
+  </ul>
+
+  <p>친환경차 선택의 핵심은 <strong>"내가 실제로 쓰는 주행 패턴"</strong>입니다. 연비만 보고 전기차로 갔다가 충전 스트레스로 후회하는 경우도, 하이브리드가 안전한 선택으로 자리 잡은 이유도 모두 이 패턴에서 나옵니다. 5년간 주유·충전·정비 영수증을 계산해보고 결정하세요.</p>`,
   },
 ];
 
