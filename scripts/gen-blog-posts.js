@@ -23,8 +23,8 @@ const SHARED_HEAD = (p) => `<!DOCTYPE html>
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg"/>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GJW4DK0XK"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4GJW4DK0XK');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
