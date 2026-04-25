@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://achaja.net/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="ACHAJA — 중고차 안 속는 가장 확실한 방법"/>
-<meta name="twitter:description" content="차량번호·VIN 하나로 제조사·리콜 이력 무료 조회. 중고차 구매 가이드 14편."/>
+<meta name="twitter:description" content="차량번호·VIN 하나로 제조사·리콜 이력 무료 조회. 중고차 구매 가이드 20편."/>
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -152,166 +152,257 @@
   <main id="main" class="pt-14 max-w-2xl mx-auto">
 
   <!-- Hero -->
-  <section class="relative px-margin py-xl flex flex-col items-center text-center overflow-hidden bg-gradient-to-b from-primary-container to-[#0d47a1]">
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrBvz0ftrrIooq3MjQfm_PEkAmGBQorLcicqwhMJ4rfp2CcegGGbZg1QutxWHdmgT_ikoqkEFvweMdJ8FPeI5vSMgy7rRmnoRV3_bD6QxXA9s6g8t_eartdt3RH57xfSUNqEThb5nVQoyoF3n6XIo2LHI8G02Uo977GsJIz9FU4xgU_d24zw1fehhtpzL3oIZqa3eqIxgxS5CczWRQsiNTjitxldfpmZGEbA4Rt_Rbb7qdnC-7Pv0bK3uDfS64Mhpjd4S3BGEaoVlU');background-size:cover;background-position:center;"></div>                                               
-    <h1 class="text-[32px] leading-tight font-headline font-semibold tracking-tight text-white mb-sm z-10">중고차 살 때,<br/>안 속는 가장 확실한 방법</h1>
-    <p class="text-sm text-blue-100 mb-sm z-10 font-semibold">아픈차 찾아내기. 아차하면 못 찾고 넘어갑니다.</p>
-    <p class="text-xs text-blue-100/90 mb-lg z-10">국산·수입차 모든 아픈차 다 찾아드립니다 — 모든 정보를 한눈에, ACHAJA.</p>
-    <form id="hero-form" class="w-full max-w-md bg-white rounded-full p-1.5 flex items-center shadow-xl z-10" action="/history" method="get" role="search" aria-label="차량 조회">
+  <section class="relative px-margin pt-xl pb-lg flex flex-col items-center text-center overflow-hidden bg-gradient-to-b from-primary-container to-[#0d47a1]">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrBvz0ftrrIooq3MjQfm_PEkAmGBQorLcicqwhMJ4rfp2CcegGGbZg1QutxWHdmgT_ikoqkEFvweMdJ8FPeI5vSMgy7rRmnoRV3_bD6QxXA9s6g8t_eartdt3RH57xfSUNqEThb5nVQoyoF3n6XIo2LHI8G02Uo977GsJIz9FU4xgU_d24zw1fehhtpzL3oIZqa3eqIxgxS5CczWRQsiNTjitxldfpmZGEbA4Rt_Rbb7qdnC-7Pv0bK3uDfS64Mhpjd4S3BGEaoVlU');background-size:cover;background-position:center;"></div>
+    <span class="z-10 inline-flex items-center gap-1 bg-white/15 text-white text-[11px] font-bold px-2.5 py-1 rounded-full mb-md backdrop-blur-sm"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">bolt</span>3초 안에 결과 · 100% 무료</span>
+    <h1 class="text-[34px] leading-[1.15] font-headline font-bold tracking-tight text-white mb-sm z-10">아픈 차, 한눈에<br/>걸러내세요</h1>
+    <p class="text-sm text-blue-100/95 mb-lg z-10 max-w-sm">차량번호 또는 VIN 한 줄이면 끝.<br/>국산·수입차 모두 무료 조회.</p>
+    <form id="hero-form" class="w-full max-w-md bg-white rounded-full p-1.5 flex items-center shadow-2xl z-10 ring-2 ring-white/20" action="/history" method="get" role="search" aria-label="차량 조회">
       <label for="hero-q" class="sr-only">차량번호 또는 VIN</label>
-      <input id="hero-q" name="q" class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md" placeholder="차량번호 또는 VIN을 입력하세요" type="text" autocomplete="off" required minlength="6" maxlength="17"/>
-      <button type="submit" class="bg-primary-container text-white px-lg py-3 rounded-full font-bold active:scale-95 transition-transform">조회하기</button>
+      <input id="hero-q" name="q" class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md text-base" placeholder="예: 12가3456 또는 VIN 17자리" type="text" autocomplete="off" required minlength="6" maxlength="17"/>
+      <button type="submit" class="bg-amber-400 hover:bg-amber-300 text-slate-900 px-lg py-3 rounded-full font-bold active:scale-95 transition shadow-lg">조회 →</button>
     </form>
-    <p class="mt-md text-[11px] text-blue-100/80 z-10">VIN·리콜 조회 완전 무료 · 국산·수입차 모두 지원</p>
+    <a href="#sample-preview" class="mt-md text-[12px] text-white/90 underline underline-offset-4 decoration-white/40 hover:decoration-white z-10">먼저 샘플 결과 보기 →</a>
   </section>
 
-  <!-- Pricing at a Glance (눈에 잘 띄는 무료/유료 비교) -->
-  <section class="px-margin pt-lg" aria-labelledby="pricing-heading">
-    <div class="flex items-center justify-between mb-md">
-      <h2 id="pricing-heading" class="font-headline text-lg font-semibold">무료 vs 유료 한눈에 보기</h2>
-      <span class="text-[10px] text-muted">2026.04 기준</span>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-      <!-- 무료 -->
-      <div class="bg-emerald-50 dark:bg-emerald-500/10 border-2 border-emerald-500/40 rounded-2xl p-md">
-        <div class="flex items-center gap-sm mb-sm">
-          <span class="bg-emerald-500 text-white text-[11px] font-bold px-2 py-0.5 rounded-full">지금 무료</span>
-          <span class="text-[11px] text-emerald-700 dark:text-emerald-300 font-semibold">로그인 없이 바로 이용</span>
-        </div>
-        <h3 class="font-headline font-bold text-base text-on-surface mb-sm">0원 · 즉시 조회</h3>
-        <ul class="space-y-1.5 text-[12px] text-on-surface leading-snug">
-          <li class="flex gap-xs"><span class="text-emerald-600 dark:text-emerald-400 font-bold">✓</span><span><strong>VIN 디코딩</strong> — 제조사·원산지·연식 (ISO 3779, 전 세계 VIN 지원)</span></li>
-          <li class="flex gap-xs"><span class="text-emerald-600 dark:text-emerald-400 font-bold">✓</span><span><strong>리콜 이력 매칭</strong> — 국산·수입 941건 DB에서 제조사·모델 검색</span></li>
-          <li class="flex gap-xs"><span class="text-emerald-600 dark:text-emerald-400 font-bold">✓</span><span><strong>번호판 용도 분석</strong> — 자가용·렌터카·영업용 판별 (한국 번호판)</span></li>
-          <li class="flex gap-xs"><span class="text-emerald-600 dark:text-emerald-400 font-bold">✓</span><span><strong>자동차 뉴스·구매 가이드 14편</strong></span></li>
-        </ul>
+  <!-- Trust Strip — 데이터 신뢰성 (숫자 강조) -->
+  <section aria-labelledby="trust-heading" class="px-margin py-lg border-b border-app-border bg-surface">
+    <h2 id="trust-heading" class="sr-only">데이터 출처와 신뢰성</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-md">
+      <div class="text-center bg-surface-container-low border border-outline-variant rounded-2xl p-md">
+        <p class="font-headline font-bold text-2xl text-primary-container dark:text-primary leading-none">941<span class="text-sm">건</span></p>
+        <p class="text-[11px] font-semibold text-on-surface mt-xs">공식 리콜 DB</p>
+        <p class="text-[10px] text-muted">한국교통안전공단</p>
       </div>
-      <!-- 유료 -->
-      <div class="bg-surface-container-low border-2 border-outline-variant rounded-2xl p-md">
-        <div class="flex items-center gap-sm mb-sm">
-          <span class="bg-surface-container-high text-muted-strong text-[11px] font-bold px-2 py-0.5 rounded-full">준비 중</span>
-          <span class="text-[11px] text-muted font-semibold">본인인증·결제 연동 후 오픈</span>
-        </div>
-        <h3 class="font-headline font-bold text-base text-on-surface mb-sm">유료 리포트 · 월 구독 (예정가)</h3>
-        <ul class="space-y-1.5 text-[12px] text-on-surface-variant leading-snug">
-          <li class="flex gap-xs"><span class="text-muted font-bold">·</span><span><strong>사고이력 상세</strong> 2,900원 — 보험개발원 데이터</span></li>
-          <li class="flex gap-xs"><span class="text-muted font-bold">·</span><span><strong>정비이력 상세</strong> 1,500원 — 공식·사설 센터 합산</span></li>
-          <li class="flex gap-xs"><span class="text-muted font-bold">·</span><span><strong>시세 정밀분석</strong> 1,900원 — 3년 잔존가치 예측</span></li>
-          <li class="flex gap-xs"><span class="text-muted font-bold">·</span><span><strong>종합 리포트</strong> 4,900원 / <strong>구독</strong> 4,900~29,900원</span></li>
-        </ul>
+      <div class="text-center bg-surface-container-low border border-outline-variant rounded-2xl p-md">
+        <p class="font-headline font-bold text-2xl text-primary-container dark:text-primary leading-none">17<span class="text-sm">자리</span></p>
+        <p class="text-[11px] font-semibold text-on-surface mt-xs">VIN 디코딩</p>
+        <p class="text-[10px] text-muted">ISO 3779 국제표준</p>
+      </div>
+      <div class="text-center bg-surface-container-low border border-outline-variant rounded-2xl p-md">
+        <p class="font-headline font-bold text-2xl text-emerald-600 dark:text-emerald-400 leading-none">₩0</p>
+        <p class="text-[11px] font-semibold text-on-surface mt-xs">완전 무료</p>
+        <p class="text-[10px] text-muted">로그인 없이 즉시</p>
+      </div>
+      <div class="text-center bg-surface-container-low border border-outline-variant rounded-2xl p-md">
+        <p class="font-headline font-bold text-2xl text-primary-container dark:text-primary leading-none">3<span class="text-sm">초</span></p>
+        <p class="text-[11px] font-semibold text-on-surface mt-xs">즉시 결과</p>
+        <p class="text-[10px] text-muted">국산·수입 모두</p>
       </div>
     </div>
-    <!-- 국산/수입차 지원 범위 -->
-    <div class="mt-md bg-surface-container border border-outline-variant rounded-2xl p-md">
-      <div class="flex items-start gap-sm">
-        <span class="material-symbols-outlined text-primary-container dark:text-primary mt-0.5">public</span>
+  </section>
+
+  <!-- 샘플 결과 미리보기 (Carfax sample report 패턴) -->
+  <section id="sample-preview" class="px-margin pt-lg" aria-labelledby="sample-heading">
+    <div class="flex items-center justify-between mb-sm">
+      <h2 id="sample-heading" class="font-headline text-lg font-semibold">결과는 이렇게 나옵니다</h2>
+      <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">샘플</span>
+    </div>
+    <p class="text-xs text-muted mb-md">실제 조회 결과 미리보기 — 신호등으로 한눈에 판단.</p>
+    <div class="bg-surface-container border border-outline-variant rounded-2xl p-md space-y-md">
+      <!-- 한 줄 결론 -->
+      <div class="flex items-center gap-md p-md rounded-xl bg-gradient-to-r from-emerald-500/10 to-emerald-500/5 border border-emerald-500/30">
+        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-bold">아차 점수 84점</p>
+          <p class="font-headline font-bold text-on-surface text-base leading-tight">양호 — 사도 좋은 차</p>
+          <p class="text-[11px] text-muted">사고·침수 이력 없음, 리콜 1건(완료)</p>
+        </div>
+      </div>
+      <!-- 항목별 상세 -->
+      <div class="grid grid-cols-3 gap-sm">
+        <div class="text-center bg-surface-container-low rounded-xl p-sm">
+          <span class="material-symbols-outlined text-emerald-500 text-2xl" style="font-variation-settings:'FILL' 1;">car_crash</span>
+          <p class="text-[10px] text-muted mt-xs">사고이력</p>
+          <p class="text-[12px] font-bold text-on-surface">0건</p>
+        </div>
+        <div class="text-center bg-surface-container-low rounded-xl p-sm">
+          <span class="material-symbols-outlined text-emerald-500 text-2xl" style="font-variation-settings:'FILL' 1;">water_drop</span>
+          <p class="text-[10px] text-muted mt-xs">침수이력</p>
+          <p class="text-[12px] font-bold text-on-surface">없음</p>
+        </div>
+        <div class="text-center bg-surface-container-low rounded-xl p-sm">
+          <span class="material-symbols-outlined text-amber-500 text-2xl" style="font-variation-settings:'FILL' 1;">campaign</span>
+          <p class="text-[10px] text-muted mt-xs">리콜</p>
+          <p class="text-[12px] font-bold text-on-surface">1건 완료</p>
+        </div>
+      </div>
+      <!-- 차량 정보 -->
+      <div class="border-t border-outline-variant pt-md">
+        <p class="text-[10px] uppercase tracking-wider text-muted mb-xs font-semibold">차량 정보</p>
+        <p class="font-headline font-semibold text-sm text-on-surface">현대자동차 2021 아반떼 CN7</p>
+        <p class="text-[11px] text-muted mt-xs">VIN: KMHLS81UMMU••••••• · 자가용 · 한국</p>
+      </div>
+      <a href="/history" class="block text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary text-sm font-bold py-3 rounded-xl active:scale-95 transition shadow-md">내 차도 조회하기 →</a>
+    </div>
+  </section>
+
+  <!-- How it works — 3단계 사용 흐름 -->
+  <section class="px-margin pt-lg" aria-labelledby="how-heading">
+    <h2 id="how-heading" class="font-headline text-lg font-semibold mb-sm">3단계로 끝나는 무료 조회</h2>
+    <p class="text-xs text-muted mb-md">중고차 사기·아픈차를 1분 안에 1차 검증합니다.</p>
+    <ol class="grid grid-cols-1 md:grid-cols-3 gap-md">
+      <li class="bg-surface-container border border-outline-variant rounded-2xl p-md relative">
+        <span class="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-primary-container dark:bg-primary text-white dark:text-on-primary font-bold text-sm flex items-center justify-center">1</span>
+        <div class="flex items-center gap-sm mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary">edit_note</span><h3 class="font-headline font-semibold text-sm">차량번호·VIN 입력</h3></div>
+        <p class="text-[12px] text-on-surface-variant leading-snug">차량번호(예: 123가4567) 또는 VIN 17자리를 입력합니다. 로그인·회원가입 필요 없습니다.</p>
+      </li>
+      <li class="bg-surface-container border border-outline-variant rounded-2xl p-md relative">
+        <span class="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-primary-container dark:bg-primary text-white dark:text-on-primary font-bold text-sm flex items-center justify-center">2</span>
+        <div class="flex items-center gap-sm mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary">manage_search</span><h3 class="font-headline font-semibold text-sm">자동 분석</h3></div>
+        <p class="text-[12px] text-on-surface-variant leading-snug">VIN 디코딩(제조사·연식·원산지) + 한국교통안전공단 리콜 매칭 + 번호판 용도 분석을 즉시 수행합니다.</p>
+      </li>
+      <li class="bg-surface-container border border-outline-variant rounded-2xl p-md relative">
+        <span class="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-primary-container dark:bg-primary text-white dark:text-on-primary font-bold text-sm flex items-center justify-center">3</span>
+        <div class="flex items-center gap-sm mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary">summarize</span><h3 class="font-headline font-semibold text-sm">결과 확인</h3></div>
+        <p class="text-[12px] text-on-surface-variant leading-snug">기본정보·리콜 이력·번호판 분석을 한 화면에서 확인. 의심 매물이면 카히스토리·정비소 정밀 점검으로 넘어갑니다.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 사용자 시나리오 (페르소나 분리) -->
+  <section class="px-margin pt-lg" aria-labelledby="persona-heading">
+    <h2 id="persona-heading" class="font-headline text-lg font-semibold mb-sm">누구에게 맞나요?</h2>
+    <p class="text-xs text-muted mb-md">사용 목적별로 추천 사용법이 다릅니다.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+      <a href="/history" class="block bg-surface-container border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition group">
+        <span class="material-symbols-outlined text-3xl text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">person_search</span>
+        <h3 class="font-headline font-bold text-sm mt-sm text-on-surface">중고차 사려는 분</h3>
+        <p class="text-[11px] text-muted mt-xs leading-relaxed">매물 보기 전에 차량번호로 1차 검증. 사고·침수·리콜 거르고 가도 좋은 차만 보세요.</p>
+        <p class="text-[11px] font-bold text-primary-container dark:text-primary mt-sm group-hover:underline">→ 무료 이력조회</p>
+      </a>
+      <a href="/parts" class="block bg-surface-container border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition group">
+        <span class="material-symbols-outlined text-3xl text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">directions_car</span>
+        <h3 class="font-headline font-bold text-sm mt-sm text-on-surface">이미 차량 소유자</h3>
+        <p class="text-[11px] text-muted mt-xs leading-relaxed">내 차에 리콜 떴는지, 정비소 갈 때 무엇을 점검할지 — 제조사·차종으로 리콜 검색.</p>
+        <p class="text-[11px] font-bold text-primary-container dark:text-primary mt-sm group-hover:underline">→ 리콜 조회</p>
+      </a>
+      <a href="/blog/" class="block bg-surface-container border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition group">
+        <span class="material-symbols-outlined text-3xl text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">storefront</span>
+        <h3 class="font-headline font-bold text-sm mt-sm text-on-surface">딜러·다구매자</h3>
+        <p class="text-[11px] text-muted mt-xs leading-relaxed">매일 여러 대 검수해야 한다면 월 구독 또는 API. 가이드 20편으로 고객 응대도 가능.</p>
+        <p class="text-[11px] font-bold text-primary-container dark:text-primary mt-sm group-hover:underline">→ 가이드 보기</p>
+      </a>
+    </div>
+  </section>                                                                                                                                                                                                                           
+                                                            
+  <!-- 강점 (Coverage + Why 통합) -->
+  <section class="px-margin pt-lg pb-lg" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="font-headline text-lg font-semibold mb-sm">ACHAJA만의 강점</h2>
+    <p class="text-xs text-muted mb-md">무료 + 공식데이터 + 국산수입 통합을 동시에 만족하는 곳은 드뭅니다.</p>
+    <div class="grid grid-cols-2 gap-md">
+      <div class="bg-surface-container p-md rounded-2xl border border-outline-variant">
+        <span class="material-symbols-outlined text-primary-container dark:text-primary text-2xl">savings</span>
+        <h3 class="font-headline font-bold text-sm mt-xs text-on-surface">100% 무료</h3>
+        <p class="text-[11px] text-on-surface-variant mt-xs leading-snug">VIN·리콜 조회 평생 무료. 카히스토리는 건당 ₩770~2,200원.</p>
+      </div>
+      <div class="bg-surface-container p-md rounded-2xl border border-outline-variant">
+        <span class="material-symbols-outlined text-primary-container dark:text-primary text-2xl">verified</span>
+        <h3 class="font-headline font-bold text-sm mt-xs text-on-surface">공식 데이터</h3>
+        <p class="text-[11px] text-on-surface-variant mt-xs leading-snug">한국교통안전공단·국토부·ISO 3779 국제표준만 사용.</p>
+      </div>
+      <div class="bg-surface-container p-md rounded-2xl border border-outline-variant">
+        <span class="material-symbols-outlined text-primary-container dark:text-primary text-2xl">public</span>
+        <h3 class="font-headline font-bold text-sm mt-xs text-on-surface">국산·수입 통합</h3>
+        <p class="text-[11px] text-on-surface-variant mt-xs leading-snug">현대·기아부터 BMW·벤츠·테슬라까지 전 세계 WMI 인식.</p>
+      </div>
+      <div class="bg-surface-container p-md rounded-2xl border border-outline-variant">
+        <span class="material-symbols-outlined text-primary-container dark:text-primary text-2xl">bolt</span>
+        <h3 class="font-headline font-bold text-sm mt-xs text-on-surface">로그인 없이 3초</h3>
+        <p class="text-[11px] text-on-surface-variant mt-xs leading-snug">회원가입·본인인증 없이 입력 즉시 결과.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing — 무료 카드 강조 + 유료 컴팩트 + 이메일 사전등록 -->
+  <section class="px-margin py-lg" aria-labelledby="plans-heading">
+    <h2 id="plans-heading" class="font-headline text-lg font-semibold mb-sm">요금제</h2>
+    <p class="text-xs text-muted mb-md">핵심 기능은 영구 무료. 상세 리포트는 오픈 예정.</p>
+
+    <!-- 무료 카드 (메인) -->
+    <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl p-lg text-white shadow-lg mb-md relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+      <div class="relative z-10">
+        <div class="flex items-center gap-sm mb-sm">
+          <span class="bg-white text-emerald-600 text-[11px] font-bold px-2.5 py-0.5 rounded-full">지금 이용 가능</span>
+          <span class="text-[10px] text-emerald-100 font-semibold">로그인 불필요</span>
+        </div>
+        <p class="font-headline font-bold text-4xl mb-xs leading-none">₩0<span class="text-base font-normal text-emerald-100"> · 평생 무료</span></p>
+        <p class="text-[12px] text-emerald-50 mb-md">중고차 1차 검증에 필요한 모든 것</p>
+        <ul class="grid grid-cols-2 gap-x-sm gap-y-1 text-[12px] mb-md">
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>VIN 디코딩</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>리콜 941건 매칭</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>번호판 용도 분석</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>구매 가이드 20편</li>
+        </ul>
+        <a href="/history" class="block text-center bg-white text-emerald-700 text-sm font-bold py-3 rounded-xl active:scale-95 transition shadow-md">지금 무료로 조회 →</a>
+      </div>
+    </div>
+
+    <!-- 유료 (단건 + 구독) 컴팩트 비교 -->
+    <div class="grid grid-cols-2 gap-sm">
+      <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
+        <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">준비 중</span>
+        <p class="font-headline font-bold text-xl text-on-surface mt-sm leading-none">₩4,900<span class="text-[10px] text-muted font-normal">/건</span></p>
+        <p class="text-[11px] font-semibold text-on-surface mt-xs">종합 리포트</p>
+        <p class="text-[10px] text-muted mt-1 leading-snug">사고·정비·시세 상세 4개 합본. 1대 구매 시 추천.</p>
+      </div>
+      <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
+        <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">준비 중</span>
+        <p class="font-headline font-bold text-xl text-on-surface mt-sm leading-none">₩4,900<span class="text-[10px] text-muted font-normal">/월~</span></p>
+        <p class="text-[11px] font-semibold text-on-surface mt-xs">월 구독</p>
+        <p class="text-[10px] text-muted mt-1 leading-snug">Basic 10건 · Premium 무제한 · Dealer API.</p>
+      </div>
+    </div>
+
+    <!-- 이메일 사전등록 -->
+    <form id="waitlist-form" class="mt-md bg-surface-container-low border border-outline-variant rounded-2xl p-md" action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="flex items-start gap-sm mb-sm">
+        <span class="material-symbols-outlined text-primary-container dark:text-primary mt-0.5">notifications_active</span>
         <div class="flex-1">
-          <p class="font-headline font-semibold text-sm text-on-surface">국산차·수입차 모두 지원</p>
-          <p class="text-[12px] text-on-surface-variant mt-xs leading-relaxed"><strong>VIN 조회</strong>는 현대·기아·제네시스·KG모빌리티부터 벤츠·BMW·아우디·폭스바겐·포르쉐·도요타·렉서스·혼다·닛산·테슬라·포드·볼보·재규어·랜드로버·페라리·람보르기니까지 <strong>전 세계 주요 브랜드</strong>를 인식합니다.<br/><strong>리콜 DB</strong>는 한국교통안전공단 자료 기준이라 <strong>국내 정식 유통된 차량</strong>(국산+수입)을 커버합니다. 병행수입차는 매칭되지 않을 수 있습니다.<br/><strong>번호판 분석</strong>은 한국 번호판만 지원합니다.</p>
+          <p class="text-on-surface text-sm font-bold">유료 리포트 오픈 알림 받기</p>
+          <p class="text-muted text-[11px] mt-xs">사고·정비·시세 상세 리포트가 오픈되면 가장 먼저 알려드립니다.</p>
         </div>
       </div>
-    </div>
-  </section>                                                                                                                                                                                                                           
-                                                            
-  <!-- Free Features -->
-  <section class="px-margin pt-lg" aria-labelledby="free-heading">
-    <h2 id="free-heading" class="font-headline text-lg font-semibold mb-md">지금 바로 쓸 수 있는 무료 기능</h2>
-  </section>
-  <section class="px-margin pb-lg grid grid-cols-2 gap-md">
-    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">qr_code_2</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span></div>
-      <h3 class="font-headline font-semibold text-sm mt-xs">VIN 디코딩</h3><p class="text-on-surface-variant text-[11px]">제조사·원산지·연식 (국산·수입)</p>
-    </div>
-    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">campaign</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span></div>
-      <h3 class="font-headline font-semibold text-sm mt-xs">리콜 이력 매칭</h3><p class="text-on-surface-variant text-[11px]">교통안전공단 941건 DB</p>
-    </div>
-    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">badge</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span></div>
-      <h3 class="font-headline font-semibold text-sm mt-xs">번호판 용도 분석</h3><p class="text-on-surface-variant text-[11px]">자가용·렌터카·영업용</p>
-    </div>
-    <div class="bg-surface-container p-md rounded-2xl border border-outline-variant flex flex-col gap-sm">
-      <div class="flex justify-between items-start"><span class="material-symbols-outlined text-primary-container dark:text-primary">article</span><span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-1.5 py-0.5 rounded-full font-bold">무료</span></div>
-      <h3 class="font-headline font-semibold text-sm mt-xs">구매 가이드·뉴스</h3><p class="text-on-surface-variant text-[11px]">블로그 14편 + 최신 뉴스</p>
-    </div>
-  </section>                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                       
-  <!-- Coming Soon Notice -->
-  <section class="px-margin py-md">
-    <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-md flex items-start gap-md">
-      <span class="material-symbols-outlined text-primary-container dark:text-primary mt-0.5">schedule</span>
-      <div class="flex-1">
-        <p class="text-on-surface text-sm font-semibold">유료 상세 리포트 서비스 준비 중</p>
-        <p class="text-muted text-xs mt-xs leading-relaxed">사고·정비·시세 상세 리포트와 구독 서비스는 본인인증·결제 연동을 거쳐 추후 오픈 예정입니다. 현재는 <strong class="text-on-surface">VIN 디코딩 · 리콜 조회 · 블로그 가이드</strong>를 무료로 이용하실 수 있습니다.</p>
+      <div class="flex gap-sm">
+        <label for="waitlist-email" class="sr-only">이메일</label>
+        <input id="waitlist-email" type="email" name="email" required placeholder="이메일 주소" class="flex-1 bg-surface text-on-surface border border-outline-variant rounded-xl px-md py-2 text-sm focus:ring-2 focus:ring-primary-container dark:focus:ring-primary focus:outline-none"/>
+        <button type="submit" class="bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold active:scale-95 transition">알림 신청</button>
       </div>
-    </div>
+      <p id="waitlist-msg" class="hidden text-[11px] text-emerald-600 dark:text-emerald-400 mt-sm font-semibold">✓ 신청이 완료되었습니다. 오픈하면 알려드릴게요.</p>
+    </form>
+    <p class="mt-md text-[10px] text-muted text-center">가격은 변경될 수 있습니다. 본인인증(NICE)·결제(토스페이먼츠) 연동 후 순차 오픈.</p>
   </section>
 
                                                             
-  <!-- Blog Preview -->
+  <!-- Blog Preview — 핵심 4편만 -->
   <section class="px-margin py-lg" aria-labelledby="blog-heading">
-    <div class="flex items-center justify-between mb-md">
-      <h2 id="blog-heading" class="font-headline text-lg font-semibold">중고차 가이드 <span class="text-xs font-normal text-muted">14편</span></h2>
-      <a href="/blog/" class="text-xs font-bold text-primary-container dark:text-primary hover:underline">전체 보기 →</a>
+    <div class="flex items-center justify-between mb-sm">
+      <h2 id="blog-heading" class="font-headline text-lg font-semibold">꼭 읽을 가이드 <span class="text-xs font-normal text-muted">총 20편</span></h2>
+      <a href="/blog/" class="text-xs font-bold text-primary-container dark:text-primary hover:underline">전체 →</a>
     </div>
+    <p class="text-[11px] text-muted mb-md">중고차 사기 전 1순위로 봐야 할 4편.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
-      <a href="/blog/flood-damaged-car/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">water_drop</span><span class="text-[10px] text-muted font-semibold">침수차 판별</span></div>
-        <h3 class="font-headline font-semibold text-sm">중고차 침수 여부 확인하는 5가지 방법</h3>
-      </a>
-      <a href="/blog/accident-history-check/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">car_crash</span><span class="text-[10px] text-muted font-semibold">사고이력</span></div>
-        <h3 class="font-headline font-semibold text-sm">중고차 사고이력 조회 무료로 하는 법</h3>
-      </a>
-      <a href="/blog/recall-check-guide/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">campaign</span><span class="text-[10px] text-muted font-semibold">리콜 조회</span></div>
-        <h3 class="font-headline font-semibold text-sm">자동차 리콜 조회하는 법 — 내 차도 대상인지 확인</h3>
+      <a href="/blog/used-car-scam-types/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">gpp_bad</span><span class="text-[10px] text-muted font-semibold">사기 예방</span></div>
+        <h3 class="font-headline font-semibold text-sm">중고차 사기 유형 7가지와 예방법</h3>
       </a>
       <a href="/blog/used-car-checklist/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
         <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">checklist</span><span class="text-[10px] text-muted font-semibold">구매 체크리스트</span></div>
-        <h3 class="font-headline font-semibold text-sm">중고차 살 때 꼭 확인해야 할 10가지 체크리스트</h3>
+        <h3 class="font-headline font-semibold text-sm">중고차 살 때 꼭 확인할 10가지</h3>
       </a>
-      <a href="/blog/vin-lookup/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">qr_code_2</span><span class="text-[10px] text-muted font-semibold">VIN 조회</span></div>
-        <h3 class="font-headline font-semibold text-sm">차량번호로 차대번호(VIN) 확인하는 방법</h3>
+      <a href="/blog/flood-damaged-car/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">water_drop</span><span class="text-[10px] text-muted font-semibold">침수차 판별</span></div>
+        <h3 class="font-headline font-semibold text-sm">중고차 침수 여부 확인 5가지 방법</h3>
       </a>
-      <a href="/blog/ev-battery-life/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">battery_charging_full</span><span class="text-[10px] text-muted font-semibold">전기차</span></div>
-        <h3 class="font-headline font-semibold text-sm">전기차 배터리 수명과 중고 구매 시 꼭 체크할 것</h3>
-      </a>
-      <a href="/blog/used-car-price-guide/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">monitoring</span><span class="text-[10px] text-muted font-semibold">시세 분석</span></div>
-        <h3 class="font-headline font-semibold text-sm">중고차 시세 정확하게 계산하는 5가지 방법</h3>
-      </a>
-      <a href="/blog/car-tax-calculator/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">calculate</span><span class="text-[10px] text-muted font-semibold">세금·공채</span></div>
-        <h3 class="font-headline font-semibold text-sm">자동차 취득세·등록세 계산법과 절세 팁</h3>
-      </a>
-      <a href="/blog/mileage-fraud/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">speed</span><span class="text-[10px] text-muted font-semibold">미터기 조작</span></div>
-        <h3 class="font-headline font-semibold text-sm">중고차 주행거리 조작 의심되는 7가지 신호</h3>
-      </a>
-      <a href="/blog/car-loan-vs-lease/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">credit_card</span><span class="text-[10px] text-muted font-semibold">구매 방법</span></div>
-        <h3 class="font-headline font-semibold text-sm">자동차 할부 vs 리스 비교 — 뭐가 더 유리할까</h3>
-      </a>
-      <a href="/blog/car-insurance-first-time/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">shield</span><span class="text-[10px] text-muted font-semibold">자동차 보험</span></div>
-        <h3 class="font-headline font-semibold text-sm">자동차 보험 첫 가입 가이드 — 보장·특약·할인 전부 정리</h3>
-      </a>
-      <a href="/blog/tire-replacement-guide/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">trip</span><span class="text-[10px] text-muted font-semibold">정비·관리</span></div>
-        <h3 class="font-headline font-semibold text-sm">타이어 교체 시기와 선택법 — 제조일·트레드·사계절</h3>
-      </a>
-      <a href="/blog/engine-oil-interval/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">oil_barrel</span><span class="text-[10px] text-muted font-semibold">정비·관리</span></div>
-        <h3 class="font-headline font-semibold text-sm">엔진오일 교환 주기와 종류 선택 — 광유·부분합성·합성유</h3>
-      </a>
-      <a href="/blog/hybrid-vs-ev/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">eco</span><span class="text-[10px] text-muted font-semibold">친환경차</span></div>
-        <h3 class="font-headline font-semibold text-sm">하이브리드 vs 전기차 — 총 소유비용·연비·유지비 비교</h3>
+      <a href="/blog/used-car-where-to-buy/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+        <div class="flex items-center gap-2 mb-xs"><span class="material-symbols-outlined text-primary-container dark:text-primary text-sm">storefront</span><span class="text-[10px] text-muted font-semibold">구매 채널</span></div>
+        <h3 class="font-headline font-semibold text-sm">매매상사·직거래·경매·인증 비교</h3>
       </a>
     </div>
+    <div class="text-center mt-md"><a href="/blog/" class="inline-block text-xs font-bold text-primary-container dark:text-primary hover:underline">나머지 16편 더 보기 →</a></div>
   </section>
 
   <!-- FAQ -->
@@ -346,6 +437,20 @@
         <summary class="cursor-pointer font-headline font-semibold text-sm flex items-center justify-between">유료 서비스는 언제 오픈되나요?<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span></summary>
         <p class="mt-sm text-xs text-on-surface-variant leading-relaxed">본인인증(NICE/KCB)과 결제(토스페이먼츠) 연동, 그리고 카히스토리/하이픈 등 유료 데이터 계약이 완료되는 대로 단계적으로 오픈 예정입니다. 정확한 일정은 확정되는 대로 공지합니다.</p>
       </details>
+    </div>
+  </section>
+
+  <!-- Bottom CTA — 다시 검색 -->
+  <section class="px-margin pb-xl" aria-labelledby="cta-heading">
+    <div class="rounded-2xl bg-gradient-to-br from-primary-container to-[#0d47a1] p-lg text-center">
+      <h2 id="cta-heading" class="font-headline text-xl font-bold text-white mb-xs">지금 바로 무료 조회</h2>
+      <p class="text-[12px] text-blue-100/90 mb-md">차량번호 또는 VIN 한 줄 — 1초 안에 결과 확인</p>
+      <form action="/history" method="get" role="search" aria-label="하단 차량 조회" class="bg-white rounded-full p-1.5 flex items-center shadow-xl max-w-md mx-auto">
+        <label for="cta-q" class="sr-only">차량번호 또는 VIN</label>
+        <input id="cta-q" name="q" class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md text-sm" placeholder="차량번호 또는 VIN" type="text" autocomplete="off" required minlength="6" maxlength="17"/>
+        <button type="submit" class="bg-primary-container text-white px-md py-2 rounded-full font-bold text-sm active:scale-95 transition-transform">조회</button>
+      </form>
+      <p class="mt-sm text-[10px] text-blue-100/80">로그인 불필요 · 100% 무료</p>
     </div>
   </section>
 
@@ -391,6 +496,25 @@
       var v=document.getElementById('hero-q').value.trim();
       if(!v){e.preventDefault();return;}
       if(window.gtag){gtag('event','search',{search_term:v,location:'home_hero'});}
+    });}
+    var c=document.querySelector('form[aria-label="하단 차량 조회"]');
+    if(c){c.addEventListener('submit',function(e){
+      var v=document.getElementById('cta-q').value.trim();
+      if(!v){e.preventDefault();return;}
+      if(window.gtag){gtag('event','search',{search_term:v,location:'home_bottom_cta'});}
+    });}
+    var w=document.getElementById('waitlist-form');
+    if(w){w.addEventListener('submit',function(e){
+      e.preventDefault();
+      var em=document.getElementById('waitlist-email').value.trim();
+      if(!em)return;
+      if(window.gtag){gtag('event','sign_up',{method:'email_waitlist',email_domain:em.split('@')[1]||''});}
+      try{var prev=JSON.parse(localStorage.getItem('achaja_waitlist')||'[]');prev.push({email:em,at:new Date().toISOString()});localStorage.setItem('achaja_waitlist',JSON.stringify(prev));}catch(_){}
+      var msg=document.getElementById('waitlist-msg');
+      if(msg)msg.classList.remove('hidden');
+      w.querySelector('input').value='';
+      w.querySelector('button').textContent='완료';
+      w.querySelector('button').disabled=true;
     });}
   });
   </script>

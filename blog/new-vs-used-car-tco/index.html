@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>신차 vs 중고차 5년 총비용(TCO) 비교 — 어느 쪽이 더 이득일까 — ACHAJA 블로그</title>
+<meta name="description" content="신차와 3년 중고차의 5년 총 소유비용(TCO)을 차량가·세금·보험·정비·잔존가치까지 숫자로 비교했습니다."/>
+<meta name="author" content="ACHAJA"/>
+<meta name="theme-color" content="#003178"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://achaja.net/blog/new-vs-used-car-tco/"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg"/>
+<link rel="manifest" href="/manifest.webmanifest"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4GJW4DK0XK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4GJW4DK0XK');</script>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="ACHAJA"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta property="og:url" content="https://achaja.net/blog/new-vs-used-car-tco/"/>
+<meta property="og:title" content="신차 vs 중고차 5년 총비용 비교"/>
+<meta property="og:description" content="신차와 중고차의 5년 TCO 비교 — 차량가·세금·보험·정비·잔존가치."/>
+<meta property="og:image" content="https://achaja.net/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="신차 vs 중고차 5년 총비용 비교"/>
+<meta name="twitter:description" content="신차와 중고차의 5년 TCO 숫자로 비교."/>
+<meta name="twitter:image" content="https://achaja.net/og-image.png"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BlogPosting","headline":"신차 vs 중고차 5년 총비용(TCO) 비교","description":"신차와 3년 중고차의 5년 총 소유비용을 숫자로 비교.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-25","dateModified":"2026-04-25","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/new-vs-used-car-tco/"},"inLanguage":"ko-KR"},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
+{"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
+{"@type":"ListItem","position":3,"name":"신차 vs 중고차 5년 TCO 비교","item":"https://achaja.net/blog/new-vs-used-car-tco/"}
+]}
+]}
+</script>
+<script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--c-primary:0 49 120;--c-primary-container:13 71 161;--c-on-primary:255 255 255;--c-background:248 249 250;--c-surface:248 249 250;--c-surface-container:237 238 239;--c-surface-container-low:243 244 245;--c-on-surface:25 28 29;--c-on-surface-variant:67 70 82;--c-outline:115 119 131;--c-outline-variant:195 198 212;--c-header-bg:248 249 250;--c-nav-bg:255 255 255;--c-app-border:225 227 228;--c-muted:100 116 139;--c-muted-strong:71 85 105;--c-active-bg:219 234 254;}
+html.dark{--c-primary:176 198 255;--c-primary-container:0 49 120;--c-on-primary:0 45 111;--c-background:18 19 24;--c-surface:18 19 24;--c-surface-container:30 31 36;--c-surface-container-low:26 27 32;--c-on-surface:226 226 232;--c-on-surface-variant:196 198 210;--c-outline:142 144 156;--c-outline-variant:67 70 81;--c-header-bg:2 6 23;--c-nav-bg:15 23 42;--c-app-border:39 39 42;--c-muted:161 161 170;--c-muted-strong:82 82 91;--c-active-bg:30 58 138;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+body{min-height:100dvh;}
+.pb-safe{padding-bottom:env(safe-area-inset-bottom);}
+.prose h2{font-family:Manrope,sans-serif;font-weight:600;font-size:1.25rem;line-height:1.75rem;margin-top:2rem;margin-bottom:0.75rem;}
+.prose h3{font-family:Manrope,sans-serif;font-weight:600;font-size:1rem;line-height:1.5rem;margin-top:1.5rem;margin-bottom:0.5rem;}
+.prose p{font-size:0.95rem;line-height:1.75rem;margin-bottom:1rem;}
+.prose ul{margin-bottom:1rem;padding-left:1.25rem;}
+.prose li{font-size:0.95rem;line-height:1.6rem;margin-bottom:0.375rem;list-style:disc;}
+.prose strong{font-weight:600;color:rgb(var(--c-primary-container));}
+html.dark .prose strong{color:rgb(var(--c-primary));}
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem;}
+.prose th,.prose td{border:1px solid rgb(var(--c-outline-variant));padding:0.5rem;text-align:left;}
+.prose th{background:rgb(var(--c-surface-container));font-weight:600;}
+</style>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"rgb(var(--c-primary)/<alpha-value>)","primary-container":"rgb(var(--c-primary-container)/<alpha-value>)","background":"rgb(var(--c-background)/<alpha-value>)","surface":"rgb(var(--c-surface)/<alpha-value>)","surface-container":"rgb(var(--c-surface-container)/<alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)","on-surface":"rgb(var(--c-on-surface)/<alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)","outline":"rgb(var(--c-outline)/<alpha-value>)","outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)","header-bg":"rgb(var(--c-header-bg)/<alpha-value>)","nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)","app-border":"rgb(var(--c-app-border)/<alpha-value>)","muted":"rgb(var(--c-muted)/<alpha-value>)","muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)","active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"},fontFamily:{"headline":["Manrope"],"body":["Inter"]},spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","xl":"32px","margin":"20px"}}}};</script>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-24">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+    <a href="/" class="flex items-center gap-2"><span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span></a>
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">홈</a>
+      <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">뉴스</a>
+      <a href="/blog/" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">블로그</a>
+      <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">이력조회</a>
+      <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">리콜</a>
+      <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">마이</a>
+    </nav>
+    <div class="flex items-center gap-1">
+      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined dark:hidden">dark_mode</span><span class="material-symbols-outlined hidden dark:inline">light_mode</span></button>
+      <a href="/my" aria-label="내 프로필" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined">account_circle</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="pt-14 max-w-3xl mx-auto px-margin">
+
+<nav aria-label="breadcrumb" class="pt-lg text-xs text-muted">
+  <a href="/" class="hover:underline">홈</a> / <a href="/blog/" class="hover:underline">블로그</a> / <span class="text-on-surface">신차 vs 중고차 TCO 비교</span>
+</nav>
+
+<article class="py-lg prose">
+  <header class="mb-lg pb-md border-b border-outline-variant">
+    <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">balance</span><span class="text-xs text-muted">구매 결정</span></div>
+    <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">신차 vs 중고차 5년 총비용 비교 — 어느 쪽이 더 이득일까</h1>
+    <p class="text-xs text-muted">2026년 4월 25일 · ACHAJA 에디터 · 약 6분 소요</p>
+  </header>
+
+  <p>"신차로 갈까 중고차로 갈까" 망설일 때 답은 단순합니다. <strong>차량가만 보지 말고 5년 총 소유비용(TCO)으로 계산</strong>하는 것. 여기에는 차량가, 취득세·등록세, 자동차세 5년치, 보험료, 정비·소모품, 그리고 5년 후 잔존가치까지 모두 들어갑니다. 동급 SUV 기준으로 시뮬레이션한 결과, 결정 기준이 명확해집니다.</p>
+
+  <h2>비교 시나리오 — 동급 중형 SUV</h2>
+  <p>현실적인 비교를 위해 다음 두 차량을 가정합니다.</p>
+  <ul>
+    <li><strong>A안: 신차</strong> — 2026년식 중형 SUV 가솔린, 차량가 3,800만 원, 풀옵션.</li>
+    <li><strong>B안: 3년 중고차</strong> — 2023년식 동일 모델, 시세 2,400만 원, 주행거리 4만 km.</li>
+  </ul>
+
+  <h2>1. 초기 비용 (차량가 + 세금)</h2>
+  <ul>
+    <li><strong>신차 3,800만</strong>: 차량가 3,800만 + 취득세 7%(266만) + 공채(지역별 50~100만) + 등록비 = 약 <strong>4,200만 원</strong>.</li>
+    <li><strong>중고차 2,400만</strong>: 차량가 2,400만 + 취득세 7%(168만) + 공채·등록비 = 약 <strong>2,650만 원</strong>.</li>
+  </ul>
+  <p>중고차는 초기에만 <strong>1,550만 원 절약</strong>됩니다. 같은 돈으로 더 좋은 옵션 차량을 살 수 있다는 뜻입니다.</p>
+
+  <h2>2. 5년 자동차세</h2>
+  <p>자동차세는 차령(연식)이 오래될수록 5%씩 감면됩니다.</p>
+  <ul>
+    <li><strong>신차</strong>: 첫해 100% → 5년차 75%, 5년 누적 약 <strong>250만 원</strong>(2,000cc 기준).</li>
+    <li><strong>3년 중고차</strong>: 첫해 85% → 5년차 65%, 5년 누적 약 <strong>200만 원</strong>.</li>
+  </ul>
+
+  <h2>3. 보험료 (자차 포함)</h2>
+  <ul>
+    <li><strong>신차</strong>: 신차 자차 비싸 첫해 약 130만, 5년 누적 약 <strong>550만 원</strong>.</li>
+    <li><strong>중고차</strong>: 자차 보험가가 신차의 60% 수준, 5년 누적 약 <strong>380만 원</strong>.</li>
+  </ul>
+
+  <h2>4. 정비·소모품</h2>
+  <ul>
+    <li><strong>신차 5년</strong>: 보증 기간 내라 큰 정비 없음. 정기점검·엔진오일·타이어 1회 교체 정도. 5년 약 <strong>200만 원</strong>.</li>
+    <li><strong>중고차 5년</strong>: 차령 3→8년 구간. 타이밍벨트·미션오일·서스펜션 등 큰 정비 발생. 5년 약 <strong>350만 원</strong>.</li>
+  </ul>
+
+  <h2>5. 5년 후 잔존가치 (감가)</h2>
+  <ul>
+    <li><strong>신차 → 5년 후</strong>: 원가 대비 50%. 3,800만 → 약 <strong>1,900만</strong>.</li>
+    <li><strong>3년 중고차 → 추가 5년(차령 8년) 후</strong>: 매입가 대비 45%. 2,400만 → 약 <strong>1,080만</strong>.</li>
+  </ul>
+  <p>5년 후 차를 팔거나 폐차할 때 회수되는 금액. 신차는 절대 금액으로는 더 받지만, 감가율(50% 손실 vs 55% 손실)은 비슷합니다.</p>
+
+  <h2>5년 TCO 종합 비교</h2>
+  <table>
+    <thead><tr><th>항목</th><th>신차 3,800만</th><th>3년 중고차 2,400만</th></tr></thead>
+    <tbody>
+      <tr><td>초기 비용</td><td>4,200만</td><td>2,650만</td></tr>
+      <tr><td>5년 자동차세</td><td>250만</td><td>200만</td></tr>
+      <tr><td>5년 보험료</td><td>550만</td><td>380만</td></tr>
+      <tr><td>5년 정비·소모품</td><td>200만</td><td>350만</td></tr>
+      <tr><td>5년 후 잔존가치</td><td>-1,900만</td><td>-1,080만</td></tr>
+      <tr><td><strong>실부담 TCO</strong></td><td><strong>3,300만</strong></td><td><strong>2,500만</strong></td></tr>
+    </tbody>
+  </table>
+  <p>5년 기준 <strong>중고차가 800만 원 저렴</strong>합니다. 단, 수치는 차종·옵션·주행거리·정비 이력에 따라 ±300만 원 변동이 가능합니다.</p>
+
+  <h2>금액 외 트레이드오프</h2>
+  <ul>
+    <li><strong>보증</strong>: 신차는 제조사 보증 3~5년 + 부분 8~10년. 중고차는 매매상사 보증 1년 또는 보증 없음. 큰 결함 발생 시 신차가 안전.</li>
+    <li><strong>최신 안전장비</strong>: ADAS·차로유지·자동긴급제동은 신차일수록 잘 작동. 3~5년 차이로도 안전 격차 큼.</li>
+    <li><strong>연비</strong>: 동일 차종이라도 신형은 연비 5~10% 향상되는 경우가 많음.</li>
+    <li><strong>이력 리스크</strong>: 중고차는 사고·침수 이력이 숨어 있을 수 있음. <strong>VIN·차량번호 무료 조회 + 카히스토리 + 정비소 진단</strong>은 필수.</li>
+  </ul>
+
+  <h2>누구에게 무엇이 맞나</h2>
+  <ul>
+    <li><strong>신차 추천</strong>: 보증·최신 안전장비 우선, 차령 7년 이상 장기 보유, 사고·침수 이력 우려 큰 사람.</li>
+    <li><strong>중고차 추천</strong>: 같은 예산으로 한 단계 위 차종을 원하는 사람, 기본 점검 능력 있는 사람, 3~5년 후 갈아탈 계획.</li>
+  </ul>
+  <p>핵심은 "차량가 차이"가 아니라 "5년 누적 차이"를 보는 것. 그리고 중고차 선택 시에는 이력 검증이 추가 비용을 막아줍니다.</p>
+
+  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
+    <h3 class="font-headline font-semibold text-base mb-sm">중고차 선택 시 이력 먼저 확인</h3>
+    <p class="text-sm text-on-surface-variant mb-md">차량번호·VIN으로 제조사·연식·리콜을 무료 조회하고 카히스토리 보고서로 사고 검증.</p>
+    <a href="/history" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">무료 조회하기 →</a>
+  </div>
+</article>
+
+<section class="pb-xl">
+  <h2 class="font-headline text-lg font-semibold mb-md">함께 보면 좋은 글</h2>
+  <div class="grid gap-md md:grid-cols-2">
+    <a href="/blog/used-car-price-guide/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+      <div class="text-xs text-muted mb-xs">시세 분석</div>
+      <div class="font-headline font-semibold text-sm">중고차 시세 정확하게 계산하는 5가지 방법</div>
+    </a>
+    <a href="/blog/car-tax-calculator/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+      <div class="text-xs text-muted mb-xs">세금·공채</div>
+      <div class="font-headline font-semibold text-sm">자동차 취득세·등록세 계산법</div>
+    </a>
+  </div>
+</section>
+
+<footer class="px-margin py-lg border-t border-app-border text-center mt-xl">
+  <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
+  <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>
+  <p class="mt-xs text-[10px] text-muted"><a href="/about/" class="hover:underline">소개</a> · <a href="/terms/" class="hover:underline">이용약관</a> · <a href="/privacy/" class="hover:underline">개인정보처리방침</a></p>
+</footer>
+
+</main>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">
+  <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
+    <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">home</span><span class="font-headline text-[10px] font-medium mt-0.5">홈</span></a>
+    <a href="/news" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">newspaper</span><span class="font-headline text-[10px] font-medium mt-0.5">뉴스</span></a>
+    <a href="/blog/" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">article</span><span class="font-headline text-[10px] font-bold mt-0.5">블로그</span></a>
+    <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">history</span><span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span></a>
+    <a href="/parts" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">campaign</span><span class="font-headline text-[10px] font-medium mt-0.5">리콜</span></a>
+  </div>
+</nav>
+
+<script>function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}</script>
+</body></html>

@@ -157,6 +157,37 @@
 
   <!-- VIN 결과 -->
   <section id="history-vin-result" class="hidden space-y-lg">
+    <!-- 한 줄 결론 (신호등) -->
+    <div id="verdict-card" class="rounded-3xl p-lg border-2 transition-colors bg-gradient-to-br from-emerald-500/15 to-emerald-500/5 border-emerald-500/40">
+      <div class="flex items-center gap-md">
+        <div id="verdict-icon-wrap" class="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+          <span id="verdict-icon" class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p id="verdict-score" class="text-[10px] uppercase tracking-wider font-bold text-emerald-700 dark:text-emerald-400">아차 점수 —</p>
+          <p id="verdict-title" class="font-headline font-bold text-on-surface text-lg leading-tight">분석 중…</p>
+          <p id="verdict-detail" class="text-[12px] text-on-surface-variant mt-xs">VIN 디코딩과 리콜 매칭을 수행하고 있습니다.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-sm mt-md">
+        <div class="text-center bg-surface/60 rounded-xl p-sm">
+          <span class="material-symbols-outlined text-emerald-500 text-xl" style="font-variation-settings:'FILL' 1;">verified</span>
+          <p class="text-[10px] text-muted mt-xs">VIN</p>
+          <p id="verdict-vin-status" class="text-[11px] font-bold text-on-surface">유효</p>
+        </div>
+        <div class="text-center bg-surface/60 rounded-xl p-sm">
+          <span class="material-symbols-outlined text-emerald-500 text-xl" style="font-variation-settings:'FILL' 1;">campaign</span>
+          <p class="text-[10px] text-muted mt-xs">리콜</p>
+          <p id="verdict-recall-status" class="text-[11px] font-bold text-on-surface">확인중</p>
+        </div>
+        <div class="text-center bg-surface/60 rounded-xl p-sm">
+          <span class="material-symbols-outlined text-slate-400 text-xl">car_crash</span>
+          <p class="text-[10px] text-muted mt-xs">사고/침수</p>
+          <p class="text-[11px] font-bold text-muted">유료(준비)</p>
+        </div>
+      </div>
+      <p class="text-[10px] text-muted mt-sm leading-relaxed">※ VIN·리콜 기준 1차 검증입니다. 사고·침수·정비 상세는 본인인증·결제 후 별도 조회.</p>
+    </div>
     <!-- Vehicle Basic Info from VIN -->
     <div class="bg-surface-container-high rounded-3xl p-lg border border-outline-variant/30">
       <div class="flex items-start justify-between mb-md">
@@ -363,10 +394,55 @@
 
     function fmtDate(d){ return d ? d.replace(/-/g,'.') : ''; }
 
+    function updateVerdict(recallCount, vinValid){
+      var card = $('verdict-card');
+      var iconWrap = $('verdict-icon-wrap');
+      var icon = $('verdict-icon');
+      var scoreEl = $('verdict-score');
+      var titleEl = $('verdict-title');
+      var detailEl = $('verdict-detail');
+      var vinStatusEl = $('verdict-vin-status');
+      var recallStatusEl = $('verdict-recall-status');
+      if (!card) return;
+      var level, score, title, detail, color, bg, border, iconName;
+      if (vinValid === false){
+        level='danger'; score='주의'; title='VIN 체크디지트 불일치'; detail='차대번호 입력을 다시 확인하세요. 잘못된 VIN일 수 있습니다.';
+        color='red'; iconName='error';
+      } else if (recallCount === 0){
+        level='good'; score='아차 점수 84점'; title='양호 — 사도 좋은 차'; detail='제조사 리콜 이력이 없습니다. 사고·침수 이력은 별도 확인 필요.';
+        color='emerald'; iconName='check_circle';
+      } else if (recallCount <= 2){
+        level='caution'; score='아차 점수 65점'; title='주의 — 리콜 확인 필요'; detail='해당 제조사에 '+recallCount+'건의 리콜이 있습니다. 대상 차량인지 아래에서 확인하세요.';
+        color='amber'; iconName='warning';
+      } else {
+        level='warning'; score='아차 점수 50점'; title='검토 필요 — 리콜 다수'; detail='해당 제조사에 '+recallCount+'건의 리콜이 누적되어 있습니다. 본인 차량 해당 여부를 꼭 확인하세요.';
+        color='orange'; iconName='warning';
+      }
+      var palette = {
+        emerald:{bg:'from-emerald-500/15 to-emerald-500/5',border:'border-emerald-500/40',iconBg:'bg-emerald-500',scoreColor:'text-emerald-700 dark:text-emerald-400'},
+        amber:{bg:'from-amber-500/15 to-amber-500/5',border:'border-amber-500/40',iconBg:'bg-amber-500',scoreColor:'text-amber-700 dark:text-amber-400'},
+        orange:{bg:'from-orange-500/15 to-orange-500/5',border:'border-orange-500/40',iconBg:'bg-orange-500',scoreColor:'text-orange-700 dark:text-orange-400'},
+        red:{bg:'from-red-500/15 to-red-500/5',border:'border-red-500/40',iconBg:'bg-red-500',scoreColor:'text-red-700 dark:text-red-400'}
+      };
+      var p = palette[color];
+      card.className = 'rounded-3xl p-lg border-2 transition-colors bg-gradient-to-br '+p.bg+' '+p.border;
+      iconWrap.className = 'w-14 h-14 rounded-full '+p.iconBg+' flex items-center justify-center flex-shrink-0 shadow-lg';
+      icon.textContent = iconName;
+      scoreEl.className = 'text-[10px] uppercase tracking-wider font-bold '+p.scoreColor;
+      scoreEl.textContent = score;
+      titleEl.textContent = title;
+      detailEl.textContent = detail;
+      vinStatusEl.textContent = vinValid===false ? '오류' : '유효';
+      recallStatusEl.textContent = recallCount===0 ? '0건' : recallCount+'건';
+      if (window.gtag){ gtag('event','verdict_shown',{level:level,recall_count:recallCount}); }
+    }
+
     function renderRecalls(list){
       var summary = $('recall-summary');
       var listEl = $('recall-list');
       var toggle = $('recall-toggle');
+      var count = (list && list.length) || 0;
+      updateVerdict(count, true);
       if (!list || list.length === 0){
         summary.innerHTML = '<p class="text-emerald-600 dark:text-emerald-400 font-headline text-xl font-semibold">0건</p><p class="text-muted text-xs mt-xs">2023년 리콜 기록에서 해당 제조사 이력이 없습니다.</p>';
         listEl.classList.add('hidden'); toggle.classList.add('hidden');
@@ -413,9 +489,11 @@
       $('vin-wmi').textContent = d.makerCode;
       $('vin-full').textContent = d.vin;
       var badge = $('vin-verified-badge');
-      if (d.checkDigitStrict && !d.checkDigitValid){
+      var vinValid = !(d.checkDigitStrict && !d.checkDigitValid);
+      if (!vinValid){
         badge.className = 'bg-red-500/10 border border-red-500/30 px-2 py-1 rounded-md flex items-center gap-1';
         badge.innerHTML = '<span class="material-symbols-outlined text-[14px] text-red-500">error</span><span class="text-[10px] font-bold text-red-500">체크디지트 불일치</span>';
+        updateVerdict(0, false);
       }
       show('history-vin-result');
     }
