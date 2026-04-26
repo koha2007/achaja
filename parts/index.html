@@ -185,14 +185,18 @@ tailwind.config={darkMode:"class",theme:{extend:{
     <div class="text-center py-12 text-muted text-sm">데이터 로딩 중…</div>
   </section>
 
-  <div class="text-center mt-8">
-    <button id="load-more" class="hidden px-8 py-3 bg-surface-container-high text-on-surface font-semibold rounded-lg">더 보기</button>
+  <div class="text-center mt-8 space-y-3">
+    <p id="load-counter" class="hidden text-xs text-muted"></p>
+    <div class="flex flex-col sm:flex-row gap-2 justify-center items-center">
+      <button id="load-more" class="hidden px-8 py-3 bg-primary-container dark:bg-primary text-white dark:text-on-primary font-bold rounded-lg shadow hover:opacity-90 transition-opacity">더 보기</button>
+      <button id="load-all" class="hidden px-6 py-3 bg-surface-container-high text-on-surface font-semibold rounded-lg hover:bg-surface-container-highest transition-colors text-sm">전체 보기</button>
+    </div>
   </div>
 
   <!-- Data source -->
   <footer class="mt-12 pt-8 border-t border-app-border flex flex-col items-center gap-3">
     <p class="text-[11px] text-muted text-center max-w-xl leading-relaxed">데이터 출처: <a href="https://www.data.go.kr" class="underline" rel="noopener" target="_blank">공공데이터포털</a> 한국교통안전공단 자동차결함 리콜현황 (2023년 기준). 개별 리콜 상세·무상수리 여부는 <a href="https://car.go.kr" class="underline" rel="noopener" target="_blank">자동차리콜센터</a>에서 확인하세요.</p>
-    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA</span><a href="/about/" class="hover:underline">소개</a><a href="/terms/" class="hover:underline">이용약관</a><a href="/privacy/" class="hover:underline">개인정보처리방침</a></div>
+    <div class="flex gap-6 text-muted-strong text-xs"><span>© 2026 ACHAJA Corp. All Rights Reserved.</span><a href="/about/" class="hover:underline">소개</a><a href="/terms/" class="hover:underline">이용약관</a><a href="/privacy/" class="hover:underline">개인정보처리방침</a></div>
   </footer>
 
 </main>
@@ -294,8 +298,26 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
       });
     });
     var lm=document.getElementById('load-more');
-    if(FILTERED.length>VISIBLE){lm.classList.remove('hidden');lm.textContent='더 보기 (+'+Math.min(20,FILTERED.length-VISIBLE)+')';}
-    else {lm.classList.add('hidden');}
+    var la=document.getElementById('load-all');
+    var lc=document.getElementById('load-counter');
+    var shown=Math.min(VISIBLE,FILTERED.length);
+    if(FILTERED.length>VISIBLE){
+      lm.classList.remove('hidden');
+      lm.textContent='더 보기 (+'+Math.min(20,FILTERED.length-VISIBLE)+')';
+      la.classList.remove('hidden');
+      la.textContent='전체 '+FILTERED.length.toLocaleString()+'건 보기';
+      lc.classList.remove('hidden');
+      lc.textContent=shown.toLocaleString()+' / '+FILTERED.length.toLocaleString()+'건 표시';
+    } else {
+      lm.classList.add('hidden');
+      la.classList.add('hidden');
+      if(FILTERED.length>20){
+        lc.classList.remove('hidden');
+        lc.textContent='전체 '+FILTERED.length.toLocaleString()+'건 표시 완료';
+      } else {
+        lc.classList.add('hidden');
+      }
+    }
     document.getElementById('stat-matched').textContent=FILTERED.length.toLocaleString();
   }
 
@@ -460,7 +482,8 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
       hideAutocomplete();
       applyFilters();
     });
-    document.getElementById('load-more').addEventListener('click',function(){VISIBLE+=20;render();});
+    document.getElementById('load-more').addEventListener('click',function(){VISIBLE+=20;render();if(window.gtag){gtag('event','recall_load_more',{visible:VISIBLE});}});
+    document.getElementById('load-all').addEventListener('click',function(){VISIBLE=FILTERED.length;render();if(window.gtag){gtag('event','recall_load_all',{total:FILTERED.length});}});
   });
 })();
 </script>
