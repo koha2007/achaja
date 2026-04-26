@@ -13,18 +13,6 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/apple-touch-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
-    },
-    {
       "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
@@ -34,13 +22,13 @@
       "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/og-image.png",
-      "sizes": "1200x630",
+      "src": "/icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ],
   "categories": ["business", "utilities"],
@@ -48,22 +36,42 @@
     {
       "name": "이력조회",
       "url": "/history",
-      "description": "차량 이력 조회"
+      "description": "차량 이력 조회",
+      "icons": [{ "src": "/icon-96.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
       "name": "리콜",
       "url": "/parts",
-      "description": "자동차 리콜 조회"
+      "description": "자동차 리콜 조회",
+      "icons": [{ "src": "/icon-96.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
       "name": "뉴스",
       "url": "/news",
-      "description": "자동차 뉴스"
+      "description": "자동차 뉴스",
+      "icons": [{ "src": "/icon-96.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
       "name": "블로그",
       "url": "/blog/",
-      "description": "중고차 가이드"
+      "description": "중고차 가이드",
+      "icons": [{ "src": "/icon-96.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "ACHAJA 데스크톱 - 차량 이력 조회"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "ACHAJA 모바일 - 홈 화면"
     }
   ]
 }
