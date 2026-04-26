@@ -319,54 +319,324 @@
     </div>
   </section>
 
-  <!-- Pricing — 무료 카드 강조 + 유료 컴팩트 + 이메일 사전등록 -->
-  <section class="px-margin py-lg" aria-labelledby="plans-heading">
-    <h2 id="plans-heading" class="font-headline text-lg font-semibold mb-sm">요금제</h2>
-    <p class="text-xs text-muted mb-md">핵심 기능은 영구 무료. 상세 리포트는 오픈 예정.</p>
+  <!-- Pricing — 글로벌 SaaS 패턴 (AI 요약 + 토글 + 비교표 + 신뢰지표) -->
+  <section class="px-margin py-xl" aria-labelledby="plans-heading">
+    <!-- 섹션 헤더 -->
+    <div class="text-center mb-lg">
+      <span class="inline-flex items-center gap-1 bg-violet-100 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300 text-[10px] font-bold px-2.5 py-1 rounded-full mb-sm">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+        AI 요약 포함 · 합리적인 가격
+      </span>
+      <h2 id="plans-heading" class="font-headline text-2xl font-bold text-on-surface mb-xs leading-tight">필요한 만큼만,<br/>딱 맞는 가격</h2>
+      <p class="text-xs text-muted">기본 검증은 평생 무료 · 정밀 분석만 유료로</p>
+    </div>
 
-    <!-- 무료 카드 (메인) -->
-    <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl p-lg text-white shadow-lg mb-md relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+    <!-- 무료 플랜 (메인 카드) -->
+    <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700 rounded-3xl p-lg text-white shadow-xl mb-md relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
       <div class="relative z-10">
-        <div class="flex items-center gap-sm mb-sm">
+        <div class="flex items-center gap-sm mb-sm flex-wrap">
           <span class="bg-white text-emerald-600 text-[11px] font-bold px-2.5 py-0.5 rounded-full">지금 이용 가능</span>
-          <span class="text-[10px] text-emerald-100 font-semibold">로그인 불필요</span>
+          <span class="text-[10px] text-emerald-50 font-semibold">로그인 불필요 · 무제한</span>
         </div>
-        <p class="font-headline font-bold text-4xl mb-xs leading-none">₩0<span class="text-base font-normal text-emerald-100"> · 평생 무료</span></p>
-        <p class="text-[12px] text-emerald-50 mb-md">중고차 1차 검증에 필요한 모든 것</p>
-        <ul class="grid grid-cols-2 gap-x-sm gap-y-1 text-[12px] mb-md">
-          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>VIN 디코딩</li>
-          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>리콜 941건 매칭</li>
-          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>번호판 용도 분석</li>
-          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>구매 가이드 26편</li>
+        <p class="font-headline font-bold text-4xl mb-xs leading-none">₩0<span class="text-base font-normal text-emerald-100 ml-1">평생 무료</span></p>
+        <p class="text-[12px] text-emerald-50 mb-md">중고차 1차 검증, 이거면 충분합니다</p>
+        <p class="text-[10px] uppercase tracking-wider text-emerald-100 font-bold mb-sm">제공 항목</p>
+        <ul class="grid grid-cols-1 gap-y-1.5 text-[13px] mb-md">
+          <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-[16px] mt-0.5 flex-shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span><span><strong>차량 기본정보</strong> — 연식·색상·주행거리</span></li>
+          <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-[16px] mt-0.5 flex-shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span><span><strong>침수 여부</strong> 확인</span></li>
+          <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-[16px] mt-0.5 flex-shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span><span><strong>리콜 정보</strong> 941건 매칭</span></li>
+          <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-[16px] mt-0.5 flex-shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span><span><strong>이력 건수</strong> 확인</span></li>
+          <li class="flex gap-sm items-start"><span class="material-symbols-outlined text-[16px] mt-0.5 flex-shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span><span><strong>AI 한 줄 요약</strong> <span class="text-[10px] bg-white/25 px-1.5 py-0.5 rounded-full ml-1">규칙 기반</span></span></li>
         </ul>
+        <p class="text-[11px] text-emerald-50/90 mb-sm bg-white/10 rounded-lg p-sm">
+          <span class="material-symbols-outlined text-[12px] align-middle">tips_and_updates</span>
+          이런 분께 추천 — 매물 1~2대 빠르게 거르고 싶은 일반 구매자
+        </p>
         <a href="/history" class="block text-center bg-white text-emerald-700 text-sm font-bold py-3 rounded-xl active:scale-95 transition shadow-md">지금 무료로 조회 →</a>
       </div>
     </div>
 
-    <!-- 유료 (단건 + 구독) 컴팩트 비교 -->
-    <div class="grid grid-cols-2 gap-sm">
-      <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
-        <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">준비 중</span>
-        <p class="font-headline font-bold text-xl text-on-surface mt-sm leading-none">₩4,900<span class="text-[10px] text-muted font-normal">/건</span></p>
-        <p class="text-[11px] font-semibold text-on-surface mt-xs">종합 리포트</p>
-        <p class="text-[10px] text-muted mt-1 leading-snug">사고·정비·시세 상세 4개 합본. 1대 구매 시 추천.</p>
+    <!-- AI 요약 기능 강조 박스 -->
+    <div class="bg-gradient-to-br from-violet-500/10 via-blue-500/5 to-blue-500/10 dark:from-violet-900/30 dark:via-blue-900/20 dark:to-blue-900/30 border border-violet-500/30 rounded-3xl p-lg mb-lg">
+      <div class="flex items-center gap-sm mb-sm">
+        <span class="inline-flex items-center gap-1 bg-violet-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+          <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+          NEW
+        </span>
+        <h3 class="font-headline font-bold text-base text-on-surface">AI가 한눈에 정리해드립니다</h3>
       </div>
+      <div class="grid grid-cols-1 gap-sm">
+        <div class="bg-white/70 dark:bg-black/30 rounded-2xl p-md border border-violet-500/20">
+          <div class="flex items-start gap-sm">
+            <span class="material-symbols-outlined text-emerald-500 mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-xs flex-wrap">
+                <p class="text-sm font-bold text-on-surface">규칙 기반 한 줄 요약</p>
+                <span class="text-[9px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-1.5 py-0.5 rounded-full font-bold">무료</span>
+              </div>
+              <p class="text-[11px] text-muted mt-1 leading-relaxed">사고건수 · 침수여부 · 소유자 변경 조건으로 자동 판단</p>
+              <p class="text-[11px] text-on-surface bg-surface-container-low rounded-lg p-2 mt-xs italic">예: "사고 0건 · 침수 없음 · 1인 소유 → 양호한 상태"</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white/70 dark:bg-black/30 rounded-2xl p-md border border-violet-500/30">
+          <div class="flex items-start gap-sm">
+            <span class="material-symbols-outlined text-violet-500 mt-0.5" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-xs flex-wrap">
+                <p class="text-sm font-bold text-on-surface">Claude AI 상세 분석</p>
+                <span class="text-[9px] bg-violet-100 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300 px-1.5 py-0.5 rounded-full font-bold">유료</span>
+                <span class="text-[9px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded-full font-bold">캐싱 ✓</span>
+              </div>
+              <p class="text-[11px] text-muted mt-1 leading-relaxed">차량 이력 전체를 Claude AI로 종합 분석 · 위험 요소·구매 협상 포인트까지 도출. 같은 차량 재조회 시 저장된 결과 즉시 제공.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 토글: 건당 vs 구독 -->
+    <div class="flex justify-center mb-md">
+      <div role="tablist" class="inline-flex bg-surface-container border border-outline-variant rounded-full p-1 shadow-sm">
+        <button data-plan-type="onetime" role="tab" aria-selected="true" class="plan-tab px-md py-2 rounded-full text-xs font-bold bg-primary-container text-white dark:bg-primary dark:text-on-primary transition-all">건당 결제</button>
+        <button data-plan-type="subscription" role="tab" aria-selected="false" class="plan-tab px-md py-2 rounded-full text-xs font-bold text-muted transition-all">월 구독 <span class="text-[9px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-1.5 py-0.5 rounded-full ml-1 font-bold">최대 60%↓</span></button>
+      </div>
+    </div>
+
+    <!-- 건당 결제 플랜 -->
+    <div id="plans-onetime" class="space-y-sm">
+      <p class="text-[11px] text-center text-muted mb-sm">필요할 때만 한 건씩 결제</p>
+      <!-- 종합 리포트 — BEST -->
+      <div class="bg-gradient-to-br from-primary-container to-[#0d47a1] dark:from-primary dark:to-[#1a5fc8] text-white rounded-3xl p-lg shadow-xl relative overflow-hidden">
+        <div class="absolute top-3 right-3">
+          <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow-md">★ BEST</span>
+        </div>
+        <p class="font-headline font-bold text-lg dark:text-on-primary">종합 리포트</p>
+        <p class="text-[11px] text-blue-100 dark:text-on-primary/80 mt-xs">사고·정비·시세·AI 분석 4개 합본</p>
+        <p class="font-headline font-bold text-3xl mt-sm leading-none dark:text-on-primary">₩4,900<span class="text-xs font-normal text-blue-100 dark:text-on-primary/70">/건</span></p>
+        <ul class="mt-md space-y-1 text-[12px]">
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>사고이력 상세 (보험개발원)</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>정비이력 상세</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>시세 정밀분석 (3년 잔존가치)</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>Claude AI 종합 분석</li>
+        </ul>
+        <p class="text-[11px] mt-md bg-white/15 rounded-lg p-sm dark:text-on-primary"><span class="material-symbols-outlined text-[12px] align-middle">tips_and_updates</span> 이런 분께 추천 — 1대 진지하게 구매할 때 한방에</p>
+      </div>
+      <!-- 사고이력 상세 -->
       <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
-        <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">준비 중</span>
-        <p class="font-headline font-bold text-xl text-on-surface mt-sm leading-none">₩4,900<span class="text-[10px] text-muted font-normal">/월~</span></p>
-        <p class="text-[11px] font-semibold text-on-surface mt-xs">월 구독</p>
-        <p class="text-[10px] text-muted mt-1 leading-snug">Basic 10건 · Premium 무제한 · Dealer API.</p>
+        <div class="flex items-start justify-between gap-sm">
+          <div class="flex-1 min-w-0">
+            <p class="font-headline font-bold text-base text-on-surface">사고이력 상세</p>
+            <p class="text-[11px] text-muted mt-xs">보험개발원 카히스토리 연동</p>
+          </div>
+          <p class="font-headline font-bold text-xl text-on-surface flex-shrink-0">₩2,900<span class="text-[10px] text-muted font-normal">/건</span></p>
+        </div>
+      </div>
+      <!-- 정비이력 상세 -->
+      <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
+        <div class="flex items-start justify-between gap-sm">
+          <div class="flex-1 min-w-0">
+            <p class="font-headline font-bold text-base text-on-surface">정비이력 상세</p>
+            <p class="text-[11px] text-muted mt-xs">공식·사설 센터 합산 기록</p>
+          </div>
+          <p class="font-headline font-bold text-xl text-on-surface flex-shrink-0">₩1,500<span class="text-[10px] text-muted font-normal">/건</span></p>
+        </div>
+      </div>
+      <!-- 시세 정밀분석 -->
+      <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
+        <div class="flex items-start justify-between gap-sm">
+          <div class="flex-1 min-w-0">
+            <p class="font-headline font-bold text-base text-on-surface">시세 정밀분석</p>
+            <p class="text-[11px] text-muted mt-xs">3년 잔존가치 예측</p>
+          </div>
+          <p class="font-headline font-bold text-xl text-on-surface flex-shrink-0">₩1,900<span class="text-[10px] text-muted font-normal">/건</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 구독 플랜 -->
+    <div id="plans-subscription" class="hidden space-y-sm">
+      <p class="text-[11px] text-center text-muted mb-sm">정기적으로 차량을 검수한다면</p>
+      <!-- Basic -->
+      <div class="bg-surface-container border border-outline-variant rounded-2xl p-md">
+        <div class="flex items-start justify-between gap-sm mb-sm">
+          <div>
+            <p class="font-headline font-bold text-base text-on-surface">Basic</p>
+            <p class="text-[11px] text-muted">월 5회 종합 리포트</p>
+          </div>
+          <div class="text-right flex-shrink-0">
+            <p class="font-headline font-bold text-xl text-on-surface leading-none">₩4,900<span class="text-[10px] text-muted font-normal">/월</span></p>
+          </div>
+        </div>
+        <ul class="text-[12px] space-y-1 text-on-surface-variant">
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span>월 5회 종합 리포트 포함</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span>AI 상세 분석 포함</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span>리포트 PDF 다운로드</li>
+        </ul>
+        <p class="text-[11px] mt-sm text-muted bg-surface-container-low rounded-lg p-sm"><span class="material-symbols-outlined text-[12px] align-middle">tips_and_updates</span> 이런 분께 추천 — 매달 1~5대 둘러보는 분</p>
+      </div>
+      <!-- Premium — 추천 -->
+      <div class="bg-gradient-to-br from-primary-container to-[#0d47a1] dark:from-primary dark:to-[#1a5fc8] text-white rounded-3xl p-lg shadow-xl relative overflow-hidden ring-4 ring-amber-400/40">
+        <div class="absolute top-3 right-3">
+          <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow-md">⭐ 가장 인기</span>
+        </div>
+        <p class="font-headline font-bold text-lg dark:text-on-primary">Premium</p>
+        <p class="text-[11px] text-blue-100 dark:text-on-primary/80 mt-xs">무제한 조회 · 모든 기능</p>
+        <p class="font-headline font-bold text-3xl mt-sm leading-none dark:text-on-primary">₩9,900<span class="text-xs font-normal text-blue-100 dark:text-on-primary/70">/월</span></p>
+        <p class="text-[11px] text-blue-100 dark:text-on-primary/70 mt-1">건당 결제 대비 약 67% 절약</p>
+        <ul class="mt-md space-y-1 text-[12px]">
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>종합 리포트 무제한</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>Claude AI 우선 처리</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>차량 비교 도구</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>리포트 보관·공유 링크</li>
+          <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>이메일 알림 (관심 차량)</li>
+        </ul>
+        <p class="text-[11px] mt-md bg-white/15 rounded-lg p-sm dark:text-on-primary"><span class="material-symbols-outlined text-[12px] align-middle">tips_and_updates</span> 이런 분께 추천 — 신중하게 여러 대 비교 중인 분</p>
+      </div>
+      <!-- Dealer -->
+      <div class="bg-surface-container border-2 border-outline-variant rounded-2xl p-md">
+        <div class="flex items-start justify-between gap-sm mb-sm">
+          <div>
+            <p class="font-headline font-bold text-base text-on-surface flex items-center gap-1">Dealer <span class="text-[9px] bg-slate-700 dark:bg-slate-300 text-white dark:text-slate-900 px-1.5 py-0.5 rounded-full font-bold">PRO</span></p>
+            <p class="text-[11px] text-muted">사업자·딜러 전용</p>
+          </div>
+          <div class="text-right flex-shrink-0">
+            <p class="font-headline font-bold text-xl text-on-surface leading-none">₩29,900<span class="text-[10px] text-muted font-normal">/월</span></p>
+          </div>
+        </div>
+        <ul class="text-[12px] space-y-1 text-on-surface-variant">
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span>Premium 전체 기능</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span><strong>API 연동</strong> (사내 시스템)</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span>일괄 조회 (CSV 업로드)</li>
+          <li class="flex gap-xs items-center"><span class="material-symbols-outlined text-[14px] text-emerald-500" style="font-variation-settings:'FILL' 1;">check_circle</span>전담 매니저 지원</li>
+        </ul>
+        <p class="text-[11px] mt-sm text-muted bg-surface-container-low rounded-lg p-sm"><span class="material-symbols-outlined text-[12px] align-middle">tips_and_updates</span> 이런 분께 추천 — 매매상사·검수기사·차량 관리 업체</p>
+      </div>
+    </div>
+
+    <!-- 기능 비교표 -->
+    <div class="mt-lg bg-surface-container border border-outline-variant rounded-3xl overflow-hidden">
+      <div class="p-md border-b border-outline-variant bg-surface-container-low">
+        <h3 class="font-headline font-bold text-sm text-on-surface">한눈에 비교</h3>
+        <p class="text-[10px] text-muted mt-1">제공 기능을 플랜별로 정리했습니다</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-[12px] min-w-[480px]">
+          <thead>
+            <tr class="border-b border-outline-variant">
+              <th class="text-left p-sm font-semibold text-muted">기능</th>
+              <th class="p-sm font-semibold text-emerald-600 dark:text-emerald-400 text-center w-16">무료</th>
+              <th class="p-sm font-semibold text-on-surface text-center w-16">건당</th>
+              <th class="p-sm font-semibold text-primary-container dark:text-primary text-center w-16">구독</th>
+            </tr>
+          </thead>
+          <tbody class="text-on-surface-variant">
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">차량 기본정보</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">리콜 정보</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">침수 여부</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">AI 한 줄 요약 <span class="text-[9px] text-muted">(규칙 기반)</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50 bg-violet-500/5">
+              <td class="p-sm font-semibold">Claude AI 상세 분석</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-violet-500 text-[18px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-violet-500 text-[18px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">사고이력 상세</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">정비이력 상세</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">시세 정밀분석</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr class="border-b border-outline-variant/50">
+              <td class="p-sm">PDF 리포트 저장</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings:'FILL' 1;">check_circle</span></td>
+            </tr>
+            <tr>
+              <td class="p-sm">API 연동</td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center"><span class="material-symbols-outlined text-muted text-[18px]">close</span></td>
+              <td class="p-sm text-center text-[10px] font-bold text-primary-container dark:text-primary">Dealer만</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 신뢰 지표 -->
+    <div class="mt-md grid grid-cols-2 gap-sm">
+      <div class="bg-surface-container-low border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+        <span class="material-symbols-outlined text-emerald-500 flex-shrink-0" style="font-variation-settings:'FILL' 1;">verified</span>
+        <div class="min-w-0">
+          <p class="text-[11px] font-bold text-on-surface">공공 데이터</p>
+          <p class="text-[10px] text-muted">국토부 · 교통안전공단</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+        <span class="material-symbols-outlined text-primary-container dark:text-primary flex-shrink-0" style="font-variation-settings:'FILL' 1;">shield_lock</span>
+        <div class="min-w-0">
+          <p class="text-[11px] font-bold text-on-surface">결제 보안</p>
+          <p class="text-[10px] text-muted">토스페이먼츠 · NICE</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+        <span class="material-symbols-outlined text-violet-500 flex-shrink-0" style="font-variation-settings:'FILL' 1;">memory</span>
+        <div class="min-w-0">
+          <p class="text-[11px] font-bold text-on-surface">AI 캐싱</p>
+          <p class="text-[10px] text-muted">재조회시 즉시 결과</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low border border-outline-variant rounded-xl p-sm flex items-center gap-sm">
+        <span class="material-symbols-outlined text-amber-500 flex-shrink-0" style="font-variation-settings:'FILL' 1;">undo</span>
+        <div class="min-w-0">
+          <p class="text-[11px] font-bold text-on-surface">7일 환불</p>
+          <p class="text-[10px] text-muted">미사용분 100%</p>
+        </div>
       </div>
     </div>
 
     <!-- 이메일 사전등록 -->
-    <form id="waitlist-form" class="mt-md bg-surface-container-low border border-outline-variant rounded-2xl p-md" action="https://formspree.io/f/your-form-id" method="POST">
+    <form id="waitlist-form" class="mt-lg bg-surface-container-low border border-outline-variant rounded-2xl p-md" action="https://formspree.io/f/your-form-id" method="POST">
       <div class="flex items-start gap-sm mb-sm">
         <span class="material-symbols-outlined text-primary-container dark:text-primary mt-0.5">notifications_active</span>
         <div class="flex-1">
           <p class="text-on-surface text-sm font-bold">유료 리포트 오픈 알림 받기</p>
-          <p class="text-muted text-[11px] mt-xs">사고·정비·시세 상세 리포트가 오픈되면 가장 먼저 알려드립니다.</p>
+          <p class="text-muted text-[11px] mt-xs">사고·정비·시세 상세 리포트와 AI 분석이 오픈되면 가장 먼저 알려드립니다.</p>
         </div>
       </div>
       <div class="flex gap-sm">
@@ -506,6 +776,27 @@
       if(!v){e.preventDefault();return;}
       if(window.gtag){gtag('event','search',{search_term:v,location:'home_bottom_cta'});}
     });}
+    document.querySelectorAll('.plan-tab').forEach(function(t){
+      t.addEventListener('click',function(){
+        var type=t.dataset.planType;
+        var on=document.getElementById('plans-onetime');
+        var sub=document.getElementById('plans-subscription');
+        if(type==='onetime'){on.classList.remove('hidden');sub.classList.add('hidden');}
+        else{on.classList.add('hidden');sub.classList.remove('hidden');}
+        document.querySelectorAll('.plan-tab').forEach(function(b){
+          var active=b.dataset.planType===type;
+          b.setAttribute('aria-selected',active?'true':'false');
+          if(active){
+            b.classList.add('bg-primary-container','text-white','dark:bg-primary','dark:text-on-primary');
+            b.classList.remove('text-muted');
+          }else{
+            b.classList.remove('bg-primary-container','text-white','dark:bg-primary','dark:text-on-primary');
+            b.classList.add('text-muted');
+          }
+        });
+        if(window.gtag){gtag('event','select_content',{content_type:'pricing_toggle',item_id:type});}
+      });
+    });
     var w=document.getElementById('waitlist-form');
     if(w){w.addEventListener('submit',function(e){
       e.preventDefault();
