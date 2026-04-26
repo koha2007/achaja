@@ -1,0 +1,4 @@
+
+# Local screenshot uploads (keep in working dir, don't commit)
+1-*.jpg
+1-*.png
