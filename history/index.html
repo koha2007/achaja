@@ -195,11 +195,12 @@
     <!-- Vehicle Basic Info from VIN -->
     <div class="bg-surface-container-high rounded-3xl p-lg border border-outline-variant/30">
       <div class="flex items-start justify-between mb-md">
-        <div>
+        <div class="min-w-0 flex-1">
           <p class="text-primary-container dark:text-primary text-[11px] uppercase tracking-wider mb-xs font-semibold" id="vin-maker">—</p>
           <h2 class="text-on-surface font-headline font-semibold text-lg leading-tight" id="vin-model-year">—</h2>
+          <p id="vin-trim-line" class="hidden text-muted text-xs mt-xs"></p>
         </div>
-        <div id="vin-verified-badge" class="bg-primary-container/10 border border-primary-container/30 dark:border-primary/30 px-2 py-1 rounded-md flex items-center gap-1">
+        <div id="vin-verified-badge" class="bg-primary-container/10 border border-primary-container/30 dark:border-primary/30 px-2 py-1 rounded-md flex items-center gap-1 flex-shrink-0">
           <span class="material-symbols-outlined text-[14px] text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">verified</span>
           <span class="text-[10px] font-bold text-primary-container dark:text-primary">VIN 유효</span>
         </div>
@@ -210,7 +211,39 @@
         <div><p class="text-outline text-[11px]">제조사 코드(WMI)</p><p class="text-on-surface text-sm font-mono" id="vin-wmi">—</p></div>
         <div><p class="text-outline text-[11px]">VIN</p><p class="text-on-surface text-[11px] font-mono break-all" id="vin-full">—</p></div>
       </div>
-      <p class="text-muted text-[11px] mt-md leading-relaxed">※ VIN 표준(ISO 3779) 기반 공개 정보입니다. 모델·트림·색상 등 세부 정보는 제조사 또는 유료 조회가 필요합니다.</p>
+
+      <!-- 상세 정보 (NHTSA) — 데이터 도착 후 동적으로 채움 -->
+      <div id="vin-detail-section" class="hidden mt-md pt-md border-t border-outline-variant/40">
+        <div class="flex items-center gap-2 mb-sm">
+          <span class="material-symbols-outlined text-emerald-500 text-base" style="font-variation-settings:'FILL' 1;">database</span>
+          <p class="text-on-surface text-[11px] font-bold uppercase tracking-wider">상세 정보</p>
+          <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[9px] px-2 py-0.5 rounded-full border border-emerald-500/20 font-bold">무료</span>
+          <span class="ml-auto text-[9px] text-outline">NHTSA vPIC</span>
+        </div>
+        <div class="grid grid-cols-2 gap-y-3 gap-x-2">
+          <div data-row="model"><p class="text-outline text-[11px]">모델</p><p class="text-on-surface text-sm font-semibold" id="vin-model">—</p></div>
+          <div data-row="series" class="hidden"><p class="text-outline text-[11px]">시리즈</p><p class="text-on-surface text-sm" id="vin-series">—</p></div>
+          <div data-row="bodyClass" class="hidden"><p class="text-outline text-[11px]">차종</p><p class="text-on-surface text-sm" id="vin-body">—</p></div>
+          <div data-row="engine" class="hidden"><p class="text-outline text-[11px]">엔진</p><p class="text-on-surface text-sm" id="vin-engine">—</p></div>
+          <div data-row="drive" class="hidden"><p class="text-outline text-[11px]">구동방식</p><p class="text-on-surface text-sm" id="vin-drive">—</p></div>
+          <div data-row="transmission" class="hidden"><p class="text-outline text-[11px]">변속기</p><p class="text-on-surface text-sm" id="vin-transmission">—</p></div>
+          <div data-row="plant" class="hidden col-span-2"><p class="text-outline text-[11px]">생산공장</p><p class="text-on-surface text-sm" id="vin-plant">—</p></div>
+        </div>
+      </div>
+
+      <!-- 한국 내수용 안내 (NHTSA 응답 빈약 시) -->
+      <div id="vin-domestic-notice" class="hidden mt-md pt-md border-t border-outline-variant/40">
+        <div class="flex items-start gap-2 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900 rounded-xl p-sm">
+          <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-base mt-0.5">info</span>
+          <p class="text-on-surface text-[11px] leading-relaxed">
+            한국 <strong id="vin-domestic-maker">내수용</strong> 차량은 모델·트림 자동 식별이 제한됩니다.
+            <span class="text-muted">제조사 카탈로그 또는 자동차등록증의 차종/세부모델을 참고해주세요.</span>
+            <span id="vin-plant-fallback" class="hidden block mt-xs text-muted">생산공장: <strong class="text-on-surface" id="vin-plant-domestic">—</strong></span>
+          </p>
+        </div>
+      </div>
+
+      <p class="text-muted text-[11px] mt-md leading-relaxed">※ VIN 표준(ISO 3779) + NHTSA 공개 데이터 기반. 사고·정비·색상 등은 본인인증 후 유료 조회가 필요합니다.</p>
     </div>
 
     <!-- 리콜 매칭 -->
@@ -498,11 +531,88 @@
       var badge = $('vin-verified-badge');
       var vinValid = !(d.checkDigitStrict && !d.checkDigitValid);
       if (!vinValid){
-        badge.className = 'bg-red-500/10 border border-red-500/30 px-2 py-1 rounded-md flex items-center gap-1';
+        badge.className = 'bg-red-500/10 border border-red-500/30 px-2 py-1 rounded-md flex items-center gap-1 flex-shrink-0';
         badge.innerHTML = '<span class="material-symbols-outlined text-[14px] text-red-500">error</span><span class="text-[10px] font-bold text-red-500">체크디지트 불일치</span>';
         updateVerdict(0, false);
       }
+      // 상세 섹션 초기화 (이전 조회 잔여물 제거)
+      var detail = $('vin-detail-section'); if (detail) detail.classList.add('hidden');
+      var notice = $('vin-domestic-notice'); if (notice) notice.classList.add('hidden');
+      var trimLine = $('vin-trim-line'); if (trimLine){ trimLine.classList.add('hidden'); trimLine.textContent = ''; }
       show('history-vin-result');
+    }
+
+    // NHTSA 응답 → UI 채우기. 응답이 빈약한 한국 내수용은 fallback notice.
+    function renderNhtsa(vinResult, ext){
+      var detail = $('vin-detail-section');
+      var notice = $('vin-domestic-notice');
+      // 모델·시리즈·엔진 중 하나라도 있어야 상세 섹션 노출
+      var hasMeaningful = ext && (ext.model || ext.series || ext.engineSummary || ext.bodyClassKo || ext.driveTypeKo);
+      if (hasMeaningful){
+        detail.classList.remove('hidden');
+        // 모델
+        if (ext.model){
+          $('vin-model').textContent = ext.model;
+          // 헤더 모델년식도 정확한 NHTSA 연식으로 갱신
+          if (ext.year){
+            $('vin-model-year').textContent = ext.year + '년식 ' + ext.model;
+          } else {
+            $('vin-model-year').textContent = ext.model + (vinResult.year ? ' (' + vinResult.year + '년식 추정)' : '');
+          }
+        } else {
+          var row = detail.querySelector('[data-row="model"]');
+          if (row) row.classList.add('hidden');
+        }
+        // 트림 (모델 옆 한 줄로 표시)
+        if (ext.trim){
+          var trimLine = $('vin-trim-line');
+          trimLine.textContent = '트림: ' + ext.trim;
+          trimLine.classList.remove('hidden');
+        }
+        // 시리즈
+        if (ext.series && ext.series !== ext.model){
+          $('vin-series').textContent = ext.series;
+          detail.querySelector('[data-row="series"]').classList.remove('hidden');
+        }
+        // 차종
+        if (ext.bodyClassKo){
+          $('vin-body').textContent = ext.bodyClassKo;
+          detail.querySelector('[data-row="bodyClass"]').classList.remove('hidden');
+        }
+        // 엔진
+        if (ext.engineSummary){
+          $('vin-engine').textContent = ext.engineSummary;
+          detail.querySelector('[data-row="engine"]').classList.remove('hidden');
+        }
+        // 구동
+        if (ext.driveTypeKo){
+          $('vin-drive').textContent = ext.driveTypeKo;
+          detail.querySelector('[data-row="drive"]').classList.remove('hidden');
+        }
+        // 변속기
+        if (ext.transmissionKo){
+          $('vin-transmission').textContent = ext.transmissionKo;
+          detail.querySelector('[data-row="transmission"]').classList.remove('hidden');
+        }
+        // 공장 — 한국차는 자체 룩업이 더 친절(예: "울산공장 (한국)")하므로 우선
+        var plantText = vinResult.plant || ext.plantSummary;
+        if (plantText){
+          $('vin-plant').textContent = plantText;
+          detail.querySelector('[data-row="plant"]').classList.remove('hidden');
+        }
+        if (window.gtag){ gtag('event','vin_nhtsa_hit',{maker:vinResult.maker||'unknown',has_model:!!ext.model}); }
+      } else {
+        // 한국 내수용 fallback — 제조사 + 공장만 보여주고 안내
+        if (vinResult.maker && /현대|기아|제네시스|르노코리아|KG모빌리티|한국지엠/.test(vinResult.maker)){
+          notice.classList.remove('hidden');
+          $('vin-domestic-maker').textContent = vinResult.maker + ' 내수용';
+          if (vinResult.plant){
+            $('vin-plant-domestic').textContent = vinResult.plant;
+            $('vin-plant-fallback').classList.remove('hidden');
+          }
+        }
+        if (window.gtag){ gtag('event','vin_nhtsa_miss',{maker:vinResult.maker||'unknown'}); }
+      }
     }
     function renderPlate(d){
       $('plate-display').textContent = d.plate;
@@ -532,6 +642,13 @@
         if (det.kind === 'vin'){
           if (window.gtag){ gtag('event','vin_decode',{maker:det.result.maker||'unknown',country:det.result.country}); }
           renderVin(det.result);
+          // NHTSA API 보강 (병렬, 실패해도 무시)
+          if (AchajaVin.fetchNhtsa){
+            AchajaVin.fetchNhtsa(det.result.vin).then(function(ext){
+              if (ext) renderNhtsa(det.result, ext);
+              else renderNhtsa(det.result, null);
+            });
+          }
           loadRecalls().then(function(){
             var matches = matchRecalls(det.result.maker);
             renderRecalls(matches);
