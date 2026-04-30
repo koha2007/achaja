@@ -60,10 +60,13 @@ body{min-height:100dvh;}
       <span class="material-symbols-outlined text-[36px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
     </div>
     <h1 class="font-headline text-2xl font-bold mt-md">결제가 완료되었습니다</h1>
-    <p class="text-sm text-muted mt-xs">ACHAJA 유료 리포트 결제가 정상 처리되었습니다.</p>
+    <p class="text-sm text-muted-strong mt-xs">ACHAJA 유료 리포트 결제가 정상 처리되었습니다.</p>
 
     <div class="mt-lg p-lg bg-surface-container rounded-2xl border border-outline-variant text-left text-sm">
-      <h2 class="font-headline font-bold text-base mb-sm">결제 내역</h2>
+      <div class="flex justify-between items-center mb-sm">
+        <h2 class="font-headline font-bold text-base">결제 영수증</h2>
+        <button id="btn-print" class="text-[11px] text-primary-container dark:text-primary font-semibold underline">인쇄/PDF 저장</button>
+      </div>
       <dl class="space-y-1.5 text-xs">
         <div class="flex justify-between gap-sm"><dt class="text-muted">상품명</dt><dd id="r-orderName" class="text-on-surface font-medium">-</dd></div>
         <div class="flex justify-between gap-sm"><dt class="text-muted">결제 금액</dt><dd id="r-amount" class="text-on-surface font-bold">-</dd></div>
@@ -71,14 +74,37 @@ body{min-height:100dvh;}
         <div class="flex justify-between gap-sm"><dt class="text-muted">주문번호</dt><dd id="r-orderId" class="text-on-surface text-[10px] font-mono break-all max-w-[60%] text-right">-</dd></div>
         <div class="flex justify-between gap-sm"><dt class="text-muted">승인일시</dt><dd id="r-approvedAt" class="text-on-surface">-</dd></div>
       </dl>
+      <div class="mt-md pt-md border-t border-outline-variant text-[10px] text-muted">
+        상호: 코하(Koha) · 사업자등록번호 108-16-82025 · 대표 김용헌
+      </div>
     </div>
 
-    <div class="mt-lg flex gap-sm">
-      <a href="/history" class="flex-1 bg-primary-container text-white font-semibold text-sm py-3 rounded-xl text-center">이력조회 시작하기</a>
-      <a href="/my" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">마이페이지</a>
+    <!-- 다음 단계 안내 -->
+    <div class="mt-lg p-md bg-primary-container/5 dark:bg-primary-container/15 border border-primary-container/20 rounded-xl text-left">
+      <p class="flex items-center gap-1.5 text-primary-container dark:text-primary font-semibold text-sm">
+        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
+        <span>다음 단계</span>
+      </p>
+      <ol class="mt-xs text-xs text-muted-strong space-y-1 list-decimal list-inside">
+        <li><strong class="text-on-surface">이력조회</strong> 페이지에서 차량번호 또는 VIN 입력</li>
+        <li>본인인증(NICE) 후 즉시 리포트 생성</li>
+        <li><strong class="text-on-surface">마이페이지</strong>에서 영수증·이용내역 다시 확인</li>
+      </ol>
     </div>
 
-    <p class="mt-md text-[11px] text-muted">결제 영수증은 마이페이지에서 확인하실 수 있습니다. 토스페이먼츠 테스트 결제 환경 — 실제 청구되지 않습니다.</p>
+    <div class="mt-lg flex flex-col gap-sm">
+      <a href="/history" class="w-full bg-primary-container text-white font-semibold text-sm py-3 rounded-xl flex items-center justify-center gap-1.5">
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        <span>이력조회 시작하기</span>
+      </a>
+      <div class="flex gap-sm">
+        <a href="/my" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">마이페이지</a>
+        <a href="/" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">홈</a>
+      </div>
+    </div>
+
+    <p id="test-mode-notice" class="mt-md text-[11px] text-amber-600 dark:text-amber-400">⚠️ 토스페이먼츠 테스트 결제 환경 — 실제 청구되지 않습니다.</p>
+    <p class="mt-xs text-[11px] text-muted">결제 관련 문의: <a href="mailto:koha3d77@gmail.com" class="underline text-primary-container dark:text-primary">koha3d77@gmail.com</a></p>
   </div>
 
   <!-- 실패 -->
@@ -153,6 +179,12 @@ body{min-height:100dvh;}
     elLoading.classList.add('hidden');
     elSuccess.classList.remove('hidden');
 
+    // 라이브 결제 환경이면 테스트 안내 숨김
+    const isTestMode = String(amount).length > 0 && (p.method === '간편결제' || /^test_/.test(paymentKey || ''));
+    if (!isTestMode && /^live_/.test(paymentKey || '')) {
+      document.getElementById('test-mode-notice')?.classList.add('hidden');
+    }
+
     if (window.gtag) {
       window.gtag('event', 'purchase', {
         transaction_id: orderId,
@@ -162,10 +194,20 @@ body{min-height:100dvh;}
       });
     }
     sessionStorage.removeItem(`achaja_order_${orderId}`);
+
+    // 인쇄 버튼
+    document.getElementById('btn-print')?.addEventListener('click', function() {
+      window.print();
+    });
   } catch (err) {
     showError('네트워크 오류: ' + (err?.message || err), 'NETWORK_ERROR');
   }
 })();
 </script>
+<style media="print">
+  header, footer, #btn-print, #test-mode-notice, .no-print, [href="/history"], [href="/my"], [href="/"] { display: none !important; }
+  body { padding: 0 !important; background: white !important; color: black !important; }
+  #state-success { padding: 24px !important; }
+</style>
 
 </body></html>

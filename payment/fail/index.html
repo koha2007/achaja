@@ -45,30 +45,62 @@ body{min-height:100dvh;}
 <main id="main" class="pt-14 max-w-2xl mx-auto px-margin">
 
 <section class="py-xl text-center">
-  <div class="inline-flex w-16 h-16 bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-full items-center justify-center">
-    <span class="material-symbols-outlined text-[36px]" style="font-variation-settings:'FILL' 1;">cancel</span>
+  <!-- 아이콘: 사용자 취소(중립)/실제 오류(빨강) 동적 변경 -->
+  <div id="fail-icon-wrap" class="inline-flex w-16 h-16 rounded-full items-center justify-center transition-colors bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400">
+    <span id="fail-icon" class="material-symbols-outlined text-[36px]" style="font-variation-settings:'FILL' 1;">cancel</span>
   </div>
-  <h1 class="font-headline text-2xl font-bold mt-md">결제가 완료되지 않았습니다</h1>
-  <p id="fail-message" class="text-sm text-muted mt-xs">결제가 취소되었거나 처리 중 오류가 발생했습니다.</p>
-  <p id="fail-code" class="text-[11px] text-muted mt-xs font-mono"></p>
-  <p id="fail-orderId" class="text-[11px] text-muted mt-xs font-mono break-all"></p>
+  <h1 id="fail-title" class="font-headline text-2xl font-bold mt-md">결제가 완료되지 않았습니다</h1>
+  <p id="fail-message" class="text-sm text-muted-strong mt-xs">결제가 취소되었거나 처리 중 오류가 발생했습니다.</p>
 
-  <div class="mt-lg p-md bg-surface-container-low rounded-xl text-left text-xs">
-    <p class="text-muted">자주 발생하는 원인</p>
-    <ul class="mt-xs list-disc list-inside text-muted-strong space-y-0.5">
-      <li>결제창에서 사용자가 직접 취소</li>
-      <li>카드 한도 초과 또는 인증 실패</li>
-      <li>결제수단 일시적 장애</li>
-      <li>네트워크 연결 끊김</li>
+  <!-- 시도하던 상품 컨텍스트 복원 -->
+  <div id="product-context" class="hidden mt-md p-md bg-primary-container/5 dark:bg-primary-container/15 border border-primary-container/20 rounded-xl">
+    <p class="text-[11px] text-muted">시도하신 결제</p>
+    <p class="mt-xs text-sm font-semibold text-on-surface"><span id="product-name">-</span> · <span id="product-amount" class="text-primary-container dark:text-primary">-</span></p>
+  </div>
+
+  <!-- 오류 상세 -->
+  <details id="error-details" class="hidden mt-md bg-surface-container-low rounded-xl text-left">
+    <summary class="cursor-pointer px-md py-sm text-xs text-muted-strong font-medium select-none">오류 상세 정보 보기</summary>
+    <div class="px-md pb-md pt-0 text-[11px] font-mono text-muted space-y-0.5">
+      <p id="fail-code"></p>
+      <p id="fail-orderId" class="break-all"></p>
+    </div>
+  </details>
+
+  <!-- 자주 발생하는 원인 -->
+  <div class="mt-md p-md bg-surface-container-low rounded-xl text-left text-xs">
+    <p class="text-muted-strong font-semibold">자주 발생하는 원인</p>
+    <ul class="mt-xs space-y-1 text-muted-strong">
+      <li class="flex gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500 flex-shrink-0 mt-0.5">credit_card_off</span><span>카드 한도 초과·잔액 부족·정지된 카드</span></li>
+      <li class="flex gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500 flex-shrink-0 mt-0.5">password</span><span>비밀번호·인증 정보 입력 오류</span></li>
+      <li class="flex gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500 flex-shrink-0 mt-0.5">cloud_off</span><span>네트워크 연결 일시 끊김</span></li>
+      <li class="flex gap-2"><span class="material-symbols-outlined text-[14px] text-amber-500 flex-shrink-0 mt-0.5">block</span><span>결제창에서 직접 취소</span></li>
     </ul>
   </div>
 
-  <div class="mt-lg flex gap-sm">
-    <a href="/pricing/" class="flex-1 bg-primary-container text-white font-semibold text-sm py-3 rounded-xl text-center">다시 시도하기</a>
-    <a href="/" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">홈으로</a>
+  <!-- 액션 버튼 -->
+  <div class="mt-lg flex flex-col gap-sm">
+    <button id="retry-same" class="hidden w-full bg-primary-container text-white font-semibold text-sm py-3 rounded-xl flex items-center justify-center gap-1.5">
+      <span class="material-symbols-outlined text-[18px]">refresh</span>
+      <span>같은 상품으로 다시 결제 (<span id="retry-amount">-</span>)</span>
+    </button>
+    <div class="flex gap-sm">
+      <a id="goto-pricing" href="/pricing/" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">상품 다시 선택</a>
+      <a href="/" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">홈으로</a>
+    </div>
   </div>
 
-  <p class="mt-lg text-[11px] text-muted">계속 같은 오류가 발생하면 koha3d77@gmail.com 으로 문의해주세요.</p>
+  <!-- 안전 안내 (신뢰 신호) -->
+  <div class="mt-lg p-md bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200/60 dark:border-emerald-700/50 rounded-xl text-left text-xs">
+    <p class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-semibold">
+      <span class="material-symbols-outlined text-[16px]" style="font-variation-settings:'FILL' 1;">verified_user</span>
+      <span>안전한 결제</span>
+    </p>
+    <p class="mt-xs text-emerald-800/80 dark:text-emerald-300/80 leading-relaxed">결제 정보는 토스페이먼츠에서 직접 처리되며 ACHAJA에 카드 번호·CVC가 저장되지 않습니다. 결제가 시도되지 않았다면 청구되지 않습니다.</p>
+  </div>
+
+  <!-- 문의 -->
+  <p class="mt-lg text-[11px] text-muted">계속 같은 오류가 발생하면 <a href="mailto:koha3d77@gmail.com?subject=ACHAJA%20%EA%B2%B0%EC%A0%9C%20%EC%98%A4%EB%A5%98%20%EB%AC%B8%EC%9D%98" class="underline text-primary-container dark:text-primary">koha3d77@gmail.com</a> 으로 문의해주세요.</p>
 </section>
 
 </main>
@@ -78,15 +110,96 @@ body{min-height:100dvh;}
   <p class="mt-xs text-[10px] text-muted-strong">© 2026 ACHAJA by 코하(Koha). All Rights Reserved.</p>
 </footer>
 
+<script src="/js/payment.js"></script>
 <script>
 (function() {
+  // Toss 표준 오류 코드 → 한국어 친절 메시지 매핑
+  const ERROR_MAP = {
+    'PAY_PROCESS_CANCELED':            { title: '결제를 취소하셨습니다', msg: '결제창에서 사용자가 결제를 직접 취소했습니다. 다시 시도하실 수 있습니다.', severity: 'cancel' },
+    'PAY_PROCESS_ABORTED':             { title: '결제가 중단되었습니다', msg: '결제창이 닫히거나 처리가 중단되었습니다.', severity: 'cancel' },
+    'USER_CANCEL':                     { title: '결제를 취소하셨습니다', msg: '사용자 직접 취소.', severity: 'cancel' },
+    'REJECT_CARD_COMPANY':             { title: '카드사 거절', msg: '카드사에서 결제를 거절했습니다. 다른 카드를 시도하거나 카드사로 문의해주세요.', severity: 'error' },
+    'INVALID_CARD_EXPIRATION':         { title: '카드 유효기간 오류', msg: '카드 유효기간을 다시 확인해주세요.', severity: 'error' },
+    'INVALID_STOPPED_CARD':            { title: '정지된 카드', msg: '사용 정지된 카드입니다. 다른 결제수단을 시도해주세요.', severity: 'error' },
+    'EXCEED_MAX_DAILY_PAYMENT_COUNT':  { title: '일일 결제 한도 초과', msg: '오늘 카드사 일일 결제 한도를 초과했습니다.', severity: 'error' },
+    'NOT_ENOUGH_BALANCE':              { title: '잔액 부족', msg: '결제 가능한 잔액이 부족합니다.', severity: 'error' },
+    'NOT_AVAILABLE_BANK':              { title: '은행 점검 시간', msg: '은행 점검 시간으로 결제할 수 없습니다. 잠시 후 다시 시도해주세요.', severity: 'error' },
+    'INVALID_CARD_NUMBER':             { title: '카드번호 오류', msg: '카드번호를 다시 확인해주세요.', severity: 'error' },
+    'INVALID_PASSWORD':                { title: '비밀번호 오류', msg: '카드 비밀번호가 일치하지 않습니다.', severity: 'error' },
+    'EXCEED_MAX_AUTH_COUNT':           { title: '인증 시도 초과', msg: '인증 시도 횟수를 초과했습니다. 잠시 후 다시 시도해주세요.', severity: 'error' },
+    'INVALID_REQUEST':                 { title: '잘못된 요청', msg: '결제 요청 정보가 올바르지 않습니다. 새로고침 후 다시 시도해주세요.', severity: 'error' },
+    'NETWORK_ERROR':                   { title: '네트워크 오류', msg: '네트워크 연결을 확인하고 다시 시도해주세요.', severity: 'error' }
+  };
+
   const params = new URLSearchParams(window.location.search);
   const code = params.get('code');
-  const message = params.get('message');
+  const rawMessage = params.get('message');
   const orderId = params.get('orderId');
-  if (message) document.getElementById('fail-message').textContent = decodeURIComponent(message);
-  if (code) document.getElementById('fail-code').textContent = '오류 코드: ' + code;
-  if (orderId) document.getElementById('fail-orderId').textContent = '주문번호: ' + orderId;
+
+  // 오류 코드 매핑 적용
+  const mapped = code ? ERROR_MAP[code] : null;
+  const titleEl = document.getElementById('fail-title');
+  const msgEl = document.getElementById('fail-message');
+  if (mapped) {
+    titleEl.textContent = mapped.title;
+    msgEl.textContent = mapped.msg;
+  } else if (rawMessage) {
+    msgEl.textContent = decodeURIComponent(rawMessage);
+  }
+
+  // severity별 아이콘/색상
+  const isUserCancel = mapped && mapped.severity === 'cancel';
+  if (!isUserCancel && code) {
+    const wrap = document.getElementById('fail-icon-wrap');
+    wrap.classList.remove('bg-amber-100', 'dark:bg-amber-500/20', 'text-amber-600', 'dark:text-amber-400');
+    wrap.classList.add('bg-red-100', 'dark:bg-red-500/20', 'text-red-600', 'dark:text-red-400');
+    document.getElementById('fail-icon').textContent = 'error';
+  }
+
+  // 오류 상세 (코드/주문번호) 표시
+  if (code || orderId) {
+    document.getElementById('error-details').classList.remove('hidden');
+    if (code) document.getElementById('fail-code').textContent = '오류 코드: ' + code;
+    if (orderId) document.getElementById('fail-orderId').textContent = '주문번호: ' + orderId;
+  }
+
+  // sessionStorage에서 시도하던 상품 컨텍스트 복원
+  let savedProduct = null;
+  if (orderId) {
+    try {
+      const raw = sessionStorage.getItem('achaja_order_' + orderId);
+      if (raw) savedProduct = JSON.parse(raw);
+    } catch (e) {}
+  }
+
+  if (savedProduct) {
+    document.getElementById('product-context').classList.remove('hidden');
+    document.getElementById('product-name').textContent = savedProduct.productName;
+    document.getElementById('product-amount').textContent = savedProduct.amount.toLocaleString() + '원';
+
+    // 같은 상품 재시도 버튼 활성화
+    const retryBtn = document.getElementById('retry-same');
+    document.getElementById('retry-amount').textContent = savedProduct.amount.toLocaleString() + '원';
+    retryBtn.classList.remove('hidden');
+    retryBtn.addEventListener('click', function() {
+      if (window.achajaPayment && savedProduct.productKey) {
+        window.achajaPayment.request(savedProduct.productKey);
+      } else {
+        location.href = '/pricing/';
+      }
+    });
+  }
+
+  // GA4 이벤트
+  if (window.gtag) {
+    window.gtag('event', 'payment_failed', {
+      error_code: code || 'UNKNOWN',
+      order_id: orderId || '',
+      product_key: savedProduct ? savedProduct.productKey : '',
+      amount: savedProduct ? savedProduct.amount : 0,
+      is_user_cancel: !!isUserCancel
+    });
+  }
 })();
 </script>
 
