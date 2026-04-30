@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>엔진 경고등(체크엔진) 의미와 대처법 — ACHAJA 블로그</title>
+<meta name="description" content="엔진 경고등(체크엔진) 점등 시 즉시 확인할 것, OBD-II 자가진단, 정비소 가야 하는 코드."/>
+<meta name="author" content="ACHAJA"/>
+<meta name="theme-color" content="#003178"/>
+<meta name="naver-site-verification" content="1e39ff92cba7c69270ba89d91ed36828248a442c"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://achaja.net/blog/engine-warning-light/"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg"/>
+<link rel="manifest" href="/manifest.json"/>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="ACHAJA"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta property="og:url" content="https://achaja.net/blog/engine-warning-light/"/>
+<meta property="og:title" content="엔진 경고등(체크엔진) 의미와 대처법"/>
+<meta property="og:description" content="엔진 경고등 점등 시 즉시 해야 할 것과 피해야 할 것."/>
+<meta property="og:image" content="https://achaja.net/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="엔진 경고등(체크엔진) 의미와 대처법"/>
+<meta name="twitter:description" content="엔진 경고등 점등 시 즉시 해야 할 것과 피해야 할 것."/>
+<meta name="twitter:image" content="https://achaja.net/og-image.png"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BlogPosting","headline":"엔진 경고등(체크엔진) 의미와 대처법","description":"엔진 경고등(체크엔진) 점등 시 즉시 확인할 것, OBD-II 자가진단, 정비소 가야 하는 코드.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-30","dateModified":"2026-04-30","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/engine-warning-light/"},"inLanguage":"ko-KR"},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
+{"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
+{"@type":"ListItem","position":3,"name":"엔진 경고등(체크엔진) 의미와 대처법","item":"https://achaja.net/blog/engine-warning-light/"}
+]}
+]}
+</script>
+<script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
+<link rel="dns-prefetch" href="https://www.clarity.ms"/>
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--c-primary:0 49 120;--c-primary-container:13 71 161;--c-on-primary:255 255 255;--c-background:248 249 250;--c-surface:248 249 250;--c-surface-container:237 238 239;--c-surface-container-low:243 244 245;--c-on-surface:25 28 29;--c-on-surface-variant:67 70 82;--c-outline:115 119 131;--c-outline-variant:195 198 212;--c-header-bg:248 249 250;--c-nav-bg:255 255 255;--c-app-border:225 227 228;--c-muted:100 116 139;--c-muted-strong:71 85 105;--c-active-bg:219 234 254;}
+html.dark{--c-primary:176 198 255;--c-primary-container:0 49 120;--c-on-primary:0 45 111;--c-background:18 19 24;--c-surface:18 19 24;--c-surface-container:30 31 36;--c-surface-container-low:26 27 32;--c-on-surface:226 226 232;--c-on-surface-variant:196 198 210;--c-outline:142 144 156;--c-outline-variant:67 70 81;--c-header-bg:2 6 23;--c-nav-bg:15 23 42;--c-app-border:39 39 42;--c-muted:161 161 170;--c-muted-strong:82 82 91;--c-active-bg:30 58 138;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+body{min-height:100dvh;}
+.pb-safe{padding-bottom:env(safe-area-inset-bottom);}
+.prose h2{font-family:Manrope,sans-serif;font-weight:600;font-size:1.25rem;line-height:1.75rem;margin-top:2rem;margin-bottom:0.75rem;}
+.prose h3{font-family:Manrope,sans-serif;font-weight:600;font-size:1rem;line-height:1.5rem;margin-top:1.5rem;margin-bottom:0.5rem;}
+.prose p{font-size:0.95rem;line-height:1.75rem;margin-bottom:1rem;}
+.prose ul{margin-bottom:1rem;padding-left:1.25rem;}
+.prose li{font-size:0.95rem;line-height:1.6rem;margin-bottom:0.375rem;list-style:disc;}
+.prose ol{margin-bottom:1rem;padding-left:1.5rem;}
+.prose ol li{font-size:0.95rem;line-height:1.6rem;margin-bottom:0.5rem;list-style:decimal;}
+.prose strong{font-weight:600;color:rgb(var(--c-primary-container));}
+html.dark .prose strong{color:rgb(var(--c-primary));}
+.prose table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem;}
+.prose th,.prose td{border:1px solid rgb(var(--c-outline-variant));padding:0.5rem;text-align:left;}
+.prose th{background:rgb(var(--c-surface-container));font-weight:600;}
+</style>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"rgb(var(--c-primary)/<alpha-value>)","primary-container":"rgb(var(--c-primary-container)/<alpha-value>)","background":"rgb(var(--c-background)/<alpha-value>)","surface":"rgb(var(--c-surface)/<alpha-value>)","surface-container":"rgb(var(--c-surface-container)/<alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)","on-surface":"rgb(var(--c-on-surface)/<alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)","outline":"rgb(var(--c-outline)/<alpha-value>)","outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)","header-bg":"rgb(var(--c-header-bg)/<alpha-value>)","nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)","app-border":"rgb(var(--c-app-border)/<alpha-value>)","muted":"rgb(var(--c-muted)/<alpha-value>)","muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)","active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"},fontFamily:{"headline":["Manrope"],"body":["Inter"]},spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","xl":"32px","margin":"20px"}}}};</script>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-24">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">본문으로 건너뛰기</a>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+    <a href="/" class="flex items-center gap-2"><span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span></a>
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">홈</a>
+      <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">뉴스</a>
+      <a href="/blog/" class="text-primary-container dark:text-primary bg-active-bg/40 dark:bg-active-bg/20 font-headline text-xs font-bold px-3 py-1.5 rounded-lg">블로그</a>
+      <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">이력조회</a>
+      <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">리콜</a>
+      <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">마이</a>
+    </nav>
+    <div class="flex items-center gap-1">
+      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined dark:hidden">dark_mode</span><span class="material-symbols-outlined hidden dark:inline">light_mode</span></button>
+      <a href="/my" aria-label="내 프로필" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined">account_circle</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="pt-14 max-w-3xl mx-auto px-margin">
+
+<nav aria-label="breadcrumb" class="pt-lg text-xs text-muted">
+  <a href="/" class="hover:underline">홈</a> / <a href="/blog/" class="hover:underline">블로그</a> / <span class="text-on-surface">엔진 경고등</span>
+</nav>
+
+<article class="py-lg prose">
+  <header class="mb-lg pb-md border-b border-outline-variant">
+    <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">warning</span><span class="text-xs text-muted">경고등 가이드</span></div>
+    <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">엔진 경고등(체크엔진) 의미와 대처법</h1>
+    <p class="text-xs text-muted">2026년 4월 30일 · ACHAJA 에디터 · 약 3분 소요</p>
+  </header>
+
+  <p>엔진 경고등(흔히 "체크엔진")이 켜졌을 때 가장 위험한 것은 <strong>"별일 아니겠지" 하고 무시하는 것</strong>입니다. 가벼운 원인부터 엔진 폐차까지 의미할 수 있어, 점등된 순간 즉시 진단해야 합니다.</p>
+
+  <h2>경고등 색상별 긴급도</h2>
+  <table>
+    <thead><tr><th>색상</th><th>의미</th><th>대응</th></tr></thead>
+    <tbody>
+      <tr><td>🟡 노랑(상시점등)</td><td>이상 감지, 주행 가능</td><td>3~7일 내 정비소</td></tr>
+      <tr><td>🟡 노랑(깜박임)</td><td>현재 진행 중인 미스파이어</td><td>즉시 정차 후 견인</td></tr>
+      <tr><td>🔴 빨강</td><td>심각한 결함, 엔진 손상 진행</td><td>즉시 시동 OFF + 견인</td></tr>
+    </tbody>
+  </table>
+  <p><strong>빨간 경고등 + 깜박임</strong>은 엔진 영구 손상까지 5분도 안 걸릴 수 있습니다. 갓길에 즉시 세우고 보험 견인 호출.</p>
+
+  <h2>흔한 원인 TOP 7</h2>
+  <ol>
+    <li><strong>주유구 캡 헐거움</strong>: 가장 흔한 원인. 캡을 다시 꼭 잠그고 30분 주행하면 자동 소등</li>
+    <li><strong>O2 센서(산소 센서) 고장</strong>: 연비 저하 + 배기가스 증가. 부품 5~10만 원, 공임 3~5만 원</li>
+    <li><strong>점화코일·플러그 노후</strong>: 미스파이어 발생. 6~10만 km 교체 주기</li>
+    <li><strong>EGR 밸브 카본 누적</strong>: 디젤 차량 흔함. 클리닝 또는 교체</li>
+    <li><strong>MAF/MAP 센서 오염</strong>: 흡기 센서 청소로 해결 가능</li>
+    <li><strong>촉매 컨버터 손상</strong>: 부품값 50~150만 원, 가장 비싼 원인</li>
+    <li><strong>배기가스 센서·EVAP 시스템</strong>: 증발가스 회수 시스템 누설</li>
+  </ol>
+
+  <h2>1만 원 OBD-II 스캐너로 자가 진단</h2>
+  <p>운전석 발 아래에 OBD-II 진단 포트가 있습니다(2002년 이후 모든 차). 블루투스 OBD-II 동글(1~3만 원) + 스마트폰 앱(Car Scanner, Torque)으로 직접 코드 확인 가능.</p>
+  <h3>코드 읽기 절차</h3>
+  <ol>
+    <li>OBD-II 동글 포트 연결</li>
+    <li>시동 ON (엔진 시동까진 안 해도 됨)</li>
+    <li>앱 페어링 후 "Read Trouble Codes" 실행</li>
+    <li>"P0xxx" 형식 코드 확인 → 인터넷 검색으로 의미 파악</li>
+  </ol>
+  <h3>코드 해석 예시</h3>
+  <ul>
+    <li><strong>P0420</strong>: 촉매 효율 저하 (정비 필요)</li>
+    <li><strong>P0171/P0174</strong>: 연료 혼합비 희박 (흡기 누설·O2 센서)</li>
+    <li><strong>P0300~P0306</strong>: 미스파이어 (점화코일·플러그)</li>
+    <li><strong>P0455</strong>: EVAP 누설 큰 → 주유구 캡 점검</li>
+  </ul>
+  <p>코드 확인 후 단순 원인이면 자가 해결, 복잡하면 정비소 견적의 근거로 활용. <strong>"진단비 5만 원" 부담을 덜 수 있습니다.</strong></p>
+
+  <h2>경고등 켜진 후 절대 하지 말 것</h2>
+  <ul>
+    <li>❌ 무시하고 계속 주행 (특히 깜박임 + 출력 감소 시)</li>
+    <li>❌ OBD 코드 그냥 지우기 (원인은 그대로)</li>
+    <li>❌ "기름 좋은 거 넣으면 꺼진다"는 미신</li>
+    <li>❌ 차량 장기 보관 후 첫 시동 직후 고속도로 진입</li>
+  </ul>
+
+  <h2>경고등 자동 소등 가능한 경우</h2>
+  <ul>
+    <li>주유구 캡 미체결 → 재체결 후 30~50km 주행</li>
+    <li>일시적 센서 노이즈 → 시동 OFF/ON 3회 + 단거리 주행</li>
+    <li>저질 연료 사용 → 정상 연료로 1탱크 소진 후 자동 소등 가능</li>
+  </ul>
+  <p>3일 이내에 자동 소등되지 않으면 <strong>실제 결함</strong>이 있는 것이므로 정비소 점검 필수입니다.</p>
+
+  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
+    <h3 class="font-headline font-semibold text-base mb-sm">ACHAJA에서 차량 리콜·하자 이력 확인</h3>
+    <p class="text-sm text-on-surface-variant mb-md">엔진 관련 리콜·기술결함 이력은 차량번호로 즉시 조회 가능합니다.</p>
+    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">리콜 조회 바로가기 →</a>
+  </div>
+</article>
+
+<section class="pb-xl">
+  <h2 class="font-headline text-lg font-semibold mb-md">함께 보면 좋은 글</h2>
+  <div class="grid gap-md md:grid-cols-2">
+    <a href="/blog/recall-check-guide/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+      <div class="text-xs text-muted mb-xs">리콜 조회</div>
+      <div class="font-headline font-semibold text-sm">자동차 리콜 조회하는 법</div>
+    </a>
+    <a href="/blog/engine-oil-interval/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
+      <div class="text-xs text-muted mb-xs">정비 주기</div>
+      <div class="font-headline font-semibold text-sm">엔진오일 교환 주기 정확히 알기</div>
+    </a>
+  </div>
+</section>
+
+<footer class="px-margin py-lg border-t border-app-border text-center mt-xl">
+  <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
+  <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA Corp. All Rights Reserved.</p>
+  <p class="mt-xs text-[10px] text-muted"><a href="/about/" class="hover:underline">소개</a> · <a href="/terms/" class="hover:underline">이용약관</a> · <a href="/privacy/" class="hover:underline">개인정보처리방침</a></p>
+</footer>
+
+</main>
+
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">
+  <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
+    <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">home</span><span class="font-headline text-[10px] font-medium mt-0.5">홈</span></a>
+    <a href="/news" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">newspaper</span><span class="font-headline text-[10px] font-medium mt-0.5">뉴스</span></a>
+    <a href="/blog/" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">article</span><span class="font-headline text-[10px] font-bold mt-0.5">블로그</span></a>
+    <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">history</span><span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span></a>
+    <a href="/parts" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">campaign</span><span class="font-headline text-[10px] font-medium mt-0.5">리콜</span></a>
+  </div>
+</nav>
+
+<script>function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}</script>
+</body></html>
