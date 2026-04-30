@@ -38,6 +38,8 @@
 ]}
 </script>
 <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
+<script src="https://js.tosspayments.com/v2/standard"></script>
+<script defer src="/js/payment.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -112,6 +114,10 @@ body{min-height:100dvh;}
         <li class="flex gap-xs items-center dark:text-on-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check</span>Claude AI 종합 분석</li>
       </ul>
       <p class="text-[11px] mt-md bg-white/15 rounded-lg p-sm dark:text-on-primary"><span class="material-symbols-outlined text-[12px] align-middle">tips_and_updates</span> 추천 — 1대 진지하게 구매할 때 한방에</p>
+      <button type="button" onclick="achajaPayment.request('comprehensive')" class="mt-md w-full bg-white text-primary-container dark:text-primary-container font-bold text-sm py-3 rounded-xl shadow hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] transition flex items-center justify-center gap-1">
+        <span class="material-symbols-outlined text-[18px]">credit_card</span>
+        4,900원 결제하기
+      </button>
     </article>
 
     <!-- 상품 2 — 사고이력 상세 -->
@@ -128,6 +134,10 @@ body{min-height:100dvh;}
           <link itemprop="availability" href="https://schema.org/PreOrder"/>
         </p>
       </div>
+      <button type="button" onclick="achajaPayment.request('accident')" class="mt-md w-full bg-primary-container hover:bg-primary text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">credit_card</span>
+        2,900원 결제하기
+      </button>
     </article>
 
     <!-- 상품 3 — 정비이력 상세 -->
@@ -144,6 +154,10 @@ body{min-height:100dvh;}
           <link itemprop="availability" href="https://schema.org/PreOrder"/>
         </p>
       </div>
+      <button type="button" onclick="achajaPayment.request('maintenance')" class="mt-md w-full bg-primary-container hover:bg-primary text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">credit_card</span>
+        1,500원 결제하기
+      </button>
     </article>
 
     <!-- 상품 4 — 시세 정밀분석 -->
@@ -160,6 +174,10 @@ body{min-height:100dvh;}
           <link itemprop="availability" href="https://schema.org/PreOrder"/>
         </p>
       </div>
+      <button type="button" onclick="achajaPayment.request('price')" class="mt-md w-full bg-primary-container hover:bg-primary text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">credit_card</span>
+        1,900원 결제하기
+      </button>
     </article>
   </div>
 
@@ -197,17 +215,18 @@ body{min-height:100dvh;}
     </article>
   </div>
 
-  <p class="mt-lg text-[11px] text-muted text-center">표시된 가격은 예정 가격이며, 본인인증(NICE)·결제(토스페이먼츠) 연동 완료 후 순차 오픈됩니다. 가격은 변경될 수 있습니다.</p>
+  <p class="mt-lg text-[11px] text-muted text-center">현재 토스페이먼츠 <strong>테스트 결제 환경</strong>입니다. 전자결제 심사 통과 후 실결제로 전환됩니다. 본인인증(NICE)·이력 데이터 연동은 순차 오픈 예정.</p>
 
   <!-- 판매자 정보 (전자상거래법 표기) -->
   <div class="mt-xl p-lg bg-surface-container-low rounded-2xl border border-outline-variant">
     <h2 class="font-headline font-bold text-sm mb-sm">판매자 정보</h2>
     <dl class="text-xs space-y-1.5">
       <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">상호</dt><dd class="text-on-surface">코하(Koha)</dd></div>
-      <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">대표자</dt><dd class="text-on-surface">koha</dd></div>
+      <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">대표자</dt><dd class="text-on-surface">김용헌</dd></div>
+      <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">사업자등록</dt><dd class="text-on-surface">108-16-82025</dd></div>
+      <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">사업장</dt><dd class="text-on-surface">경기도 남양주시 진접읍 해밀예당1로 145</dd></div>
       <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">서비스명</dt><dd class="text-on-surface">ACHAJA (achaja.net)</dd></div>
       <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">이메일</dt><dd class="text-on-surface"><a class="underline" href="mailto:koha3d77@gmail.com">koha3d77@gmail.com</a></dd></div>
-      <div class="flex gap-sm"><dt class="text-muted w-20 flex-shrink-0">사업자등록</dt><dd class="text-on-surface">신청 완료 · 발급 대기</dd></div>
     </dl>
   </div>
 </section>

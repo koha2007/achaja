@@ -2,3 +2,26 @@
 # Local screenshot uploads (keep in working dir, don't commit)
 1-*.jpg
 1-*.png
+image.png
+image copy.png
+image*.png
+
+# Personal documents (개인정보·사업자등록증 등)
+*.pdf
+ACHAJA_사업자*
+android.keystore
+*.keystore
+*.jks
+app-release-*
+
+# Android build artifacts
+.gradle/
+build/
+gradle/
+gradlew
+gradlew.bat
+gradle.properties
+build.gradle
+settings.gradle
+app/
+manifest-checksum.txt

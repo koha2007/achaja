@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>결제 완료 — ACHAJA</title>
+<meta name="description" content="ACHAJA 유료 리포트 결제가 완료되었습니다."/>
+<meta name="theme-color" content="#003178"/>
+<meta name="robots" content="noindex,follow"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg"/>
+<link rel="manifest" href="/manifest.webmanifest"/>
+<script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--c-primary:0 49 120;--c-primary-container:13 71 161;--c-on-primary:255 255 255;--c-background:248 249 250;--c-surface:248 249 250;--c-surface-container:237 238 239;--c-surface-container-low:243 244 245;--c-on-surface:25 28 29;--c-on-surface-variant:67 70 82;--c-outline:115 119 131;--c-outline-variant:195 198 212;--c-header-bg:248 249 250;--c-nav-bg:255 255 255;--c-app-border:225 227 228;--c-muted:100 116 139;--c-muted-strong:71 85 105;--c-active-bg:219 234 254;}
+html.dark{--c-primary:176 198 255;--c-primary-container:0 49 120;--c-on-primary:0 45 111;--c-background:18 19 24;--c-surface:18 19 24;--c-surface-container:30 31 36;--c-surface-container-low:26 27 32;--c-on-surface:226 226 232;--c-on-surface-variant:196 198 210;--c-outline:142 144 156;--c-outline-variant:67 70 81;--c-header-bg:2 6 23;--c-nav-bg:15 23 42;--c-app-border:39 39 42;--c-muted:161 161 170;--c-muted-strong:82 82 91;--c-active-bg:30 58 138;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+body{min-height:100dvh;}
+.pb-safe{padding-bottom:env(safe-area-inset-bottom);}
+@keyframes spin{to{transform:rotate(360deg);}}
+.spinner{animation:spin 0.8s linear infinite;}
+</style>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"rgb(var(--c-primary)/<alpha-value>)","primary-container":"rgb(var(--c-primary-container)/<alpha-value>)","on-primary":"rgb(var(--c-on-primary)/<alpha-value>)","background":"rgb(var(--c-background)/<alpha-value>)","surface":"rgb(var(--c-surface)/<alpha-value>)","surface-container":"rgb(var(--c-surface-container)/<alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)","on-surface":"rgb(var(--c-on-surface)/<alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)","outline":"rgb(var(--c-outline)/<alpha-value>)","outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)","header-bg":"rgb(var(--c-header-bg)/<alpha-value>)","nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)","app-border":"rgb(var(--c-app-border)/<alpha-value>)","muted":"rgb(var(--c-muted)/<alpha-value>)","muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)","active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"},fontFamily:{"headline":["Manrope"],"body":["Inter"]},spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","xl":"32px","margin":"20px"}}}};</script>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-24">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">본문으로 건너뛰기</a>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
+    <a href="/" class="flex items-center gap-2"><span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span></a>
+  </div>
+</header>
+
+<main id="main" class="pt-14 max-w-2xl mx-auto px-margin">
+
+<section class="py-xl">
+  <!-- 처리 중 (기본) -->
+  <div id="state-loading" class="text-center py-xl">
+    <div class="inline-block w-12 h-12 border-4 border-primary-container/20 border-t-primary-container rounded-full spinner"></div>
+    <h1 class="font-headline text-xl font-bold mt-md">결제 승인 처리 중...</h1>
+    <p class="text-sm text-muted mt-xs">잠시만 기다려주세요. 페이지를 닫지 마세요.</p>
+  </div>
+
+  <!-- 성공 -->
+  <div id="state-success" class="hidden text-center py-xl">
+    <div class="inline-flex w-16 h-16 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-full items-center justify-center">
+      <span class="material-symbols-outlined text-[36px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+    </div>
+    <h1 class="font-headline text-2xl font-bold mt-md">결제가 완료되었습니다</h1>
+    <p class="text-sm text-muted mt-xs">ACHAJA 유료 리포트 결제가 정상 처리되었습니다.</p>
+
+    <div class="mt-lg p-lg bg-surface-container rounded-2xl border border-outline-variant text-left text-sm">
+      <h2 class="font-headline font-bold text-base mb-sm">결제 내역</h2>
+      <dl class="space-y-1.5 text-xs">
+        <div class="flex justify-between gap-sm"><dt class="text-muted">상품명</dt><dd id="r-orderName" class="text-on-surface font-medium">-</dd></div>
+        <div class="flex justify-between gap-sm"><dt class="text-muted">결제 금액</dt><dd id="r-amount" class="text-on-surface font-bold">-</dd></div>
+        <div class="flex justify-between gap-sm"><dt class="text-muted">결제 수단</dt><dd id="r-method" class="text-on-surface">-</dd></div>
+        <div class="flex justify-between gap-sm"><dt class="text-muted">주문번호</dt><dd id="r-orderId" class="text-on-surface text-[10px] font-mono break-all max-w-[60%] text-right">-</dd></div>
+        <div class="flex justify-between gap-sm"><dt class="text-muted">승인일시</dt><dd id="r-approvedAt" class="text-on-surface">-</dd></div>
+      </dl>
+    </div>
+
+    <div class="mt-lg flex gap-sm">
+      <a href="/history" class="flex-1 bg-primary-container text-white font-semibold text-sm py-3 rounded-xl text-center">이력조회 시작하기</a>
+      <a href="/my" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">마이페이지</a>
+    </div>
+
+    <p class="mt-md text-[11px] text-muted">결제 영수증은 마이페이지에서 확인하실 수 있습니다. 토스페이먼츠 테스트 결제 환경 — 실제 청구되지 않습니다.</p>
+  </div>
+
+  <!-- 실패 -->
+  <div id="state-error" class="hidden text-center py-xl">
+    <div class="inline-flex w-16 h-16 bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 rounded-full items-center justify-center">
+      <span class="material-symbols-outlined text-[36px]" style="font-variation-settings:'FILL' 1;">error</span>
+    </div>
+    <h1 class="font-headline text-2xl font-bold mt-md">결제 승인 실패</h1>
+    <p id="error-message" class="text-sm text-muted mt-xs">결제 승인 중 오류가 발생했습니다.</p>
+    <p id="error-code" class="text-[11px] text-muted mt-xs font-mono"></p>
+
+    <div class="mt-lg flex gap-sm">
+      <a href="/pricing/" class="flex-1 bg-primary-container text-white font-semibold text-sm py-3 rounded-xl text-center">상품안내로 돌아가기</a>
+      <a href="/" class="flex-1 bg-surface-container border border-outline-variant text-on-surface font-semibold text-sm py-3 rounded-xl text-center">홈</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="px-margin py-lg border-t border-app-border text-center mt-xl">
+  <p class="text-[10px] text-muted-strong">상호: 코하(Koha) · 대표: 김용헌 · 사업자등록 108-16-82025 · 문의: koha3d77@gmail.com</p>
+  <p class="mt-xs text-[10px] text-muted-strong">© 2026 ACHAJA by 코하(Koha). All Rights Reserved.</p>
+</footer>
+
+<script>
+(async function() {
+  const params = new URLSearchParams(window.location.search);
+  const paymentKey = params.get('paymentKey');
+  const orderId = params.get('orderId');
+  const amount = params.get('amount');
+
+  const elLoading = document.getElementById('state-loading');
+  const elSuccess = document.getElementById('state-success');
+  const elError = document.getElementById('state-error');
+
+  function showError(msg, code) {
+    elLoading.classList.add('hidden');
+    elError.classList.remove('hidden');
+    document.getElementById('error-message').textContent = msg || '알 수 없는 오류';
+    if (code) document.getElementById('error-code').textContent = code;
+  }
+
+  if (!paymentKey || !orderId || !amount) {
+    showError('잘못된 접근입니다. 결제 정보가 없습니다.', 'MISSING_PARAMS');
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/payment/confirm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ paymentKey, orderId, amount: Number(amount) }),
+    });
+    const data = await res.json();
+
+    if (!res.ok || !data.ok) {
+      showError(data?.message || '결제 승인에 실패했습니다.', data?.code || `HTTP_${res.status}`);
+      return;
+    }
+
+    const p = data.payment || {};
+    const stored = sessionStorage.getItem(`achaja_order_${orderId}`);
+    let displayName = p.orderName || (stored ? JSON.parse(stored).productName : '');
+
+    document.getElementById('r-orderName').textContent = displayName || '-';
+    document.getElementById('r-amount').textContent = '₩' + Number(p.totalAmount || amount).toLocaleString() + ' KRW';
+    document.getElementById('r-method').textContent = p.method || '-';
+    document.getElementById('r-orderId').textContent = orderId;
+    document.getElementById('r-approvedAt').textContent = p.approvedAt ? new Date(p.approvedAt).toLocaleString('ko-KR') : '-';
+
+    elLoading.classList.add('hidden');
+    elSuccess.classList.remove('hidden');
+
+    if (window.gtag) {
+      window.gtag('event', 'purchase', {
+        transaction_id: orderId,
+        value: Number(amount),
+        currency: 'KRW',
+        items: [{ item_name: displayName }],
+      });
+    }
+    sessionStorage.removeItem(`achaja_order_${orderId}`);
+  } catch (err) {
+    showError('네트워크 오류: ' + (err?.message || err), 'NETWORK_ERROR');
+  }
+})();
+</script>
+
+</body></html>
