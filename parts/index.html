@@ -42,6 +42,9 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
+<link rel="dns-prefetch" href="https://www.clarity.ms"/>
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -349,17 +352,33 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
   }
 
   function buildSuggestions(q){
-    if(!q || q.length<1) return [];
-    var ql=q.toLowerCase(), seen={}, out=[];
-    for(var i=0;i<ALL.length && out.length<8;i++){
-      var r=ALL[i];
-      var label;
-      if(r.maker.toLowerCase().indexOf(ql)>=0) label=r.maker;
-      else if(r.model.toLowerCase().indexOf(ql)>=0) label=r.model;
-      else continue;
-      if(!seen[label]){seen[label]=true;out.push({label:label,sub:label===r.maker?'제조사':r.maker});}
+    var ql=(q||'').toLowerCase().trim();
+    var tokens=ql.split(/\s+/).filter(Boolean);
+    // 빈 입력 시 → 데이터 기반 인기 제조사 상위 6개
+    if(tokens.length===0){
+      var counts={};
+      for(var k=0;k<ALL.length;k++){counts[ALL[k].maker]=(counts[ALL[k].maker]||0)+1;}
+      var sorted=Object.keys(counts).sort(function(a,b){return counts[b]-counts[a];}).slice(0,6);
+      return sorted.map(function(m){return {label:m,sub:'제조사 · '+counts[m]+'건',count:counts[m]};});
     }
-    return out;
+    function matchAll(text){var t=text.toLowerCase();for(var i=0;i<tokens.length;i++){if(t.indexOf(tokens[i])<0) return false;} return true;}
+    var seen={}, makerCount={}, modelInfo={};
+    for(var i=0;i<ALL.length;i++){
+      var r=ALL[i];
+      if(matchAll(r.maker)){makerCount[r.maker]=(makerCount[r.maker]||0)+1;}
+      var key=r.maker+'|'+r.model;
+      if(matchAll(r.model)&&!seen[key]){seen[key]=true;modelInfo[key]={label:r.model,sub:r.maker,count:1};}
+      else if(seen[key]&&matchAll(r.model)){modelInfo[key].count++;}
+    }
+    var out=[];
+    Object.keys(makerCount).slice(0,4).forEach(function(m){
+      out.push({label:m,sub:'제조사 · '+makerCount[m]+'건',count:makerCount[m]});
+    });
+    Object.keys(modelInfo).slice(0,8-out.length).forEach(function(k){
+      var v=modelInfo[k];
+      out.push({label:v.label,sub:v.sub+' · '+v.count+'건',count:v.count});
+    });
+    return out.slice(0,8);
   }
 
   function renderAutocomplete(q){
@@ -433,7 +452,8 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
 
   async function loadData(){
     try{
-      var r=await fetch('/data/recalls.json');
+      var r=await fetch('/api/recalls?numOfRows=1000').catch(function(){return null;});
+      if(!r||!r.ok){ r=await fetch('/data/recalls.json'); }
       if(!r.ok) throw new Error('fetch_failed');
       var data=await r.json();
       ALL=data.records;
@@ -461,6 +481,9 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
       var v=search.value.trim();
       renderAutocomplete(v);
       timer=setTimeout(applyFilters,150);
+    });
+    search.addEventListener('focus',function(){
+      if(ALL.length>0 && search.value.trim().length===0) renderAutocomplete('');
     });
     search.addEventListener('keydown',function(e){
       var ul=document.getElementById('recall-autocomplete');

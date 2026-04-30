@@ -109,6 +109,21 @@
     'GENESIS': {
       'A': '아산공장 (한국)',
       'U': '울산공장 (한국)'
+    },
+    // KG모빌리티/쌍용 (KPB/KPH)
+    'KGMOBILITY': {
+      'P': '평택공장 (한국)',
+      'C': '창원공장 (한국)'
+    },
+    // 르노코리아 (KNM/KPA)
+    'RENAULTKOREA': {
+      'B': '부산공장 (한국)'
+    },
+    // 한국지엠 (KL1/KL3/KL4/KL5/KL7/KL8)
+    'GMKOREA': {
+      'B': '부평공장 (한국)',
+      'C': '창원공장 (한국)',
+      'G': '군산공장 (한국, 폐쇄)'
     }
   };
 
@@ -158,6 +173,9 @@
     if (/현대/.test(maker)) key = 'HYUNDAI';
     else if (/기아/.test(maker)) key = 'KIA';
     else if (/제네시스/.test(maker)) key = 'GENESIS';
+    else if (/KG모빌리티|쌍용/.test(maker)) key = 'KGMOBILITY';
+    else if (/르노코리아/.test(maker)) key = 'RENAULTKOREA';
+    else if (/한국지엠|쉐보레|대우/.test(maker)) key = 'GMKOREA';
     if (!key) return null;
     return (PLANT[key] && PLANT[key][pos11]) || null;
   }
@@ -377,12 +395,26 @@
   // 한국 차량번호 검증 + 용도 추정
   // 2006년 이후 신형 번호판: "12가3456" 또는 "123가4567"
   var PLATE_RE = /^([0-9]{2,3})([가-힣])([0-9]{4})$/;
-  // 용도 기호 (2006년 신 번호판 체계)
+  // 용도 기호 (자동차관리법 시행규칙 별표 9)
   var PURPOSE = {
-    rental: ['하', '허', '호'], // 렌터카
-    business: ['아', '바', '사', '자'], // 영업용/택시/버스/화물 (일부)
-    diplomat: ['외'] // 외교용
+    rental: ['하', '허', '호'],                                // 렌터카
+    taxi:   ['아', '바', '사', '자'],                          // 영업용 택시·버스·화물 공통 (1차 분류)
+    truck:  ['배'],                                            // 택배·소형화물 전용
+    diplomat: ['외']                                          // 외교용 (실제 형식은 외교 XX)
   };
+
+  // prefix 숫자 범위로 용도 더 세분화 (자동차관리법 별표 9)
+  function refineByPrefix(prefix, kana) {
+    var n = parseInt(prefix, 10);
+    if (isNaN(n)) return null;
+    if (PURPOSE.taxi.indexOf(kana) >= 0) {
+      // 70~79: 택시, 80~97: 버스, 70 미만/98+: 화물 (영업용 카테고리 내 세분화)
+      if (n >= 70 && n <= 79) return '영업용 택시';
+      if (n >= 80 && n <= 97) return '영업용 버스';
+      return '영업용 화물·승합';
+    }
+    return null;
+  }
 
   function decodePlate(raw) {
     if (!raw) return { valid: false };
@@ -390,19 +422,32 @@
     var m = plate.match(PLATE_RE);
     if (!m) return { valid: false, plate: plate };
     var kana = m[2];
+    var prefix = m[1];
     var type = '자가용 승용';
     if (PURPOSE.rental.indexOf(kana) >= 0) type = '렌터카';
-    else if (PURPOSE.business.indexOf(kana) >= 0) type = '영업용';
+    else if (PURPOSE.taxi.indexOf(kana) >= 0) type = refineByPrefix(prefix, kana) || '영업용';
+    else if (PURPOSE.truck.indexOf(kana) >= 0) type = '영업용 택배·화물';
     else if (PURPOSE.diplomat.indexOf(kana) >= 0) type = '외교용';
+
+    // 자가용 prefix 숫자별 분류 (자가용은 prefix만으로도 차종 추정)
+    var category = null;
+    if (type === '자가용 승용') {
+      var n = parseInt(prefix, 10);
+      if (n >= 1 && n <= 69) category = '승용차';
+      else if (n >= 70 && n <= 79) category = '승합차';
+      else if (n >= 80 && n <= 97) category = '화물차';
+      else if (n >= 98 && n <= 99) category = '특수차';
+    }
 
     return {
       valid: true,
       plate: plate,
-      prefix: m[1],
+      prefix: prefix,
       kana: kana,
       suffix: m[3],
       type: type,
-      cc: m[1].length === 3 ? '2019년 이후 신규발급' : '2006년~현재 전국번호판'
+      category: category,
+      cc: prefix.length === 3 ? '2019년 이후 신규발급' : '2006년~현재 전국번호판'
     };
   }
 

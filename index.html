@@ -13,7 +13,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg"/>
 <link rel="manifest" href="/manifest.json"/>
-<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js')</script>
+<script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('/sw.js');});</script>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
@@ -36,7 +36,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","name":"ACHAJA","alternateName":"아차자","url":"https://achaja.net/","inLanguage":"ko-KR","description":"차량번호·VIN로 제조사·연식·리콜을 무료 조회. 중고차 구매 가이드 블로그 제공.","potentialAction":{"@type":"SearchAction","target":"https://achaja.net/history?q={search_term_string}","query-input":"required name=search_term_string"}},
-{"@type":"Organization","name":"ACHAJA","url":"https://achaja.net/","logo":"https://achaja.net/og-image.png","email":"koha3d77@gmail.com","sameAs":["https://github.com/koha2007/achaja"]},
+{"@type":"Organization","name":"ACHAJA","alternateName":"아차자","legalName":"코하","url":"https://achaja.net/","logo":"https://achaja.net/icon-512.png","email":"koha3d77@gmail.com","foundingDate":"2026-04","founder":{"@type":"Person","name":"김용헌"},"taxID":"108-16-82025","sameAs":["https://github.com/koha2007/achaja"],"address":{"@type":"PostalAddress","addressCountry":"KR"}},
 {"@type":"Service","name":"ACHAJA 차량 이력조회","provider":{"@type":"Organization","name":"ACHAJA"},"areaServed":"KR","serviceType":"차량 정보 조회","description":"VIN 디코딩(제조사·원산지·연식), 한국교통안전공단 리콜 데이터 매칭, 차량번호 번호판 분석 — 모든 조회 무료."},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"차량 이력은 어떻게 조회하나요?","acceptedAnswer":{"@type":"Answer","text":"차대번호(VIN) 17자리 입력 시 제조사·원산지·연식과 해당 제조사의 최신 리콜 이력을 무료로 조회할 수 있습니다. 차량번호만 입력하면 번호판 용도(자가용/렌터카/영업용)와 등록체계만 확인됩니다."}},
@@ -55,6 +55,9 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
+<link rel="dns-prefetch" href="https://www.clarity.ms"/>
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>                                                                         
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>                                                                                          
   <style>                                                                                                                                                                                                                              
