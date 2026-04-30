@@ -1,5 +1,5 @@
 // ACHAJA Service Worker — achaja.net
-const VERSION = 'v1.0.0';
+const VERSION = 'v1.1.0';
 const CACHE_STATIC = `achaja-static-${VERSION}`;
 const CACHE_RUNTIME = `achaja-runtime-${VERSION}`;
 
@@ -8,7 +8,6 @@ const PRECACHE_URLS = [
   '/index.html',
   '/404.html',
   '/manifest.json',
-  '/manifest.webmanifest',
   '/favicon.svg',
   '/apple-touch-icon.svg',
   '/icon-96.png',
