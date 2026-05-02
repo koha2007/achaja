@@ -67,6 +67,20 @@
       "label": "ACHAJA 데스크톱 - 차량 이력 조회"
     },
     {
+      "src": "/screenshot-blog-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "ACHAJA 블로그 - 중고차 가이드 40편"
+    },
+    {
+      "src": "/screenshot-news-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "ACHAJA 뉴스 - 자동차 최신 소식"
+    },
+    {
       "src": "/screenshot-mobile.png",
       "sizes": "720x1280",
       "type": "image/png",
