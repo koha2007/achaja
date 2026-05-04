@@ -6,5 +6,11 @@
     "directory": "./",
     "not_found_handling": "404-page",
     "binding": "ASSETS"
-  }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "ACHAJA_CACHE",
+      "id": "30fece72a9fe4cdc98aa81b453c0b20a"
+    }
+  ]
 }
