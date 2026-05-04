@@ -3,10 +3,7 @@
 const TOSS_CLIENT_KEY = 'test_ck_QbgMGZzorzKXvmBPMRZv8l5E1em4';
 
 const PRODUCTS = {
-  comprehensive: { name: '종합 리포트', amount: 4900 },
-  accident: { name: '사고이력 상세', amount: 2900 },
-  maintenance: { name: '정비이력 상세', amount: 1500 },
-  price: { name: '시세 정밀분석', amount: 1900 },
+  comprehensive: { name: '종합 리포트', amount: 1900 },
 };
 
 function generateOrderId(productKey) {

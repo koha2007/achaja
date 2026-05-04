@@ -1,7 +1,7 @@
 {
   "packageId": "net.achaja.app",
   "host": "achaja.net",
-  "name": "ACHAJA - 중고차 사고이력·침수·정비 조회",
+  "name": "ACHAJA - VIN·리콜·번호판 무료 검증",
   "launcherName": "ACHAJA",
   "display": "standalone",
   "themeColor": "#003178",

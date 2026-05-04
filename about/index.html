@@ -110,7 +110,7 @@ body{min-height:100dvh;}
   </ul>
 
   <h2>ACHAJA는 어떤 서비스인가요?</h2>
-  <p>ACHAJA는 <strong>중고차를 살 때 리콜 차량과 차량 기본 정보를 확인할 수 있도록</strong> 도와주는 웹 서비스입니다. 현재는 한국교통안전공단 자동차리콜센터 공공데이터와 ISO 3779 VIN 표준을 기반으로 무료 조회를 제공하며, 사고·침수·정비 상세 이력은 보험개발원 카히스토리·공공 API 연동이 완료되는 대로 단계적으로 추가됩니다. "이 차 문제 없을까?"라는 질문에 공식 데이터로 답하는 것이 목표입니다.</p>
+  <p>ACHAJA는 <strong>중고차 매물을 검토할 때 합법적 공공 데이터로 1차 검증할 수 있도록</strong> 도와주는 웹 서비스입니다. 한국교통안전공단 자동차리콜센터 공공데이터와 ISO 3779 VIN 표준을 기반으로 제조사·연식·리콜·번호판 정보를 무료로 검증해 드립니다. 사고이력 조회·중개·재판매는 ACHAJA가 일절 수행하지 않으며, 사고이력은 보험개발원 카히스토리(carhistory.or.kr) 공식 사이트에서 직접 조회하시도록 외부 안내합니다.</p>
 
   <h2>서비스 범위 — 국산차·수입차 모두 지원</h2>
   <p>ACHAJA는 국산차 전용 서비스가 아닙니다. 기능별로 지원 범위를 정리하면 다음과 같습니다.</p>
@@ -121,24 +121,21 @@ body{min-height:100dvh;}
   </ul>
 
   <h2>유료 결제 시 받을 수 있는 정보</h2>
-  <p>현재 유료 기능은 모두 <strong>"준비 중"</strong> 상태이며, 본인인증·결제·데이터 계약이 완료되는 대로 단계적으로 오픈됩니다. 오픈 예정 가격과 범위는 다음과 같습니다(이용약관 기재 기준, 최종 요금은 변경될 수 있습니다).</p>
+  <p>유료 기능은 토스페이먼츠 가맹점 심사·본인인증 연동이 완료되는 대로 오픈됩니다. 오픈 예정 가격과 범위는 다음과 같습니다(최종 요금은 변경될 수 있습니다).</p>
   <div class="my-md border border-outline-variant rounded-2xl overflow-hidden">
     <table class="w-full text-sm">
       <thead class="bg-surface-container-low">
         <tr><th class="text-left px-md py-sm font-headline font-semibold text-on-surface">항목</th><th class="text-left px-md py-sm font-headline font-semibold text-on-surface">예정 가격</th><th class="text-left px-md py-sm font-headline font-semibold text-on-surface">포함 내용</th></tr>
       </thead>
       <tbody class="divide-y divide-outline-variant">
-        <tr><td class="px-md py-sm font-semibold">사고이력 상세</td><td class="px-md py-sm">2,900원/건</td><td class="px-md py-sm text-on-surface-variant text-xs">보험개발원 카히스토리 기반 사고 일자·수리비·부위</td></tr>
-        <tr><td class="px-md py-sm font-semibold">정비이력 상세</td><td class="px-md py-sm">1,500원/건</td><td class="px-md py-sm text-on-surface-variant text-xs">공식·사설 정비소 정비 기록 합산</td></tr>
-        <tr><td class="px-md py-sm font-semibold">시세 정밀분석</td><td class="px-md py-sm">1,900원/건</td><td class="px-md py-sm text-on-surface-variant text-xs">동일 모델 거래가 분포 + 3년 잔존가치 예측</td></tr>
-        <tr><td class="px-md py-sm font-semibold">종합 리포트</td><td class="px-md py-sm">4,900원/건</td><td class="px-md py-sm text-on-surface-variant text-xs">위 항목 통합 + 구매 추천 점수</td></tr>
-        <tr><td class="px-md py-sm font-semibold">월 구독 Basic</td><td class="px-md py-sm">4,900원/월</td><td class="px-md py-sm text-on-surface-variant text-xs">종합 리포트 월 3건 + 관심차량 리콜 알림</td></tr>
-        <tr><td class="px-md py-sm font-semibold">월 구독 Premium</td><td class="px-md py-sm">9,900원/월</td><td class="px-md py-sm text-on-surface-variant text-xs">무제한 리포트 + 시세 알림 + 정비 이력 우선조회</td></tr>
+        <tr><td class="px-md py-sm font-semibold">VIN 종합 리포트</td><td class="px-md py-sm">1,900원/건</td><td class="px-md py-sm text-on-surface-variant text-xs">VIN 차량정보 + 국토부 리콜 매칭 + Claude AI 종합 분석 + PDF 다운로드</td></tr>
+        <tr><td class="px-md py-sm font-semibold">월 구독 Basic</td><td class="px-md py-sm">4,900원/월</td><td class="px-md py-sm text-on-surface-variant text-xs">VIN 종합 리포트 월 3건 + 관심차량 리콜 알림</td></tr>
+        <tr><td class="px-md py-sm font-semibold">월 구독 Premium</td><td class="px-md py-sm">9,900원/월</td><td class="px-md py-sm text-on-surface-variant text-xs">무제한 리포트 + 우선 처리 + 확장 AI 분석</td></tr>
         <tr><td class="px-md py-sm font-semibold">월 구독 Dealer</td><td class="px-md py-sm">29,900원/월</td><td class="px-md py-sm text-on-surface-variant text-xs">대량 조회 API + 매물 일괄 분석 (딜러·매매상사)</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="text-xs text-muted">※ 유료 결제 시에도 국산·수입차 구분 없이 동일 조건으로 조회됩니다. 단, 데이터 제공처(보험개발원 등)의 커버리지에 따라 일부 병행수입차는 상세 이력이 누락될 수 있습니다.</p>
+  <p class="text-xs text-muted">※ 사고이력은 ACHAJA가 제공하지 않습니다. <a href="https://www.carhistory.or.kr" target="_blank" rel="noopener noreferrer" class="text-primary-container dark:text-primary hover:underline">보험개발원 카히스토리</a>(건당 770~2,200원)에서 직접 조회하시기 바랍니다.</p>
 
   <h2>왜 만들었나요?</h2>
   <p>한국에서 중고차 구매 피해는 여전히 흔합니다. 보험개발원·국토부가 무료로 제공하는 정보가 많지만, 출처가 나뉘어 있어 일반인이 한 번에 확인하기 어렵습니다. 유료 리포트(카히스토리 등)는 품질은 좋지만 한 건당 2,000원 이상 비용이 들어 가벼운 매물 비교에는 부담입니다.</p>
@@ -150,18 +147,17 @@ body{min-height:100dvh;}
     <li><strong>차량 리콜 조회</strong> — 한국교통안전공단 자동차리콜센터 공공데이터 941건을 제조사별로 매칭 표시 (<a href="/parts" class="text-primary-container dark:text-primary hover:underline">리콜 조회</a>)</li>
     <li><strong>차량번호 분석</strong> — 번호판 용도(자가용/렌터카/영업용/외교용) 및 등록체계 판별</li>
     <li><strong>자동차 뉴스</strong> — 네이버 뉴스 검색 API를 통한 신차·리콜·정책 최신 동향 (<a href="/news" class="text-primary-container dark:text-primary hover:underline">뉴스</a>)</li>
-    <li><strong>중고차 가이드 블로그</strong> — 침수차 판별, 사고이력 무료 조회, VIN 해석, 시세 계산, 세금 절약 등 실용 가이드 (<a href="/blog/" class="text-primary-container dark:text-primary hover:underline">블로그</a>)</li>
+    <li><strong>중고차 가이드 블로그</strong> — 침수차 판별, 사고이력 조회 안내, VIN 해석, 시세 계산, 세금 절약 등 실용 가이드 (<a href="/blog/" class="text-primary-container dark:text-primary hover:underline">블로그</a>)</li>
   </ul>
 
   <h2>준비 중인 기능</h2>
-  <p>아래 기능은 본인인증(NICE/KCB), 결제(토스페이먼츠), 유료 데이터 계약(카히스토리·하이픈 등)이 순차적으로 완료되는 대로 오픈됩니다. 일정은 확정되는 대로 공지합니다.</p>
+  <p>아래 기능은 본인인증(NICE/KCB)과 결제(토스페이먼츠) 가맹점 심사가 완료되는 대로 오픈됩니다. 일정은 확정되는 대로 공지합니다.</p>
   <ul>
-    <li>사고·침수 상세 이력 조회 (보험개발원 데이터)</li>
-    <li>정비 이력 상세 (공식·사설 정비소 합산)</li>
-    <li>정밀 시세 분석 및 3년 잔존가치 예측</li>
-    <li>종합 리포트 및 월 구독 (Basic / Premium / Dealer)</li>
+    <li>VIN 종합 리포트 1,900원/건 (VIN+리콜+Claude AI+PDF)</li>
+    <li>월 구독 Basic / Premium / Dealer</li>
     <li>관심 차량 저장·리콜 알림 푸시</li>
   </ul>
+  <p class="text-xs text-muted">※ 사고이력 조회·중개·재판매는 ACHAJA의 서비스 범위가 아닙니다. 사고이력은 보험개발원 카히스토리에서 직접 조회하세요.</p>
 
   <h2>데이터 출처</h2>
   <p>ACHAJA가 사용하는 모든 조회 결과는 공식 또는 표준 출처에 기반하며, 임의로 데이터를 생성하거나 가공하지 않습니다.</p>

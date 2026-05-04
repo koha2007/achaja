@@ -1,7 +1,7 @@
 {
-  "name": "ACHAJA - 중고차 사고이력·침수·정비 조회",
+  "name": "ACHAJA - VIN·리콜·번호판 무료 검증",
   "short_name": "ACHAJA",
-  "description": "차량번호 하나로 사고·침수·정비 이력, 리콜 정보, 시세를 한 번에 조회. 공공 데이터 기반.",
+  "description": "차량번호 또는 VIN 한 번으로 제조사·연식·리콜·번호판 1차 검증. 공공 데이터 기반 무료 조회.",
   "start_url": "https://achaja.net/",
   "scope": "/",
   "id": "/",

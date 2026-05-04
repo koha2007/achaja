@@ -2,8 +2,8 @@
   <html lang="ko"><head>                                                                                                                                                                                                               
   <meta charset="utf-8"/>                                   
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <title>차량 이력조회 — ACHAJA | 사고·침수·정비이력 한 번에</title>
-  <meta name="description" content="차량번호·VIN 입력 한 번으로 사고·침수·정비이력 조회. 공공 데이터 기반. 상세 리포트 4,900원부터."/>
+  <title>차량 이력조회 — ACHAJA | VIN·리콜·번호판 무료 검증</title>
+  <meta name="description" content="차량번호·VIN 입력 한 번으로 제조사·연식·리콜·번호판 1차 검증. 공공 데이터 기반 무료. AI 종합 리포트 1,900원."/>
   <meta name="author" content="ACHAJA"/>
   <meta name="theme-color" content="#003178"/>
 <meta name="naver-site-verification" content="1e39ff92cba7c69270ba89d91ed36828248a442c"/>
@@ -23,12 +23,12 @@
   <meta property="og:site_name" content="ACHAJA"/>
   <meta property="og:locale" content="ko_KR"/>
   <meta property="og:url" content="https://achaja.net/history"/>
-  <meta property="og:title" content="차량 이력조회 — 사고·침수·정비이력 한 번에"/>
-  <meta property="og:description" content="차량번호 또는 차대번호 한 번으로 사고·침수·정비·소유자 이력 조회. 공식 데이터 기반."/>
+  <meta property="og:title" content="차량 이력조회 — VIN·리콜·번호판 무료 검증"/>
+  <meta property="og:description" content="차량번호 또는 차대번호 한 번으로 제조사·연식·리콜·번호판 1차 검증. 공식 공공 데이터 기반."/>
   <meta property="og:image" content="https://achaja.net/og-image.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="차량 이력조회 — 사고·침수·정비이력 한 번에"/>
-  <meta name="twitter:description" content="차량번호 또는 차대번호 한 번으로 사고·침수·정비·소유자 이력 조회."/>
+  <meta name="twitter:title" content="차량 이력조회 — VIN·리콜·번호판 무료 검증"/>
+  <meta name="twitter:description" content="차량번호 또는 차대번호 한 번으로 제조사·연식·리콜·번호판 1차 검증."/>
   <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -189,12 +189,12 @@
           <p id="verdict-recall-status" class="text-[11px] font-bold text-on-surface">확인중</p>
         </div>
         <div class="text-center bg-surface/60 rounded-xl p-sm">
-          <span class="material-symbols-outlined text-slate-400 text-xl">car_crash</span>
-          <p class="text-[10px] text-muted mt-xs">사고/침수</p>
-          <p class="text-[11px] font-bold text-muted">유료(준비)</p>
+          <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">badge</span>
+          <p class="text-[10px] text-muted mt-xs">번호판</p>
+          <p id="verdict-plate-status" class="text-[11px] font-bold text-on-surface">분석</p>
         </div>
       </div>
-      <p class="text-[10px] text-muted mt-sm leading-relaxed">※ VIN·리콜 기준 1차 검증입니다. 사고·침수·정비 상세는 본인인증·결제 후 별도 조회.</p>
+      <p class="text-[10px] text-muted mt-sm leading-relaxed">※ ACHAJA는 VIN·리콜·번호판 기준 1차 검증을 무료로 제공합니다. 사고·침수 이력은 ACHAJA가 제공하지 않으며, 보험개발원 카히스토리에서 직접 조회하세요.</p>
     </div>
     <!-- Vehicle Basic Info from VIN -->
     <div class="bg-surface-container-high rounded-3xl p-lg border border-outline-variant/30">
@@ -247,7 +247,7 @@
         </div>
       </div>
 
-      <p class="text-muted text-[11px] mt-md leading-relaxed">※ VIN 표준(ISO 3779) + NHTSA 공개 데이터 기반. 사고·정비·색상 등은 본인인증 후 유료 조회가 필요합니다.</p>
+      <p class="text-muted text-[11px] mt-md leading-relaxed">※ VIN 표준(ISO 3779) + NHTSA 공개 데이터 기반. 사고이력은 ACHAJA가 제공하지 않으며, 보험개발원 카히스토리에서 직접 조회하시기 바랍니다.</p>
     </div>
 
     <!-- 리콜 매칭 -->
@@ -288,37 +288,41 @@
         <span class="material-symbols-outlined text-amber-600 dark:text-amber-400">info</span>
         <div>
           <p class="text-on-surface font-semibold text-sm">상세 정보 확인에는 VIN이 필요합니다</p>
-          <p class="text-muted text-xs mt-xs leading-relaxed">현행법상 차량번호만으로 제조사·연식·사고·정비 이력을 자동 조회할 수는 없습니다. 차량등록증에서 <strong>차대번호(VIN) 17자리</strong>를 확인해 입력해주세요.</p>
+          <p class="text-muted text-xs mt-xs leading-relaxed">현행법상 차량번호만으로 제조사·연식 정보를 자동 조회할 수는 없습니다. 차량등록증에서 <strong>차대번호(VIN) 17자리</strong>를 확인해 입력해주세요.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 유료 섹션 (본인인증·결제 필요) -->
+  <!-- 추가 조회 안내 -->
   <section id="history-paid" class="hidden space-y-md">
-    <h4 class="text-outline text-xs font-medium px-xs">추가 조회 (본인인증 필요)</h4>
-    <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">
-      <div class="flex items-center gap-md">
-        <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-red-500 dark:text-red-400">car_crash</span></div>
-        <div><p class="text-on-surface text-sm">사고·침수 이력</p><p class="text-outline text-[11px]">보험개발원 데이터 (준비 중)</p></div>
+    <h4 class="text-outline text-xs font-medium px-xs">추가 조회 안내</h4>
+
+    <!-- 사고이력 외부 안내 (카히스토리) -->
+    <div class="bg-surface-container border border-outline-variant/40 rounded-2xl p-md">
+      <div class="flex items-start gap-md">
+        <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-red-500 dark:text-red-400">car_crash</span></div>
+        <div class="flex-1 min-w-0">
+          <p class="text-on-surface text-sm font-bold">사고·침수 이력</p>
+          <p class="text-muted text-[11px] mt-xs leading-relaxed">ACHAJA는 사고이력 조회·중개·재판매를 일절 수행하지 않습니다. 보험개발원 카히스토리(공식)에서 건당 770~2,200원으로 직접 조회하세요.</p>
+        </div>
       </div>
-      <button class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-muted text-[11px] font-semibold cursor-not-allowed" disabled>준비 중</button>
+      <a href="https://www.carhistory.or.kr" target="_blank" rel="noopener noreferrer" class="block mt-sm text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">카히스토리에서 조회 →</a>
     </div>
-    <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">
-      <div class="flex items-center gap-md">
-        <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-blue-600 dark:text-blue-400">build</span></div>
-        <div><p class="text-on-surface text-sm">정비 이력 상세</p><p class="text-outline text-[11px]">공식·사설 센터 (준비 중)</p></div>
+
+    <!-- ACHAJA 종합 리포트 (오픈 예정) -->
+    <div class="bg-surface-container border border-outline-variant/40 rounded-2xl p-md">
+      <div class="flex items-start gap-md">
+        <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-violet-600 dark:text-violet-400">summarize</span></div>
+        <div class="flex-1 min-w-0">
+          <p class="text-on-surface text-sm font-bold">ACHAJA 종합 리포트 <span class="text-[11px] text-primary-container dark:text-primary font-bold">1,900원/건</span></p>
+          <p class="text-muted text-[11px] mt-xs leading-relaxed">VIN 차량정보 + 국토부 리콜 매칭 + Claude AI 종합 분석 + PDF 다운로드. 토스페이먼츠 가맹점 심사 완료 후 오픈 예정.</p>
+        </div>
       </div>
-      <button class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-muted text-[11px] font-semibold cursor-not-allowed" disabled>준비 중</button>
+      <button class="block w-full mt-sm bg-surface-container-highest px-3 py-2.5 rounded-xl text-muted text-[12px] font-semibold cursor-not-allowed" disabled>오픈 예정</button>
     </div>
-    <div class="bg-surface-container rounded-2xl p-md flex items-center justify-between border border-outline-variant/20">
-      <div class="flex items-center gap-md">
-        <div class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-slate-600 dark:text-slate-400">analytics</span></div>
-        <div><p class="text-on-surface text-sm">정밀 시세 분석</p><p class="text-outline text-[11px]">향후 3년 잔존가치 (준비 중)</p></div>
-      </div>
-      <button class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-muted text-[11px] font-semibold cursor-not-allowed" disabled>준비 중</button>
-    </div>
-    <p class="text-muted text-[11px] leading-relaxed px-xs">※ 사고·정비·시세는 본인인증(NICE/KCB)과 유료 API 연동이 필요합니다. 서비스 준비가 완료되는 대로 오픈됩니다.</p>
+
+    <p class="text-muted text-[11px] leading-relaxed px-xs">※ ACHAJA는 합법적으로 공개된 공공 데이터(국토부 리콜·NHTSA VIN)와 자체 AI 분석만 제공합니다. 사고이력은 외부 공식기관에서 직접 조회하세요.</p>
   </section>
 
   <footer class="pt-xl pb-12 text-center">
@@ -453,7 +457,7 @@
         level='danger'; score='주의'; title='VIN 체크디지트 불일치'; detail='차대번호 입력을 다시 확인하세요. 잘못된 VIN일 수 있습니다.';
         color='red'; iconName='error';
       } else if (recallCount === 0){
-        level='good'; score='아차 점수 84점'; title='양호 — 사도 좋은 차'; detail='제조사 리콜 이력이 없습니다. 사고·침수 이력은 별도 확인 필요.';
+        level='good'; score='아차 점수 84점'; title='1차 검증 통과'; detail='제조사 리콜 이력이 없습니다. 사고이력은 보험개발원 카히스토리에서 별도 확인하세요.';
         color='emerald'; iconName='check_circle';
       } else if (recallCount <= 2){
         level='caution'; score='아차 점수 65점'; title='주의 — 리콜 확인 필요'; detail='해당 제조사에 '+recallCount+'건의 리콜이 있습니다. 대상 차량인지 아래에서 확인하세요.';

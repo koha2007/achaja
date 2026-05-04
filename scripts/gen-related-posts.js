@@ -5,7 +5,7 @@ const path = require('path');
 const BLOG_DIR = path.join(__dirname, '..', 'blog');
 
 const posts = {
-  'accident-history-check': { title: '중고차 사고이력 조회 무료로 하는 법', label: '사고이력', cat: 'used-car', tags: ['사고이력', '카히스토리', '무료조회'] },
+  'accident-history-check': { title: '중고차 사고이력 조회 어디서 하나요? — 카히스토리 가이드', label: '사고이력', cat: 'used-car', tags: ['사고이력', '카히스토리', '외부조회'] },
   'brake-pad-replacement': { title: '브레이크 패드 교체 시기와 비용', label: '정비', cat: 'maintenance', tags: ['브레이크', '정비', '비용'] },
   'business-vs-personal-car': { title: '법인차 vs 개인차 — 부가세·비용처리 비교', label: '세금·금융', cat: 'finance', tags: ['법인차', '부가세', '절세'] },
   'car-ac-refrigerant': { title: '자동차 에어컨 가스 충전 시기와 비용', label: '정비', cat: 'maintenance', tags: ['에어컨', '정비', '비용'] },
