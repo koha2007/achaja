@@ -3,7 +3,8 @@
 const TOSS_CLIENT_KEY = 'test_ck_QbgMGZzorzKXvmBPMRZv8l5E1em4';
 
 const PRODUCTS = {
-  comprehensive: { name: '종합 리포트', amount: 1900 },
+  comprehensive: { name: '종합 리포트 (단건)', amount: 1900 },
+  pack5: { name: '종합 리포트 묶음 5건', amount: 7900 },
 };
 
 function generateOrderId(productKey) {
