@@ -1,15 +1,19 @@
 // /api/analyze — ACHAJA Claude AI 종합 분석 엔드포인트
-// Cloudflare Pages Functions
+// Cloudflare Worker (src/index.js 라우터에서 호출)
 //
-// 환경변수 (Cloudflare Pages 대시보드 → Settings → Environment Variables):
-//   ANTHROPIC_API_KEY = sk-ant-... (Anthropic 콘솔에서 발급)
+// 환경변수 (Cloudflare Workers 대시보드 → Settings → Variables and Secrets):
+//   ANTHROPIC_API_KEY = sk-ant-... (Anthropic 콘솔에서 발급) [Secret]
 //
-// KV 바인딩 (Cloudflare Pages 대시보드 → Settings → Functions → KV namespace bindings):
-//   ACHAJA_CACHE = <KV namespace ID>
+// KV 바인딩 (Cloudflare Workers 대시보드 → Settings → Bindings):
+//   ACHAJA_CACHE = KV namespace
+//
+// 라우팅 (src/index.js):
+//   /api/analyze → analyzeHandler({ request, env })
 //
 // 사용법:
-//   POST /api/analyze
-//   Body: { vin, vinData, recalls, plate, userContext? }
+//   GET  /api/analyze       — 헬스체크
+//   POST /api/analyze       — 분석 실행 (Body: { vin, vinData, recalls, plate, userContext? })
+//   OPTIONS /api/analyze    — CORS preflight
 
 const MODEL = 'claude-sonnet-4-6';
 const MAX_TOKENS = 2400;
@@ -244,9 +248,16 @@ async function callClaude(env, userMessage) {
 }
 
 // ──────────────────────────────────────────────────────────
-// 메인 핸들러
+// 메인 핸들러 (단일 onRequest export — src/index.js 라우터 호환)
 // ──────────────────────────────────────────────────────────
-export async function onRequestPost({ request, env }) {
+export async function onRequest({ request, env }) {
+  const method = request.method.toUpperCase();
+  if (method === 'OPTIONS') return handleOptions();
+  if (method === 'GET') return handleGet(env);
+  if (method !== 'POST') {
+    return jsonResponse({ error: 'POST·GET·OPTIONS만 허용됩니다.' }, 405);
+  }
+
   // 환경변수 확인
   if (!env.ANTHROPIC_API_KEY) {
     return jsonResponse({ error: 'ANTHROPIC_API_KEY가 설정되지 않았습니다.' }, 500);
@@ -343,9 +354,9 @@ export async function onRequestPost({ request, env }) {
 }
 
 // ──────────────────────────────────────────────────────────
-// OPTIONS (CORS preflight) — 같은 도메인이면 불필요하지만 안전망
+// OPTIONS / GET 헬퍼
 // ──────────────────────────────────────────────────────────
-export async function onRequestOptions() {
+function handleOptions() {
   return new Response(null, {
     status: 204,
     headers: {
@@ -357,10 +368,7 @@ export async function onRequestOptions() {
   });
 }
 
-// ──────────────────────────────────────────────────────────
-// GET — 헬스체크
-// ──────────────────────────────────────────────────────────
-export async function onRequestGet({ env }) {
+function handleGet(env) {
   return jsonResponse({
     service: 'achaja-analyze',
     model: MODEL,

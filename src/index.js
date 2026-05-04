@@ -2,6 +2,7 @@ import { onRequest as newsHandler } from './api/news.js';
 import { onRequest as rssHandler } from './api/rss.js';
 import { onRequest as paymentConfirmHandler } from './api/payment-confirm.js';
 import { onRequest as recallsHandler } from './api/recalls.js';
+import { onRequest as analyzeHandler } from './api/analyze.js';
 
 // CSP Report-Only — 1주 모니터링 후 강제 모드 전환 예정.
 // AdSense, GA4, Clarity, TossPayments, Google Fonts, Tailwind CDN 모두 허용.
@@ -51,6 +52,8 @@ export default {
       response = await recallsHandler({ request, env });
     } else if (url.pathname === '/api/payment/confirm') {
       response = await paymentConfirmHandler({ request, env });
+    } else if (url.pathname === '/api/analyze') {
+      response = await analyzeHandler({ request, env });
     } else if (url.pathname === '/rss.xml') {
       response = await rssHandler({ request, env });
     } else {
