@@ -872,7 +872,9 @@
       })
       .then(function(res){
         if (!res.ok || !res.data || !res.data.analysis){
-          var msg = (res.data && res.data.error) ? res.data.error : ('서버 오류 (' + res.status + ')');
+          var base = (res.data && res.data.error) ? res.data.error : '서버 오류';
+          var detail = (res.data && res.data.detail) ? ' · ' + res.data.detail : '';
+          var msg = base + ' (HTTP ' + res.status + ')' + detail;
           showAiError(msg);
           if (window.gtag){ gtag('event','ai_analyze_fail',{ status: res.status }); }
           return;

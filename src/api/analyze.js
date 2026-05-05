@@ -16,9 +16,11 @@
 //   OPTIONS /api/analyze    — CORS preflight
 
 const MODEL = 'claude-sonnet-4-6';
-const MAX_TOKENS = 2400;
+const MAX_TOKENS = 2000;
 const CACHE_TTL_SECONDS = 60 * 60 * 24 * 7; // 7일
 const ANTHROPIC_VERSION = '2023-06-01';
+const REASON_MAX_LEN = 100; // 리콜 reason 텍스트 최대 길이 (토큰 절감)
+const RETRY_ON_STATUS = new Set([429, 500, 502, 503, 504, 529]);
 
 // ──────────────────────────────────────────────────────────
 // 시스템 프롬프트 — Anthropic prompt caching 적용 (ephemeral)
@@ -150,10 +152,12 @@ function buildUserMessage({ vin, vinData, recalls, plate, userContext }) {
     lines.push('- 매칭된 리콜 없음');
   } else {
     lines.push(`- 매칭 ${recalls.length}건:`);
-    recalls.slice(0, 10).forEach((r, i) => {
-      lines.push(`  ${i + 1}. [${r.date || '날짜 미상'}] ${r.maker || ''} — ${r.reason || r.model || '내용 미상'}`);
+    recalls.slice(0, 8).forEach((r, i) => {
+      const rawReason = r.reason || r.model || '내용 미상';
+      const reason = rawReason.length > REASON_MAX_LEN ? rawReason.slice(0, REASON_MAX_LEN) + '…' : rawReason;
+      lines.push(`  ${i + 1}. [${r.date || '날짜 미상'}] ${r.maker || ''} — ${reason}`);
     });
-    if (recalls.length > 10) lines.push(`  ...외 ${recalls.length - 10}건`);
+    if (recalls.length > 8) lines.push(`  ...외 ${recalls.length - 8}건`);
   }
   lines.push('');
 
@@ -205,32 +209,42 @@ function parseClaudeJson(text) {
 // ──────────────────────────────────────────────────────────
 async function callClaude(env, userMessage) {
   const startedAt = Date.now();
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': env.ANTHROPIC_API_KEY,
-      'anthropic-version': ANTHROPIC_VERSION,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      max_tokens: MAX_TOKENS,
-      system: [
-        {
-          type: 'text',
-          text: SYSTEM_PROMPT,
-          cache_control: { type: 'ephemeral' },
-        },
-      ],
-      messages: [{ role: 'user', content: userMessage }],
-    }),
+  const requestBody = JSON.stringify({
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
+    system: [
+      {
+        type: 'text',
+        text: SYSTEM_PROMPT,
+        cache_control: { type: 'ephemeral' },
+      },
+    ],
+    messages: [{ role: 'user', content: userMessage }],
   });
+
+  // 5xx/429/529는 1회 재시도 (Anthropic overloaded·rate limit 일시 회복용)
+  let response;
+  let attempt = 0;
+  while (true) {
+    response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': env.ANTHROPIC_API_KEY,
+        'anthropic-version': ANTHROPIC_VERSION,
+        'content-type': 'application/json',
+      },
+      body: requestBody,
+    });
+    if (response.ok || attempt >= 1 || !RETRY_ON_STATUS.has(response.status)) break;
+    attempt++;
+    await new Promise((r) => setTimeout(r, 1500));
+  }
 
   const latencyMs = Date.now() - startedAt;
 
   if (!response.ok) {
     const errText = await response.text();
-    throw new Error(`Claude API ${response.status}: ${errText.slice(0, 500)}`);
+    throw new Error(`Claude API ${response.status}: ${errText.slice(0, 400)}`);
   }
 
   const data = await response.json();
@@ -240,6 +254,7 @@ async function callClaude(env, userMessage) {
   return {
     text,
     latencyMs,
+    attempts: attempt + 1,
     inputTokens: usage.input_tokens,
     cacheCreationTokens: usage.cache_creation_input_tokens,
     cacheReadTokens: usage.cache_read_input_tokens,
@@ -329,6 +344,7 @@ export async function onRequest({ request, env }) {
     model: MODEL,
     generatedAt: new Date().toISOString(),
     latencyMs: claudeResult.latencyMs,
+    attempts: claudeResult.attempts,
     tokens: {
       input: claudeResult.inputTokens,
       cacheCreation: claudeResult.cacheCreationTokens,
