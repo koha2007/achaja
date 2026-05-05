@@ -265,6 +265,107 @@
       <div id="recall-list" class="hidden space-y-2 mt-md max-h-80 overflow-y-auto"></div>
       <button id="recall-toggle" class="hidden w-full mt-md text-xs text-primary-container dark:text-primary font-semibold py-2 rounded-lg bg-active-bg/30">전체 펼치기</button>
     </div>
+
+    <!-- AI 종합 분석 (Claude Sonnet 4.6) -->
+    <div id="ai-analysis-card" class="bg-gradient-to-br from-violet-500/10 to-violet-500/5 dark:from-violet-500/15 dark:to-violet-500/5 border border-violet-500/30 rounded-3xl p-md">
+      <div class="flex justify-between items-center mb-sm">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-violet-600 dark:text-violet-400" style="font-variation-settings:'FILL' 1;">psychology</span>
+          <span class="text-on-surface font-semibold text-sm">Claude AI 종합 분석</span>
+        </div>
+        <span class="bg-violet-500/10 text-violet-600 dark:text-violet-400 text-[10px] px-2 py-0.5 rounded-full border border-violet-500/20 font-bold">베타</span>
+      </div>
+      <div id="ai-intro">
+        <p class="text-muted text-xs leading-relaxed">VIN 정보와 리콜 매칭 결과를 Claude Sonnet 4.6이 종합해 차량 프로파일·리콜 위험도·구매 체크리스트·협상 포인트를 5섹션 리포트로 작성합니다.</p>
+        <button id="ai-analyze-btn" class="block w-full mt-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">AI 분석 받기 (베타 무료)</button>
+        <p class="text-muted text-[10px] mt-xs text-center">처음 분석 시 15~25초 소요 · 동일 차량 재조회 시 즉시 반환</p>
+      </div>
+
+      <div id="ai-loading" class="hidden text-center py-md">
+        <span class="material-symbols-outlined text-3xl text-violet-600 dark:text-violet-400 animate-spin">progress_activity</span>
+        <p class="text-muted text-xs mt-sm">Claude Sonnet 4.6 분석 중…</p>
+        <p class="text-muted text-[10px] mt-xs">15~25초 소요</p>
+      </div>
+
+      <div id="ai-error" class="hidden mt-sm bg-red-500/10 border border-red-500/30 rounded-xl p-sm">
+        <div class="flex items-start gap-2">
+          <span class="material-symbols-outlined text-red-500 text-base mt-0.5">error</span>
+          <div class="flex-1 min-w-0">
+            <p class="text-on-surface text-sm font-semibold">AI 분석 실패</p>
+            <p id="ai-error-msg" class="text-muted text-xs mt-xs"></p>
+            <button id="ai-retry-btn" class="mt-sm text-xs text-violet-600 dark:text-violet-400 font-semibold underline">다시 시도</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ai-result" class="hidden space-y-md">
+        <!-- score -->
+        <div id="ai-score-card" class="rounded-2xl p-md border-2 transition-colors">
+          <div class="flex items-center gap-md">
+            <div id="ai-score-icon-wrap" class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+              <span id="ai-score-icon" class="material-symbols-outlined text-white text-2xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p id="ai-score-value" class="text-[10px] uppercase tracking-wider font-bold">아차 AI 점수 —</p>
+              <p id="ai-score-headline" class="font-headline font-bold text-on-surface text-base leading-tight">—</p>
+            </div>
+          </div>
+        </div>
+        <!-- vehicleProfile -->
+        <div class="bg-surface-container-low rounded-2xl p-md border border-outline-variant/20">
+          <div class="flex items-center gap-2 mb-sm">
+            <span class="material-symbols-outlined text-primary-container dark:text-primary text-base" style="font-variation-settings:'FILL' 1;">directions_car</span>
+            <p id="ai-profile-title" class="text-on-surface text-sm font-bold">차량 프로파일</p>
+          </div>
+          <p id="ai-profile-body" class="text-on-surface-variant text-xs leading-relaxed"></p>
+        </div>
+        <!-- recallRisk -->
+        <div class="bg-surface-container-low rounded-2xl p-md border border-outline-variant/20">
+          <div class="flex items-center gap-2 mb-sm">
+            <span class="material-symbols-outlined text-orange-500 text-base" style="font-variation-settings:'FILL' 1;">warning</span>
+            <p id="ai-recall-title" class="text-on-surface text-sm font-bold">리콜 위험도</p>
+          </div>
+          <p id="ai-recall-body" class="text-on-surface-variant text-xs leading-relaxed"></p>
+          <div id="ai-recall-action-wrap" class="mt-sm bg-orange-500/10 border border-orange-500/20 rounded-xl p-sm">
+            <p class="text-orange-700 dark:text-orange-400 text-[10px] font-bold uppercase tracking-wider mb-xs">권장 조치</p>
+            <p id="ai-recall-action" class="text-on-surface text-xs leading-relaxed"></p>
+          </div>
+        </div>
+        <!-- purchaseChecklist -->
+        <div class="bg-surface-container-low rounded-2xl p-md border border-outline-variant/20">
+          <div class="flex items-center gap-2 mb-sm">
+            <span class="material-symbols-outlined text-emerald-500 text-base" style="font-variation-settings:'FILL' 1;">checklist</span>
+            <p id="ai-checklist-title" class="text-on-surface text-sm font-bold">구매 시 확인 포인트</p>
+          </div>
+          <ul id="ai-checklist-items" class="space-y-2"></ul>
+        </div>
+        <!-- negotiation -->
+        <div class="bg-surface-container-low rounded-2xl p-md border border-outline-variant/20">
+          <div class="flex items-center gap-2 mb-sm">
+            <span class="material-symbols-outlined text-amber-500 text-base" style="font-variation-settings:'FILL' 1;">handshake</span>
+            <p id="ai-negotiation-title" class="text-on-surface text-sm font-bold">협상 포인트</p>
+          </div>
+          <p id="ai-negotiation-body" class="text-on-surface-variant text-xs leading-relaxed"></p>
+          <div id="ai-negotiation-tip-wrap" class="mt-sm bg-amber-500/10 border border-amber-500/20 rounded-xl p-sm flex items-start gap-2">
+            <span class="material-symbols-outlined text-amber-500 text-sm mt-0.5">tips_and_updates</span>
+            <p id="ai-negotiation-tip" class="text-on-surface text-xs leading-relaxed flex-1"></p>
+          </div>
+        </div>
+        <!-- externalReferences -->
+        <div class="bg-blue-500/5 dark:bg-blue-500/10 rounded-2xl p-md border border-blue-500/20">
+          <div class="flex items-center gap-2 mb-sm">
+            <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-base">open_in_new</span>
+            <p class="text-on-surface text-sm font-bold">외부 공식기관 안내</p>
+          </div>
+          <ul class="space-y-2 text-xs">
+            <li id="ai-ext-carhistory" class="text-on-surface-variant leading-relaxed"></li>
+            <li id="ai-ext-car365" class="text-on-surface-variant leading-relaxed"></li>
+          </ul>
+        </div>
+        <!-- meta -->
+        <p id="ai-meta" class="text-muted text-[10px] text-center"></p>
+      </div>
+    </div>
   </section>
 
   <!-- 차량번호 결과 -->
@@ -372,6 +473,9 @@
       // 유료 섹션은 VIN/plate 결과와 함께 표시
       if(id==='history-vin-result' || id==='history-plate-result'){ $('history-paid').classList.remove('hidden'); }
     }
+
+    // 현재 조회 차량 컨텍스트 (AI 분석에 전달) — VIN 모드일 때만 채움
+    var currentAnalysisInput = null;
 
     // 리콜 데이터 캐시
     var recallsCache = null;
@@ -486,6 +590,10 @@
     }
 
     function renderRecalls(list){
+      // AI 분석 컨텍스트 보강
+      if (currentAnalysisInput) currentAnalysisInput.recalls = (list || []).map(function(r){
+        return { maker: r.maker, date: r.date, model: r.model, reason: r.reason };
+      });
       var summary = $('recall-summary');
       var listEl = $('recall-list');
       var toggle = $('recall-toggle');
@@ -530,6 +638,15 @@
     function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
     function renderVin(d){
+      // AI 분석 컨텍스트 초기화 (이 시점엔 VIN+기본정보만, NHTSA·리콜은 도착 후 보강)
+      currentAnalysisInput = {
+        vin: d.vin,
+        vinData: { maker: d.maker, year: d.year, country: d.country },
+        recalls: [],
+        plate: null
+      };
+      resetAiCard();
+
       $('vin-maker').textContent = d.maker || '제조사 미상';
       $('vin-model-year').textContent = (d.year ? d.year + '년식(추정)' : '연식 판별 불가');
       $('vin-country').textContent = d.country;
@@ -552,6 +669,13 @@
 
     // NHTSA 응답 → UI 채우기. 응답이 빈약한 한국 내수용은 fallback notice.
     function renderNhtsa(vinResult, ext){
+      // AI 분석 컨텍스트 보강
+      if (currentAnalysisInput && ext){
+        if (ext.model) currentAnalysisInput.vinData.model = ext.model;
+        if (ext.year) currentAnalysisInput.vinData.year = ext.year;
+        if (ext.engineSummary) currentAnalysisInput.vinData.engine = ext.engineSummary;
+        if (ext.bodyClassKo) currentAnalysisInput.vinData.bodyClass = ext.bodyClassKo;
+      }
       var detail = $('vin-detail-section');
       var notice = $('vin-domestic-notice');
       // 모델·시리즈·엔진 중 하나라도 있어야 상세 섹션 노출
@@ -623,12 +747,149 @@
       }
     }
     function renderPlate(d){
+      // 차량번호 모드는 VIN 없이 AI 분석 불가
+      currentAnalysisInput = null;
       $('plate-display').textContent = d.plate;
       $('plate-type').textContent = d.type;
       $('plate-era').textContent = d.cc;
       $('plate-prefix').textContent = d.prefix + ' (' + (d.prefix.length===3?'3자리':'2자리') + ')';
       $('plate-suffix').textContent = d.suffix;
       show('history-plate-result');
+    }
+
+    // ──────────────────────────────────────────────────────
+    // AI 분석 (Claude Sonnet 4.6) — POST /api/analyze
+    // ──────────────────────────────────────────────────────
+    var SCORE_PALETTE = {
+      good:    { bg:'from-emerald-500/15 to-emerald-500/5', border:'border-emerald-500/40', iconBg:'bg-emerald-500', text:'text-emerald-700 dark:text-emerald-400', icon:'check_circle' },
+      caution: { bg:'from-amber-500/15 to-amber-500/5',     border:'border-amber-500/40',   iconBg:'bg-amber-500',   text:'text-amber-700 dark:text-amber-400',   icon:'warning' },
+      warning: { bg:'from-orange-500/15 to-orange-500/5',   border:'border-orange-500/40',  iconBg:'bg-orange-500',  text:'text-orange-700 dark:text-orange-400', icon:'warning' },
+      danger:  { bg:'from-red-500/15 to-red-500/5',         border:'border-red-500/40',     iconBg:'bg-red-500',     text:'text-red-700 dark:text-red-400',       icon:'error' }
+    };
+
+    function resetAiCard(){
+      $('ai-intro').classList.remove('hidden');
+      $('ai-loading').classList.add('hidden');
+      $('ai-error').classList.add('hidden');
+      $('ai-result').classList.add('hidden');
+      var btn = $('ai-analyze-btn');
+      if (btn){ btn.disabled = false; btn.textContent = 'AI 분석 받기 (베타 무료)'; btn.classList.remove('opacity-50','cursor-not-allowed'); }
+    }
+
+    function showAiState(state){
+      $('ai-intro').classList.toggle('hidden', state !== 'intro');
+      $('ai-loading').classList.toggle('hidden', state !== 'loading');
+      $('ai-error').classList.toggle('hidden', state !== 'error');
+      $('ai-result').classList.toggle('hidden', state !== 'result');
+    }
+
+    function renderAiResult(payload){
+      var a = payload.analysis || {};
+      var meta = payload.meta || {};
+      // score
+      var score = a.score || {};
+      var lvl = SCORE_PALETTE[score.level] || SCORE_PALETTE.caution;
+      var card = $('ai-score-card');
+      card.className = 'rounded-2xl p-md border-2 transition-colors bg-gradient-to-br ' + lvl.bg + ' ' + lvl.border;
+      $('ai-score-icon-wrap').className = 'w-12 h-12 rounded-full ' + lvl.iconBg + ' flex items-center justify-center flex-shrink-0';
+      $('ai-score-icon').textContent = lvl.icon;
+      $('ai-score-value').className = 'text-[10px] uppercase tracking-wider font-bold ' + lvl.text;
+      $('ai-score-value').textContent = '아차 AI 점수 ' + (typeof score.value === 'number' ? score.value + '점' : '—');
+      $('ai-score-headline').textContent = score.headline || '—';
+      // vehicleProfile
+      var prof = a.vehicleProfile || {};
+      $('ai-profile-title').textContent = prof.title || '차량 프로파일';
+      $('ai-profile-body').textContent = prof.body || '';
+      // recallRisk
+      var risk = a.recallRisk || {};
+      $('ai-recall-title').textContent = risk.title || '리콜 위험도';
+      $('ai-recall-body').textContent = risk.body || '';
+      if (risk.actionAdvice){
+        $('ai-recall-action').textContent = risk.actionAdvice;
+        $('ai-recall-action-wrap').classList.remove('hidden');
+      } else {
+        $('ai-recall-action-wrap').classList.add('hidden');
+      }
+      // purchaseChecklist
+      var cl = a.purchaseChecklist || {};
+      $('ai-checklist-title').textContent = cl.title || '구매 시 확인 포인트';
+      var ul = $('ai-checklist-items');
+      ul.innerHTML = '';
+      (cl.items || []).forEach(function(item){
+        var li = document.createElement('li');
+        li.className = 'flex items-start gap-2';
+        li.innerHTML =
+          '<span class="material-symbols-outlined text-emerald-500 text-base flex-shrink-0">check_circle</span>' +
+          '<span class="text-on-surface-variant text-xs leading-relaxed flex-1">' + escapeHtml(item) + '</span>';
+        ul.appendChild(li);
+      });
+      // negotiation
+      var ne = a.negotiation || {};
+      $('ai-negotiation-title').textContent = ne.title || '협상 포인트';
+      $('ai-negotiation-body').textContent = ne.body || '';
+      if (ne.tip){
+        $('ai-negotiation-tip').textContent = ne.tip;
+        $('ai-negotiation-tip-wrap').classList.remove('hidden');
+      } else {
+        $('ai-negotiation-tip-wrap').classList.add('hidden');
+      }
+      // externalReferences
+      var ext = a.externalReferences || {};
+      $('ai-ext-carhistory').textContent = ext.carhistory || '사고이력 — 보험개발원 카히스토리(carhistory.or.kr) 직접 조회';
+      $('ai-ext-car365').textContent = ext.car365 || '등록·소유 정보 — 자동차365(car365.go.kr) 무료 조회';
+      // meta
+      var metaParts = ['Claude Sonnet 4.6'];
+      if (meta.cacheHit) metaParts.push('캐시 적중');
+      else if (typeof meta.latencyMs === 'number') metaParts.push((meta.latencyMs/1000).toFixed(1) + '초');
+      $('ai-meta').textContent = metaParts.join(' · ');
+      showAiState('result');
+    }
+
+    function showAiError(msg){
+      $('ai-error-msg').textContent = msg || 'AI 분석 호출에 실패했습니다. 잠시 후 다시 시도해주세요.';
+      showAiState('error');
+    }
+
+    function callAiAnalyze(){
+      if (!currentAnalysisInput || !currentAnalysisInput.vin){
+        showAiError('VIN 조회 결과가 필요합니다. VIN 17자리를 먼저 조회해주세요.');
+        return;
+      }
+      showAiState('loading');
+      var payload = {
+        vin: currentAnalysisInput.vin,
+        vinData: currentAnalysisInput.vinData,
+        recalls: currentAnalysisInput.recalls
+      };
+      if (window.gtag){ gtag('event','ai_analyze_request',{ vin: payload.vin.slice(0,8)+'***', recalls: (payload.recalls||[]).length }); }
+      fetch('/api/analyze', {
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body: JSON.stringify(payload)
+      })
+      .then(function(r){
+        return r.json().then(function(j){ return { ok: r.ok, status: r.status, data: j }; });
+      })
+      .then(function(res){
+        if (!res.ok || !res.data || !res.data.analysis){
+          var msg = (res.data && res.data.error) ? res.data.error : ('서버 오류 (' + res.status + ')');
+          showAiError(msg);
+          if (window.gtag){ gtag('event','ai_analyze_fail',{ status: res.status }); }
+          return;
+        }
+        renderAiResult(res.data);
+        if (window.gtag){
+          gtag('event','ai_analyze_success',{
+            cache_hit: !!(res.data.meta && res.data.meta.cacheHit),
+            score: (res.data.analysis.score && res.data.analysis.score.value) || 0,
+            level: (res.data.analysis.score && res.data.analysis.score.level) || 'unknown'
+          });
+        }
+      })
+      .catch(function(err){
+        showAiError('네트워크 오류: ' + (err && err.message ? err.message : '연결에 실패했습니다.'));
+        if (window.gtag){ gtag('event','ai_analyze_fail',{ status: 0 }); }
+      });
     }
 
     document.addEventListener('DOMContentLoaded', function(){
@@ -680,6 +941,16 @@
       input.addEventListener('input',function(){
         if(!err.classList.contains('hidden')) err.classList.add('hidden');
       });
+
+      // AI 분석 버튼
+      var aiBtn = $('ai-analyze-btn');
+      if (aiBtn){
+        aiBtn.addEventListener('click', function(){ callAiAnalyze(); });
+      }
+      var aiRetry = $('ai-retry-btn');
+      if (aiRetry){
+        aiRetry.addEventListener('click', function(){ callAiAnalyze(); });
+      }
 
       // URL q 파라미터가 있으면 자동 조회
       var urlQ = new URLSearchParams(location.search).get('q');
