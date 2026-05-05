@@ -20,7 +20,7 @@ const MAX_TOKENS = 2000;
 const CACHE_TTL_SECONDS = 60 * 60 * 24 * 7; // 7일
 const ANTHROPIC_VERSION = '2023-06-01';
 const REASON_MAX_LEN = 100; // 리콜 reason 텍스트 최대 길이 (토큰 절감)
-const RETRY_ON_STATUS = new Set([429, 500, 502, 503, 504, 529]);
+const RETRY_ON_STATUS = new Set([403, 429, 500, 502, 503, 504, 529]);
 
 // ──────────────────────────────────────────────────────────
 // 시스템 프롬프트 — Anthropic prompt caching 적용 (ephemeral)
@@ -222,9 +222,10 @@ async function callClaude(env, userMessage) {
     messages: [{ role: 'user', content: userMessage }],
   });
 
-  // 5xx/429/529는 1회 재시도 (Anthropic overloaded·rate limit 일시 회복용)
+  // 403/429/5xx/529는 최대 2회 재시도 (Anthropic transient forbidden·overloaded·rate limit 회복용)
   let response;
   let attempt = 0;
+  const MAX_RETRIES = 2;
   while (true) {
     response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -235,7 +236,7 @@ async function callClaude(env, userMessage) {
       },
       body: requestBody,
     });
-    if (response.ok || attempt >= 1 || !RETRY_ON_STATUS.has(response.status)) break;
+    if (response.ok || attempt >= MAX_RETRIES || !RETRY_ON_STATUS.has(response.status)) break;
     attempt++;
     await new Promise((r) => setTimeout(r, 1500));
   }
