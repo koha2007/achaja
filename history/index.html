@@ -395,20 +395,57 @@
     </div>
   </section>
 
-  <!-- 추가 조회 안내 -->
+  <!-- 외부 공식기관 — 추가 조회 (무료 안내) -->
   <section id="history-paid" class="hidden space-y-md">
-    <h4 class="text-outline text-xs font-medium px-xs">추가 조회 안내</h4>
+    <div class="flex items-center justify-between px-xs">
+      <h4 class="text-outline text-xs font-medium">외부 공식기관 — 추가 조회</h4>
+      <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/20 font-bold">무료 안내</span>
+    </div>
 
-    <!-- 사고이력 외부 안내 (카히스토리) -->
+    <!-- 1. 사고·침수 — 카히스토리 -->
     <div class="bg-surface-container border border-outline-variant/40 rounded-2xl p-md">
       <div class="flex items-start gap-md">
         <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-red-500 dark:text-red-400">car_crash</span></div>
         <div class="flex-1 min-w-0">
           <p class="text-on-surface text-sm font-bold">사고·침수 이력</p>
-          <p class="text-muted text-[11px] mt-xs leading-relaxed">ACHAJA는 사고이력 조회·중개·재판매를 일절 수행하지 않습니다. 보험개발원 카히스토리(공식)에서 건당 770~2,200원으로 직접 조회하세요.</p>
+          <p class="text-muted text-[11px] mt-xs leading-relaxed">보험개발원 카히스토리(공식) · 770~2,200원/건. ACHAJA는 사고이력을 일절 제공하지 않습니다.</p>
+          <p id="ext-carhistory-prefill-msg" class="hidden text-emerald-600 dark:text-emerald-400 text-[11px] mt-xs font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">auto_awesome</span>차량번호 <span id="ext-carhistory-prefill-plate" class="font-mono"></span> 자동 입력</p>
         </div>
       </div>
-      <a href="https://www.carhistory.or.kr" target="_blank" rel="noopener noreferrer" class="block mt-sm text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">카히스토리에서 조회 →</a>
+      <a id="ext-carhistory-link" href="https://www.carhistory.or.kr" target="_blank" rel="noopener noreferrer" class="block mt-sm text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">카히스토리에서 조회 →</a>
+    </div>
+
+    <!-- 2. 리콜 미수리 — 자동차리콜센터 -->
+    <div class="bg-surface-container border border-outline-variant/40 rounded-2xl p-md">
+      <div class="flex items-start gap-md">
+        <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-orange-500 dark:text-orange-400">campaign</span></div>
+        <div class="flex-1 min-w-0">
+          <p class="text-on-surface text-sm font-bold">리콜 미수리 확인 (차량별)</p>
+          <p class="text-muted text-[11px] mt-xs leading-relaxed">한국교통안전공단 자동차리콜센터 · 무료. 본인 차량의 리콜 수리 완료 여부를 직접 조회할 수 있습니다.</p>
+          <p id="ext-recall-copy-hint" class="hidden text-muted text-[11px] mt-xs">클릭 시 <span id="ext-recall-copy-label">VIN</span> <span id="ext-recall-copy-value" class="font-mono text-on-surface"></span>이 클립보드에 복사됩니다.</p>
+        </div>
+      </div>
+      <button id="ext-recall-btn" type="button" class="block w-full mt-sm text-center bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">자동차리콜센터에서 확인 →</button>
+    </div>
+
+    <!-- 3. 등록·소유·저당 — 자동차365 -->
+    <div class="bg-surface-container border border-outline-variant/40 rounded-2xl p-md">
+      <div class="flex items-start gap-md">
+        <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-blue-600 dark:text-blue-400">badge</span></div>
+        <div class="flex-1 min-w-0">
+          <p class="text-on-surface text-sm font-bold">소유·저당·압류 정보</p>
+          <p class="text-muted text-[11px] mt-xs leading-relaxed">국토교통부 자동차365 통합이력조회 · 무료. 차주 본인 인증(간편인증) 후 조회 가능합니다.</p>
+        </div>
+      </div>
+      <a href="https://www.car365.go.kr/ccpt/cmmn/menu/redirectMenu.do?menuId=M630201000" target="_blank" rel="noopener noreferrer" class="block mt-sm text-center bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">자동차365 통합이력조회 →</a>
+    </div>
+
+    <!-- 클립보드 복사 토스트 -->
+    <div id="ext-toast" class="hidden bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-sm">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-base">content_copy</span>
+        <p id="ext-toast-msg" class="text-on-surface text-[11px] leading-relaxed flex-1">복사되었습니다.</p>
+      </div>
     </div>
 
     <!-- ACHAJA 종합 리포트 (오픈 예정) -->
@@ -423,7 +460,7 @@
       <button class="block w-full mt-sm bg-surface-container-highest px-3 py-2.5 rounded-xl text-muted text-[12px] font-semibold cursor-not-allowed" disabled>오픈 예정</button>
     </div>
 
-    <p class="text-muted text-[11px] leading-relaxed px-xs">※ ACHAJA는 합법적으로 공개된 공공 데이터(국토부 리콜·NHTSA VIN)와 자체 AI 분석만 제공합니다. 사고이력은 외부 공식기관에서 직접 조회하세요.</p>
+    <p class="text-muted text-[11px] leading-relaxed px-xs">※ ACHAJA는 합법적으로 공개된 공공 데이터(국토부 리콜·NHTSA VIN)와 자체 AI 분석만 제공합니다. 외부 공식기관 조회 결과는 ACHAJA가 보관·중개하지 않습니다.</p>
   </section>
 
   <footer class="pt-xl pb-12 text-center">
@@ -646,6 +683,7 @@
         plate: null
       };
       resetAiCard();
+      updateExternalLinks({ vin: d.vin });
 
       $('vin-maker').textContent = d.maker || '제조사 미상';
       $('vin-model-year').textContent = (d.year ? d.year + '년식(추정)' : '연식 판별 불가');
@@ -754,7 +792,76 @@
       $('plate-era').textContent = d.cc;
       $('plate-prefix').textContent = d.prefix + ' (' + (d.prefix.length===3?'3자리':'2자리') + ')';
       $('plate-suffix').textContent = d.suffix;
+      updateExternalLinks({ plate: d.plate });
       show('history-plate-result');
+    }
+
+    // ──────────────────────────────────────────────────────
+    // 외부 공식기관 딥링크 업데이트 (VIN/차량번호 별 prefill·복사)
+    // ──────────────────────────────────────────────────────
+    function updateExternalLinks(ctx){
+      var carhistoryLink = $('ext-carhistory-link');
+      var prefillMsg = $('ext-carhistory-prefill-msg');
+      var prefillPlate = $('ext-carhistory-prefill-plate');
+      var recallBtn = $('ext-recall-btn');
+      var recallHint = $('ext-recall-copy-hint');
+      var recallLabel = $('ext-recall-copy-label');
+      var recallValue = $('ext-recall-copy-value');
+
+      // 카히스토리: 차량번호 있을 때만 ?carnum= prefill (VIN은 prefill 미지원)
+      if (ctx.plate){
+        carhistoryLink.href = 'https://www.carhistory.or.kr/search/carhistory/initSearch.car?carnum=' + encodeURIComponent(ctx.plate);
+        prefillPlate.textContent = ctx.plate;
+        prefillMsg.classList.remove('hidden');
+      } else {
+        carhistoryLink.href = 'https://www.carhistory.or.kr';
+        prefillMsg.classList.add('hidden');
+      }
+
+      // 리콜센터: VIN 또는 차량번호 클립보드 복사 (prefill 불가 — JS 폼)
+      var copyValue = ctx.vin || ctx.plate || '';
+      if (copyValue){
+        var label = ctx.vin ? 'VIN' : '차량번호';
+        recallLabel.textContent = label;
+        recallValue.textContent = copyValue;
+        recallHint.classList.remove('hidden');
+        recallBtn.textContent = label + ' 복사 + 리콜센터 열기 →';
+        recallBtn.onclick = function(){
+          copyToClipboard(copyValue);
+          showExtToast(label + ' "' + copyValue + '"이(가) 복사되었습니다. 리콜센터 입력란에 붙여넣어 주세요.');
+          window.open('https://www.car.go.kr/home/main.do', '_blank', 'noopener');
+          if (window.gtag){ gtag('event','external_recall_open',{type: ctx.vin ? 'vin' : 'plate'}); }
+        };
+      } else {
+        recallHint.classList.add('hidden');
+        recallBtn.textContent = '자동차리콜센터에서 확인 →';
+        recallBtn.onclick = function(){
+          window.open('https://www.car.go.kr/home/main.do', '_blank', 'noopener');
+        };
+      }
+    }
+
+    function copyToClipboard(text){
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).catch(function(){ fallbackCopy(text); });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+    function fallbackCopy(text){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta);
+    }
+    function showExtToast(msg){
+      var t = $('ext-toast');
+      $('ext-toast-msg').textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(t._toastTimer);
+      t._toastTimer = setTimeout(function(){ t.classList.add('hidden'); }, 5000);
     }
 
     // ──────────────────────────────────────────────────────
