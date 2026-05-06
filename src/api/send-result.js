@@ -77,20 +77,20 @@ function buildEmailHtml(payload) {
 
   return `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"/><title>${escapeHtml(subject)}</title></head>
-<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#111827;">
+<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕','Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;color:#111827;-webkit-text-size-adjust:100%;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:24px 0;">
     <tr><td align="center">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
 
         <!-- Header -->
         <tr><td style="padding:24px;background:linear-gradient(135deg,#0d47a1 0%,#1565c0 100%);">
-          <div style="font-family:'Manrope',-apple-system,sans-serif;font-size:24px;font-weight:800;color:white;letter-spacing:-0.5px;">ACHAJA</div>
+          <div style="font-size:24px;font-weight:800;color:white;letter-spacing:-0.5px;">ACHAJA</div>
           <div style="font-size:13px;color:rgba(255,255,255,0.85);margin-top:4px;">차량 이력 조회 결과</div>
         </td></tr>
 
         <!-- Body -->
         <tr><td style="padding:24px;">
-          <h2 style="font-family:'Manrope',-apple-system,sans-serif;font-size:18px;font-weight:700;color:#0d47a1;margin:0 0 16px;">${escapeHtml(subject)}</h2>
+          <h2 style="font-size:18px;font-weight:700;color:#0d47a1;margin:0 0 16px;line-height:1.4;">${escapeHtml(subject)}</h2>
           <div style="font-size:14px;line-height:1.7;color:#374151;">${bodyHtml}</div>
 
           ${(vin || plate) ? `
