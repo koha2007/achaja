@@ -3,6 +3,7 @@ import { onRequest as rssHandler } from './api/rss.js';
 import { onRequest as paymentConfirmHandler } from './api/payment-confirm.js';
 import { onRequest as recallsHandler } from './api/recalls.js';
 import { onRequest as analyzeHandler } from './api/analyze.js';
+import { onRequest as sendResultHandler } from './api/send-result.js';
 
 // CSP Report-Only — 1주 모니터링 후 강제 모드 전환 예정.
 // AdSense, GA4, Clarity, TossPayments, Google Fonts, Tailwind CDN 모두 허용.
@@ -12,7 +13,7 @@ const CSP_DIRECTIVES = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com",
   "font-src 'self' https://fonts.gstatic.com data:",
   "img-src 'self' data: blob: https:",
-  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.clarity.ms https://*.clarity.ms https://www.googletagmanager.com https://api.tosspayments.com https://*.tosspayments.com https://vpic.nhtsa.dot.gov https://apis.data.go.kr",
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.clarity.ms https://*.clarity.ms https://www.googletagmanager.com https://api.tosspayments.com https://*.tosspayments.com https://vpic.nhtsa.dot.gov https://apis.data.go.kr https://api.brevo.com https://api.resend.com",
   "frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://*.tosspayments.com https://*.toss.im",
   "frame-ancestors 'self'",
   "form-action 'self' https://*.tosspayments.com",
@@ -54,6 +55,8 @@ export default {
       response = await paymentConfirmHandler({ request, env });
     } else if (url.pathname === '/api/analyze') {
       response = await analyzeHandler({ request, env });
+    } else if (url.pathname === '/api/send-result') {
+      response = await sendResultHandler({ request, env });
     } else if (url.pathname === '/rss.xml') {
       response = await rssHandler({ request, env });
     } else {
