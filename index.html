@@ -204,47 +204,64 @@
   <section id="sample-preview" class="px-margin pt-lg" aria-labelledby="sample-heading">
     <div class="flex items-center justify-between mb-sm">
       <h2 id="sample-heading" class="font-headline text-lg font-semibold">결과는 이렇게 나옵니다</h2>
-      <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">샘플</span>
+      <span class="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full font-bold">샘플 리포트</span>
     </div>
-    <p class="text-xs text-muted mb-md">실제 조회 결과 미리보기 — 신호등으로 한눈에 판단.</p>
-    <div class="bg-surface-container border border-outline-variant rounded-2xl p-md space-y-md">
-      <!-- 한 줄 결론 -->
-      <div class="flex items-center gap-md p-md rounded-xl bg-gradient-to-r from-emerald-500/10 to-emerald-500/5 border border-emerald-500/30">
-        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-          <span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+    <p class="text-xs text-muted mb-md">결제 전 실제 결과 화면을 미리 확인하세요. Carfax·AutoCheck 같은 글로벌 리포트 패턴.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+      <!-- 무료 미리보기 카드 -->
+      <a href="/preview/free/" class="group bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 dark:from-emerald-500/15 dark:to-emerald-500/5 border-2 border-emerald-500/30 rounded-2xl p-md hover:border-emerald-500/60 hover:shadow-lg transition-all active:scale-[0.99]">
+        <div class="flex items-center justify-between mb-sm">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-xl" style="font-variation-settings:'FILL' 1;">verified</span>
+            <h3 class="font-headline font-bold text-sm">무료 결과 미리보기</h3>
+          </div>
+          <span class="bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">₩0</span>
         </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-bold">1차 검증 통과</p>
-          <p class="font-headline font-bold text-on-surface text-base leading-tight">VIN·리콜·번호판 정상</p>
-          <p class="text-[11px] text-muted">제조사 식별 ✓, 리콜 1건(완료), 번호판 자가용</p>
+        <p class="text-[11px] text-on-surface-variant leading-relaxed mb-sm">VIN·리콜·번호판·AI 4가지 무료 결과의 실제 화면</p>
+        <div class="bg-surface/60 rounded-lg p-sm mb-sm">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="material-symbols-outlined text-amber-500 text-base" style="font-variation-settings:'FILL' 1;">warning</span>
+            <p class="text-[11px] font-bold text-on-surface">아차 점수 65점</p>
+          </div>
+          <p class="text-[10px] text-muted">2023 그랜저 하이브리드 · IEB 리콜 1건 (긴급)</p>
         </div>
-      </div>
-      <!-- 항목별 상세 -->
-      <div class="grid grid-cols-3 gap-sm">
-        <div class="text-center bg-surface-container-low rounded-xl p-sm">
-          <span class="material-symbols-outlined text-emerald-500 text-2xl" style="font-variation-settings:'FILL' 1;">verified</span>
-          <p class="text-[10px] text-muted mt-xs">VIN 디코딩</p>
-          <p class="text-[12px] font-bold text-on-surface">정상</p>
+        <div class="flex items-center justify-between">
+          <p class="text-[10px] text-muted">VIN·NHTSA·리콜·번호판·AI 한줄</p>
+          <span class="text-emerald-700 dark:text-emerald-400 text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+            샘플 보기 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
         </div>
-        <div class="text-center bg-surface-container-low rounded-xl p-sm">
-          <span class="material-symbols-outlined text-amber-500 text-2xl" style="font-variation-settings:'FILL' 1;">campaign</span>
-          <p class="text-[10px] text-muted mt-xs">리콜</p>
-          <p class="text-[12px] font-bold text-on-surface">1건 완료</p>
+      </a>
+
+      <!-- 유료 미리보기 카드 -->
+      <a href="/preview/" class="group bg-gradient-to-br from-violet-500/10 to-purple-600/10 dark:from-violet-500/15 dark:to-purple-600/15 border-2 border-violet-500/30 rounded-2xl p-md hover:border-violet-500/60 hover:shadow-lg transition-all active:scale-[0.99] relative">
+        <span class="absolute -top-2 right-3 bg-violet-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm">PDF 영구</span>
+        <div class="flex items-center justify-between mb-sm">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-violet-600 dark:text-violet-400 text-xl" style="font-variation-settings:'FILL' 1;">summarize</span>
+            <h3 class="font-headline font-bold text-sm">종합 리포트 미리보기</h3>
+          </div>
+          <span class="bg-violet-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">₩1,900</span>
         </div>
-        <div class="text-center bg-surface-container-low rounded-xl p-sm">
-          <span class="material-symbols-outlined text-primary-container dark:text-primary text-2xl" style="font-variation-settings:'FILL' 1;">badge</span>
-          <p class="text-[10px] text-muted mt-xs">번호판</p>
-          <p class="text-[12px] font-bold text-on-surface">자가용</p>
+        <p class="text-[11px] text-on-surface-variant leading-relaxed mb-sm">무료 4가지 + AI 5섹션 + 외부조회 가이드 PDF</p>
+        <div class="bg-surface/60 rounded-lg p-sm mb-sm">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="material-symbols-outlined text-violet-600 dark:text-violet-400 text-base" style="font-variation-settings:'FILL' 1;">psychology</span>
+            <p class="text-[11px] font-bold text-on-surface">Claude AI 5섹션</p>
+          </div>
+          <p class="text-[10px] text-muted">프로파일·리콜위험도·체크리스트·협상포인트·종합의견</p>
         </div>
-      </div>
-      <!-- 차량 정보 -->
-      <div class="border-t border-outline-variant pt-md">
-        <p class="text-[10px] uppercase tracking-wider text-muted mb-xs font-semibold">차량 정보</p>
-        <p class="font-headline font-semibold text-sm text-on-surface">현대자동차 2021 아반떼 CN7</p>
-        <p class="text-[11px] text-muted mt-xs">VIN: KMHLS81UMMU••••••• · 자가용 · 한국</p>
-      </div>
-      <a href="/history" class="block text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary text-sm font-bold py-3 rounded-xl active:scale-95 transition shadow-md">내 차도 조회하기 →</a>
+        <div class="flex items-center justify-between">
+          <p class="text-[10px] text-muted">+ 카히스토리·자동차365 가이드</p>
+          <span class="text-violet-700 dark:text-violet-400 text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+            샘플 보기 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </div>
+      </a>
     </div>
+
+    <a href="/history" class="block mt-md text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary text-sm font-bold py-3 rounded-xl active:scale-95 transition shadow-md">내 차도 무료로 조회하기 →</a>
   </section>
 
   <!-- How it works — 3단계 사용 흐름 -->
@@ -348,7 +365,7 @@
             <span class="text-[10px] text-emerald-50 font-semibold">로그인 불필요 · 무제한</span>
           </div>
           <p class="font-headline font-bold text-4xl mb-xs leading-none">₩0<span class="text-sm font-normal text-emerald-100 ml-1">평생 무료</span></p>
-          <p class="text-[12px] text-emerald-50 mb-md">VIN·번호판만 입력하면 즉시 4가지</p>
+          <p class="text-[12px] text-emerald-50 mb-md">VIN(권장) + 차량번호 함께 입력 시 4가지 모두</p>
 
           <ul class="space-y-2 text-[13px] mb-md flex-1">
             <li class="flex items-start gap-sm bg-white/10 rounded-xl p-2.5">
@@ -361,8 +378,8 @@
             <li class="flex items-start gap-sm bg-white/10 rounded-xl p-2.5">
               <span class="bg-white/25 text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
               <div class="min-w-0">
-                <p class="font-bold">리콜 정보</p>
-                <p class="text-[11px] text-emerald-50/90 mt-0.5">국토부 941건 DB에서 자동 매칭</p>
+                <p class="font-bold">내 차량 관련 리콜</p>
+                <p class="text-[11px] text-emerald-50/90 mt-0.5">941건 DB와 연식·모델 자동 대조 (Carfax 스타일 카드)</p>
               </div>
             </li>
             <li class="flex items-start gap-sm bg-white/10 rounded-xl p-2.5">
