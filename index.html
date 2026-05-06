@@ -29,6 +29,9 @@
 <meta property="og:title" content="ACHAJA — 중고차 살 때 먼저 확인하는 곳"/>
 <meta property="og:description" content="차량번호·VIN 하나로 제조사·리콜 이력 무료 조회. 중고차 구매 가이드 블로그 제공."/>
 <meta property="og:image" content="https://achaja.net/og-image.png"/>
+<meta property="og:image:alt" content="ACHAJA 로고 — 중고차 사고·리콜 이력 무료 조회 서비스"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="ACHAJA — 중고차 살 때 먼저 확인하는 곳"/>
 <meta name="twitter:description" content="차량번호·VIN 하나로 제조사·리콜 이력 무료 조회. 중고차 구매 가이드 40편."/>
@@ -748,9 +751,14 @@
         </div>
       </div>
     </div>
+    <p class="mt-md text-[10px] text-muted text-center">가격은 변경될 수 있습니다. 본인인증(NICE)·결제(토스페이먼츠) 연동 후 순차 오픈.</p>
+  </section>
 
+  <!-- Early Access Waitlist — 별도 섹션 (시각적 호흡 + 결제 직전 부스터 분리) -->
+  <section class="px-margin py-lg" aria-labelledby="waitlist-heading">
+    <h2 id="waitlist-heading" class="sr-only">유료 리포트 오픈 알림 신청</h2>
     <!-- 이메일 사전등록 (Notion/Linear 패턴: Early Access + 한정 혜택) -->
-    <form id="waitlist-form" class="mt-lg bg-gradient-to-br from-violet-500/10 to-purple-600/5 dark:from-violet-500/15 dark:to-purple-600/10 border-2 border-violet-500/30 rounded-2xl p-md" onsubmit="return false;">
+    <form id="waitlist-form" class="bg-gradient-to-br from-violet-500/10 to-purple-600/5 dark:from-violet-500/15 dark:to-purple-600/10 border-2 border-violet-500/30 rounded-2xl p-md" onsubmit="return false;">
       <div class="flex items-start gap-sm mb-sm">
         <span class="material-symbols-outlined text-violet-600 dark:text-violet-400 mt-0.5 text-2xl flex-shrink-0" style="font-variation-settings:'FILL' 1;">notifications_active</span>
         <div class="flex-1 min-w-0">
@@ -795,7 +803,6 @@
         });
       })();
     </script>
-    <p class="mt-md text-[10px] text-muted text-center">가격은 변경될 수 있습니다. 본인인증(NICE)·결제(토스페이먼츠) 연동 후 순차 오픈.</p>
   </section>
 
                                                             
@@ -824,7 +831,7 @@
         <h3 class="font-headline font-semibold text-sm">매매상사·직거래·경매·인증 비교</h3>
       </a>
     </div>
-    <div class="text-center mt-md"><a href="/blog/" class="inline-block text-xs font-bold text-primary-container dark:text-primary hover:underline">나머지 16편 더 보기 →</a></div>
+    <div class="text-center mt-md"><a href="/blog/" class="inline-block text-xs font-bold text-primary-container dark:text-primary hover:underline">나머지 36편 더 보기 →</a></div>
   </section>
 
   <!-- FAQ -->
@@ -862,25 +869,62 @@
     </div>
   </section>
 
-  <!-- Bottom CTA — 다시 검색 -->
+  <!-- Bottom CTA — 단일 버튼 (Stripe/Linear 패턴: 페이지 하단은 단일 액션) -->
   <section class="px-margin pb-xl" aria-labelledby="cta-heading">
     <div class="rounded-2xl bg-gradient-to-br from-primary-container to-[#0d47a1] p-lg text-center">
       <h2 id="cta-heading" class="font-headline text-xl font-bold text-white mb-xs">지금 바로 무료 조회</h2>
-      <p class="text-[12px] text-blue-100/90 mb-md">차량번호 또는 VIN 한 줄 — 1초 안에 결과 확인</p>
-      <form action="/history" method="get" role="search" aria-label="하단 차량 조회" class="bg-white rounded-full p-1.5 flex items-center shadow-xl max-w-md mx-auto">
-        <label for="cta-q" class="sr-only">차량번호 또는 VIN</label>
-        <input id="cta-q" name="q" class="flex-1 bg-transparent border-none text-slate-900 placeholder:text-slate-400 focus:ring-0 px-md text-sm" placeholder="차량번호 또는 VIN" type="text" autocomplete="off" required minlength="6" maxlength="17"/>
-        <button type="submit" class="bg-primary-container text-white px-md py-2 rounded-full font-bold text-sm active:scale-95 transition-transform">조회</button>
-      </form>
-      <p class="mt-sm text-[10px] text-blue-100/80">로그인 불필요 · 100% 무료</p>
+      <p class="text-[12px] text-blue-100/90 mb-md">VIN·차량번호 한 줄 — 30초면 결과 확인</p>
+      <a href="/history" class="inline-flex items-center gap-2 bg-white text-primary-container font-bold text-sm px-lg py-3 rounded-full shadow-xl hover:shadow-2xl transition active:scale-95">
+        <span class="material-symbols-outlined text-[18px]">search</span>
+        <span>지금 무료 조회 시작 →</span>
+      </a>
+      <p class="mt-sm text-[10px] text-blue-100/80">로그인 불필요 · 100% 무료 · 회원가입 없음</p>
     </div>
   </section>
 
-  <footer class="px-margin py-lg border-t border-app-border text-center">
-    <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부, 보험개발원, 한국교통안전공단</p>
-    <p class="mt-xs text-[10px] text-muted">상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145, 1504동 6층 01호 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com</p>
-    <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA by 코하(Koha). All Rights Reserved.</p>
-    <p class="mt-xs text-[10px] text-muted"><a href="/about/" class="hover:underline">소개</a> · <a href="/pricing/" class="hover:underline">상품안내</a> · <a href="/terms/" class="hover:underline">이용약관</a> · <a href="/privacy/" class="hover:underline">개인정보처리방침</a></p>                                                                                                                                               
+  <!-- Footer — Google SEO 가이드 권장 패턴: 카테고리별 내부 링크 그룹핑 -->
+  <footer class="px-margin py-lg border-t border-app-border">
+    <!-- 사이트맵 그리드 -->
+    <nav aria-label="사이트맵" class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-3xl mx-auto mb-lg text-left">
+      <div>
+        <p class="font-headline font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">서비스</p>
+        <ul class="space-y-1.5">
+          <li><a href="/history" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">차량 이력조회</a></li>
+          <li><a href="/parts" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">리콜 검색</a></li>
+          <li><a href="/sources/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">공식기관 가이드</a></li>
+          <li><a href="/pricing/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">상품안내</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-headline font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">미리보기</p>
+        <ul class="space-y-1.5">
+          <li><a href="/preview/free/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">무료 결과 샘플</a></li>
+          <li><a href="/preview/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">종합 리포트 샘플</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-headline font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">콘텐츠</p>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">블로그 (40편)</a></li>
+          <li><a href="/news" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">뉴스</a></li>
+          <li><a href="/blog/used-car-checklist/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">중고차 체크리스트</a></li>
+          <li><a href="/blog/vin-lookup/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">VIN 조회 가이드</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-headline font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">회사 / 정책</p>
+        <ul class="space-y-1.5">
+          <li><a href="/about/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">소개</a></li>
+          <li><a href="/terms/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">이용약관</a></li>
+          <li><a href="/privacy/" class="text-[11px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">개인정보처리방침</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="text-center border-t border-app-border pt-md">
+      <p class="text-[10px] text-muted-strong">데이터 출처: 국토교통부 · 보험개발원 카히스토리 · 한국교통안전공단 · NHTSA vPIC · ISO 3779</p>
+      <p class="mt-xs text-[10px] text-muted">상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145, 1504동 6층 01호 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com</p>
+      <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA by 코하(Koha). All Rights Reserved.</p>
+    </div>
   </footer>                                                                                                                                                                                                                            
                                                                                                                                                                                                                                        
   </main>                                                                                                                                                                                                                              
