@@ -317,6 +317,29 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.06);}
 </article>
 <!-- ▲▲▲ 무료 결과 미리보기 끝 ▲▲▲ -->
 
+<!-- 액션바: 무료 결과도 공유·메일 발송 가능 (PDF는 유료 전용) -->
+<section class="mt-lg mb-lg bg-surface-container rounded-2xl p-md border border-outline-variant/20">
+  <p class="text-[10px] uppercase tracking-wider text-muted font-bold text-center mb-sm">결과 활용</p>
+  <div class="grid grid-cols-3 gap-sm">
+    <button type="button" id="preview-action-share" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+      <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">share</span>
+      <span class="text-[11px] font-semibold text-on-surface">공유하기</span>
+      <span class="text-[9px] text-muted">카톡·X·링크</span>
+    </button>
+    <button type="button" id="preview-action-email" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+      <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">mail</span>
+      <span class="text-[11px] font-semibold text-on-surface">이메일로 받기</span>
+      <span class="text-[9px] text-emerald-600 dark:text-emerald-400 font-bold">무료</span>
+    </button>
+    <a href="/preview/" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low/50 rounded-xl border border-outline-variant/40 opacity-80 hover:opacity-100 transition">
+      <span class="material-symbols-outlined text-violet-500 text-xl">picture_as_pdf</span>
+      <span class="text-[11px] font-semibold text-muted">PDF 저장</span>
+      <span class="text-[9px] text-violet-600 dark:text-violet-400 font-bold">₩1,900 전용</span>
+    </a>
+  </div>
+  <p class="text-[10px] text-muted text-center mt-sm">무료 결과도 공유·이메일 발송 가능 · PDF 영구 보관은 ₩1,900 종합 리포트에서</p>
+</section>
+
 <!-- 다음 단계 — 유료 종합 리포트 안내 -->
 <section class="mt-xl mb-lg p-lg bg-gradient-to-br from-violet-500/10 to-purple-600/10 dark:from-violet-500/15 dark:to-purple-600/15 border border-violet-500/30 rounded-3xl">
   <div class="flex items-center gap-2 mb-sm">
@@ -362,8 +385,26 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.06);}
   </div>
 </nav>
 
+<script src="/js/share-mail.js"></script>
 <script>
 function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
 if(window.gtag){window.gtag('event','view_preview_free',{page_location:'preview/free',engagement_time_msec:1});}
+
+// 액션바 핸들러 — 샘플 결과 공유·메일 (실제 결과 페이지와 동일 동작)
+(function(){
+  var sampleCtx = {
+    title: 'ACHAJA — 무료 결과 미리보기 (2023 그랜저 하이브리드)',
+    text: 'ACHAJA 무료 결과 샘플 — VIN·리콜·번호판·AI 4가지 무료\n2023 현대 그랜저 하이브리드 GN7 HEV · IEB 리콜 1건\n────\n샘플 보기: ' + location.href,
+    url: location.href,
+    subject: '[ACHAJA] 무료 결과 미리보기 샘플',
+    body: 'ACHAJA 무료 결과 샘플입니다.\n\n샘플 차량: 2023 현대 그랜저 하이브리드 (GN7 HEV)\n아차 점수: 65점 (주의)\nIEB 리콜 1건 (긴급 안전)\n\n자세히 보기: ' + location.href + '\n\n무료 조회 시작: https://achaja.net/history',
+    vin: 'KMHED41CBPA523456',
+    plate: '25라4567'
+  };
+  var sBtn = document.getElementById('preview-action-share');
+  var eBtn = document.getElementById('preview-action-email');
+  if (sBtn) sBtn.addEventListener('click', function(){ if (window.AchajaShare) AchajaShare.share(sampleCtx); });
+  if (eBtn) eBtn.addEventListener('click', function(){ if (window.AchajaShare) AchajaShare.sendByEmail(sampleCtx); });
+})();
 </script>
 </body></html>

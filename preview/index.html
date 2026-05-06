@@ -316,6 +316,29 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.07);}
 
 <!-- 무료 vs 유료 비교는 홈페이지 #sample-preview에 통합 — 여기는 PDF 샘플 자체에 집중 -->
 
+<!-- 액션바: 결제 후 받게 될 3가지 (공유 + 이메일 + PDF) -->
+<section class="mb-xl bg-surface-container rounded-2xl p-md border border-outline-variant/20">
+  <p class="text-[10px] uppercase tracking-wider text-muted font-bold text-center mb-sm">결제 후 받게 될 3가지</p>
+  <div class="grid grid-cols-3 gap-sm">
+    <button type="button" id="paid-action-share" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+      <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">share</span>
+      <span class="text-[11px] font-semibold text-on-surface">공유하기</span>
+      <span class="text-[9px] text-muted">카톡·X·링크</span>
+    </button>
+    <button type="button" id="paid-action-email" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+      <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">mail</span>
+      <span class="text-[11px] font-semibold text-on-surface">이메일 발송</span>
+      <span class="text-[9px] text-violet-600 dark:text-violet-400 font-bold">PDF 첨부</span>
+    </button>
+    <a href="/preview/pdf-sample/" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-violet-500/10 hover:bg-violet-500/15 dark:bg-violet-500/15 rounded-xl border-2 border-violet-500/40 transition active:scale-95">
+      <span class="material-symbols-outlined text-violet-600 dark:text-violet-400 text-xl" style="font-variation-settings:'FILL' 1;">picture_as_pdf</span>
+      <span class="text-[11px] font-bold text-violet-700 dark:text-violet-300">PDF 미리보기</span>
+      <span class="text-[9px] text-violet-600 dark:text-violet-400 font-bold">A4 2쪽</span>
+    </a>
+  </div>
+  <p class="text-[10px] text-muted text-center mt-sm leading-relaxed">결제 완료 시 ① 즉시 다운로드 링크 + ② 이메일에 PDF 첨부 + ③ 1년 재다운로드 마이페이지에 저장됩니다.</p>
+</section>
+
 <!-- 신뢰 신호 -->
 <section class="mb-xl p-lg bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200/60 dark:border-emerald-700/50 rounded-2xl">
   <h2 class="font-headline font-bold text-base flex items-center gap-1.5 text-emerald-800 dark:text-emerald-400 mb-sm">
@@ -391,8 +414,26 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.07);}
 </nav>
 
 <script src="/js/payment.js"></script>
+<script src="/js/share-mail.js"></script>
 <script>
 function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
 if(window.gtag){window.gtag('event','view_preview',{page_location:'preview',engagement_time_msec:1});}
+
+// 액션바 핸들러 — 유료 샘플 (PDF는 /preview/pdf-sample/ 링크로 처리됨, 공유·메일만 JS)
+(function(){
+  var sampleCtx = {
+    title: 'ACHAJA 종합 리포트 PDF 샘플 — 2023 그랜저 하이브리드',
+    text: 'ACHAJA ₩1,900 종합 리포트 PDF 샘플\n2023 현대 그랜저 하이브리드 GN7 HEV\nClaude AI 5섹션 + 외부조회 가이드 PDF\n────\n샘플: ' + location.href,
+    url: location.href,
+    subject: '[ACHAJA] 종합 리포트 PDF 샘플',
+    body: 'ACHAJA 종합 리포트 PDF 샘플입니다.\n\n샘플 차량: 2023 현대 그랜저 하이브리드 (GN7 HEV)\n포함: VIN+리콜+번호판+AI 5섹션+외부조회 가이드\n\nPDF 미리보기: ' + location.origin + '/preview/pdf-sample/\n결제 안내: ' + location.href,
+    vin: 'KMHED41CBPA523456',
+    plate: '25라4567'
+  };
+  var sBtn = document.getElementById('paid-action-share');
+  var eBtn = document.getElementById('paid-action-email');
+  if (sBtn) sBtn.addEventListener('click', function(){ if (window.AchajaShare) AchajaShare.share(sampleCtx); });
+  if (eBtn) eBtn.addEventListener('click', function(){ if (window.AchajaShare) AchajaShare.sendByEmail(sampleCtx); });
+})();
 </script>
 </body></html>

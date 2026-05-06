@@ -445,6 +445,29 @@
         </div>
       </div>
     </div>
+
+    <!-- 액션바: 공유 + 이메일 발송 + PDF (PDF는 토스 심사 후 활성화) -->
+    <div class="bg-surface-container rounded-2xl p-md border border-outline-variant/20">
+      <p class="text-[10px] uppercase tracking-wider text-muted font-bold text-center mb-sm">결과 활용</p>
+      <div class="grid grid-cols-3 gap-sm">
+        <button type="button" id="vin-action-share" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+          <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">share</span>
+          <span class="text-[11px] font-semibold text-on-surface">공유하기</span>
+          <span class="text-[9px] text-muted">카톡·X·링크</span>
+        </button>
+        <button type="button" id="vin-action-email" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+          <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">mail</span>
+          <span class="text-[11px] font-semibold text-on-surface">이메일로 받기</span>
+          <span class="text-[9px] text-emerald-600 dark:text-emerald-400 font-bold">무료</span>
+        </button>
+        <button type="button" id="vin-action-pdf" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low/50 rounded-xl border border-outline-variant/40 cursor-not-allowed opacity-60" disabled>
+          <span class="material-symbols-outlined text-muted text-xl">picture_as_pdf</span>
+          <span class="text-[11px] font-semibold text-muted">PDF 저장</span>
+          <span class="text-[9px] text-violet-600 dark:text-violet-400 font-bold">₩1,900 후 활성</span>
+        </button>
+      </div>
+      <p class="text-[10px] text-muted text-center mt-sm">PDF 자동 발급은 토스페이먼츠 심사 완료 후 활성화 · 그 전까지는 결과를 이메일로 받아 직접 인쇄 가능</p>
+    </div>
   </section>
 
   <!-- 차량번호 결과 -->
@@ -487,6 +510,23 @@
           </form>
           <p id="plate-supplement-err" class="hidden text-[10px] text-red-600 dark:text-red-400 mt-xs">VIN 17자리가 아닙니다. I·O·Q는 사용되지 않습니다.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- 액션바: 공유 + 이메일 발송 (차량번호 모드에서도 동일) -->
+    <div class="bg-surface-container rounded-2xl p-md border border-outline-variant/20">
+      <p class="text-[10px] uppercase tracking-wider text-muted font-bold text-center mb-sm">결과 활용</p>
+      <div class="grid grid-cols-2 gap-sm">
+        <button type="button" id="plate-action-share" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+          <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">share</span>
+          <span class="text-[11px] font-semibold text-on-surface">공유하기</span>
+          <span class="text-[9px] text-muted">카톡·X·링크</span>
+        </button>
+        <button type="button" id="plate-action-email" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+          <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">mail</span>
+          <span class="text-[11px] font-semibold text-on-surface">이메일로 받기</span>
+          <span class="text-[9px] text-emerald-600 dark:text-emerald-400 font-bold">무료</span>
+        </button>
       </div>
     </div>
   </section>
@@ -615,6 +655,7 @@
   </nav>
                                                                                                                                                                                                                                        
   <script src="/js/vin-decoder.js"></script>
+  <script src="/js/share-mail.js"></script>
   <script>
   function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
   (function(){
@@ -1387,6 +1428,49 @@
       input.addEventListener('input',function(){
         if(!err.classList.contains('hidden')) err.classList.add('hidden');
       });
+
+      // 액션바: 공유 + 이메일 (VIN/plate 양쪽 동일 핸들러)
+      function buildActionContext(){
+        var ctx = currentAnalysisInput || {};
+        var vinTxt = ctx.vin || (document.getElementById('vin-full') && document.getElementById('vin-full').textContent) || '';
+        var plateTxt = ctx.plate || (document.getElementById('plate-display') && document.getElementById('plate-display').textContent) || '';
+        var maker = (ctx.vinData && ctx.vinData.maker) || '';
+        var model = (ctx.vinData && ctx.vinData.model) || '';
+        var year = (ctx.vinData && ctx.vinData.year) || '';
+        var titleParts = [];
+        if (maker) titleParts.push(maker);
+        if (year) titleParts.push(year + '년식');
+        if (model) titleParts.push(model);
+        var label = titleParts.join(' ') || (vinTxt ? 'VIN ' + vinTxt.substr(0,8) + '*****' : '차량');
+        var bodyLines = ['ACHAJA 차량 이력 조회 결과', '────────────', label];
+        if (vinTxt) bodyLines.push('VIN: ' + vinTxt);
+        if (plateTxt && plateTxt !== '—') bodyLines.push('차량번호: ' + plateTxt);
+        if (ctx.recalls && ctx.recalls.length) bodyLines.push('관련 리콜: ' + ctx.recalls.length + '건');
+        bodyLines.push('────────────', '결과 보기: ' + location.href);
+        return {
+          title: 'ACHAJA — ' + label + ' 이력 조회',
+          text: bodyLines.join('\n'),
+          url: location.href,
+          vin: vinTxt || null,
+          plate: (plateTxt && plateTxt !== '—') ? plateTxt : null,
+          subject: '[ACHAJA] ' + label + ' 차량 이력 조회 결과'
+        };
+      }
+      function attachActionHandlers(prefix){
+        var sBtn = document.getElementById(prefix + '-action-share');
+        var eBtn = document.getElementById(prefix + '-action-email');
+        if (sBtn) sBtn.addEventListener('click', function(){
+          if (window.AchajaShare) AchajaShare.share(buildActionContext());
+        });
+        if (eBtn) eBtn.addEventListener('click', function(){
+          if (window.AchajaShare){
+            var c = buildActionContext();
+            AchajaShare.sendByEmail({ subject: c.subject, body: c.text, url: c.url, vin: c.vin, plate: c.plate });
+          }
+        });
+      }
+      attachActionHandlers('vin');
+      attachActionHandlers('plate');
 
       // 보조 입력 ① — VIN 결과 위에 차량번호 추가
       var vinSuppForm = $('vin-supplement-form');
