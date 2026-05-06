@@ -791,58 +791,25 @@
     <p class="mt-md text-[10px] text-muted text-center">가격은 변경될 수 있습니다. 본인인증(NICE)·결제(토스페이먼츠) 연동 후 순차 오픈.</p>
   </section>
 
-  <!-- Early Access Waitlist — 별도 섹션 (시각적 호흡 + 결제 직전 부스터 분리) -->
-  <section class="px-margin py-lg" aria-labelledby="waitlist-heading">
-    <h2 id="waitlist-heading" class="sr-only">유료 리포트 오픈 알림 신청</h2>
-    <!-- 이메일 사전등록 (Notion/Linear 패턴: Early Access + 한정 혜택) -->
-    <form id="waitlist-form" class="bg-gradient-to-br from-violet-500/10 to-purple-600/5 dark:from-violet-500/15 dark:to-purple-600/10 border-2 border-violet-500/30 rounded-2xl p-md" onsubmit="return false;">
-      <div class="flex items-start gap-sm mb-sm">
-        <span class="material-symbols-outlined text-violet-600 dark:text-violet-400 mt-0.5 text-2xl flex-shrink-0" style="font-variation-settings:'FILL' 1;">notifications_active</span>
+  <!-- 결과 활용 안내 (Early Access 폐지, 액션바로 기능 대체) -->
+  <section class="px-margin py-lg" aria-labelledby="result-actions-heading">
+    <h2 id="result-actions-heading" class="sr-only">결과 활용 안내</h2>
+    <div class="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 dark:from-emerald-500/15 dark:to-emerald-500/5 border-2 border-emerald-500/30 rounded-2xl p-md">
+      <div class="flex items-start gap-sm">
+        <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 mt-0.5 text-2xl flex-shrink-0" style="font-variation-settings:'FILL' 1;">forward_to_inbox</span>
         <div class="flex-1 min-w-0">
-          <div class="flex items-center gap-2 flex-wrap">
-            <p class="text-on-surface text-sm font-bold">Early Access — 오픈 알림</p>
-            <span class="inline-flex items-center gap-1 bg-violet-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">
-              <span class="material-symbols-outlined text-[10px]" style="font-variation-settings:'FILL' 1;">card_giftcard</span>선착순 100명
-            </span>
+          <p class="text-on-surface text-sm font-bold">결과를 메일·카톡으로 받아 보관 가능</p>
+          <p class="text-muted text-[11px] mt-xs leading-relaxed">조회 후 결과 화면 하단에서 <strong class="text-on-surface">공유</strong>(카카오톡·X·링크 복사) + <strong class="text-on-surface">이메일 발송</strong>이 가능합니다. 매물 비교용으로 카톡 그룹에 보내거나 본인 메일에 보관해 두세요.</p>
+          <div class="flex flex-wrap gap-2 mt-sm">
+            <span class="inline-flex items-center gap-1 bg-surface text-on-surface text-[10px] px-2 py-1 rounded-full border border-outline-variant"><span class="material-symbols-outlined text-[12px] text-emerald-600 dark:text-emerald-400" style="font-variation-settings:'FILL' 1;">share</span>공유 무료</span>
+            <span class="inline-flex items-center gap-1 bg-surface text-on-surface text-[10px] px-2 py-1 rounded-full border border-outline-variant"><span class="material-symbols-outlined text-[12px] text-emerald-600 dark:text-emerald-400" style="font-variation-settings:'FILL' 1;">mail</span>메일 발송 무료</span>
+            <span class="inline-flex items-center gap-1 bg-surface text-on-surface text-[10px] px-2 py-1 rounded-full border border-outline-variant"><span class="material-symbols-outlined text-[12px] text-violet-600 dark:text-violet-400" style="font-variation-settings:'FILL' 1;">picture_as_pdf</span>PDF 영구 보관 ₩1,900</span>
           </div>
-          <p class="text-muted text-[11px] mt-xs leading-relaxed">₩1,900 종합 리포트 PDF가 오픈되면 즉시 알림. <strong class="text-violet-700 dark:text-violet-300">조기 신청자 한정</strong>: 첫 발급 시 <strong class="text-violet-700 dark:text-violet-300">50% 할인 쿠폰</strong> 자동 발송.</p>
-          <p class="text-muted text-[10px] mt-xs flex items-center gap-1">
-            <span class="material-symbols-outlined text-[12px]">schedule</span>
-            오픈 예정: 2026년 5~6월 (토스페이먼츠 가맹점 심사 완료 후)
-          </p>
         </div>
       </div>
-      <div class="flex gap-sm">
-        <label for="waitlist-email" class="sr-only">이메일</label>
-        <input id="waitlist-email" type="email" name="email" required placeholder="example@email.com" class="flex-1 bg-surface text-on-surface placeholder:text-outline border border-outline-variant rounded-xl px-md py-2 text-sm focus:ring-2 focus:ring-violet-500 focus:outline-none"/>
-        <button id="waitlist-btn" type="button" class="bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 text-white px-md py-2 rounded-xl text-sm font-bold active:scale-95 transition whitespace-nowrap shadow-sm">알림 신청</button>
-      </div>
-      <p id="waitlist-msg" class="hidden text-[11px] text-emerald-600 dark:text-emerald-400 mt-sm font-semibold">✓ 메일 앱이 열립니다. 보내주시면 오픈 시 50% 쿠폰과 함께 알려드릴게요.</p>
-      <p class="text-muted text-[10px] mt-sm leading-relaxed">※ 신청자 정보는 오픈 알림 전송 후 즉시 폐기. 마케팅·제3자 공유 없음. 가격은 변경될 수 있으나 조기 신청자에게는 보장된 50% 할인이 적용됩니다.</p>
-    </form>
-    <script>
-      (function(){
-        var btn=document.getElementById('waitlist-btn');
-        if(!btn) return;
-        btn.addEventListener('click', function(){
-          var input=document.getElementById('waitlist-email');
-          var msg=document.getElementById('waitlist-msg');
-          var email=(input&&input.value||'').trim();
-          if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-            input&&input.focus();
-            return;
-          }
-          var subject=encodeURIComponent('[ACHAJA] 유료 리포트 오픈 알림 신청');
-          var body=encodeURIComponent('이메일: '+email+'\n\nACHAJA 유료 리포트 오픈 시 알림을 받고 싶습니다.');
-          window.location.href='mailto:koha3d77@gmail.com?subject='+subject+'&body='+body;
-          if(msg) msg.classList.remove('hidden');
-          if(window.gtag){ gtag('event','waitlist_click',{}); }
-        });
-      })();
-    </script>
+    </div>
   </section>
 
-                                                            
   <!-- Blog Preview — 핵심 4편만 -->
   <section class="px-margin py-lg" aria-labelledby="blog-heading">
     <div class="flex items-center justify-between mb-sm">
