@@ -46,6 +46,12 @@ function withSecurityHeaders(response) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    // workers.dev → achaja.net 301 (중복 도메인 SEO 방지)
+    if (url.hostname.endsWith('.workers.dev')) {
+      return Response.redirect(`https://achaja.net${url.pathname}${url.search}`, 301);
+    }
+
     let response;
     if (url.pathname === '/api/news') {
       response = await newsHandler({ request, env });
