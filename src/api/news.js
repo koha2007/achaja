@@ -37,8 +37,9 @@ export async function onRequest({ request, env }) {
   const start = Math.min(Math.max(parseInt(url.searchParams.get('start') || '1', 10), 1), 1000);
 
   if (!env.NAVER_CLIENT_ID || !env.NAVER_CLIENT_SECRET) {
-    return new Response(JSON.stringify({ error: 'API_KEY_MISSING' }), {
-      status: 500,
+    console.error('[news] NAVER_CLIENT_ID/SECRET not configured');
+    return new Response(JSON.stringify({ items: [], total: 0, error: 'unavailable' }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   }
@@ -54,16 +55,18 @@ export async function onRequest({ request, env }) {
       },
     });
   } catch (e) {
-    return new Response(JSON.stringify({ error: 'UPSTREAM_FETCH_FAILED' }), {
-      status: 502,
+    console.error('[news] upstream fetch failed:', e);
+    return new Response(JSON.stringify({ items: [], total: 0, error: 'unavailable' }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   }
 
   if (!upstream.ok) {
     const body = await upstream.text();
-    return new Response(JSON.stringify({ error: 'UPSTREAM_ERROR', status: upstream.status, body }), {
-      status: upstream.status,
+    console.error('[news] upstream error', upstream.status, body.slice(0, 200));
+    return new Response(JSON.stringify({ items: [], total: 0, error: 'unavailable' }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   }

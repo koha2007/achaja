@@ -35,10 +35,8 @@ export async function onRequest({ request, env }) {
   const query = CATEGORY_QUERIES[category] || CATEGORY_QUERIES.all;
 
   if (!env.NAVER_CLIENT_ID || !env.NAVER_CLIENT_SECRET) {
-    return new Response('<?xml version="1.0"?><error>API_KEY_MISSING</error>', {
-      status: 500,
-      headers: { 'Content-Type': 'application/xml; charset=utf-8' },
-    });
+    console.error('[rss] NAVER credentials not configured');
+    return emptyRss('서비스 점검 중');
   }
 
   const apiUrl = `https://openapi.naver.com/v1/search/news.json?query=${encodeURIComponent(query)}&display=30&sort=date`;
@@ -51,18 +49,14 @@ export async function onRequest({ request, env }) {
         'X-Naver-Client-Secret': env.NAVER_CLIENT_SECRET,
       },
     });
-  } catch {
-    return new Response('<?xml version="1.0"?><error>UPSTREAM_FETCH_FAILED</error>', {
-      status: 502,
-      headers: { 'Content-Type': 'application/xml; charset=utf-8' },
-    });
+  } catch (err) {
+    console.error('[rss] upstream fetch failed:', err);
+    return emptyRss('업스트림 일시 오류');
   }
 
   if (!upstream.ok) {
-    return new Response(`<?xml version="1.0"?><error>UPSTREAM_${upstream.status}</error>`, {
-      status: upstream.status,
-      headers: { 'Content-Type': 'application/xml; charset=utf-8' },
-    });
+    console.error('[rss] upstream error', upstream.status);
+    return emptyRss('업스트림 응답 오류');
   }
 
   const data = await upstream.json();
@@ -99,6 +93,29 @@ ${items}
     headers: {
       'Content-Type': 'application/rss+xml; charset=utf-8',
       'Cache-Control': 'public, max-age=1800',
+    },
+  });
+}
+
+function emptyRss(reason) {
+  const lastBuildDate = new Date().toUTCString();
+  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ACHAJA 자동차 뉴스</title>
+    <link>https://achaja.net/news</link>
+    <atom:link href="https://achaja.net/rss.xml" rel="self" type="application/rss+xml" />
+    <description>${reason}</description>
+    <language>ko-KR</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
+    <ttl>60</ttl>
+  </channel>
+</rss>`;
+  return new Response(rss, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/rss+xml; charset=utf-8',
+      'Cache-Control': 'public, max-age=300',
     },
   });
 }

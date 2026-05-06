@@ -153,6 +153,9 @@ body{min-height:100dvh;}
     return;
   }
 
+  // URL에서 결제키·주문ID·금액 파라미터 제거 (브라우저 히스토리·캐시·로그 노출 방지)
+  try { window.history.replaceState({}, '', '/payment/success/'); } catch(_){}
+
   try {
     const res = await fetch('/api/payment/confirm', {
       method: 'POST',

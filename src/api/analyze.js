@@ -23,6 +23,18 @@ const REASON_MAX_LEN = 100; // 리콜 reason 텍스트 최대 길이 (토큰 절
 const RETRY_ON_STATUS = new Set([403, 429, 500, 502, 503, 504, 529]);
 
 // ──────────────────────────────────────────────────────────
+// 보호 장치 — 비용 폭증·봇 abuse 방어
+// ──────────────────────────────────────────────────────────
+const ALLOWED_ORIGINS = new Set([
+  'https://achaja.net',
+  'https://www.achaja.net',
+  'https://achaja.pages.dev',
+]);
+const RATE_LIMIT_PER_IP_HOUR = 5;        // IP당 시간 5회
+const RATE_LIMIT_PER_IP_DAY = 20;        // IP당 일 20회
+const GLOBAL_DAILY_CALL_CAP = 1000;      // 글로벌 일일 호출 상한 (비용 안전망)
+
+// ──────────────────────────────────────────────────────────
 // 시스템 프롬프트 — Anthropic prompt caching 적용 (ephemeral)
 // 이 블록이 캐시되면 동일 시스템 프롬프트 재사용 시 입력비 90% 절감
 // ──────────────────────────────────────────────────────────
@@ -264,19 +276,90 @@ async function callClaude(env, userMessage) {
 }
 
 // ──────────────────────────────────────────────────────────
+// 보호 헬퍼: Origin 검증
+// ──────────────────────────────────────────────────────────
+function validateOrigin(request) {
+  const origin = request.headers.get('origin') || '';
+  const referer = request.headers.get('referer') || '';
+  if (origin && ALLOWED_ORIGINS.has(origin)) return true;
+  for (const allowed of ALLOWED_ORIGINS) {
+    if (referer.startsWith(allowed + '/')) return true;
+  }
+  return false;
+}
+
+// ──────────────────────────────────────────────────────────
+// 보호 헬퍼: Rate limit (IP당 시간/일 + 글로벌 일일 cap)
+// 모두 KV 기반. KV 미설정 시 통과 (안전 fallback은 글로벌 cap 변수만으로 보호 한계).
+// ──────────────────────────────────────────────────────────
+async function checkRateLimit(env, request) {
+  if (!env.ACHAJA_CACHE) return { ok: true };
+  const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+  const now = new Date();
+  const dayKey = now.toISOString().slice(0, 10);              // YYYY-MM-DD
+  const hourKey = now.toISOString().slice(0, 13);             // YYYY-MM-DDTHH
+
+  const ipDayKey = `rl:ipd:${ip}:${dayKey}`;
+  const ipHourKey = `rl:iph:${ip}:${hourKey}`;
+  const globalKey = `rl:gd:${dayKey}`;
+
+  const [ipDay, ipHour, globalDay] = await Promise.all([
+    env.ACHAJA_CACHE.get(ipDayKey).then((v) => parseInt(v) || 0).catch(() => 0),
+    env.ACHAJA_CACHE.get(ipHourKey).then((v) => parseInt(v) || 0).catch(() => 0),
+    env.ACHAJA_CACHE.get(globalKey).then((v) => parseInt(v) || 0).catch(() => 0),
+  ]);
+
+  if (globalDay >= GLOBAL_DAILY_CALL_CAP) {
+    return { ok: false, status: 503, reason: 'service_capacity_reached' };
+  }
+  if (ipHour >= RATE_LIMIT_PER_IP_HOUR) {
+    return { ok: false, status: 429, reason: 'ip_hour_limit', retryAfter: 3600 };
+  }
+  if (ipDay >= RATE_LIMIT_PER_IP_DAY) {
+    return { ok: false, status: 429, reason: 'ip_day_limit', retryAfter: 86400 };
+  }
+
+  // 카운터 증가 (실패해도 흐름 진행)
+  const ttlDay = 60 * 60 * 24 + 60;
+  const ttlHour = 60 * 60 + 60;
+  await Promise.all([
+    env.ACHAJA_CACHE.put(ipDayKey, String(ipDay + 1), { expirationTtl: ttlDay }).catch(() => {}),
+    env.ACHAJA_CACHE.put(ipHourKey, String(ipHour + 1), { expirationTtl: ttlHour }).catch(() => {}),
+    env.ACHAJA_CACHE.put(globalKey, String(globalDay + 1), { expirationTtl: ttlDay }).catch(() => {}),
+  ]);
+  return { ok: true };
+}
+
+// ──────────────────────────────────────────────────────────
 // 메인 핸들러 (단일 onRequest export — src/index.js 라우터 호환)
 // ──────────────────────────────────────────────────────────
 export async function onRequest({ request, env }) {
   const method = request.method.toUpperCase();
-  if (method === 'OPTIONS') return handleOptions();
+  if (method === 'OPTIONS') return handleOptions(request);
   if (method === 'GET') return handleGet(env);
   if (method !== 'POST') {
     return jsonResponse({ error: 'POST·GET·OPTIONS만 허용됩니다.' }, 405);
   }
 
+  // Origin 검증 — 외부 도메인에서의 직접 호출 차단
+  if (!validateOrigin(request)) {
+    return jsonResponse({ error: '허용되지 않은 요청 출처입니다.' }, 403);
+  }
+
   // 환경변수 확인
   if (!env.ANTHROPIC_API_KEY) {
-    return jsonResponse({ error: 'ANTHROPIC_API_KEY가 설정되지 않았습니다.' }, 500);
+    return jsonResponse({ error: '서비스 점검 중입니다. 잠시 후 다시 시도해주세요.' }, 503);
+  }
+
+  // Rate limit (KV 기반 IP/시간/일 + 글로벌 cap)
+  const rl = await checkRateLimit(env, request);
+  if (!rl.ok) {
+    const headers = { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' };
+    if (rl.retryAfter) headers['retry-after'] = String(rl.retryAfter);
+    const msg = rl.reason === 'service_capacity_reached'
+      ? '오늘의 무료 분석 한도가 모두 소진되었습니다. 내일 다시 이용해주세요.'
+      : '잠시 후 다시 시도해주세요. (시간당·일별 분석 한도)';
+    return new Response(JSON.stringify({ error: msg, code: rl.reason }), { status: rl.status, headers });
   }
 
   // Body 파싱
@@ -321,8 +404,9 @@ export async function onRequest({ request, env }) {
   try {
     claudeResult = await callClaude(env, userMessage);
   } catch (err) {
+    console.error('[analyze] Claude API error:', err);
     return jsonResponse(
-      { error: 'Claude API 호출 실패', detail: String(err).slice(0, 500) },
+      { error: 'AI 분석 요청을 처리하지 못했습니다. 잠시 후 다시 시도해주세요.' },
       502
     );
   }
@@ -330,11 +414,9 @@ export async function onRequest({ request, env }) {
   // JSON 파싱
   const analysis = parseClaudeJson(claudeResult.text);
   if (!analysis) {
+    console.error('[analyze] JSON parse failed. Preview:', claudeResult.text.slice(0, 300));
     return jsonResponse(
-      {
-        error: 'AI 응답을 JSON으로 파싱하지 못했습니다.',
-        rawPreview: claudeResult.text.slice(0, 300),
-      },
+      { error: 'AI 응답 형식 오류입니다. 잠시 후 다시 시도해주세요.' },
       502
     );
   }
@@ -373,14 +455,17 @@ export async function onRequest({ request, env }) {
 // ──────────────────────────────────────────────────────────
 // OPTIONS / GET 헬퍼
 // ──────────────────────────────────────────────────────────
-function handleOptions() {
+function handleOptions(request) {
+  const origin = request?.headers?.get?.('origin') || '';
+  const allowed = ALLOWED_ORIGINS.has(origin) ? origin : 'https://achaja.net';
   return new Response(null, {
     status: 204,
     headers: {
-      'access-control-allow-origin': 'https://achaja.net',
+      'access-control-allow-origin': allowed,
       'access-control-allow-methods': 'POST, OPTIONS',
       'access-control-allow-headers': 'content-type',
       'access-control-max-age': '86400',
+      'vary': 'Origin',
     },
   });
 }

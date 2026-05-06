@@ -65,8 +65,9 @@ async function requestPayment(productKey) {
     });
   } catch (err) {
     if (err && err.code === 'USER_CANCEL') return;
-    console.error('[payment] requestPayment error:', err);
-    alert('결제 요청 중 오류가 발생했습니다: ' + (err?.message || err));
+    console.error('[payment] requestPayment error code:', err?.code || 'unknown');
+    var safeMsg = (err && typeof err.message === 'string') ? err.message : '결제 요청 중 오류가 발생했습니다.';
+    alert('결제 요청 중 오류가 발생했습니다. (' + (err?.code || safeMsg.slice(0, 60)) + ')');
   }
 }
 

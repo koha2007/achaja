@@ -11,7 +11,8 @@ export async function onRequest({ request, env }) {
   }
 
   if (!env.TOSS_SECRET_KEY) {
-    return json({ ok: false, code: 'SECRET_NOT_CONFIGURED', message: '서버 설정 오류: 결제 시크릿 키가 등록되지 않았습니다.' }, 500);
+    console.error('[payment-confirm] TOSS_SECRET_KEY not configured');
+    return json({ ok: false, code: 'SERVICE_UNAVAILABLE', message: '결제 시스템 점검 중입니다. 잠시 후 다시 시도해주세요.' }, 503);
   }
 
   let body;
@@ -44,14 +45,16 @@ export async function onRequest({ request, env }) {
     });
     tossData = await tossRes.json();
   } catch (err) {
-    return json({ ok: false, code: 'TOSS_NETWORK_ERROR', message: 'PG 통신 오류: ' + (err?.message || err) }, 502);
+    console.error('[payment-confirm] toss network error:', err);
+    return json({ ok: false, code: 'NETWORK_ERROR', message: '결제 승인 통신 오류입니다. 잠시 후 다시 시도해주세요.' }, 502);
   }
 
   if (!tossRes.ok) {
+    console.error('[payment-confirm] toss declined', tossRes.status, tossData?.code, tossData?.message);
     return json({
       ok: false,
-      code: tossData?.code || `TOSS_HTTP_${tossRes.status}`,
-      message: tossData?.message || '결제 승인 실패',
+      code: tossData?.code || 'PAYMENT_DECLINED',
+      message: tossData?.message || '결제 승인에 실패했습니다.',
     }, tossRes.status);
   }
 

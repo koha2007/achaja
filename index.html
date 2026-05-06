@@ -675,8 +675,8 @@
       </div>
     </div>
 
-    <!-- 이메일 사전등록 -->
-    <form id="waitlist-form" class="mt-lg bg-surface-container-low border border-outline-variant rounded-2xl p-md" action="https://formspree.io/f/your-form-id" method="POST">
+    <!-- 이메일 사전등록 (mailto 폴백 — 백엔드 연동 전까지 운영자 메일로 직접 전송) -->
+    <form id="waitlist-form" class="mt-lg bg-surface-container-low border border-outline-variant rounded-2xl p-md" onsubmit="return false;">
       <div class="flex items-start gap-sm mb-sm">
         <span class="material-symbols-outlined text-primary-container dark:text-primary mt-0.5">notifications_active</span>
         <div class="flex-1">
@@ -687,10 +687,30 @@
       <div class="flex gap-sm">
         <label for="waitlist-email" class="sr-only">이메일</label>
         <input id="waitlist-email" type="email" name="email" required placeholder="이메일 주소" class="flex-1 bg-surface text-on-surface border border-outline-variant rounded-xl px-md py-2 text-sm focus:ring-2 focus:ring-primary-container dark:focus:ring-primary focus:outline-none"/>
-        <button type="submit" class="bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold active:scale-95 transition">알림 신청</button>
+        <button id="waitlist-btn" type="button" class="bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold active:scale-95 transition">알림 신청</button>
       </div>
-      <p id="waitlist-msg" class="hidden text-[11px] text-emerald-600 dark:text-emerald-400 mt-sm font-semibold">✓ 신청이 완료되었습니다. 오픈하면 알려드릴게요.</p>
+      <p id="waitlist-msg" class="hidden text-[11px] text-emerald-600 dark:text-emerald-400 mt-sm font-semibold">✓ 메일 앱이 열립니다. 보내주시면 오픈 시 알려드릴게요.</p>
     </form>
+    <script>
+      (function(){
+        var btn=document.getElementById('waitlist-btn');
+        if(!btn) return;
+        btn.addEventListener('click', function(){
+          var input=document.getElementById('waitlist-email');
+          var msg=document.getElementById('waitlist-msg');
+          var email=(input&&input.value||'').trim();
+          if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+            input&&input.focus();
+            return;
+          }
+          var subject=encodeURIComponent('[ACHAJA] 유료 리포트 오픈 알림 신청');
+          var body=encodeURIComponent('이메일: '+email+'\n\nACHAJA 유료 리포트 오픈 시 알림을 받고 싶습니다.');
+          window.location.href='mailto:koha3d77@gmail.com?subject='+subject+'&body='+body;
+          if(msg) msg.classList.remove('hidden');
+          if(window.gtag){ gtag('event','waitlist_click',{}); }
+        });
+      })();
+    </script>
     <p class="mt-md text-[10px] text-muted text-center">가격은 변경될 수 있습니다. 본인인증(NICE)·결제(토스페이먼츠) 연동 후 순차 오픈.</p>
   </section>
 

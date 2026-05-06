@@ -136,6 +136,9 @@ body{min-height:100dvh;}
   const rawMessage = params.get('message');
   const orderId = params.get('orderId');
 
+  // URL에서 결제 실패 파라미터 제거 (히스토리·로그 노출 방지)
+  try { window.history.replaceState({}, '', '/payment/fail/'); } catch(_){}
+
   // 오류 코드 매핑 적용
   const mapped = code ? ERROR_MAP[code] : null;
   const titleEl = document.getElementById('fail-title');

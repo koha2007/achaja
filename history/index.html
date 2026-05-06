@@ -279,6 +279,7 @@
         <p class="text-muted text-xs leading-relaxed">VIN 정보와 리콜 매칭 결과를 Claude Sonnet 4.6이 종합해 차량 프로파일·리콜 위험도·구매 체크리스트·협상 포인트를 5섹션 리포트로 작성합니다.</p>
         <button id="ai-analyze-btn" class="block w-full mt-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white text-sm font-bold py-2.5 rounded-xl active:scale-95 transition">AI 분석 받기 (베타 무료)</button>
         <p class="text-muted text-[10px] mt-xs text-center">처음 분석 시 15~25초 소요 · 동일 차량 재조회 시 즉시 반환</p>
+        <p class="text-muted text-[10px] mt-xs text-center leading-relaxed">⓵ 무료 베타: 시간당 5회 / 일 20회 한도 · 한도 초과 시 안내 메시지 표시</p>
       </div>
 
       <div id="ai-loading" class="hidden text-center py-md">
@@ -995,9 +996,17 @@
       })
       .then(function(res){
         if (!res.ok || !res.data || !res.data.analysis){
-          var base = (res.data && res.data.error) ? res.data.error : '서버 오류';
-          var detail = (res.data && res.data.detail) ? ' · ' + res.data.detail : '';
-          var msg = base + ' (HTTP ' + res.status + ')' + detail;
+          var msg;
+          if (res.status === 429){
+            msg = (res.data && res.data.error) || '시간당·일별 무료 분석 한도에 도달했습니다. 잠시 후 다시 시도해주세요.';
+          } else if (res.status === 503){
+            msg = (res.data && res.data.error) || '오늘의 무료 분석 한도가 모두 소진되었습니다. 내일 다시 이용해주세요.';
+          } else if (res.status === 403){
+            msg = '허용되지 않은 요청입니다. 페이지를 새로고침하고 다시 시도해주세요.';
+          } else {
+            var base = (res.data && res.data.error) ? res.data.error : '서버 오류';
+            msg = base + ' (HTTP ' + res.status + ')';
+          }
           showAiError(msg);
           if (window.gtag){ gtag('event','ai_analyze_fail',{ status: res.status }); }
           return;

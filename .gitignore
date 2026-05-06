@@ -28,3 +28,22 @@ manifest-checksum.txt
 
 # Wrangler local cache
 .wrangler/
+
+# Environment / secrets (절대 커밋 금지)
+.env
+.env.local
+.env.*.local
+.dev.vars
+*.secret
+*.secrets
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node
+node_modules/
