@@ -369,7 +369,7 @@ const posts = [
     ctaHref: '/history',
     related: [
       { href: '/blog/used-car-checklist/', cat: '구매 체크리스트', title: '중고차 살 때 꼭 확인해야 할 10가지' },
-      { href: '/blog/accident-history-check/', cat: '사고이력', title: '중고차 사고이력 조회 무료로 하는 법' },
+      { href: '/blog/accident-history-check/', cat: '사고이력', title: '중고차 사고이력 조회 어디서? — 카히스토리 가이드' },
     ],
     body: `  <p>디지털 계기판 시대가 되었어도 <strong>주행거리 조작(미터기 조작)</strong>은 여전히 발생합니다. 전용 장비로 ECU 값을 변경하면 10만 km 주행 차량을 5만 km로 위장할 수 있습니다. 육안으로 판별할 수 있는 7가지 신호를 소개합니다.</p>
 
@@ -965,13 +965,13 @@ const posts = [
     category: '자동차 보험',
     icon: 'savings',
     readTime: 5,
-    ctaTitle: '내 차 사고 이력도 함께 확인',
-    ctaText: '갱신 전 본인 차량의 사고·정비 이력을 차량번호로 1차 확인. 협상 카드로 활용하세요.',
+    ctaTitle: '내 차 리콜·기본정보 무료 확인',
+    ctaText: '갱신 전 본인 차량의 VIN·리콜·번호판 정보를 1차 검증. 사고이력은 보험개발원 카히스토리에서 직접 조회하세요.',
     ctaBtn: '이력조회',
     ctaHref: '/history',
     related: [
       { href: '/blog/car-insurance-first-time/', cat: '자동차 보험', title: '자동차 보험 첫 가입 가이드' },
-      { href: '/blog/accident-history-check/', cat: '사고이력', title: '중고차 사고이력 조회 무료로 하는 법' },
+      { href: '/blog/accident-history-check/', cat: '사고이력', title: '중고차 사고이력 조회 어디서? — 카히스토리 가이드' },
     ],
     body: `  <p>자동차 보험은 매년 갱신하는데, 같은 보장이라도 회사·시기·옵션 조합에 따라 <strong>30% 이상 차이</strong>가 납니다. 갱신 안내장이 도착했을 때 그대로 자동 갱신하지 말고, 다음 7가지를 확인하세요.</p>
 
@@ -1427,12 +1427,12 @@ const posts = [
     category: '액세서리',
     icon: 'videocam',
     readTime: 5,
-    ctaTitle: 'ACHAJA 사고 이력 조회',
-    ctaText: '블랙박스가 사고 순간을 담는다면, 이력조회는 차량의 사고 과거를 알려줍니다.',
+    ctaTitle: 'ACHAJA 무료 차량 검증',
+    ctaText: '블랙박스가 사고 순간을 담는다면, ACHAJA는 차량 기본정보·리콜을 1차로 검증합니다. 사고이력은 보험개발원 카히스토리에서 직접 조회하세요.',
     ctaBtn: '이력조회 바로가기',
     ctaHref: '/history',
     related: [
-      { href: '/blog/accident-history-check/', cat: '사고 이력', title: '중고차 사고이력 무료 조회' },
+      { href: '/blog/accident-history-check/', cat: '사고 이력', title: '중고차 사고이력 조회 어디서? — 카히스토리 가이드' },
       { href: '/blog/used-car-checklist/', cat: '구매 체크리스트', title: '중고차 살 때 꼭 확인해야 할 10가지' },
     ],
     body: `  <p>블랙박스는 사고 발생 시 <strong>가장 결정적인 증거</strong>입니다. 보험 처리, 과실 비율 산정, 음주·뺑소니 입증까지 영상 한 장이 수백만 원의 차이를 만듭니다. 다만 "어떤 블랙박스를 사야 하는지", "어떻게 설치해야 사각지대가 없는지" 모르면 막상 사고 났을 때 영상이 흐릿하거나 끊겨 무용지물이 됩니다.</p>
@@ -1589,11 +1589,11 @@ const posts = [
     icon: 'fact_check',
     readTime: 5,
     ctaTitle: 'ACHAJA 무료 이력조회',
-    ctaText: 'VIN/차량번호 한 번으로 리콜·기본정보를 확인하세요. 사고이력 본인인증 조회는 준비 중입니다.',
+    ctaText: 'VIN/차량번호 한 번으로 리콜·기본정보를 확인하세요. 사고이력은 보험개발원 카히스토리에서 직접 조회하세요.',
     ctaBtn: '이력조회 바로가기',
     ctaHref: '/history',
     related: [
-      { href: '/blog/accident-history-check/', cat: '사고 이력', title: '중고차 사고이력 무료 조회' },
+      { href: '/blog/accident-history-check/', cat: '사고 이력', title: '중고차 사고이력 조회 어디서? — 카히스토리 가이드' },
       { href: '/blog/flood-damaged-car/', cat: '침수차', title: '침수 여부 확인하는 5가지 방법' },
     ],
     body: `  <p>중고차 구매 시 가장 많이 듣는 단어가 "<strong>카히스토리 떼봤어?</strong>"입니다. 그런데 "카히스토리"와 "보험개발원 사고이력"이 같은 것인지, 다른 것인지, 무엇을 보면 정확한지 헷갈리는 분이 많습니다. 결론부터 말하면 둘은 <strong>같은 곳에서 운영하지만 제공 범위가 다릅니다</strong>.</p>
