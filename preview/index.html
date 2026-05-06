@@ -239,16 +239,41 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.07);}
       </div>
     </div>
 
-    <!-- ⑥ 외부 공식기관 조회 가이드 -->
+    <!-- ⑥ 외부 공식기관 조회 가이드 (PDF 동봉) -->
     <h4 class="font-headline font-semibold text-sm mb-sm flex items-center gap-1.5">
       <span class="material-symbols-outlined text-[16px] text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">link</span>
       <span>외부 공식기관 조회 가이드 (PDF 동봉)</span>
     </h4>
-    <ul class="text-xs space-y-1.5 text-on-surface-variant mb-md">
-      <li class="flex gap-2"><span class="text-amber-500">①</span><span><strong>카히스토리</strong> — 사고·침수 이력 (₩770~2,200/건). 차량번호 자동입력 링크 동봉.</span></li>
-      <li class="flex gap-2"><span class="text-orange-500">②</span><span><strong>자동차리콜센터</strong> — 본인 VIN 리콜 수리 완료 확인 (무료). 클립보드 자동복사.</span></li>
-      <li class="flex gap-2"><span class="text-primary-container">③</span><span><strong>자동차365</strong> — 소유·저당·압류 (무료, 본인인증 필요).</span></li>
-    </ul>
+    <p class="text-[11px] text-muted mb-sm leading-relaxed">VIN·차량번호 자동입력 링크와 함께 PDF 마지막 장에 통합 동봉됩니다.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-sm mb-md">
+      <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-sm">
+        <div class="flex items-center gap-1.5 mb-xs">
+          <span class="material-symbols-outlined text-amber-600 dark:text-amber-400 text-base" style="font-variation-settings:'FILL' 1;">car_crash</span>
+          <p class="text-[10px] uppercase tracking-wider font-bold text-amber-700 dark:text-amber-400">770~2,200원</p>
+        </div>
+        <p class="text-on-surface text-xs font-bold">카히스토리</p>
+        <p class="text-muted text-[10px] mt-0.5 leading-snug">사고·침수 이력 — 차량번호 자동입력</p>
+      </div>
+      <div class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-sm">
+        <div class="flex items-center gap-1.5 mb-xs">
+          <span class="material-symbols-outlined text-orange-600 dark:text-orange-400 text-base" style="font-variation-settings:'FILL' 1;">campaign</span>
+          <p class="text-[10px] uppercase tracking-wider font-bold text-emerald-600 dark:text-emerald-400">무료</p>
+        </div>
+        <p class="text-on-surface text-xs font-bold">자동차리콜센터</p>
+        <p class="text-muted text-[10px] mt-0.5 leading-snug">VIN별 리콜 수리 완료 확인 — VIN 클립보드 자동복사</p>
+      </div>
+      <div class="bg-primary-container/10 dark:bg-primary/10 border border-primary-container/30 dark:border-primary/30 rounded-xl p-sm">
+        <div class="flex items-center gap-1.5 mb-xs">
+          <span class="material-symbols-outlined text-primary-container dark:text-primary text-base" style="font-variation-settings:'FILL' 1;">badge</span>
+          <p class="text-[10px] uppercase tracking-wider font-bold text-emerald-600 dark:text-emerald-400">무료</p>
+        </div>
+        <p class="text-on-surface text-xs font-bold">자동차365</p>
+        <p class="text-muted text-[10px] mt-0.5 leading-snug">소유·저당·압류 — 본인인증 후 조회</p>
+      </div>
+    </div>
+    <a href="/sources/" class="block text-center text-[11px] font-bold text-primary-container dark:text-primary hover:underline mb-md">
+      → 공식기관 3종 통합 가이드 자세히 보기
+    </a>
 
     <p class="mt-lg text-[11px] text-muted text-center">데이터 출처: 한국교통안전공단 자동차리콜센터 941건 DB · NHTSA vPIC · ISO 3779 · Claude Sonnet 4.6 AI 분석<br/>※ 사고·침수 이력은 ACHAJA가 보관·재배포하지 않으며, 카히스토리에서 별도 결제 조회입니다 (보험개발원 약관 준수).</p>
   </article>
