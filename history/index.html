@@ -1437,16 +1437,70 @@
         var maker = (ctx.vinData && ctx.vinData.maker) || '';
         var model = (ctx.vinData && ctx.vinData.model) || '';
         var year = (ctx.vinData && ctx.vinData.year) || '';
+        var bodyClass = (ctx.vinData && ctx.vinData.bodyClass) || '';
+        var engine = (ctx.vinData && ctx.vinData.engine) || '';
+
+        // 차량 라벨 — 가능한 한 풍부하게
         var titleParts = [];
         if (maker) titleParts.push(maker);
         if (year) titleParts.push(year + '년식');
         if (model) titleParts.push(model);
         var label = titleParts.join(' ') || (vinTxt ? 'VIN ' + vinTxt.substr(0,8) + '*****' : '차량');
-        var bodyLines = ['ACHAJA 차량 이력 조회 결과', '────────────', label];
-        if (vinTxt) bodyLines.push('VIN: ' + vinTxt);
-        if (plateTxt && plateTxt !== '—') bodyLines.push('차량번호: ' + plateTxt);
-        if (ctx.recalls && ctx.recalls.length) bodyLines.push('관련 리콜: ' + ctx.recalls.length + '건');
-        bodyLines.push('────────────', '결과 보기: ' + location.href);
+
+        // verdict 카드에서 아차 점수·결론 읽기 (DOM)
+        var scoreText  = (document.getElementById('verdict-score') && document.getElementById('verdict-score').textContent) || '';
+        var titleText  = (document.getElementById('verdict-title') && document.getElementById('verdict-title').textContent) || '';
+        var detailText = (document.getElementById('verdict-detail') && document.getElementById('verdict-detail').textContent) || '';
+
+        // 리콜 심각도 분포 집계 (currentAnalysisInput.recalls 기반)
+        var sevCount = { critical:0, urgent:0, caution:0 };
+        var recalls = (ctx.recalls || []);
+        recalls.forEach(function(r){
+          if (typeof classifySeverity === 'function'){
+            sevCount[classifySeverity(r.reason).level]++;
+          }
+        });
+
+        // 본문 구성 (포맷 ──── 구분선)
+        var bodyLines = ['ACHAJA 차량 이력 조회 결과', '────────────'];
+        bodyLines.push('▶ 차량: ' + label);
+        if (bodyClass) bodyLines.push('  · 차종: ' + bodyClass);
+        if (engine)    bodyLines.push('  · 엔진: ' + engine);
+        if (vinTxt)    bodyLines.push('  · VIN: ' + vinTxt);
+        if (plateTxt && plateTxt !== '—') bodyLines.push('  · 차량번호: ' + plateTxt);
+
+        bodyLines.push('────────────');
+
+        // 아차 점수 + 결론
+        if (scoreText && titleText){
+          bodyLines.push('▶ ' + scoreText.replace(/\s+/g,' ').trim());
+          bodyLines.push('  ' + titleText.replace(/\s+/g,' ').trim());
+          if (detailText) bodyLines.push('  ' + detailText.replace(/\s+/g,' ').trim());
+          bodyLines.push('────────────');
+        }
+
+        // 리콜 정보 — 명확한 맥락 + 심각도
+        if (recalls.length > 0){
+          bodyLines.push('▶ 관련 가능 리콜: ' + recalls.length + '건 (제조사·연식 기준 자동 매칭)');
+          var sevPills = [];
+          if (sevCount.critical) sevPills.push('긴급 ' + sevCount.critical);
+          if (sevCount.urgent)   sevPills.push('주의 ' + sevCount.urgent);
+          if (sevCount.caution)  sevPills.push('점검 ' + sevCount.caution);
+          if (sevPills.length)   bodyLines.push('  · ' + sevPills.join(' · '));
+          bodyLines.push('  · 본인 차량 정확한 일치 여부는 자동차리콜센터에서 VIN으로 정밀 확인 필요 (무료)');
+        } else {
+          bodyLines.push('▶ 관련 리콜: 0건 (제조사·연식 기준)');
+          bodyLines.push('  · 2023년 공고 기준 일치 리콜 없음. 단 2023년 이전·미공개 리콜은 자동차리콜센터에서 별도 확인.');
+        }
+
+        bodyLines.push('────────────');
+        bodyLines.push('▶ 추가 조회 권장:');
+        bodyLines.push('  · 카히스토리 (사고·침수, ₩770~2,200): https://www.carhistory.or.kr');
+        bodyLines.push('  · 자동차리콜센터 (VIN별 미수리 리콜, 무료): https://car.go.kr');
+        bodyLines.push('  · 자동차365 (소유·저당, 무료): https://www.car365.go.kr');
+        bodyLines.push('────────────');
+        bodyLines.push('결과 페이지: ' + location.href);
+
         return {
           title: 'ACHAJA — ' + label + ' 이력 조회',
           text: bodyLines.join('\n'),
