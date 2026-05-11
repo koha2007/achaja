@@ -192,16 +192,7 @@ body{min-height:100dvh;}
   }
 
   // GA4 이벤트
-  if (window.gtag) {
-    window.gtag('event', 'payment_failed', {
-      error_code: code || 'UNKNOWN',
-      order_id: orderId || '',
-      product_key: savedProduct ? savedProduct.productKey : '',
-      amount: savedProduct ? savedProduct.amount : 0,
-      is_user_cancel: !!isUserCancel
-    });
-  }
-})();
+  })();
 </script>
 
 </body></html>

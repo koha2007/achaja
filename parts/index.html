@@ -255,7 +255,6 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
     var title='['+r.maker+'] '+r.model+' 리콜 정보';
     var text=r.model+' (생산 '+r.from+' ~ '+r.to+')\n리콜개시: '+r.date+'\n\n'+r.reason+'\n\n출처: ACHAJA';
     var url='https://achaja.net/parts';
-    if(window.gtag){gtag('event','share',{method:navigator.share?'web_share':'clipboard',content_type:'recall',item_id:r.maker+':'+r.model});}
     if(navigator.share){
       navigator.share({title:title,text:text,url:url}).catch(function(){});
     } else if(navigator.clipboard){
@@ -502,8 +501,8 @@ function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark')
       hideAutocomplete();
       applyFilters();
     });
-    document.getElementById('load-more').addEventListener('click',function(){VISIBLE+=20;render();if(window.gtag){gtag('event','recall_load_more',{visible:VISIBLE});}});
-    document.getElementById('load-all').addEventListener('click',function(){VISIBLE=FILTERED.length;render();if(window.gtag){gtag('event','recall_load_all',{total:FILTERED.length});}});
+    document.getElementById('load-more').addEventListener('click',function(){VISIBLE+=20;render();});
+    document.getElementById('load-all').addEventListener('click',function(){VISIBLE=FILTERED.length;render();});
   });
 })();
 </script>

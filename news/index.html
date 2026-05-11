@@ -299,11 +299,9 @@
         renderHero(data.items[0]);
         grid.innerHTML='';
         renderGrid(data.items.slice(1));
-        if(window.gtag){gtag('event','news_load',{category:category});}
-      } else {
+        } else {
         appendGrid(data.items);
-        if(window.gtag){gtag('event','news_load_more',{category:category,start:CURRENT_START});}
-      }
+        }
       CURRENT_START += PAGE_SIZE;
       updateLoadMore();
     }catch(e){

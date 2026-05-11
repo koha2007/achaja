@@ -845,8 +845,7 @@
       detailEl.textContent = detail;
       vinStatusEl.textContent = vinValid===false ? '오류' : '유효';
       recallStatusEl.textContent = recallCount===0 ? '0건' : recallCount+'건';
-      if (window.gtag){ gtag('event','verdict_shown',{level:level,recall_count:recallCount}); }
-    }
+      }
 
     function renderRecalls(list){
       // AI 분석 컨텍스트 보강
@@ -925,8 +924,7 @@
         toggle.onclick = function(){
           sorted.slice(3).forEach(function(r){ listEl.appendChild(renderRecallItem(r)); });
           toggle.classList.add('hidden');
-          if (window.gtag){ gtag('event', 'recall_expand', { count: sorted.length }); }
-        };
+          };
       } else {
         toggle.classList.add('hidden');
       }
@@ -1046,8 +1044,7 @@
             ext.model
           );
           renderRecalls(refined);
-          if (window.gtag){ gtag('event','recall_match',{maker:currentAnalysisInput.vinData.maker,count:refined.length,filter:'year+model'}); }
-        }
+          }
       }
       var detail = $('vin-detail-section');
       var notice = $('vin-domestic-notice');
@@ -1105,8 +1102,7 @@
           $('vin-plant').textContent = plantText;
           detail.querySelector('[data-row="plant"]').classList.remove('hidden');
         }
-        if (window.gtag){ gtag('event','vin_nhtsa_hit',{maker:vinResult.maker||'unknown',has_model:!!ext.model}); }
-      } else {
+        } else {
         // 한국 내수용 fallback — 제조사 + 공장만 보여주고 안내
         if (vinResult.maker && /현대|기아|제네시스|르노코리아|KG모빌리티|한국지엠/.test(vinResult.maker)){
           notice.classList.remove('hidden');
@@ -1116,8 +1112,7 @@
             $('vin-plant-fallback').classList.remove('hidden');
           }
         }
-        if (window.gtag){ gtag('event','vin_nhtsa_miss',{maker:vinResult.maker||'unknown'}); }
-      }
+        }
     }
     function renderPlate(d, opts){
       opts = opts || {};
@@ -1192,8 +1187,7 @@
           copyToClipboard(copyValue);
           showExtToast(label + ' "' + copyValue + '"이(가) 복사되었습니다. 리콜센터 입력란에 붙여넣어 주세요.');
           window.open('https://www.car.go.kr/home/main.do', '_blank', 'noopener');
-          if (window.gtag){ gtag('event','external_recall_open',{type: ctx.vin ? 'vin' : 'plate'}); }
-        };
+          };
       } else {
         recallHint.classList.add('hidden');
         recallBtn.textContent = '자동차리콜센터에서 확인 →';
@@ -1330,7 +1324,6 @@
         vinData: currentAnalysisInput.vinData,
         recalls: currentAnalysisInput.recalls
       };
-      if (window.gtag){ gtag('event','ai_analyze_request',{ vin: payload.vin.slice(0,8)+'***', recalls: (payload.recalls||[]).length }); }
       fetch('/api/analyze', {
         method:'POST',
         headers:{'content-type':'application/json'},
@@ -1353,22 +1346,13 @@
             msg = base + ' (HTTP ' + res.status + ')';
           }
           showAiError(msg);
-          if (window.gtag){ gtag('event','ai_analyze_fail',{ status: res.status }); }
           return;
         }
         renderAiResult(res.data);
-        if (window.gtag){
-          gtag('event','ai_analyze_success',{
-            cache_hit: !!(res.data.meta && res.data.meta.cacheHit),
-            score: (res.data.analysis.score && res.data.analysis.score.value) || 0,
-            level: (res.data.analysis.score && res.data.analysis.score.level) || 'unknown'
-          });
-        }
-      })
+        })
       .catch(function(err){
         showAiError('네트워크 오류: ' + (err && err.message ? err.message : '연결에 실패했습니다.'));
-        if (window.gtag){ gtag('event','ai_analyze_fail',{ status: 0 }); }
-      });
+        });
     }
 
     document.addEventListener('DOMContentLoaded', function(){
@@ -1383,12 +1367,10 @@
         if (det.kind === 'invalid' || det.kind === 'empty'){
           err.classList.remove('hidden');
           input.focus();
-          if (window.gtag){ gtag('event','plate_invalid',{value:String(raw||'').slice(0,20)}); }
           return;
         }
         show('history-loading');
         if (det.kind === 'vin'){
-          if (window.gtag){ gtag('event','vin_decode',{maker:det.result.maker||'unknown',country:det.result.country}); }
           renderVin(det.result);
           // NHTSA API 보강 (병렬, 실패해도 무시)
           if (AchajaVin.fetchNhtsa){
@@ -1401,14 +1383,12 @@
             // 1차 매칭 — VIN 디코더의 연식만으로 (즉시)
             var matches = matchRecalls(det.result.maker, det.result.year, null);
             renderRecalls(matches);
-            if (window.gtag){ gtag('event','recall_match',{maker:det.result.maker||'unknown',count:matches.length,filter:'year'}); }
-          }).catch(function(){
+            }).catch(function(){
             $('recall-summary').innerHTML = '<p class="text-muted text-sm">리콜 데이터 불러오기 실패</p>';
           });
         } else {
           renderPlate(det.result);
         }
-        if (window.gtag){ gtag('event','lookup_vehicle',{kind:det.kind}); }
         var url=new URL(location.href);
         url.searchParams.set('q', det.kind==='vin' ? det.result.vin : det.result.plate);
         history.replaceState(null,'',url);
@@ -1535,8 +1515,7 @@
           sErr.classList.add('hidden');
           var vinCtx = currentAnalysisInput && currentAnalysisInput.vin;
           renderPlate(det.result, { supplemental:true, vinContext:vinCtx });
-          if (window.gtag){ gtag('event','supplement_add',{type:'plate_after_vin'}); }
-        });
+          });
       }
 
       // 보조 입력 ② — 차량번호 결과 위에 VIN 추가
@@ -1569,8 +1548,7 @@
           }).catch(function(){
             $('recall-summary').innerHTML = '<p class="text-muted text-sm">리콜 데이터 불러오기 실패</p>';
           });
-          if (window.gtag){ gtag('event','supplement_add',{type:'vin_after_plate'}); }
-        });
+          });
       }
 
       // AI 분석 버튼

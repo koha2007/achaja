@@ -958,14 +958,12 @@
     if(f){f.addEventListener('submit',function(e){
       var v=document.getElementById('hero-q').value.trim();
       if(!v){e.preventDefault();return;}
-      if(window.gtag){gtag('event','search',{search_term:v,location:'home_hero'});}
-    });}
+      });}
     var c=document.querySelector('form[aria-label="하단 차량 조회"]');
     if(c){c.addEventListener('submit',function(e){
       var v=document.getElementById('cta-q').value.trim();
       if(!v){e.preventDefault();return;}
-      if(window.gtag){gtag('event','search',{search_term:v,location:'home_bottom_cta'});}
-    });}
+      });}
     document.querySelectorAll('.plan-tab').forEach(function(t){
       t.addEventListener('click',function(){
         var type=t.dataset.planType;
@@ -984,15 +982,13 @@
             b.classList.add('text-muted');
           }
         });
-        if(window.gtag){gtag('event','select_content',{content_type:'pricing_toggle',item_id:type});}
-      });
+        });
     });
     var w=document.getElementById('waitlist-form');
     if(w){w.addEventListener('submit',function(e){
       e.preventDefault();
       var em=document.getElementById('waitlist-email').value.trim();
       if(!em)return;
-      if(window.gtag){gtag('event','sign_up',{method:'email_waitlist',email_domain:em.split('@')[1]||''});}
       try{var prev=JSON.parse(localStorage.getItem('achaja_waitlist')||'[]');prev.push({email:em,at:new Date().toISOString()});localStorage.setItem('achaja_waitlist',JSON.stringify(prev));}catch(_){}
       var msg=document.getElementById('waitlist-msg');
       if(msg)msg.classList.remove('hidden');

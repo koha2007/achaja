@@ -16,12 +16,10 @@
     var text  = opts.text  || '';
     var url   = opts.url   || location.href;
 
-    if (window.gtag) gtag('event', 'share_attempt', { method: 'auto', url: url });
-
     // 1) Web Share API (모바일 우선) — 안 되면 폴백
     if (navigator.share) {
       return navigator.share({ title: title, text: text, url: url })
-        .then(function(){ if (window.gtag) gtag('event','share_complete',{method:'web_share'}); })
+        .then(function(){ })
         .catch(function(err){ console.warn('Web Share cancelled', err); });
     }
 
@@ -76,7 +74,6 @@
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(function(){
         showToast('링크가 복사되었습니다');
-        if (window.gtag) gtag('event','share_complete',{method:'clipboard'});
       });
     } else {
       // Legacy fallback
@@ -101,7 +98,6 @@
           link: { mobileWebUrl: ctx.url, webUrl: ctx.url }
         }
       });
-      if (window.gtag) gtag('event','share_complete',{method:'kakao'});
     } else {
       // SDK 미로드 시: 카카오톡 share URL 폴백 (모바일 카카오톡 앱 호출)
       var url = 'https://story.kakao.com/share?url=' + encodeURIComponent(ctx.url) + '&text=' + encodeURIComponent(ctx.text || '');
@@ -176,7 +172,6 @@
   }
 
   function submitEmailRequest(payload) {
-    if (window.gtag) gtag('event','email_request_submit',{has_vin: !!payload.vin});
     // Worker 엔드포인트 시도. 없으면 mailto 폴백.
     return fetch('/api/send-result', {
       method: 'POST',
@@ -193,7 +188,6 @@
     }).then(function(r){
       if (r.ok) {
         showToast('✓ ' + payload.email + '로 발송했습니다');
-        if (window.gtag) gtag('event','email_request_complete',{method:'api'});
         return { ok: true, method: 'api' };
       }
       throw new Error('api_failed');
@@ -212,7 +206,6 @@
         '&body=' + encodeURIComponent(mailtoBody);
       window.location.href = mailtoLink;
       showToast('메일 앱에서 발송해주세요. 운영자가 결과를 회신합니다.');
-      if (window.gtag) gtag('event','email_request_complete',{method:'mailto_fallback'});
       return { ok: true, method: 'mailto' };
     });
   }

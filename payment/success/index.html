@@ -186,14 +186,6 @@ body{min-height:100dvh;}
       document.getElementById('test-mode-notice')?.classList.add('hidden');
     }
 
-    if (window.gtag) {
-      window.gtag('event', 'purchase', {
-        transaction_id: orderId,
-        value: Number(amount),
-        currency: 'KRW',
-        items: [{ item_name: displayName }],
-      });
-    }
     sessionStorage.removeItem(`achaja_order_${orderId}`);
 
     // 인쇄 버튼

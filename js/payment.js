@@ -41,14 +41,6 @@ async function requestPayment(productKey) {
       JSON.stringify({ productKey, productName: product.name, amount: product.amount, createdAt: Date.now() })
     );
 
-    if (window.gtag) {
-      window.gtag('event', 'begin_checkout', {
-        currency: 'KRW',
-        value: product.amount,
-        items: [{ item_id: productKey, item_name: product.name, price: product.amount, quantity: 1 }],
-      });
-    }
-
     await payment.requestPayment({
       method: 'CARD',
       amount: { currency: 'KRW', value: product.amount },

@@ -1,5 +1,5 @@
 // ACHAJA Service Worker — achaja.net
-const VERSION = 'v1.1.0';
+const VERSION = 'v1.2.0';
 const CACHE_STATIC = `achaja-static-${VERSION}`;
 const CACHE_RUNTIME = `achaja-runtime-${VERSION}`;
 

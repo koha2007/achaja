@@ -410,8 +410,6 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.07);}
 <script src="/js/share-mail.js"></script>
 <script>
 function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
-if(window.gtag){window.gtag('event','view_preview',{page_location:'preview',engagement_time_msec:1});}
-
 // 액션바 핸들러 — 유료 샘플 (PDF는 /preview/pdf-sample/ 링크로 처리됨, 공유·메일만 JS)
 (function(){
   var sampleCtx = {

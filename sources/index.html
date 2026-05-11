@@ -122,7 +122,7 @@ body{min-height:100dvh;}
       <div class="flex gap-sm"><dt class="text-muted w-24 flex-shrink-0">결제 방법</dt><dd class="text-on-surface">회원가입 후 신용카드·계좌이체</dd></div>
       <div class="flex gap-sm"><dt class="text-muted w-24 flex-shrink-0">운영 기관</dt><dd class="text-on-surface">사단법인 보험개발원 (carhistory.or.kr)</dd></div>
     </dl>
-    <a href="https://www.carhistory.or.kr" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag)gtag('event','outbound_click',{link_url:'https://www.carhistory.or.kr',link_label:'sources_carhistory'});" class="block w-full text-center bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
+    <a href="https://www.carhistory.or.kr" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
       <span class="material-symbols-outlined text-[16px]">launch</span>
       카히스토리 공식 사이트 →
     </a>
@@ -150,7 +150,7 @@ body{min-height:100dvh;}
       <div class="flex gap-sm"><dt class="text-muted w-24 flex-shrink-0">조회 방법</dt><dd class="text-on-surface">VIN 17자리 입력 (별도 인증 불필요)</dd></div>
       <div class="flex gap-sm"><dt class="text-muted w-24 flex-shrink-0">운영 기관</dt><dd class="text-on-surface">한국교통안전공단 (car.go.kr/home/recall)</dd></div>
     </dl>
-    <a href="https://car.go.kr/home/main.do" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag)gtag('event','outbound_click',{link_url:'car.go.kr',link_label:'sources_recall'});" class="block w-full text-center bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
+    <a href="https://car.go.kr/home/main.do" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
       <span class="material-symbols-outlined text-[16px]">launch</span>
       자동차리콜센터 공식 사이트 →
     </a>
@@ -178,7 +178,7 @@ body{min-height:100dvh;}
       <div class="flex gap-sm"><dt class="text-muted w-24 flex-shrink-0">조회 방법</dt><dd class="text-on-surface">본인 차량은 간편인증 / 타인 차량은 차주 동의 필요</dd></div>
       <div class="flex gap-sm"><dt class="text-muted w-24 flex-shrink-0">운영 기관</dt><dd class="text-on-surface">국토교통부 (car365.go.kr)</dd></div>
     </dl>
-    <a href="https://www.car365.go.kr/" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag)gtag('event','outbound_click',{link_url:'car365.go.kr',link_label:'sources_car365'});" class="block w-full text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary hover:opacity-90 font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
+    <a href="https://www.car365.go.kr/" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-primary-container dark:bg-primary text-white dark:text-on-primary hover:opacity-90 font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-1">
       <span class="material-symbols-outlined text-[16px]">launch</span>
       자동차365 공식 사이트 →
     </a>
@@ -267,6 +267,5 @@ body{min-height:100dvh;}
 
 <script>
 function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
-if(window.gtag){window.gtag('event','view_sources',{page_location:'sources',engagement_time_msec:1});}
 </script>
 </body></html>
