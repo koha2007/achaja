@@ -14,11 +14,6 @@
 <link rel="manifest" href="/manifest.json"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -32,11 +27,18 @@
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"BlogPosting","headline":"자동차 과태료·범칙금 조회 가이드 — 미납 확인부터 납부까지","description":"경찰청 이파인, 위택스, 정부24 통한 과태료·범칙금 조회 방법, 차이점, 가산금 회피 시점, 분할납부 신청법.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-04-23","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/traffic-fine-lookup/"},"inLanguage":"ko-KR"},
+{"@type":"BlogPosting","headline":"자동차 과태료·범칙금 조회 가이드 — 미납 확인부터 납부까지","description":"경찰청 이파인, 위택스, 정부24 통한 과태료·범칙금 조회 방법, 차이점, 가산금 회피 시점, 분할납부 신청법.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/traffic-fine-lookup/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
 {"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
 {"@type":"ListItem","position":3,"name":"자동차 과태료·범칙금 조회 가이드 — 미납 확인부터 납부까지","item":"https://achaja.net/blog/traffic-fine-lookup/"}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"과태료와 범칙금은 무엇이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"과태료는 무인 카메라 단속으로 차량 소유자에게 부과되며 벌점이 없습니다. 범칙금은 현장 경찰 단속으로 운전자 본인에게 부과되며 벌점이 있고 즉결심판이 가능합니다. 일반적으로 같은 위반이라도 과태료는 금액이 더 높고 벌점이 없는 반면, 범칙금은 금액이 낮지만 벌점이 누적됩니다."}},
+{"@type":"Question","name":"과태료는 어디서 조회하나요?","acceptedAnswer":{"@type":"Answer","text":"경찰청 이파인(efine.go.kr) — 신호·속도·주정차 무인 단속 통합 조회, 위택스(wetax.go.kr) — 지방세·자동차세와 함께, 정부24(gov.kr) — 전체 행정 서비스 통합 포털에서 조회 가능합니다."}},
+{"@type":"Question","name":"자진 납부 시 감경이 얼마나 되나요?","acceptedAnswer":{"@type":"Answer","text":"통지서 수령일로부터 30일 이내 자진 납부 시 20% 감경됩니다. 예) 4만 원 → 3.2만 원. 61일 이후엔 매월 1.2% 가산금이 붙어 최대 75%까지 추가됩니다. 1년 이상 미납 시 차량 압류·번호판 영치·신용 정보 등록도 가능."}},
+{"@type":"Question","name":"이의신청은 어떤 경우에 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"차량 도난 시점 위반, 응급 환자 후송 등 긴급 상황(의료기록 증빙 필요), 단속 카메라 오작동·번호판 오인식, 차량 매도 후 발생한 위반(이전 등록 지연) 등이 있습니다. 통지서 수령일로부터 60일 이내 부과 기관에 서면 또는 온라인 제출."}},
+{"@type":"Question","name":"중고차 매수 시 과태료는 어떻게 처리하나요?","acceptedAnswer":{"@type":"Answer","text":"차량 명의 이전 시 과거 과태료도 함께 승계됩니다. 매수 전 반드시 위택스에서 차량번호로 미납 내역을 조회하고, 미납 발견 시 매도자에게 정산 요구 또는 매매가에서 차감 협의해야 합니다."}}
 ]}
 ]}
 </script>
@@ -44,8 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://www.clarity.ms"/>
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,10 +101,12 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <header class="mb-lg pb-md border-b border-outline-variant">
     <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">gavel</span><span class="text-xs text-muted">법규 · 관리</span></div>
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">자동차 과태료·범칙금 조회 가이드 — 미납 확인부터 납부까지</h1>
-    <p class="text-xs text-muted">2026년 4월 23일 · ACHAJA 에디터 · 약 4분 소요</p>
+    <p class="text-xs text-muted">2026년 4월 23일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 9분 소요</p>
   </header>
 
   <p>주정차 위반·신호 위반·과속·통행료 미납. 운전을 하다 보면 어느새 모르고 지나친 과태료가 쌓입니다. 모르고 두면 가산금이 매월 추가되고, 출국 금지·차량 압류까지 갈 수 있습니다. 다행히 한국은 <strong>온라인으로 과태료를 5분 안에 조회</strong>할 수 있습니다. 어디서, 어떻게, 어떤 차이가 있는지 정리했습니다.</p>
+
+  <p>경찰청 통계상 2024년 무인 단속 적발은 약 1,700만 건이며, 그중 약 4%가 1년 이상 미납으로 가산금이 부과됐습니다. 미납 1건당 평균 가산금만 2~3만 원 추가됩니다. 함께 보면 좋은 글: <a href="/blog/window-tinting-law/" class="text-primary-container dark:text-primary underline">썬팅 합법 기준</a>, <a href="/blog/vehicle-inspection-guide/" class="text-primary-container dark:text-primary underline">자동차 정기검사</a>.</p>
 
   <h2>과태료 vs 범칙금 — 무엇이 다른가</h2>
   <table class="w-full text-sm border-collapse my-md">
@@ -169,10 +171,48 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <p>차량 명의를 이전하면 과거 과태료도 함께 승계됩니다. 매수 전 반드시 <strong>위택스</strong>에서 차량번호로 미납 내역을 조회하세요. 미납 발견 시 매도자에게 정산 요구 또는 매매가에서 차감 협의해야 합니다.</p>
   <p>한 번에 5분 투자로 과태료 사각지대를 없앨 수 있습니다. 매년 1~2회 정기 점검을 습관화하면 가산금·압류 위험 0%로 차량 운영이 깔끔해집니다.</p>
 
-  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
-    <h3 class="font-headline font-semibold text-base mb-sm">ACHAJA 차량 관리 가이드</h3>
-    <p class="text-sm text-on-surface-variant mb-md">과태료뿐 아니라 차량 정기검사·보험 갱신·세금 납부까지 한눈에 관리하세요.</p>
-    <a href="/blog/" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">관리 가이드 →</a>
+  <div class="my-lg p-md bg-active-bg/30 dark:bg-active-bg/15 rounded-xl border border-primary-container/20 dark:border-primary/20">
+    <p class="text-sm font-semibold mb-xs">📌 중고차 매수 전 과태료 미납 확인</p>
+    <p class="text-sm text-on-surface-variant mb-sm">매수 후 발견되면 신 소유자 부담. 위택스에서 5분이면 끝.</p>
+    <a href="/history" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition">차량 조회 →</a>
+  </div>
+
+  <h2>과태료 관리 시 자주 놓치는 함정 3가지</h2>
+
+  <h3>함정 1 — 30일 자진 납부 기간 놓침</h3>
+  <p>30일 안에 자진 납부하면 20% 감경. 통지서 받는 즉시 카드로 납부가 가장 안전.</p>
+
+  <h3>함정 2 — 이사·연락처 변경으로 통지서 미수령</h3>
+  <p>통지서가 오래된 주소로 가면 모르는 사이 가산금 누적. 매년 1~2회 이파인·위택스 정기 점검 권장.</p>
+
+  <h3>함정 3 — 중고차 매수 후 미납 발견</h3>
+  <p>매수 전 위택스에서 차량번호로 확인하지 않으면 신 소유자가 부담. 매도자 정산 또는 매매가 차감 협의 필수.</p>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 과태료 vs 범칙금?</h3>
+    <p>과태료: 무인 단속·차량 소유자·벌점 X. 범칙금: 현장 단속·운전자 본인·벌점 O.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 조회 사이트?</h3>
+    <p>이파인(efine.go.kr)·위택스(wetax.go.kr)·정부24(gov.kr).</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 자진 납부 감경?</h3>
+    <p>30일 이내 20% 감경. 61일 후 매월 1.2% 가산.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 이의신청 가능?</h3>
+    <p>도난·긴급·카메라 오작동·매도 후 위반. 60일 이내 신청.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 중고 매수 시 과태료?</h3>
+    <p>승계됨. 위택스에서 사전 조회 필수.</p>
   </div>
 </article>
 

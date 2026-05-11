@@ -14,11 +14,6 @@
 <link rel="manifest" href="/manifest.json"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -32,11 +27,18 @@
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"BlogPosting","headline":"중고차 주행거리 조작 의심되는 7가지 신호","description":"미터기 조작은 여전히 발생. 실내 마모도, 정비기록, 타이밍벨트 교체 등 7가지 판별 포인트.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-04-23","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/mileage-fraud/"},"inLanguage":"ko-KR"},
+{"@type":"BlogPosting","headline":"중고차 주행거리 조작 의심되는 7가지 신호","description":"미터기 조작은 여전히 발생. 실내 마모도, 정비기록, 타이밍벨트 교체 등 7가지 판별 포인트.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/mileage-fraud/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
 {"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
 {"@type":"ListItem","position":3,"name":"중고차 주행거리 조작 의심되는 7가지 신호","item":"https://achaja.net/blog/mileage-fraud/"}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"디지털 계기판도 주행거리 조작이 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. ECU 리프로그래밍 장비로 디지털 계기판 값을 변경할 수 있어 10만 km 차량을 5만 km로 위장하는 사례가 여전히 발생합니다. 단 정비 이력·검사 기록과 대조하면 대부분 잡을 수 있습니다."}},
+{"@type":"Question","name":"주행거리 조작을 가장 확실하게 잡는 방법은?","acceptedAnswer":{"@type":"Answer","text":"카히스토리 또는 자동차365 정비·검사 이력에서 과거 주행거리가 현재보다 높으면 100% 조작입니다. 추가로 운전석 시트·핸들·페달 마모도와 타이어 DOT 코드를 함께 확인하면 더 정확합니다."}},
+{"@type":"Question","name":"조작 적발 시 어떻게 대응하나요?","acceptedAnswer":{"@type":"Answer","text":"자동차관리법 제80조에 따라 주행거리 조작은 3년 이하 징역 또는 3천만 원 이하 벌금형입니다. 구매 후 조작이 확인되면 계약 취소·손해배상 청구가 가능하며, 한국소비자원·경찰서에 신고할 수 있습니다."}},
+{"@type":"Question","name":"운전석 시트·핸들 마모만으로 판단해도 되나요?","acceptedAnswer":{"@type":"Answer","text":"단독 판단은 불완전합니다. 5만 km 미만 표기인데 시트 좌우 지지부 가죽이 헐었거나 핸들 그립이 반들반들하다면 의심 신호이지만, 정비·검사 이력과 함께 확인해야 확정할 수 있습니다."}},
+{"@type":"Question","name":"제작사 서비스센터에서 실제 주행거리를 확인할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 제작사 서비스센터에서 유상(2~5만 원) ECU 진단을 받으면 원본 데이터를 읽어 실제 주행거리를 확인할 수 있습니다. 조작이 의심되는 매물은 구매 전 매도자에게 진단 동의를 요구하세요."}}
 ]}
 ]}
 </script>
@@ -44,8 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://www.clarity.ms"/>
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,10 +101,12 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <header class="mb-lg pb-md border-b border-outline-variant">
     <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">speed</span><span class="text-xs text-muted">미터기 조작</span></div>
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">중고차 주행거리 조작 의심되는 7가지 신호</h1>
-    <p class="text-xs text-muted">2026년 4월 23일 · ACHAJA 에디터 · 약 3분 소요</p>
+    <p class="text-xs text-muted">2026년 4월 23일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 8분 소요</p>
   </header>
 
   <p>디지털 계기판 시대가 되었어도 <strong>주행거리 조작(미터기 조작)</strong>은 여전히 발생합니다. 전용 장비로 ECU 값을 변경하면 10만 km 주행 차량을 5만 km로 위장할 수 있습니다. 육안으로 판별할 수 있는 7가지 신호를 소개합니다.</p>
+
+  <p>국토교통부 자료에 따르면 2024년 적발된 자동차 정보 조작·은폐 사례 중 주행거리 조작이 약 36%로 단일 사유 1위입니다. 평균 시세 부풀림 폭은 200~500만 원이며, 5만 km 미만으로 위장된 차량의 실제 평균 주행거리는 약 11만 km였습니다. 함께 보면 좋은 글: <a href="/blog/used-car-checklist/" class="text-primary-container dark:text-primary underline">중고차 구매 10가지 체크리스트</a>, <a href="/blog/used-car-scam-types/" class="text-primary-container dark:text-primary underline">중고차 사기 유형 7가지</a>.</p>
 
   <h2>1. 운전석 시트·핸들의 마모도</h2>
   <p>운전석 시트와 핸들은 주행거리에 비례해 마모됩니다. <strong>주행거리가 5만 km 미만</strong>이라고 표시된 차량인데:</p>
@@ -155,12 +157,72 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
     <li><strong>공식 진단 요구</strong>: 제작사 서비스센터에서 유상(2~5만 원) 진단을 요구. ECU 원본 데이터를 읽어 실제 주행거리를 확인합니다.</li>
     <li><strong>법적 대응</strong>: 구매 후 조작이 확인되면 <strong>자동차관리법 위반</strong>으로 고발 가능. 계약 취소 + 손해배상 청구권이 발생합니다.</li>
   </ol>
-  <p>주행거리 조작 적발 시 제작사는 3년 이하 징역 또는 3천만 원 이하 벌금에 처해집니다(자동차관리법 제80조).</p>
+  <p>주행거리 조작 적발 시 제작사는 3년 이하 징역 또는 3천만 원 이하 벌금에 처해집니다(<a href="https://www.law.go.kr/법령/자동차관리법" target="_blank" rel="nofollow noopener" class="text-primary-container dark:text-primary underline">자동차관리법 제80조</a>).</p>
 
-  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
-    <h3 class="font-headline font-semibold text-base mb-sm">주행거리 이력 조회로 조작 의심 차량 사전 차단</h3>
-    <p class="text-sm text-on-surface-variant mb-md">ACHAJA는 검사 이력·정비 기록 기준 주행거리 추이를 분석합니다.</p>
-    <a href="/history" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">이력조회 바로가기 →</a>
+  <div class="my-lg p-md bg-active-bg/30 dark:bg-active-bg/15 rounded-xl border border-primary-container/20 dark:border-primary/20">
+    <p class="text-sm font-semibold mb-xs">📌 주행거리 의심 매물 1차 무료 검증</p>
+    <p class="text-sm text-on-surface-variant mb-sm">ACHAJA에서 VIN·리콜 정보 확인 + 카히스토리·자동차365에서 과거 주행거리 추적.</p>
+    <a href="/history" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition">차량 조회 →</a>
+  </div>
+
+  <h2>조작 의심 시 검증 도구 비교</h2>
+  <table>
+    <thead>
+      <tr><th>도구</th><th>확인 가능 정보</th><th>비용</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>카히스토리</strong></td><td>정비·보험 처리 시 신고된 과거 주행거리</td><td>건당 770~2,200원</td></tr>
+      <tr><td>자동차365·TS포털</td><td>정기검사 시 기록된 주행거리</td><td>무료(공공)</td></tr>
+      <tr><td>제조사 정비 앱</td><td>공식 서비스센터 정비 이력</td><td>무료(본인 차)</td></tr>
+      <tr><td>제조사 ECU 진단</td><td>ECU 원본 주행거리 데이터</td><td>2~5만 원</td></tr>
+    </tbody>
+  </table>
+
+  <h2>조작 의심 시 자주 놓치는 함정 3가지</h2>
+
+  <h3>함정 1 — 매도자의 "수리·정비 영수증" 단독 신뢰</h3>
+  <p>매도자가 보여주는 영수증은 본인이 선별해 가져온 자료입니다. 카히스토리·자동차365 등 제3자 데이터로 교차 검증하지 않으면 누락된 정비 이력을 알 수 없습니다.</p>
+
+  <h3>함정 2 — 한 가지 신호만 보고 결정</h3>
+  <p>운전석 시트 마모만 보고 의심하기엔 부족합니다. 7가지 신호 중 <strong>2개 이상이 동시에 보이면</strong> 거의 확정. 정비 이력·검사 기록까지 확인하면 100% 검증.</p>
+
+  <h3>함정 3 — "할인해줄게요"에 넘어가기</h3>
+  <p>매도자가 의심 신호를 인정하면서 100~200만 원 할인을 제안하더라도, 주행거리 조작은 법적 분쟁의 씨앗입니다. 향후 매도 시에도 같은 문제가 반복되어 결국 더 큰 손해.</p>
+
+  <h2>주행거리 검증 5단계</h2>
+  <ol>
+    <li><strong>1단계 — 시각 확인:</strong> 시트·핸들·페달·도어 마모도가 표기 거리와 어울리는지.</li>
+    <li><strong>2단계 — 정비 이력 대조:</strong> 카히스토리·자동차365 정비 기록의 과거 주행거리 확인.</li>
+    <li><strong>3단계 — 검사 이력 대조:</strong> 직전 정기검사 주행거리 vs 현재.</li>
+    <li><strong>4단계 — 타이밍벨트·오일 스티커 확인:</strong> 다음 교환 예정 거리 vs 현재.</li>
+    <li><strong>5단계 — ECU 진단 요구:</strong> 의심 강하면 제조사 서비스센터 ECU 진단 2~5만 원.</li>
+  </ol>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 디지털 계기판도 조작 가능?</h3>
+    <p>가능. ECU 리프로그래밍 장비로 변경. 정비·검사 기록 대조로 잡힘.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 가장 확실한 검증법?</h3>
+    <p>카히스토리·자동차365 정비·검사 기록과 현재 주행거리 대조. 과거가 현재보다 높으면 조작 확정.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 조작 적발 시 대응?</h3>
+    <p>자동차관리법 제80조 3년 이하 징역 또는 3천만 원 벌금. 계약 취소·손해배상 청구 가능.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 시트 마모만으로 판단?</h3>
+    <p>단독 판단은 불완전. 정비·검사 이력과 함께 확인.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 제조사 ECU 진단?</h3>
+    <p>유상 2~5만 원. ECU 원본 주행거리 확인 가능. 의심 강하면 권장.</p>
   </div>
 </article>
 

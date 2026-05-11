@@ -24,11 +24,6 @@ const SHARED_HEAD = (p) => `<!DOCTYPE html>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>

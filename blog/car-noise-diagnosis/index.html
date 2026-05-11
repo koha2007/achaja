@@ -14,11 +14,6 @@
 <link rel="manifest" href="/manifest.json"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -32,11 +27,18 @@
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"BlogPosting","headline":"차량 이상 소음 자가 진단 — 어디서 나는지 알아내기","description":"엔진룸·하부·실내 위치별 소음 종류와 원인. 정비소 가기 전 자가 진단으로 진단비 절약.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-30","dateModified":"2026-04-30","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/car-noise-diagnosis/"},"inLanguage":"ko-KR"},
+{"@type":"BlogPosting","headline":"차량 이상 소음 자가 진단 — 어디서 나는지 알아내기","description":"엔진룸·하부·실내 위치별 소음 종류와 원인. 정비소 가기 전 자가 진단으로 진단비 절약.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-30","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/car-noise-diagnosis/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
 {"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
 {"@type":"ListItem","position":3,"name":"차량 이상 소음 자가 진단 — 어디서 나는지 알아내기","item":"https://achaja.net/blog/car-noise-diagnosis/"}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"엔진룸에서 '끽~' 소리가 나면 무슨 문제인가요?","acceptedAnswer":{"@type":"Answer","text":"대부분 벨트 끽음으로 텐셔너·풀리·벨트 노후가 원인입니다. 부품비 1~5만 원, 공임 3~7만 원으로 수리됩니다. 방치하면 벨트가 끊어져 알터네이터·워터펌프 동작 정지로 이어집니다."}},
+{"@type":"Question","name":"브레이크 밟을 때 '두두두' 떨림이 느껴지면?","acceptedAnswer":{"@type":"Answer","text":"디스크 변형 신호입니다. 패드만 교체하면 새 패드도 빠르게 마모되므로 디스크와 패드를 동시에 교체해야 합니다. 비용은 준중형 기준 25~40만 원입니다."}},
+{"@type":"Question","name":"요철 지나갈 때 '두두두' 소리는?","acceptedAnswer":{"@type":"Answer","text":"쇼크업소버 또는 부싱 마모 신호입니다. 한쪽만 나면 그쪽 쇼크업소버를, 양쪽이면 양쪽 모두 교체 권장합니다. 비용은 1짝당 10~20만 원입니다."}},
+{"@type":"Question","name":"소음을 정비소에 어떻게 설명해야 정확한가요?","acceptedAnswer":{"@type":"Answer","text":"위치(엔진룸/하부/실내), 시점(시동/가속/제동/회전/요철), RPM·차속 연관성 3가지를 메모하고 휴대폰으로 30초 이상 녹음해 가세요. 정비사가 5분 만에 원인을 좁힐 수 있어 진단비를 줄일 수 있습니다."}},
+{"@type":"Question","name":"즉시 정차해야 하는 소음은?","acceptedAnswer":{"@type":"Answer","text":"\"쾅\" 충격음 + 진동(부품 이탈), \"쉬쉬\" 누설음 + 경고등(라디에이터·연료 누설), 금속 마찰음 + 출력 저하(엔진 내부 손상), 정상 RPM에서 \"푸드덕\" 폭발음(백파이어)입니다. 즉시 갓길에 세우고 견인 호출."}}
 ]}
 ]}
 </script>
@@ -44,8 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://www.clarity.ms"/>
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,10 +101,12 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <header class="mb-lg pb-md border-b border-outline-variant">
     <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">volume_up</span><span class="text-xs text-muted">진단 가이드</span></div>
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">차량 이상 소음 자가 진단 — 어디서 나는지 알아내기</h1>
-    <p class="text-xs text-muted">2026년 4월 30일 · ACHAJA 에디터 · 약 4분 소요</p>
+    <p class="text-xs text-muted">2026년 4월 30일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 9분 소요</p>
   </header>
 
   <p>차량 이상 소음을 정비소에 가져가면 <strong>"증상이 안 나타나서 진단 못 함"</strong>이라는 답을 듣기 일쑤입니다. 자가 진단으로 위치·시점·상황을 정확히 기록하면 정비사가 5분 만에 원인 파악이 가능합니다.</p>
+
+  <p>한국소비자원 자동차 정비 분쟁 통계에 따르면 "원인 미상 진단·과잉 견적" 분쟁이 전체의 19%를 차지합니다. 자가 진단으로 위치·시점·소음 패턴을 기록해 가면 정비사가 진단 시간을 70% 단축할 수 있고, 과잉 견적도 방어할 수 있습니다. 함께 보면 좋은 글: <a href="/blog/engine-warning-light/" class="text-primary-container dark:text-primary underline">엔진 경고등 의미와 대처</a>, <a href="/blog/brake-pad-replacement/" class="text-primary-container dark:text-primary underline">브레이크 패드 교체 시기</a>.</p>
 
   <h2>소음 진단의 3가지 변수</h2>
   <ol>
@@ -187,10 +189,57 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
     <li>🔴 정상 RPM에서 "푸드덕" 폭발음 → 백파이어, 즉시 시동 OFF</li>
   </ul>
 
-  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
-    <h3 class="font-headline font-semibold text-base mb-sm">ACHAJA에서 차량 결함 이력 확인</h3>
-    <p class="text-sm text-on-surface-variant mb-md">이상 소음의 원인이 제조 결함일 수 있습니다. 차량번호로 리콜 이력 즉시 조회.</p>
-    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">리콜 조회 바로가기 →</a>
+  <div class="my-lg p-md bg-active-bg/30 dark:bg-active-bg/15 rounded-xl border border-primary-container/20 dark:border-primary/20">
+    <p class="text-sm font-semibold mb-xs">📌 소음의 원인이 제조 결함일 수도</p>
+    <p class="text-sm text-on-surface-variant mb-sm">CV조인트·미션 마운트·머플러 등 리콜 사례 다수. 무상 시정 대상이면 정비비 절감.</p>
+    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition">리콜 검색 →</a>
+  </div>
+
+  <h2>소음 진단 시 자주 놓치는 함정 3가지</h2>
+
+  <h3>함정 1 — 정비소에서 소음 재현 못 함</h3>
+  <p>"증상이 안 나타나서 진단 못 한다"는 가장 흔한 정비소 답변입니다. 휴대폰으로 30초 이상 녹음해 가지고 가면 정비사가 90%는 위치·원인을 좁힐 수 있습니다.</p>
+
+  <h3>함정 2 — 한 곳만 견적 받고 결정</h3>
+  <p>이상 소음은 정비소마다 견적이 2배 이상 차이날 수 있습니다. 같은 증상으로 2~3곳 견적 비교 후 결정하세요. 본인이 자가 진단한 추정 원인을 가지고 가면 협상 우위.</p>
+
+  <h3>함정 3 — "엔진 통째 교체"는 과잉 견적</h3>
+  <p>차량 소음의 90%는 부품 교체로 해결됩니다. "엔진·미션 통째 교체 800~1,500만 원" 견적을 받으면 OBD 코드와 함께 다른 정비소 의견을 반드시 들어보세요.</p>
+
+  <h2>소음 진단 효율적 5단계</h2>
+  <ol>
+    <li><strong>1단계 — 3가지 변수 기록:</strong> 위치·시점·RPM·차속 연관성 메모.</li>
+    <li><strong>2단계 — 30초 녹음:</strong> 창문 닫고 라디오 끈 상태, 같은 조건 재현해서 2회.</li>
+    <li><strong>3단계 — 리콜 사전 확인:</strong> ACHAJA·자동차리콜센터에서 차종 리콜 조회.</li>
+    <li><strong>4단계 — 정비소 2~3곳 견적 비교:</strong> 녹음 + 메모 가지고 가서 30분 차이 비교.</li>
+    <li><strong>5단계 — 수리 후 시운전 30km:</strong> 같은 조건 재현해 소음 사라졌는지 확인.</li>
+  </ol>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 엔진룸에서 '끽~' 소리?</h3>
+    <p>벨트 끽음. 텐셔너·풀리·벨트 노후. 부품 1~5만 원, 공임 3~7만 원.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 브레이크 밟을 때 '두두두' 떨림?</h3>
+    <p>디스크 변형. 디스크 + 패드 동시 교체. 준중형 25~40만 원.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 요철 지나갈 때 '두두두'?</h3>
+    <p>쇼크업소버·부싱 마모. 1짝당 10~20만 원.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 소음을 정비소에 어떻게 설명?</h3>
+    <p>위치·시점·RPM 연관성 3가지 메모 + 30초 녹음. 진단 시간 70% 단축.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 즉시 정차해야 하는 소음은?</h3>
+    <p>"쾅" 충격음, "쉬쉬" 누설 + 경고등, 금속 마찰 + 출력 저하, "푸드덕" 백파이어. 즉시 갓길·견인.</p>
   </div>
 </article>
 

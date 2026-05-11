@@ -14,11 +14,6 @@
 <link rel="manifest" href="/manifest.json"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -32,11 +27,18 @@
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"BlogPosting","headline":"하이브리드 vs 전기차 — 총 소유비용·연비·유지비 비교","description":"하이브리드(HEV·PHEV)와 전기차(BEV)의 실제 연비, 보조금, 유지비, 감가까지 5년 총 소유비용(TCO) 관점에서 비교.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-04-23","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/hybrid-vs-ev/"},"inLanguage":"ko-KR"},
+{"@type":"BlogPosting","headline":"하이브리드 vs 전기차 — 총 소유비용·연비·유지비 비교","description":"하이브리드(HEV·PHEV)와 전기차(BEV)의 실제 연비, 보조금, 유지비, 감가까지 5년 총 소유비용(TCO) 관점에서 비교.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/hybrid-vs-ev/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
 {"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
 {"@type":"ListItem","position":3,"name":"하이브리드 vs 전기차 — 총 소유비용·연비·유지비 비교","item":"https://achaja.net/blog/hybrid-vs-ev/"}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"하이브리드와 전기차 중 무엇이 더 경제적인가요?","acceptedAnswer":{"@type":"Answer","text":"주행 패턴에 따라 다릅니다. 아파트·직장 완속 충전이 가능하고 연 1.5만 km 이상 주행한다면 전기차가 가장 저렴합니다. 완속 충전이 어렵거나 장거리 운행이 많다면 하이브리드가 5년 TCO 기준 가장 유리합니다."}},
+{"@type":"Question","name":"전기차 배터리 수명은 얼마나 되나요?","acceptedAnswer":{"@type":"Answer","text":"제조사 보증은 일반적으로 8년/16만 km이며, 실제 평균 사용 수명은 10~15년으로 보고됩니다. 배터리 용량은 매년 약 2~3% 감소하며, 10년 후 약 80% 용량을 유지하는 것이 표준입니다. 교체 비용은 모델별 800~2,000만 원 수준입니다."}},
+{"@type":"Question","name":"전기차 보조금은 매년 줄어드나요?","acceptedAnswer":{"@type":"Answer","text":"네. 환경부 무공해차 통합누리집에 따르면 국고보조금은 2022년 700만 원에서 2026년 300~690만 원으로 단계적으로 축소 중입니다. 보조금은 매년 1월에 환경부 고시로 결정되며, 차량 가격·주행거리·연비에 따라 차등 지급됩니다."}},
+{"@type":"Question","name":"PHEV는 왜 보조금이 거의 없나요?","acceptedAnswer":{"@type":"Answer","text":"2022년부터 환경부 무공해차 정책상 PHEV는 보조금 지급 대상에서 단계적으로 제외됐습니다. 전기 주행거리가 짧고 일상에서 가솔린 의존도가 높다는 점이 정책적 이유입니다. 취득세 감면(최대 40만 원)만 유지됩니다."}},
+{"@type":"Question","name":"전기차 자동차세는 정말 정액인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 지방세법 시행령상 전기차 자동차세는 영업용·비영업용 구분 없이 연 13만 원 정액입니다. 배기량 3,000cc 가솔린 세단의 자동차세가 연 80만 원인 점을 고려하면 대형 전기차일수록 절세 효과가 큽니다."}}
 ]}
 ]}
 </script>
@@ -44,8 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://www.clarity.ms"/>
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,10 +101,14 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <header class="mb-lg pb-md border-b border-outline-variant">
     <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">eco</span><span class="text-xs text-muted">친환경차</span></div>
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">하이브리드 vs 전기차 — 총 소유비용·연비·유지비 비교</h1>
-    <p class="text-xs text-muted">2026년 4월 23일 · ACHAJA 에디터 · 약 6분 소요</p>
+    <p class="text-xs text-muted">2026년 4월 23일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 10분 소요</p>
   </header>
 
   <p>신차 구매 시 "하이브리드로 갈까, 전기차로 갈까" 고민하는 분이 많습니다. 단순히 연비만 비교하면 답이 안 나옵니다. 차량가, 보조금, 충전·주유비, 유지비, 5년 후 중고가(감가)까지 모두 넣은 <strong>총 소유비용(TCO)</strong> 관점에서 비교해야 정확합니다.</p>
+
+  <p><a href="https://ev.or.kr/" target="_blank" rel="nofollow noopener" class="text-primary-container dark:text-primary underline">환경부 무공해차 통합누리집</a>에 따르면 2025년 국내 등록 전기차는 약 60만 대, 하이브리드는 약 200만 대로 친환경차 누적 등록은 260만 대를 넘어섰습니다. 그러나 산업통상자원부 조사상 "충전 인프라 부족"이 전기차 구매 포기 사유 1위(43%)로 꼽혔습니다. 즉 차량 자체가 아니라 <strong>아파트·직장 완속 충전 가능 여부</strong>가 친환경차 선택의 가장 큰 변수입니다.</p>
+
+  <p>이 글은 차량가·보조금·연료비·정비비·자동차세·감가까지 5년치 비용을 모두 합쳐서 비교합니다. 단순 잔존가치 분석은 <a href="/blog/car-residual-value/" class="text-primary-container dark:text-primary underline">중고차 잔존가치 계산법</a>을, 전기차 배터리 수명·교체 비용은 <a href="/blog/ev-battery-life/" class="text-primary-container dark:text-primary underline">전기차 배터리 수명과 교체 비용</a>을 함께 보세요.</p>
 
   <h2>먼저 용어 정리 — HEV·PHEV·BEV·FCEV</h2>
   <ul>
@@ -184,6 +188,59 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   </ul>
 
   <p>친환경차 선택의 핵심은 <strong>"내가 실제로 쓰는 주행 패턴"</strong>입니다. 연비만 보고 전기차로 갔다가 충전 스트레스로 후회하는 경우도, 하이브리드가 안전한 선택으로 자리 잡은 이유도 모두 이 패턴에서 나옵니다. 5년간 주유·충전·정비 영수증을 계산해보고 결정하세요.</p>
+
+  <div class="my-lg p-md bg-active-bg/30 dark:bg-active-bg/15 rounded-xl border border-primary-container/20 dark:border-primary/20">
+    <p class="text-sm font-semibold mb-xs">📌 중고 하이브리드·전기차 매물 검토 시</p>
+    <p class="text-sm text-on-surface-variant mb-sm">차량번호·VIN으로 리콜·연식 확인. 배터리 관련 리콜 이력은 잔존가치에 직격탄.</p>
+    <a href="/history" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition">차량 이력조회 →</a>
+  </div>
+
+  <h2>친환경차 구매 시 자주 놓치는 함정 3가지</h2>
+
+  <h3>함정 1 — 보조금만 보고 결정하는 경우</h3>
+  <p>보조금은 매년 줄고 있고 차종별 차등이 큽니다. 보조금 700만 원에 끌려 5,500만 원 전기차를 샀는데 충전 인프라가 없어 매주 급속을 쓰면, 가솔린차보다 비용이 더 들 수 있습니다. 보조금은 결정의 보조 지표이지 결정 자체가 아닙니다.</p>
+
+  <h3>함정 2 — PHEV가 "두 마리 토끼" 잡는다고 믿는 경우</h3>
+  <p>PHEV는 보조금이 사실상 없어졌고, 단거리는 전기·장거리는 가솔린이라는 광고만큼 효율이 좋지 않습니다. 한국에너지공단 실측에 따르면 PHEV 사용자의 약 40%가 외부 충전을 거의 하지 않아 사실상 가솔린차로 운행됩니다. 충전 의지가 강하지 않다면 PHEV는 추천하기 어렵습니다.</p>
+
+  <h3>함정 3 — 중고 전기차의 배터리 잔존 용량 미확인</h3>
+  <p>중고 전기차는 외관·주행거리만 보고 사면 안 됩니다. 차량 진단 장비로 <strong>SOH(State of Health, 배터리 건강도)</strong>를 측정해 80% 이상인지 확인하세요. SOH 70% 이하면 1년 안에 교체 압박이 옵니다. 매수 전 제조사 보증 잔여 기간도 함께 확인해야 합니다.</p>
+
+  <h2>친환경차 결정을 위한 5단계 체크</h2>
+  <ol>
+    <li><strong>1단계 — 완속 충전 가능 여부:</strong> 거주지·직장에 완속 충전기 설치 가능? Yes → 전기차 후보 / No → 하이브리드.</li>
+    <li><strong>2단계 — 연 주행거리:</strong> 1.5만 km 이상? 연료비 차이가 큼, 전기차·하이브리드 유리. 1만 km 이하면 가솔린도 충분.</li>
+    <li><strong>3단계 — 보유 기간:</strong> 5년 이상 보유 → 감가 영향 작아져 친환경차 유리. 2~3년 단기 → 잔존가치 안정적인 모델 선택.</li>
+    <li><strong>4단계 — 보조금 확인:</strong> 환경부 무공해차 통합누리집에서 거주지·차종별 보조금 합산액 확인.</li>
+    <li><strong>5단계 — 5년 TCO 표 작성:</strong> 본인 주행 패턴 대입해 직접 계산. 위 표는 참고용 표준 값.</li>
+  </ol>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 하이브리드와 전기차 중 무엇이 더 경제적인가요?</h3>
+    <p>주행 패턴에 따라 다릅니다. 아파트·직장 완속 충전이 가능하고 연 1.5만 km 이상 주행한다면 전기차가 가장 저렴합니다. 완속 충전이 어렵거나 장거리 운행이 많다면 하이브리드가 5년 TCO 기준 가장 유리합니다.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 전기차 배터리 수명은 얼마나 되나요?</h3>
+    <p>제조사 보증은 일반적으로 8년/16만 km이며, 실제 평균 사용 수명은 10~15년으로 보고됩니다. 배터리 용량은 매년 약 2~3% 감소하며, 10년 후 약 80% 용량을 유지하는 것이 표준입니다.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 전기차 보조금은 매년 줄어드나요?</h3>
+    <p>네. 국고보조금은 2022년 700만 원에서 2026년 300~690만 원으로 단계적으로 축소 중입니다. 매년 1월 환경부 고시로 결정됩니다.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. PHEV는 왜 보조금이 거의 없나요?</h3>
+    <p>2022년부터 환경부 무공해차 정책상 PHEV는 보조금 지급 대상에서 단계적으로 제외됐습니다. 취득세 감면(최대 40만 원)만 유지됩니다.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 전기차 자동차세는 정말 정액인가요?</h3>
+    <p>네, 지방세법 시행령상 전기차 자동차세는 영업용·비영업용 구분 없이 연 13만 원 정액입니다. 배기량 3,000cc 가솔린 세단의 연 80만 원과 비교하면 대형 전기차일수록 절세 효과가 큽니다.</p>
+  </div>
 
   <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
     <h3 class="font-headline font-semibold text-base mb-sm">친환경차 리콜도 확인</h3>

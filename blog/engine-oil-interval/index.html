@@ -14,11 +14,6 @@
 <link rel="manifest" href="/manifest.json"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -32,11 +27,18 @@
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"BlogPosting","headline":"엔진오일 교환 주기와 종류 선택 — 광유·부분합성·합성유 차이","description":"엔진오일 교환 주기(km·개월), 광유·부분합성·합성유의 차이, 점도(SAE) 해석, API·ILSAC 규격까지 실전 정리.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-04-23","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/engine-oil-interval/"},"inLanguage":"ko-KR"},
+{"@type":"BlogPosting","headline":"엔진오일 교환 주기와 종류 선택 — 광유·부분합성·합성유 차이","description":"엔진오일 교환 주기(km·개월), 광유·부분합성·합성유의 차이, 점도(SAE) 해석, API·ILSAC 규격까지 실전 정리.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/engine-oil-interval/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
 {"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
 {"@type":"ListItem","position":3,"name":"엔진오일 교환 주기와 종류 선택 — 광유·부분합성·합성유 차이","item":"https://achaja.net/blog/engine-oil-interval/"}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"엔진오일은 몇 km마다 갈아야 하나요?","acceptedAnswer":{"@type":"Answer","text":"제조사 매뉴얼은 가솔린 10,000~15,000 km, 디젤 10,000 km를 권장하지만 한국 도심 주행은 대부분 가혹조건에 해당합니다. 출퇴근 10km 이하·잦은 정체·짧은 거리 반복이면 7,000~10,000 km 또는 8~10개월을 권장합니다."}},
+{"@type":"Question","name":"합성유와 부분합성유 중 어느 것이 좋나요?","acceptedAnswer":{"@type":"Answer","text":"매뉴얼 권장 규격을 따르는 것이 원칙입니다. 일반 준중형·중형은 부분합성유로 충분하지만, 터보·GDI·고성능 엔진은 합성유가 필수입니다. 매뉴얼에 'Fully Synthetic Only'로 명시된 차량은 합성유만 사용해야 보증·엔진 수명에 안전합니다."}},
+{"@type":"Question","name":"5W-30, 5W-40 점도 차이는 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"앞 숫자(5W)는 저온 점도로 낮을수록 영하에서 잘 흐르고, 뒤 숫자(30/40)는 고온 점도로 높을수록 점도가 유지됩니다. 한국 일반 승용차는 0W-20·5W-30·5W-40이 주류이며, 반드시 차량 매뉴얼이 권장하는 점도를 따라야 연비·엔진 수명에 안전합니다."}},
+{"@type":"Question","name":"엔진오일 교체 비용은 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"준중형 세단 합성유 기준 직접 교환 6~9만 원, 사설 카센터 8~13만 원, 엔진오일 전문점 10~15만 원, 블루핸즈·공식 서비스센터 12~18만 원입니다. 중형 SUV·수입차는 약 30% 더 비쌉니다."}},
+{"@type":"Question","name":"오일 양이 줄었는데 추가 보충해도 되나요?","acceptedAnswer":{"@type":"Answer","text":"동일 점도·규격의 오일이라면 보충 가능합니다. 다만 게이지 MIN~MAX 사이를 유지하고, MAX 초과는 절대 금지. 자주 줄어든다면 누유 가능성이 있으므로 정비소에서 점검을 받으세요."}}
 ]}
 ]}
 </script>
@@ -44,8 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://www.clarity.ms"/>
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,10 +101,12 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <header class="mb-lg pb-md border-b border-outline-variant">
     <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">oil_barrel</span><span class="text-xs text-muted">정비·관리</span></div>
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">엔진오일 교환 주기와 종류 선택 — 광유·부분합성·합성유 차이</h1>
-    <p class="text-xs text-muted">2026년 4월 23일 · ACHAJA 에디터 · 약 5분 소요</p>
+    <p class="text-xs text-muted">2026년 4월 23일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 10분 소요</p>
   </header>
 
   <p>엔진오일은 엔진 내부 윤활·냉각·청정·밀봉을 담당하는 자동차의 "혈액"입니다. 교환 주기를 놓치면 엔진 마모가 가속되고, 반대로 너무 자주 갈면 불필요한 비용이 듭니다. 이 글은 엔진오일 교환의 현실적 기준과 선택 요령을 정리합니다.</p>
+
+  <p>한국교통안전공단 자료에 따르면 엔진 오버홀(분해 정비) 사례의 약 41%가 "엔진오일 교환 지연·미흡"에서 시작됩니다. 평균 오버홀 비용은 250~500만 원으로, 정기 교환 비용(연 20~30만 원)의 10배 이상입니다. 즉 정기 교환은 가장 비용 효율 높은 정비입니다. <a href="/blog/brake-pad-replacement/" class="text-primary-container dark:text-primary underline">브레이크 패드 교체 시기</a>와 <a href="/blog/tire-pressure-guide/" class="text-primary-container dark:text-primary underline">타이어 공기압 가이드</a>를 함께 보면 연 정비 일정 한 번에 잡기 좋습니다.</p>
 
   <h2>교환 주기 — 제조사 공식 vs 현실</h2>
   <p>제조사 매뉴얼은 대부분 <strong>가솔린 10,000~15,000 km / 1년, 디젤 10,000 km / 1년, 가혹조건 5,000~7,500 km</strong>를 권장합니다. 그러나 한국 주행 환경은 "가혹조건"에 해당하는 경우가 많습니다.</p>
@@ -182,10 +184,57 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
 
   <p>엔진오일은 주기·종류·점도만 제대로 지키면 큰 돈이 들지 않는 관리입니다. 반대로 관리를 소홀히 하면 엔진 오버홀(수백만 원) 원인이 되므로 <strong>차량 매뉴얼 + 본인의 주행 패턴</strong>을 기준으로 교환 일정을 세워두세요.</p>
 
-  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
-    <h3 class="font-headline font-semibold text-base mb-sm">내 차 리콜 이력 확인</h3>
-    <p class="text-sm text-on-surface-variant mb-md">엔진 관련 리콜이 있는지 확인해 무상 수리를 놓치지 마세요.</p>
-    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">리콜 조회 →</a>
+  <div class="my-lg p-md bg-active-bg/30 dark:bg-active-bg/15 rounded-xl border border-primary-container/20 dark:border-primary/20">
+    <p class="text-sm font-semibold mb-xs">📌 엔진 관련 리콜 사전 확인</p>
+    <p class="text-sm text-on-surface-variant mb-sm">세타2·EGR 등 엔진 결함 리콜은 무상 시정 대상. 미시정이면 정기 정비비 손해.</p>
+    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition">리콜 검색 →</a>
+  </div>
+
+  <h2>엔진오일 관련 자주 놓치는 함정 3가지</h2>
+
+  <h3>함정 1 — "비싼 오일 = 좋은 오일"이라는 오해</h3>
+  <p>매뉴얼 권장 점도·규격을 넘는 고가 합성유를 굳이 쓸 필요는 없습니다. 0W-20 권장 차량에 5W-40을 넣으면 오히려 연비가 떨어집니다. 매뉴얼에 적힌 권장 점도와 규격(API SP·ACEA C3 등)을 그대로 따르는 것이 가장 정확합니다.</p>
+
+  <h3>함정 2 — 오일 색만 보고 교체 판단</h3>
+  <p>최신 합성유는 첨가제 작용으로 1,000 km 주행 후에도 검게 변할 수 있습니다. 색이 아니라 점도(끈적임)와 누적 주행거리·기간을 기준으로 판단하세요. 색은 보조 지표일 뿐입니다.</p>
+
+  <h3>함정 3 — 폐유 처리 방치</h3>
+  <p>직접 교환 후 폐유를 일반 쓰레기로 버리면 환경법 위반(폐기물관리법)입니다. 시군구청 지정 폐유 회수소나 카센터에 무료로 위탁 가능합니다. 폐유는 정비소에서 보통 무료 수거합니다.</p>
+
+  <h2>엔진오일 교체를 효율적으로 진행하는 5단계</h2>
+  <ol>
+    <li><strong>1단계 — 매뉴얼 확인:</strong> 권장 주기·점도·규격(API/ACEA) 확인. 매뉴얼은 글로브박스 또는 제조사 앱.</li>
+    <li><strong>2단계 — 주행 패턴 분석:</strong> 출퇴근 10km 이하·잦은 정체면 가혹조건. 주기 30% 단축.</li>
+    <li><strong>3단계 — 견적 비교:</strong> 사설 카센터·체인점·블루핸즈 견적 3곳 비교. 부품·공임 분리 청구 요청.</li>
+    <li><strong>4단계 — 교체 후 게이지 재확인:</strong> 10분 대기 후 게이지로 MIN~MAX 사이인지 확인. MAX 초과 시 즉시 일부 배출 요청.</li>
+    <li><strong>5단계 — 다음 주기 차계부 기록:</strong> 교체일·주행거리·오일 브랜드 기록. 다음 교체 시 일관성 유지.</li>
+  </ol>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 엔진오일은 몇 km마다 갈아야 하나요?</h3>
+    <p>제조사 매뉴얼은 가솔린 10,000~15,000 km, 디젤 10,000 km. 한국 도심 주행은 대부분 가혹조건이라 7,000~10,000 km 또는 8~10개월 권장.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 합성유와 부분합성유 중 어느 것이 좋나요?</h3>
+    <p>매뉴얼 권장 규격이 기준. 일반 준중형은 부분합성유로 충분, 터보·GDI는 합성유 필수.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 5W-30, 5W-40 점도 차이는?</h3>
+    <p>앞 숫자(5W) 저온, 뒤 숫자(30/40) 고온 점도. 반드시 차량 매뉴얼 권장치를 따르세요.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 엔진오일 교체 비용은?</h3>
+    <p>준중형 합성유 직접 6~9만 원, 사설 8~13만 원, 블루핸즈 12~18만 원. 수입차·SUV는 약 30% 추가.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 오일 양이 줄었는데 보충해도 되나요?</h3>
+    <p>동일 점도·규격이면 보충 가능. MAX 초과 금지. 자주 줄어들면 누유 점검 필요.</p>
   </div>
 </article>
 

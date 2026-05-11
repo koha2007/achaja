@@ -14,11 +14,6 @@
 <link rel="manifest" href="/manifest.json"/>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5109067049933124" crossorigin="anonymous"></script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZSZCMMFK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VZSZCMMFK0');</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "whie0ep4hs");</script>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="ACHAJA"/>
 <meta property="og:locale" content="ko_KR"/>
@@ -32,11 +27,18 @@
 <meta name="twitter:image" content="https://achaja.net/og-image.png"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"BlogPosting","headline":"엔진 경고등(체크엔진) 의미와 대처법","description":"엔진 경고등(체크엔진) 점등 시 즉시 확인할 것, OBD-II 자가진단, 정비소 가야 하는 코드.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-30","dateModified":"2026-04-30","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/engine-warning-light/"},"inLanguage":"ko-KR"},
+{"@type":"BlogPosting","headline":"엔진 경고등(체크엔진) 의미와 대처법","description":"엔진 경고등(체크엔진) 점등 시 즉시 확인할 것, OBD-II 자가진단, 정비소 가야 하는 코드.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-30","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/engine-warning-light/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
 {"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
 {"@type":"ListItem","position":3,"name":"엔진 경고등(체크엔진) 의미와 대처법","item":"https://achaja.net/blog/engine-warning-light/"}
+]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"엔진 경고등이 켜졌을 때 즉시 정비소로 가야 하나요?","acceptedAnswer":{"@type":"Answer","text":"색상과 패턴에 따라 다릅니다. 노란색 상시점등은 3~7일 내 정비소 방문이면 되지만, 노란색이 깜박이거나 빨간색이면 즉시 정차하고 견인이 필요합니다. 빨간 + 깜박임은 엔진 영구 손상까지 5분이 안 걸릴 수 있습니다."}},
+{"@type":"Question","name":"체크엔진 가장 흔한 원인은?","acceptedAnswer":{"@type":"Answer","text":"주유구 캡 헐거움이 가장 흔합니다. 캡을 다시 단단히 잠그고 30~50km 주행하면 자동 소등됩니다. 그 외 O2 센서·점화코일·EGR·MAF 센서·촉매 컨버터 등이 주요 원인입니다."}},
+{"@type":"Question","name":"OBD-II 스캐너로 자가 진단이 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"네. 2002년 이후 모든 차에 OBD-II 진단 포트가 있어 1~3만 원짜리 블루투스 동글과 스마트폰 앱(Car Scanner, Torque)으로 P0xxx 형식의 트러블 코드를 직접 읽을 수 있습니다. 정비소 진단비 5만 원을 아낄 수 있습니다."}},
+{"@type":"Question","name":"경고등이 꺼졌으면 그냥 둬도 되나요?","acceptedAnswer":{"@type":"Answer","text":"일시적 노이즈·주유구 캡 미체결이면 자동 소등되지만, 결함이 사라진 게 아니라 잠깐 임계치 아래로 떨어진 것일 수 있습니다. OBD 코드 이력에 남아 있으므로 다음 정비 때 확인 요청하세요."}},
+{"@type":"Question","name":"고급 휘발유를 넣으면 경고등이 꺼지나요?","acceptedAnswer":{"@type":"Answer","text":"미신입니다. 경고등은 센서·시스템 결함에 의한 것이지 연료 옥탄가 문제는 아닙니다. 저질 연료로 일시적 점등된 경우라면 정상 연료 1탱크 소진 후 자동 소등될 수 있지만, 일반 휘발유로도 충분합니다."}}
 ]}
 ]}
 </script>
@@ -44,8 +46,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://www.clarity.ms"/>
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,10 +101,12 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   <header class="mb-lg pb-md border-b border-outline-variant">
     <div class="flex items-center gap-2 mb-sm"><span class="material-symbols-outlined text-primary-container dark:text-primary">warning</span><span class="text-xs text-muted">경고등 가이드</span></div>
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">엔진 경고등(체크엔진) 의미와 대처법</h1>
-    <p class="text-xs text-muted">2026년 4월 30일 · ACHAJA 에디터 · 약 3분 소요</p>
+    <p class="text-xs text-muted">2026년 4월 30일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 8분 소요</p>
   </header>
 
   <p>엔진 경고등(흔히 "체크엔진")이 켜졌을 때 가장 위험한 것은 <strong>"별일 아니겠지" 하고 무시하는 것</strong>입니다. 가벼운 원인부터 엔진 폐차까지 의미할 수 있어, 점등된 순간 즉시 진단해야 합니다.</p>
+
+  <p>미국 NHTSA 통계에 따르면 체크엔진 무시로 발생하는 엔진 영구 손상 사례의 평균 수리비는 800~3,000 USD(약 110~410만 원)입니다. 한국에서도 EGR·촉매 컨버터 손상 사례는 100~300만 원 수준이며, 초기 단계에서 OBD-II 코드만 확인했다면 수만 원으로 끝났을 사안이 대부분입니다. 함께 보면 좋은 글: <a href="/blog/engine-oil-interval/" class="text-primary-container dark:text-primary underline">엔진오일 교환 주기</a>, <a href="/blog/car-noise-diagnosis/" class="text-primary-container dark:text-primary underline">차량 소음 자가 진단</a>.</p>
 
   <h2>경고등 색상별 긴급도</h2>
   <table>
@@ -162,10 +164,57 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   </ul>
   <p>3일 이내에 자동 소등되지 않으면 <strong>실제 결함</strong>이 있는 것이므로 정비소 점검 필수입니다.</p>
 
-  <div class="my-xl p-lg bg-surface-container rounded-2xl border border-outline-variant">
-    <h3 class="font-headline font-semibold text-base mb-sm">ACHAJA에서 차량 리콜·하자 이력 확인</h3>
-    <p class="text-sm text-on-surface-variant mb-md">엔진 관련 리콜·기술결함 이력은 차량번호로 즉시 조회 가능합니다.</p>
-    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-2 rounded-xl text-sm font-bold hover:opacity-90 transition">리콜 조회 바로가기 →</a>
+  <div class="my-lg p-md bg-active-bg/30 dark:bg-active-bg/15 rounded-xl border border-primary-container/20 dark:border-primary/20">
+    <p class="text-sm font-semibold mb-xs">📌 엔진 관련 리콜 사전 확인</p>
+    <p class="text-sm text-on-surface-variant mb-sm">세타2·GDI·EGR 리콜 미시정이면 경고등 원인일 수 있음. 무상 시정 대상.</p>
+    <a href="/parts" class="inline-block bg-primary-container dark:bg-primary text-white dark:text-on-primary px-md py-1.5 rounded-lg text-sm font-bold hover:opacity-90 transition">리콜 검색 →</a>
+  </div>
+
+  <h2>경고등 대응 시 자주 놓치는 함정 3가지</h2>
+
+  <h3>함정 1 — OBD 스캐너로 코드만 지우기</h3>
+  <p>코드를 지우면 경고등이 일시적으로 꺼지지만 원인은 그대로입니다. 며칠 안에 다시 점등되고, 결국 영구 손상으로 이어집니다. 코드 확인 후엔 반드시 해결까지 진행하세요.</p>
+
+  <h3>함정 2 — "기름 좋은 거 넣으면 꺼진다"는 미신</h3>
+  <p>옥탄가가 높은 휘발유로 바꿔도 센서·시스템 결함은 해결되지 않습니다. 일시적 저질 연료가 원인이면 정상 연료 1탱크로 충분합니다.</p>
+
+  <h3>함정 3 — 정비소 견적의 "엔진 통째로 교체" 압박</h3>
+  <p>OBD 코드 확인 없이 "엔진 교체 800만 원" 견적을 받으면 무조건 의심하세요. P0420(촉매)·P0171(연료)·P0300(미스파이어)은 부품 교체로 해결 가능한 경우가 대부분입니다. OBD 코드를 본인이 미리 알면 협상에 유리합니다.</p>
+
+  <h2>경고등 대응 5단계</h2>
+  <ol>
+    <li><strong>1단계 — 색상·패턴 확인:</strong> 노랑 상시 → 주행 가능, 노랑 깜박 / 빨강 → 즉시 정차.</li>
+    <li><strong>2단계 — 주유구 캡 확인:</strong> 30~50km 주행 후 소등 여부 확인.</li>
+    <li><strong>3단계 — OBD 코드 자가 확인:</strong> 블루투스 동글 1~3만 원으로 P0xxx 코드 읽기.</li>
+    <li><strong>4단계 — 리콜 확인:</strong> 해당 차종 진행 중인 리콜 확인. 리콜이면 무상 시정.</li>
+    <li><strong>5단계 — 정비소 견적 비교:</strong> OBD 코드 정보를 가지고 2~3곳 견적 비교 후 결정.</li>
+  </ol>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 경고등이 켜졌을 때 즉시 정비소로 가야 하나요?</h3>
+    <p>노랑 상시 → 3~7일 내, 노랑 깜박 / 빨강 → 즉시 정차·견인.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 가장 흔한 원인은?</h3>
+    <p>주유구 캡 헐거움(1위). O2 센서·점화코일·EGR·MAF·촉매 컨버터 순.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. OBD-II 자가 진단 가능?</h3>
+    <p>2002년 이후 모든 차 가능. 1~3만 원 동글 + 앱(Car Scanner·Torque).</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 자동 소등됐으면 그냥 둬도 되나요?</h3>
+    <p>OBD 이력에 남으므로 다음 정비 때 확인 요청. 재발 가능성 있음.</p>
+  </div>
+
+  <div style="padding:1rem;border:1px solid rgb(var(--c-outline-variant));border-radius:1rem;margin-bottom:0.75rem;background:rgb(var(--c-surface-container-low));">
+    <h3 style="margin-top:0;">Q. 고급 휘발유 넣으면 꺼지나요?</h3>
+    <p>미신. 센서·시스템 결함은 옥탄가와 무관.</p>
   </div>
 </article>
 
