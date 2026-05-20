@@ -9,11 +9,11 @@ import { onRequest as sendResultHandler } from './api/send-result.js';
 // AdSense, TossPayments, Google Fonts, Tailwind CDN 허용.
 const CSP_DIRECTIVES = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.googletagservices.com https://cdn.tailwindcss.com https://js.tosspayments.com https://*.tosspayments.com https://ajax.googleapis.com https://www.gstatic.com https://*.clarity.ms",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.googletagservices.com https://cdn.tailwindcss.com https://js.tosspayments.com https://*.tosspayments.com https://ajax.googleapis.com https://www.gstatic.com https://*.clarity.ms https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com",
   "font-src 'self' https://fonts.gstatic.com data:",
   "img-src 'self' data: blob: https:",
-  "connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://api.tosspayments.com https://*.tosspayments.com https://vpic.nhtsa.dot.gov https://apis.data.go.kr https://api.brevo.com https://api.resend.com https://*.clarity.ms",
+  "connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://api.tosspayments.com https://*.tosspayments.com https://vpic.nhtsa.dot.gov https://apis.data.go.kr https://api.brevo.com https://api.resend.com https://*.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net",
   "frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://*.tosspayments.com https://*.toss.im",
   "frame-ancestors 'self'",
   "form-action 'self' https://*.tosspayments.com",
