@@ -151,6 +151,10 @@
         <a href="/my" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">마이</a>
       </nav>
       <div class="flex items-center gap-1">
+        <button onclick="toggleLang()" id="lang-toggle" data-noi18n aria-label="Switch language / 언어 전환" title="한국어 / English" class="flex items-center gap-0.5 px-2 py-1.5 rounded-lg text-muted hover:text-on-surface active:scale-95 transition text-xs font-bold">
+          <span class="material-symbols-outlined text-[18px]">language</span>
+          <span id="lang-toggle-label">EN</span>
+        </button>
         <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted active:scale-95 transition-transform">
           <span class="material-symbols-outlined dark:hidden">dark_mode</span>
           <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
@@ -1006,4 +1010,224 @@
   });
   </script>
                                                             
+  <!-- ACHAJA i18n — 한국어/English 런타임 토글 (SEO용 원본은 한국어 유지, 봇은 ko 고정) -->
+  <script>
+  (function(){
+    var I18N = {
+      // a11y / sr-only
+      "본문으로 건너뛰기":"Skip to content","데이터 출처와 신뢰성":"Data sources & reliability","결과 활용 안내":"Using your result",
+      // Header / nav
+      "홈":"Home","뉴스":"News","블로그":"Blog","이력조회":"History","리콜":"Recalls","마이":"My",
+      // Hero
+      "입력 즉시 결과 · 100% 무료":"Instant results · 100% free",
+      "아픈 차, 한눈에":"Spot a sick car","걸러내세요":"at a glance",
+      "차량번호 또는 VIN 한 줄이면 끝.":"One plate number or VIN is all it takes.",
+      "국산·수입차 모두 무료 조회.":"Free for domestic & imported cars.",
+      "조회 →":"Search →","먼저 샘플 결과 보기 →":"See a sample result first →",
+      "차량번호 또는 VIN":"Plate number or VIN",
+      // Trust strip
+      "건":"entries","공식 리콜 DB":"Official recall DB","한국교통안전공단":"KOTSA",
+      "자리":"digits","VIN 디코딩":"VIN decoding","ISO 3779 국제표준":"ISO 3779 standard",
+      "완전 무료":"Completely free","로그인 없이 즉시":"Instant, no login","초":"sec",
+      "평균 조회시간":"Avg. lookup time","국산·수입 통합":"Domestic + imported",
+      // How it works
+      "3단계 · 30초면 끝":"3 steps · done in 30 sec","로그인 없이":"No login",
+      "중고차 사기·아픈차를 차에 가기 전에 1차 검증합니다.":"A first screening for scams & lemons before you go see the car.",
+      "차량번호 또는 VIN 입력":"Enter plate number or VIN","~10초":"~10 sec",
+      "예:":"e.g.","또는":"or",". 회원가입·본인인증 없음.":". No signup or identity check.",
+      "자동 분석 4가지":"4 automatic analyses","~15초":"~15 sec",
+      "VIN 디코딩(ISO 3779) · NHTSA vPIC 모델 보강 · 941건 리콜 DB 연식·모델 자동 대조 · 번호판 용도 판별.":"VIN decoding (ISO 3779) · NHTSA vPIC model enrichment · auto-matching against the 941-entry recall DB by year & model · plate-type detection.",
+      "신호등 결과 확인":"Check the traffic-light result","~5초":"~5 sec",
+      "아차 점수(0~100) + Carfax 스타일 리콜 카드 + AI 한 줄 요약. 의심 매물이면 카히스토리 외부 결제 자동 안내.":"ACHA score (0–100) + Carfax-style recall cards + a one-line AI summary. For suspicious listings, you're guided to Carhistory's external paid check.",
+      "지금 30초 무료 조회 시작":"Start your free 30-sec check now",
+      // Personas
+      "누구에게 맞나요?":"Who is it for?",
+      "차량 라이프사이클 3단계 — 살 때 / 탈 때 / 팔 때 모두 ACHAJA가 도와드립니다.":"Three stages of a car's life — buying, owning, and selling. ACHAJA helps with all three.",
+      "살 때":"Buying","중고차 검토자":"Used-car shopper",
+      "매물 보기 전 1차 검증. VIN으로 제조사·연식·리콜·번호판 4가지를 거른 뒤 매물 보러 가세요.":"A first check before viewing. Screen maker, year, recalls, and plate via VIN, then go see the listing.",
+      "→ 무료 이력조회":"→ Free history lookup","탈 때":"Owning","현 차량 소유자":"Current owner",
+      "내 차에 리콜 떴는지, 정비소 갈 때 무엇을 점검할지 — 제조사·차종으로 941건 리콜 검색.":"Check if your car has a recall and what to inspect at the shop — search 941 recalls by maker & model.",
+      "→ 리콜 조회":"→ Recall lookup","팔 때":"Selling","매도 준비자":"Getting ready to sell",
+      "₩1,900 종합 PDF로 매수자에게 신뢰 어필 + 가이드 40편으로 협상 카드 무장. (PDF는 토스 심사 후 오픈)":"Build buyer trust with a ₩1,900 full PDF, and arm yourself with 40 guides for negotiation. (PDF opens after Toss review.)",
+      "→ 종합 리포트 미리보기":"→ Preview the full report",
+      // Why ACHAJA
+      "왜 ACHAJA인가요?":"Why ACHAJA?",
+      "국내 무료 + 공식 데이터 + 국산·수입 통합을 동시에 만족하는 차량이력 서비스":"A car-history service that's free in Korea, uses official data, and covers domestic & imported cars — all at once.",
+      "평생 무료 · 무제한":"Free forever · unlimited",
+      "VIN·리콜·번호판 조회는 횟수 제한 없음. 사고이력만 카히스토리(외부) ₩770~2,200원.":"Unlimited VIN, recall, and plate lookups. Only accident history is on Carhistory (external), ₩770–2,200.",
+      "공식 데이터원":"Official data sources",
+      "한국교통안전공단 941건 + ISO 3779 + NHTSA vPIC. 자체 입력 데이터 0건.":"KOTSA 941 entries + ISO 3779 + NHTSA vPIC. Zero self-entered data.",
+      "현대·기아·제네시스부터 BMW·벤츠·테슬라까지 전 세계 제조사 코드 인식.":"Recognizes maker codes worldwide — from Hyundai, Kia, and Genesis to BMW, Mercedes, and Tesla.",
+      "회원가입·본인인증 없이 평균 30초. 개인정보 0건 보관.":"About 30 seconds, no signup or ID check. Zero personal data stored.",
+      // Free vs paid sample
+      "무료로 충분할까? PDF가 필요할까?":"Is free enough, or do you need the PDF?","샘플":"Sample",
+      "5초 안에 결정 — 매물 1차 거름이면 무료, 협상·계약·매도용이면 종합 리포트":"Decide in 5 seconds — free for a first screen, the full report for negotiation, contracts, or selling.",
+      "무료 4가지":"4 free checks","로그인 없이 30초":"30 sec, no login","평생 무료 · 무제한 조회":"Free forever · unlimited lookups",
+      "VIN 디코딩 (제조사·연식·원산지)":"VIN decoding (maker · year · origin)",
+      "NHTSA vPIC 상세 (모델·엔진·차종)":"NHTSA vPIC detail (model · engine · body)",
+      "내 차량 관련 리콜 (Carfax 스타일)":"Recalls for your car (Carfax-style)",
+      "차량번호 분석 (자가/렌트/영업)":"Plate analysis (private/rental/commercial)",
+      "AI 한 줄 요약 + 아차 점수":"One-line AI summary + ACHA score",
+      "PDF 영구 보관":"Permanent PDF storage","Claude AI 5섹션 상세 분석":"Claude AI 5-section deep analysis",
+      "언제?":"When?","매물 빠르게 1차 거를 때 · 차주 본인 점검":"Quick first screening · owner self-check",
+      "무료 결과 미리보기 →":"Preview the free result →","⭐ 매물 비교 / 협상 권장":"⭐ Best for comparing & negotiating",
+      "종합 리포트 PDF":"Full report PDF","PDF 영구 보관 · 재활용":"Permanent PDF · reusable","단건 결제 · 유효기간 없음":"One-time payment · no expiry",
+      "무료 4가지 모두 포함":"All 4 free checks included","Claude AI 5섹션":"Claude AI 5 sections",
+      "— 프로파일·리콜위험·체크리스트·협상포인트·종합의견":"— profile · recall risk · checklist · negotiation points · overall opinion",
+      "외부 공식기관 가이드":"Official external-agency guide",
+      "— 카히스토리·자동차365 자동입력 링크 PDF 동봉":"— Carhistory & Auto365 auto-fill links bundled in the PDF",
+      "— 매물 비교·딜러 협상·재매도 시 재활용":"— reuse it for comparing listings, dealer negotiation, or reselling",
+      "사고이력은 카히스토리 별도 결제 (₩770~2,200, 외부 링크 자동입력)":"Accident history is a separate Carhistory payment (₩770–2,200, external link auto-fill)",
+      "매물 1대로 좁힌 후 · 협상·계약 직전 · 매도자 신뢰 어필용":"After narrowing to one car · just before negotiating/signing · to build seller trust",
+      "종합 리포트 샘플 보기 →":"See a full-report sample →",
+      "상세 비교표 펼치기":"Expand detailed comparison","기능":"Feature","무료":"Free",
+      "VIN 디코딩 + NHTSA":"VIN decoding + NHTSA","내 차량 리콜 매칭":"Your-car recall matching","번호판 분석":"Plate analysis",
+      "AI 한 줄 요약":"One-line AI summary","외부 가이드 PDF 동봉":"External guide bundled in PDF","영구 PDF 보관":"Permanent PDF storage",
+      "사용 횟수":"Usage count","무제한":"Unlimited","1회 / 결제":"1 per payment","내 차도 무료로 조회하기 →":"Check my car for free too →",
+      // Pricing
+      "AI 요약 포함 · 합리적인 가격":"Includes AI summary · fair pricing","필요한 만큼만,":"Pay only for","딱 맞는 가격":"what you need",
+      "기본 검증은 평생 무료 · 정밀 분석만 유료로":"Basic checks free forever · pay only for deep analysis",
+      "지금 이용 가능":"Available now","로그인 불필요 · 무제한":"No login · unlimited","평생 무료":"lifetime free",
+      "VIN(권장) + 차량번호 함께 입력 시 4가지 모두":"Enter VIN (recommended) + plate to get all 4",
+      "차량 기본정보":"Basic vehicle info","VIN으로 제조사·연식·원산지 식별":"Identify maker, year & origin from VIN",
+      "내 차량 관련 리콜":"Recalls for your car","941건 DB와 연식·모델 자동 대조 (Carfax 스타일 카드)":"Auto-matched against the 941-entry DB by year & model (Carfax-style cards)",
+      "자가용·렌터카·영업용 용도 판별":"Detects private / rental / commercial use","규칙 기반":"rule-based",
+      "예: \"양호 — 사도 좋은 차 (84점)\"":"e.g. \"Good — safe to buy (84 pts)\"","지금 무료로 조회 →":"Look it up free now →",
+      "결제 후 이용":"After payment","무료 4가지 + 추가 2가지":"4 free + 2 add-ons","/건부터":"/report+","/건":"/report",
+      "위 무료 + AI 해석 + 보관 가능 문서":"All the free items + AI interpretation + a storable document",
+      "Claude AI 상세 분석":"Claude AI deep analysis",
+      "차량 평판 · 리콜 위험도 · 구매 체크리스트 · 협상 포인트 — Claude AI가 5섹션으로 해석":"Vehicle reputation · recall risk · buying checklist · negotiation points — interpreted by Claude AI in 5 sections",
+      "PDF 리포트 저장":"Save PDF report","오픈 예정":"Coming soon",
+      "A4 1쪽 공식 문서로 조회 결과를 보관·공유. 토스 가맹점 심사 통과 후 단계적 오픈.":"Save & share your result as a 1-page A4 official document. Rolling out after Toss merchant review.",
+      "유료 상품 자세히 보기 →":"See paid plans in detail →",
+      "언제 무료만으로 충분한가?":"When is free enough?",
+      "매물을 빠르게 1차 거를 때 (VIN·리콜 검증).":"When you just need a quick first screen (VIN & recall check).",
+      "언제 유료가 필요한가?":"When do you need the paid plan?",
+      "1대로 좁힌 후 협상·계약 전 AI 해석과 보관 가능한 공식 문서가 필요할 때.":"When you've narrowed to one car and need AI interpretation and a storable official document before negotiating or signing.",
+      "건당 결제":"Pay per report","월 구독":"Monthly","최대 60%↓":"up to 60% off",
+      "필요한 만큼만 결제 — 단건 또는 묶음 5건":"Pay only for what you need — a single report or a 5-pack",
+      "옵션 1 · 단건":"Option 1 · single","종합 리포트 (단건)":"Full report (single)",
+      "VIN 차량정보 + 리콜 + Claude AI + PDF · 1회 이용권":"VIN vehicle info + recalls + Claude AI + PDF · 1 use",
+      "VIN 차량 기본정보 (제조사·연식)":"VIN basic vehicle info (maker · year)","리콜 매칭 (국토부 공공데이터)":"Recall matching (MOLIT open data)",
+      "Claude AI 종합 분석":"Claude AI full analysis","PDF 다운로드":"PDF download",
+      "추천 — 차량 1대 구매 전 빠른 검증":"Recommended — a quick check before buying one car",
+      "⭐ 추천 · 17%↓":"⭐ Best value · 17% off","⭐ 추천":"⭐ Recommended","옵션 2 · 묶음 5건":"Option 2 · 5-pack","종합 리포트 묶음 5건":"Full report 5-pack",
+      "5회 이용권 · 단건 대비 17% 절약 (유효기간은 오픈 시 약관에 확정)":"5 uses · save 17% vs. single (validity set in the terms at launch)",
+      "/5건":"/5","건당 ₩1,580 — 단건 대비 1,600원 절약":"₩1,580 each — save ₩1,600 vs. single",
+      "종합 리포트 5회 이용권":"Full report — 5 uses","유효기간·보관 기간은 오픈 시 약관에 확정":"Validity & storage period set in the terms at launch",
+      "전자상거래법 청약철회권 보장 (관련법 준수)":"Right of withdrawal guaranteed under e-commerce law (fully compliant)",
+      "추천 — 매물 3~5대 비교 검토 중인 구매자":"Recommended — buyers comparing 3–5 listings",
+      "공식기관 통합 가이드":"Official-agency guide","ACHAJA 무료 조회 후 거쳐야 할 3종 공식기관":"3 official agencies to visit after your free ACHAJA lookup",
+      "카히스토리":"Carhistory","770~2,200원":"₩770–2,200","리콜센터":"Recall Center","자동차365":"Auto365","전체 가이드 보기 →":"See the full guide →",
+      "※ ACHAJA는 사고이력·소유정보·리콜수리상태를 직접 보관·중개하지 않으며, 본 안내는 외부 공식 출처로 가는 가이드입니다.":"※ ACHAJA does not store or broker accident history, ownership, or recall-repair status; this is a guide to official external sources.",
+      "정기적으로 차량을 검수한다면":"If you inspect cars regularly","월 5회 종합 리포트":"5 full reports per month","/월":"/mo",
+      "월 5회 종합 리포트 포함":"Includes 5 full reports per month","AI 상세 분석 포함":"Includes detailed AI analysis","리포트 PDF 다운로드":"Report PDF download",
+      "이런 분께 추천 — 매달 1~5대 둘러보는 분":"For those browsing 1–5 cars a month","무제한 조회 · 모든 기능":"Unlimited lookups · all features",
+      "월 3건 이상 조회 시 단건 결제보다 저렴":"Cheaper than pay-per-report at 3+ lookups a month","종합 리포트 월 사용량 확장":"Expanded monthly full-report allowance",
+      "Claude AI 분석 (모든 플랜 동일 모델)":"Claude AI analysis (same model on every plan)","리포트 보관 (오픈 시 약관에 보관 기간 확정)":"Report storage (retention set in the terms at launch)",
+      "관심 차량 알림":"Watched-car alerts","이런 분께 추천 — 신중하게 여러 대 비교 중인 분":"For those carefully comparing several cars",
+      "사업자·딜러 전용":"For businesses & dealers","Premium 전체 기능":"All Premium features","API 연동":"API integration","(사내 시스템)":"(in-house systems)",
+      "일괄 조회 (CSV 업로드)":"Bulk lookup (CSV upload)","전담 매니저 지원":"Dedicated manager support",
+      "이런 분께 추천 — 매매상사·검수기사·차량 관리 업체":"For dealerships, inspectors & fleet managers",
+      "전체 비교 — 무료 4가지 + 유료 추가 2가지":"Full comparison — 4 free + 2 paid add-ons","플랜별 가격 · 사용 횟수 · 제공 항목을 한눈에":"Prices, usage and features by plan at a glance",
+      "단건":"Single","묶음 5건 ⭐":"5-pack ⭐","(건당 ₩1,580)":"(₩1,580 each)","구독":"Subscription","₩4,900~/월":"₩4,900~/mo",
+      "리콜 정보":"Recall info","(규칙 기반)":"(rule-based)","(준비 중)":"(in prep)",
+      "사용 횟수 / 유효기간":"Usage / validity","1회":"1 use","유효기간 없음":"no expiry","5회":"5 uses","유효기간 추후 확정":"validity TBD","월 5회~무제한":"5/mo to unlimited",
+      "사고이력 조회":"Accident-history lookup","(외부 안내)":"(external)",
+      "※ 모든 유료 옵션에서 ACHAJA가 제공하는 데이터·분석 항목은 동일합니다. 단건/묶음/구독은 사용 횟수와 단가가 다를 뿐입니다. 사고이력은 보험개발원 카히스토리에서 별도 조회하세요.":"※ Every paid option provides the same ACHAJA data & analysis; single, pack, and subscription differ only in usage count and unit price. Look up accident history separately at KIDI Carhistory.",
+      "결제 전 신뢰 체크리스트":"Pre-payment trust checklist","공공 데이터":"Public data","국토부 · 교통안전공단":"MOLIT · KOTSA",
+      "결제 보안":"Payment security","토스페이먼츠":"TossPayments","국제 표준":"Global standards","사업자 등록":"Business registration",
+      "108-16-82025 · 코하":"108-16-82025 · Koha","환불 보장":"Refund guarantee","전자상거래법 100%":"100% per e-commerce law",
+      "가격은 변경될 수 있습니다. 본인인증(NICE)·결제(토스페이먼츠) 연동 후 순차 오픈.":"Prices may change. Rolling out after identity (NICE) and payment (TossPayments) integration.",
+      // Result actions
+      "결과를 메일·카톡으로 받아 보관 가능":"Get your result by email or KakaoTalk and keep it",
+      "조회 후 결과 화면 하단에서":"After your lookup, at the bottom of the result screen you can",
+      "공유":"Share","(카카오톡·X·링크 복사) +":"(KakaoTalk · X · copy link) and","이메일 발송":"send by email",
+      "이 가능합니다. 매물 비교용으로 카톡 그룹에 보내거나 본인 메일에 보관해 두세요.":". Send it to a KakaoTalk group to compare listings, or keep it in your own inbox.",
+      "공유 무료":"Share free","메일 발송 무료":"Email free","PDF 영구 보관 ₩1,900":"Permanent PDF ₩1,900",
+      // Blog
+      "꼭 읽을 가이드":"Must-read guides","총 40편":"40 total","전체 →":"All →","중고차 사기 전 1순위로 봐야 할 4편.":"The top 4 to read before buying a used car.",
+      "사기 예방":"Scam prevention","중고차 사기 유형 7가지와 예방법":"7 used-car scam types and how to avoid them",
+      "구매 체크리스트":"Buying checklist","중고차 살 때 꼭 확인할 10가지":"10 things to check when buying a used car",
+      "침수차 판별":"Flood-car detection","중고차 침수 여부 확인 5가지 방법":"5 ways to tell if a used car was flooded",
+      "구매 채널":"Where to buy","매매상사·직거래·경매·인증 비교":"Dealer vs. private vs. auction vs. certified","나머지 36편 더 보기 →":"See the other 36 guides →",
+      // FAQ
+      "자주 묻는 질문":"Frequently asked questions","차량 이력은 어떻게 조회하나요?":"How do I look up a car's history?",
+      "차대번호(VIN) 17자리 입력 시 제조사·원산지·연식과 해당 제조사의 최신 리콜 이력을 무료로 조회할 수 있습니다. 차량번호만 입력하면 번호판 용도(자가용/렌터카/영업용)와 등록체계만 확인됩니다.":"Enter the 17-digit VIN to look up the maker, origin, year, and that maker's latest recalls for free. Entering only the plate number shows just the plate type (private/rental/commercial) and the registration scheme.",
+      "사고·침수 이력도 바로 볼 수 있나요?":"Can I see accident & flood history too?",
+      "ACHAJA는 사고이력 조회·중개·재판매를 일절 수행하지 않습니다. 사고이력은":"ACHAJA never looks up, brokers, or resells accident history. For accident history, visit",
+      "보험개발원 카히스토리":"KIDI Carhistory",
+      "공식 사이트에서 건당 770~2,200원으로 직접 조회하실 수 있습니다. ACHAJA에서는 VIN 차량 기본정보·리콜 매칭·Claude AI 분석을 1,900원 종합 리포트로 제공합니다.":"official site, where you can look it up directly for ₩770–2,200 each. On ACHAJA, VIN basic info, recall matching, and Claude AI analysis come as a ₩1,900 full report.",
+      "자동차 리콜 조회는 무료인가요?":"Is recall lookup free?",
+      "네, 완전 무료입니다. 한국교통안전공단 자동차리콜센터의 공식 공공데이터(941건)를 기반으로 제조사와 차명으로 리콜 여부를 확인할 수 있습니다.":"Yes, completely free. Based on the KOTSA Auto Recall Center's official open data (941 entries), you can check recalls by maker and model name.",
+      "데이터는 어디서 오나요?":"Where does the data come from?",
+      "VIN 디코딩은 ISO 3779 국제표준, 리콜은 한국교통안전공단 자동차리콜센터 공공데이터, 뉴스는 네이버 뉴스 검색 API를 활용합니다.":"VIN decoding uses the ISO 3779 international standard, recalls use KOTSA Auto Recall Center open data, and news uses the Naver News Search API.",
+      "국산차만 되나요, 수입차도 조회할 수 있나요?":"Domestic only, or imported cars too?","국산·수입차 모두 지원":"Both domestic & imported are supported",
+      "합니다. VIN 디코딩은 현대·기아·제네시스·KG모빌리티 등 국산 브랜드부터 벤츠·BMW·아우디·폭스바겐·포르쉐·도요타·렉서스·혼다·닛산·테슬라·포드·볼보·재규어·랜드로버·페라리·람보르기니까지 전 세계 주요 브랜드를 인식합니다. 리콜 DB는 한국교통안전공단 자료 기준이라 국내 정식 유통 차량을 커버합니다. 병행수입차는 매칭되지 않을 수 있습니다.":". VIN decoding recognizes major brands worldwide — from Korean makers like Hyundai, Kia, Genesis, and KG Mobility to Mercedes, BMW, Audi, Volkswagen, Porsche, Toyota, Lexus, Honda, Nissan, Tesla, Ford, Volvo, Jaguar, Land Rover, Ferrari, and Lamborghini. The recall DB follows KOTSA data, so it covers officially distributed domestic vehicles. Gray-import cars may not match.",
+      "유료 결제 시 어디까지 정보를 볼 수 있나요?":"What do I get when I pay?","종합 리포트 1,900원/건":"Full Report (₩1,900)",
+      "은 VIN 차량정보, 국토부 리콜 매칭, Claude AI 종합 분석, PDF 다운로드를 포함합니다. 사고이력은 ACHAJA가 제공하지 않으며":" includes VIN vehicle info, MOLIT recall matching, Claude AI full analysis, and PDF download. ACHAJA does not provide accident history;",
+      "(건당 770~2,200원)에서 직접 조회하실 수 있습니다. 월 구독 Basic 4,900원 / Premium 9,900원 / Dealer 29,900원은 오픈 예정입니다.":" (₩770–2,200 each) lets you look it up directly. Monthly plans — Basic ₩4,900 / Premium ₩9,900 / Dealer ₩29,900 — are coming soon.",
+      "유료 서비스는 언제 오픈되나요?":"When do paid services launch?",
+      "본인인증(NICE/KCB)과 결제(토스페이먼츠) 가맹점 심사가 완료되는 대로 단계적으로 오픈 예정입니다. 정확한 일정은 확정되는 대로 공지합니다.":"They'll roll out in stages once identity verification (NICE/KCB) and payment (TossPayments) merchant review are complete. We'll announce the exact schedule once confirmed.",
+      // Bottom CTA
+      "지금 바로 무료 조회":"Look it up free, right now","VIN·차량번호 한 줄 — 30초면 결과 확인":"One line — VIN or plate — results in 30 seconds",
+      "지금 무료 조회 시작 →":"Start your free lookup →","로그인 불필요 · 100% 무료 · 회원가입 없음":"No login · 100% free · no signup",
+      // Footer
+      "서비스":"Services","차량 이력조회":"Vehicle history lookup","리콜 검색":"Recall search","공식기관 가이드":"Official-agency guide","상품안내":"Plans",
+      "미리보기":"Previews","무료 결과 샘플":"Free result sample","종합 리포트 샘플":"Full report sample",
+      "콘텐츠":"Content","블로그 (40편)":"Blog (40)","중고차 체크리스트":"Used-car checklist","VIN 조회 가이드":"VIN lookup guide",
+      "회사 / 정책":"Company / policy","소개":"About","이용약관":"Terms","개인정보처리방침":"Privacy policy",
+      "데이터 출처: 국토교통부 · 보험개발원 카히스토리 · 한국교통안전공단 · NHTSA vPIC · ISO 3779":"Data sources: MOLIT · KIDI Carhistory · KOTSA · NHTSA vPIC · ISO 3779",
+      "상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com":"Company: Koha · CEO: Kim Yong-heon · Biz reg. no.: 108-16-82025 · Address: 145 Haemilyedang 1-ro, Jinjeop-eup, Namyangju-si, Gyeonggi-do, Korea · Tel: 010-8947-1841 · Email: koha3d77@gmail.com",
+      "© 2026 ACHAJA by 코하(Koha). All Rights Reserved.":"© 2026 ACHAJA by Koha. All Rights Reserved."
+    };
+    var PH = { "hero-q": "e.g. 12가3456 or a 17-digit VIN" };
+    var nodes = null;
+    function collect(){
+      nodes = [];
+      var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(n){
+          var p = n.parentNode; if(!p) return NodeFilter.FILTER_REJECT;
+          var t = p.nodeName;
+          if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT') return NodeFilter.FILTER_REJECT;
+          if(p.closest && p.closest('[data-noi18n]')) return NodeFilter.FILTER_REJECT;
+          if(!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var n; while((n=w.nextNode())) nodes.push(n);
+    }
+    function apply(lang){
+      if(!nodes) collect();
+      for(var i=0;i<nodes.length;i++){
+        var n=nodes[i];
+        if(n.__ko===undefined) n.__ko=n.nodeValue;
+        var ko=n.__ko, key=ko.trim(), en=I18N[key];
+        n.nodeValue = (lang==='en' && en!==undefined) ? ko.replace(key,en) : ko;
+      }
+      Object.keys(PH).forEach(function(id){
+        var el=document.getElementById(id); if(!el) return;
+        if(el.__ph===undefined) el.__ph=el.getAttribute('placeholder')||'';
+        el.setAttribute('placeholder', lang==='en'?PH[id]:el.__ph);
+      });
+      document.documentElement.lang = (lang==='en')?'en':'ko';
+      var lbl=document.getElementById('lang-toggle-label'); if(lbl) lbl.textContent=(lang==='en')?'한국어':'EN';
+      try{ localStorage.setItem('achaja_lang', lang); }catch(e){}
+      window.__achajaLang = lang;
+    }
+    function isBot(){
+      var ua=(navigator.userAgent||'');
+      return /bot|crawl|spider|slurp|mediapartners|googlebot|bingpreview|baidu|yandex|duckduck|facebookexternalhit|embedly|quora|pinterest|slackbot|twitterbot|whatsapp|telegrambot|lighthouse|headless|prerender/i.test(ua) || navigator.webdriver===true;
+    }
+    function detect(){
+      try{ var s=localStorage.getItem('achaja_lang'); if(s==='en'||s==='ko') return s; }catch(e){}
+      if(isBot()) return 'ko';
+      var nav=(navigator.language||navigator.userLanguage||'ko').toLowerCase();
+      return nav.indexOf('en')===0 ? 'en' : 'ko';
+    }
+    window.toggleLang=function(){ apply(window.__achajaLang==='en'?'ko':'en'); };
+    function init(){ apply(detect()); }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+  })();
+  </script>
   </body></html>                                                                       
