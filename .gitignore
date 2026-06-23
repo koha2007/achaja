@@ -45,5 +45,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Claude Code
+.claude/
+
 # Node
 node_modules/
