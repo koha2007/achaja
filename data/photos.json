@@ -1,0 +1,574 @@
+{
+ "note": "ACHAJA 사진 라이브러리. 출처: 위키미디어 공용(CC0·퍼블릭 도메인·CC BY만). 표시할 때 author·license·source로 출처 캡션을 단다.",
+ "photos": [
+  {
+   "id": "road-volcano",
+   "title": "끝없이 뻗은 도로와 산",
+   "tags": [
+    "hero",
+    "road",
+    "landscape"
+   ],
+   "author": "Jonatan Pie",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Mountain_Road_in_Iceland.jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/road-volcano.webp",
+   "file800": "/img/photos/road-volcano-800.webp"
+  },
+  {
+   "id": "road-green-valley",
+   "title": "초록 계곡을 지나는 도로",
+   "tags": [
+    "road",
+    "landscape",
+    "spring",
+    "summer"
+   ],
+   "author": "Vyacheslav Argenberg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Snostskali_Valley,_Mountain_road,_Khevi,_Georgia.jpg",
+   "w": 1600,
+   "h": 1063,
+   "file": "/img/photos/road-green-valley.webp",
+   "file800": "/img/photos/road-green-valley-800.webp"
+  },
+  {
+   "id": "road-fog-mountain",
+   "title": "안개 낀 산길",
+   "tags": [
+    "road",
+    "weather",
+    "fog",
+    "rain"
+   ],
+   "author": "Vyacheslav Argenberg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hai_Van_Pass_in_dense_fog,_Vietnam.jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/road-fog-mountain.webp",
+   "file800": "/img/photos/road-fog-mountain-800.webp"
+  },
+  {
+   "id": "road-autumn",
+   "title": "낙엽 쌓인 가을 길",
+   "tags": [
+    "road",
+    "autumn",
+    "season"
+   ],
+   "author": "Anthony Shaw",
+   "license": "Public domain",
+   "licenseUrl": "",
+   "source": "https://commons.wikimedia.org/wiki/File:Autumn_morning_on_Davyhulme_Road,_Urmston.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/road-autumn.webp",
+   "file800": "/img/photos/road-autumn-800.webp"
+  },
+  {
+   "id": "road-snow",
+   "title": "눈 덮인 겨울 길",
+   "tags": [
+    "road",
+    "winter",
+    "snow",
+    "weather",
+    "season"
+   ],
+   "author": "Wil540 art",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Albemarle_Road_in_the_Snow_Jan_2026_Brooklyn.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/road-snow.webp",
+   "file800": "/img/photos/road-snow-800.webp"
+  },
+  {
+   "id": "highway-city-day",
+   "title": "도심 고속도로",
+   "tags": [
+    "highway",
+    "city"
+   ],
+   "author": "Qiw007",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Coastal_Road,_Mumbai,_November_2025.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/highway-city-day.webp",
+   "file800": "/img/photos/highway-city-day-800.webp"
+  },
+  {
+   "id": "highway-city-night",
+   "title": "도심 고속도로 야경",
+   "tags": [
+    "highway",
+    "city",
+    "night"
+   ],
+   "author": "Qiw007",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Coastal_Road_(Mumbai),_by_night.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/highway-city-night.webp",
+   "file800": "/img/photos/highway-city-night-800.webp"
+  },
+  {
+   "id": "trails-curve",
+   "title": "곡선 도로의 빛 궤적",
+   "tags": [
+    "night",
+    "highway",
+    "hero"
+   ],
+   "author": "Caleb George seemoris",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Lines_of_Night_Traffic_(Unsplash).jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/trails-curve.webp",
+   "file800": "/img/photos/trails-curve-800.webp"
+  },
+  {
+   "id": "trails-avenue",
+   "title": "가로수 길의 빛 궤적",
+   "tags": [
+    "night",
+    "city"
+   ],
+   "author": "Inés Outumuro inesoutumuro",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Nighttime_Traffic_1_(Unsplash).jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/trails-avenue.webp",
+   "file800": "/img/photos/trails-avenue-800.webp"
+  },
+  {
+   "id": "trails-highway",
+   "title": "고속도로 빛 궤적",
+   "tags": [
+    "night",
+    "highway"
+   ],
+   "author": "Forbes Johnston",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Night_traffic_tails.jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/trails-highway.webp",
+   "file800": "/img/photos/trails-highway-800.webp"
+  },
+  {
+   "id": "trails-intersection",
+   "title": "교차로를 위에서 본 야경",
+   "tags": [
+    "night",
+    "city"
+   ],
+   "author": "Ferdinand Stöhr fellowferdi",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Traffic_at_night_(Unsplash).jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/trails-intersection.webp",
+   "file800": "/img/photos/trails-intersection-800.webp"
+  },
+  {
+   "id": "city-night-valley",
+   "title": "도시 야경과 도로",
+   "tags": [
+    "night",
+    "city"
+   ],
+   "author": "Kyle Murfin kwmurf",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Traffic_light_trails_in_LA_(Unsplash).jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/city-night-valley.webp",
+   "file800": "/img/photos/city-night-valley-800.webp"
+  },
+  {
+   "id": "kr-tollgate",
+   "title": "고속도로 요금소",
+   "tags": [
+    "korea",
+    "highway",
+    "tollgate"
+   ],
+   "author": "LandAndTree",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Gyeongbu_Expressway_Daejeon_IC_Tollgate_20240731_(01).jpg",
+   "w": 1600,
+   "h": 1201,
+   "file": "/img/photos/kr-tollgate.webp",
+   "file800": "/img/photos/kr-tollgate-800.webp"
+  },
+  {
+   "id": "kr-expressway-junction",
+   "title": "고속도로 분기점",
+   "tags": [
+    "korea",
+    "highway"
+   ],
+   "author": "LandAndTree",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Gyeongbu_Expressway_Hoedeok_Junction_and_Biryong_Junction_Entrances_20240731.jpg",
+   "w": 1600,
+   "h": 1201,
+   "file": "/img/photos/kr-expressway-junction.webp",
+   "file800": "/img/photos/kr-expressway-junction-800.webp"
+  },
+  {
+   "id": "kr-expressway-open",
+   "title": "탁 트인 고속도로",
+   "tags": [
+    "korea",
+    "highway",
+    "hero"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Highway_in_South_Korea_Expressway_(3).jpg",
+   "w": 1600,
+   "h": 891,
+   "file": "/img/photos/kr-expressway-open.webp",
+   "file800": "/img/photos/kr-expressway-open-800.webp"
+  },
+  {
+   "id": "kr-sign-seoul",
+   "title": "서울 방면 고속도로 표지판",
+   "tags": [
+    "korea",
+    "highway",
+    "sign"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Korea_Expressway_Signs.jpg",
+   "w": 1600,
+   "h": 1133,
+   "file": "/img/photos/kr-sign-seoul.webp",
+   "file800": "/img/photos/kr-sign-seoul-800.webp"
+  },
+  {
+   "id": "kr-expressway-clear",
+   "title": "맑은 날 고속도로",
+   "tags": [
+    "korea",
+    "highway"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Korea_Expressway_tollgate_ic.jpg",
+   "w": 1600,
+   "h": 890,
+   "file": "/img/photos/kr-expressway-clear.webp",
+   "file800": "/img/photos/kr-expressway-clear-800.webp"
+  },
+  {
+   "id": "kr-expressway-signs",
+   "title": "고속도로 안내 표지",
+   "tags": [
+    "korea",
+    "highway"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Korean_highway_Expressway_in_South_Korea_(8).jpg",
+   "w": 1600,
+   "h": 893,
+   "file": "/img/photos/kr-expressway-signs.webp",
+   "file800": "/img/photos/kr-expressway-signs-800.webp"
+  },
+  {
+   "id": "kr-tunnel",
+   "title": "고속도로 터널",
+   "tags": [
+    "korea",
+    "tunnel",
+    "highway"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Korean_highway_Expressway_in_South_Korea_Tunnel.jpg",
+   "w": 1600,
+   "h": 892,
+   "file": "/img/photos/kr-tunnel.webp",
+   "file800": "/img/photos/kr-tunnel-800.webp"
+  },
+  {
+   "id": "kr-tollgate-sign",
+   "title": "요금소 안내 표지",
+   "tags": [
+    "korea",
+    "highway",
+    "tollgate"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Pyeongtaek_tollgate_in_South_Korea_expressway_highway.jpg",
+   "w": 1600,
+   "h": 893,
+   "file": "/img/photos/kr-tollgate-sign.webp",
+   "file800": "/img/photos/kr-tollgate-sign-800.webp"
+  },
+  {
+   "id": "kr-expressway-hill",
+   "title": "언덕을 넘는 고속도로",
+   "tags": [
+    "korea",
+    "highway"
+   ],
+   "author": "Hankook12",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:South_Korea_Expressway_(9).jpg",
+   "w": 1600,
+   "h": 893,
+   "file": "/img/photos/kr-expressway-hill.webp",
+   "file800": "/img/photos/kr-expressway-hill-800.webp"
+  },
+  {
+   "id": "kr-crosswalk-night",
+   "title": "밤의 횡단보도",
+   "tags": [
+    "korea",
+    "city",
+    "night"
+   ],
+   "author": "H. Y. Shin 000",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:(Apgujeong-Sinsa)_20190312_050439.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/kr-crosswalk-night.webp",
+   "file800": "/img/photos/kr-crosswalk-night-800.webp"
+  },
+  {
+   "id": "kr-seoul-gate-night",
+   "title": "숭례문과 도심 야경",
+   "tags": [
+    "korea",
+    "city",
+    "night",
+    "seoul"
+   ],
+   "author": "tylerdurden1 from Los Angeles, USA",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Seoul-Namdaemun-at.night-02.jpg",
+   "w": 1600,
+   "h": 900,
+   "file": "/img/photos/kr-seoul-gate-night.webp",
+   "file800": "/img/photos/kr-seoul-gate-night-800.webp"
+  },
+  {
+   "id": "kr-seoul-street",
+   "title": "서울 도심 도로",
+   "tags": [
+    "korea",
+    "city",
+    "seoul"
+   ],
+   "author": "Immanuelle",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:View_of_Night_Traffic_from_Above_in_Seoul-3.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/kr-seoul-street.webp",
+   "file800": "/img/photos/kr-seoul-street-800.webp"
+  },
+  {
+   "id": "tire-motion",
+   "title": "달리는 바퀴",
+   "tags": [
+    "tire",
+    "care"
+   ],
+   "author": "Julian Povey from Bournemouth, UK",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Driving_rain_-_Flickr_-_a_whisper_of_unremitting_demand.jpg",
+   "w": 1600,
+   "h": 916,
+   "file": "/img/photos/tire-motion.webp",
+   "file800": "/img/photos/tire-motion-800.webp"
+  },
+  {
+   "id": "tire-stack",
+   "title": "쌓여 있는 타이어",
+   "tags": [
+    "tire",
+    "care",
+    "repair"
+   ],
+   "author": "PheobeLongneck",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Dirty_car_tires.jpg",
+   "w": 1600,
+   "h": 1068,
+   "file": "/img/photos/tire-stack.webp",
+   "file800": "/img/photos/tire-stack-800.webp"
+  },
+  {
+   "id": "gauges",
+   "title": "계기판",
+   "tags": [
+    "dashboard",
+    "warning",
+    "repair",
+    "care"
+   ],
+   "author": "The Car Spy",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:2005_BMW_645Ci_Cabriolet_-_Flickr_-_The_Car_Spy_(3).jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/gauges.webp",
+   "file800": "/img/photos/gauges-800.webp"
+  },
+  {
+   "id": "shifter",
+   "title": "변속 레버",
+   "tags": [
+    "interior",
+    "care"
+   ],
+   "author": "The Car Spy",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:2005_BMW_645Ci_Cabriolet_-_Flickr_-_The_Car_Spy.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/shifter.webp",
+   "file800": "/img/photos/shifter-800.webp"
+  },
+  {
+   "id": "workshop-lift",
+   "title": "정비소 리프트",
+   "tags": [
+    "repair",
+    "workshop"
+   ],
+   "author": "Leotard",
+   "license": "Public domain",
+   "licenseUrl": "",
+   "source": "https://commons.wikimedia.org/wiki/File:Auto_workshop02.jpg",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/workshop-lift.webp",
+   "file800": "/img/photos/workshop-lift-800.webp"
+  },
+  {
+   "id": "ev-plug",
+   "title": "전기차 충전 플러그",
+   "tags": [
+    "ev",
+    "charging"
+   ],
+   "author": "Syced",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Electric_charging_of_Tokyo_Gas_car_2.jpg",
+   "w": 1600,
+   "h": 1205,
+   "file": "/img/photos/ev-plug.webp",
+   "file800": "/img/photos/ev-plug-800.webp"
+  },
+  {
+   "id": "ev-charging-bokeh",
+   "title": "전기차 충전",
+   "tags": [
+    "ev",
+    "charging"
+   ],
+   "author": "Ivan Radic",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_an_electric_car_charging._Traffic_lights_in_a_blurry_background.jpg",
+   "w": 1600,
+   "h": 1064,
+   "file": "/img/photos/ev-charging-bokeh.webp",
+   "file800": "/img/photos/ev-charging-bokeh-800.webp"
+  },
+  {
+   "id": "ev-charging-night",
+   "title": "밤의 전기차 충전소",
+   "tags": [
+    "ev",
+    "charging",
+    "night"
+   ],
+   "author": "Ivan Radic",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Electric_car_charging_(9213).jpg",
+   "w": 1600,
+   "h": 1198,
+   "file": "/img/photos/ev-charging-night.webp",
+   "file800": "/img/photos/ev-charging-night-800.webp"
+  },
+  {
+   "id": "tunnel-amber",
+   "title": "주황빛 터널",
+   "tags": [
+    "tunnel",
+    "road"
+   ],
+   "author": "Kurt Kaiser",
+   "license": "CC0",
+   "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "source": "https://commons.wikimedia.org/wiki/File:Traffic_tunnel_pedestrian_sidewalk_2.jpg",
+   "w": 1600,
+   "h": 1200,
+   "file": "/img/photos/tunnel-amber.webp",
+   "file800": "/img/photos/tunnel-amber-800.webp"
+  },
+  {
+   "id": "fuel-station-night",
+   "title": "밤의 주유소",
+   "tags": [
+    "fuel",
+    "price",
+    "night"
+   ],
+   "author": "Harrison Keely",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:A_modern_BP_gas_station_or_filling_station_in_the_United_States_01.jpg",
+   "w": 1600,
+   "h": 1180,
+   "file": "/img/photos/fuel-station-night.webp",
+   "file800": "/img/photos/fuel-station-night-800.webp"
+  }
+ ]
+}

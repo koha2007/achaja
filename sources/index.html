@@ -53,27 +53,33 @@
 body{min-height:100dvh;}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
 </style>
-<link rel="stylesheet" href="/css/app.css"/>
+<link rel="stylesheet" href="/css/app.css?v=4053e161ac"/>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen pb-24">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">본문으로 건너뛰기</a>
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-14">
-    <a href="/" class="flex items-center gap-2"><span class="font-headline text-lg font-bold tracking-tight text-primary-container dark:text-primary">ACHAJA</span></a>
-    <nav class="hidden md:flex items-center gap-1">
-      <a href="/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">홈</a>
-      <a href="/news" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">뉴스</a>
-      <a href="/blog/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">블로그</a>
-      <a href="/history" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">이력조회</a>
-      <a href="/parts" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">리콜</a>
-      <a href="/pricing/" class="text-muted hover:text-on-surface font-headline text-xs font-semibold px-3 py-1.5 rounded-lg">상품</a>
-    </nav>
-    <div class="flex items-center gap-1">
-      <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted"><span class="material-symbols-outlined dark:hidden">dark_mode</span><span class="material-symbols-outlined hidden dark:inline">light_mode</span></button>
+  <!-- @header active=buy -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-header-bg/85 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 px-4 md:px-6 h-14">
+      <a href="/" class="flex items-center gap-2" aria-label="ACHAJA 홈">
+        <span class="font-headline text-lg font-extrabold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>
+      </a>
+      <nav aria-label="주요 메뉴" class="hidden md:flex items-center gap-1">
+        <a href="/buy/" aria-current="page" class="text-primary-container dark:text-primary bg-active-bg/50 dark:bg-active-bg/30 font-bold text-sm px-3 py-2 rounded-lg transition-colors">살 때</a>
+        <a href="/repair/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">아플 때</a>
+        <a href="/care/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">관리</a>
+        <a href="/news" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">소식</a>
+      </nav>
+      <div class="flex items-center gap-1">
+        <button onclick="toggleTheme()" aria-label="테마 전환" class="p-2 rounded-lg text-muted hover:text-on-surface active:scale-95 transition-transform">
+          <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+          <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+        </button>
+        <a href="/my" class="hidden md:inline-flex items-center gap-1 text-sm font-semibold px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">garage</span>내 차</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+  <!-- /@header -->
 
 <main id="main" class="pt-14 max-w-3xl mx-auto px-margin">
 
@@ -251,24 +257,66 @@ body{min-height:100dvh;}
   </div>
 </section>
 
-<footer class="px-margin py-lg border-t border-app-border text-center mt-xl">
-  <p class="text-[10px] text-muted-strong">데이터 출처: 보험개발원 카히스토리 · 한국교통안전공단 자동차리콜센터 · 국토교통부 자동차365</p>
-  <p class="mt-xs text-[10px] text-muted-strong">상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com</p>
-  <p class="mt-xs text-[10px] text-muted">© 2026 ACHAJA by 코하(Koha). All Rights Reserved.</p>
-  <p class="mt-xs text-[10px] text-muted"><a href="/about/" class="hover:underline">소개</a> · <a href="/pricing/" class="hover:underline">상품안내</a> · <a href="/sources/" class="hover:underline">공식기관 가이드</a> · <a href="/terms/" class="hover:underline">이용약관</a> · <a href="/privacy/" class="hover:underline">개인정보처리방침</a></p>
-</footer>
+    <!-- @footer -->
+  <footer class="px-margin pt-xl pb-lg border-t border-app-border mt-xl">
+    <nav aria-label="사이트맵" class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-5xl mx-auto mb-lg text-left">
+      <div>
+        <p class="font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">도구</p>
+        <ul class="space-y-1.5">
+          <li><a href="/history" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">매물 체크(차량 조회)</a></li>
+          <li><a href="/parts" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">리콜 조회</a></li>
+          <li><a href="/sources/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">공식기관 가이드</a></li>
+          <li><a href="/pricing/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">상품안내</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">상황별 가이드</p>
+        <ul class="space-y-1.5">
+          <li><a href="/buy/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">살 때</a></li>
+          <li><a href="/repair/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">아플 때</a></li>
+          <li><a href="/care/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">관리</a></li>
+          <li><a href="/news" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">소식</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">콘텐츠</p>
+        <ul class="space-y-1.5">
+          <li><a href="/blog/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">전체 가이드</a></li>
+          <li><a href="/blog/used-car-checklist/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">중고차 체크리스트</a></li>
+          <li><a href="/blog/engine-warning-light/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">엔진 경고등</a></li>
+          <li><a href="/blog/vehicle-inspection-guide/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">자동차 정기검사</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">회사·정책</p>
+        <ul class="space-y-1.5">
+          <li><a href="/about/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">소개</a></li>
+          <li><a href="/terms/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">이용약관</a></li>
+          <li><a href="/privacy/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">개인정보처리방침</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="max-w-5xl mx-auto text-center border-t border-app-border pt-md space-y-1">
+      <p class="text-[11px] text-muted-strong">데이터 출처: 국토교통부 · 한국교통안전공단 · 보험개발원 카히스토리(외부 안내) · NHTSA vPIC · ISO 3779 · 사진: 위키미디어 공용</p>
+      <p class="text-[11px] text-muted">상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com</p>
+      <p class="text-[11px] text-muted">© 2026 ACHAJA by 코하(Koha). All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- /@footer -->
 
 </main>
 
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">
-  <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
-    <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">home</span><span class="font-headline text-[10px] font-medium mt-0.5">홈</span></a>
-    <a href="/news" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">newspaper</span><span class="font-headline text-[10px] font-medium mt-0.5">뉴스</span></a>
-    <a href="/blog/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">article</span><span class="font-headline text-[10px] font-medium mt-0.5">블로그</span></a>
-    <a href="/history" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">history</span><span class="font-headline text-[10px] font-medium mt-0.5">이력조회</span></a>
-    <a href="/pricing/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">sell</span><span class="font-headline text-[10px] font-medium mt-0.5">상품</span></a>
-  </div>
-</nav>
+  <!-- @tabbar active=buy -->
+  <nav aria-label="하단 메뉴" class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">
+    <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
+      <a href="/buy/" aria-current="page" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">directions_car</span><span class="text-[10px] font-bold mt-0.5">살 때</span></a>
+      <a href="/repair/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">car_repair</span><span class="text-[10px] font-medium mt-0.5">아플 때</span></a>
+      <a href="/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-medium mt-0.5">홈</span></a>
+      <a href="/care/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">handyman</span><span class="text-[10px] font-medium mt-0.5">관리</span></a>
+      <a href="/my" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">garage</span><span class="text-[10px] font-medium mt-0.5">내 차</span></a>
+    </div>
+  </nav>
+  <!-- /@tabbar -->
 
 <script>
 function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}
