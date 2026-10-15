@@ -10,10 +10,14 @@ function photo(id) {
   return p;
 }
 
-// 출처 캡션 (CC BY 계열은 표기 의무, CC0·퍼블릭 도메인도 관례상 표기)
+// 출처 캡션 (CC BY 계열은 표기 의무, CC0·퍼블릭 도메인·Unsplash도 관례상 표기)
+const site = (p) => p.site || '위키미디어 공용';
+const creditText = (p) => (p.site ? `사진: ${p.author} · ${p.site}` : `사진: ${p.author} · ${p.license} · ${site(p)}`);
 function credit(id) {
   const p = photo(id);
-  return `사진: <a href="${esc(p.source)}" target="_blank" rel="noopener" class="hover:underline">${esc(p.author)}</a> · ${esc(p.license)} · 위키미디어 공용`;
+  return p.site
+    ? `사진: <a href="${esc(p.source)}" target="_blank" rel="noopener" class="hover:underline">${esc(p.author)}</a> · ${esc(p.site)}`
+    : `사진: <a href="${esc(p.source)}" target="_blank" rel="noopener" class="hover:underline">${esc(p.author)}</a> · ${esc(p.license)} · ${site(p)}`;
 }
 
 // 반응형 사진 <img> — 800/1600 WebP. eager=true는 첫 화면 사진만
@@ -77,4 +81,4 @@ body{min-height:100dvh;}
 
 const THEME_SCRIPT = `<script>function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}</script>`;
 
-module.exports = { esc, photo, credit, img, head, THEME_SCRIPT, photos };
+module.exports = { esc, photo, credit, creditText, img, head, THEME_SCRIPT, photos };

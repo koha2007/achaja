@@ -4,7 +4,7 @@
 // 사용: node scripts/gen-news.js && node scripts/build-layout.js
 const fs = require('fs');
 const path = require('path');
-const { esc, img, head, THEME_SCRIPT, photo } = require('./lib/page');
+const { esc, img, head, THEME_SCRIPT, photo, creditText } = require('./lib/page');
 
 const ROOT = path.resolve(__dirname, '..');
 const NEW = fs.existsSync(path.join(ROOT, 'data/new.json')) ? [...require('../data/new.json').items].sort((a, b) => b.date.localeCompare(a.date)) : [];
@@ -21,7 +21,7 @@ const CATS = [
 ];
 const catPhotos = Object.fromEntries(CATS.map(([k, , id]) => {
   const p = photo(id);
-  return [k, { src: p.file800, srcset: `${p.file800} 800w, ${p.file} 1600w`, alt: p.title, credit: `사진: ${p.author} · ${p.license} · 위키미디어 공용`, source: p.source }];
+  return [k, { src: p.file800, srcset: `${p.file800} 800w, ${p.file} 1600w`, alt: p.title, credit: creditText(p), source: p.source }];
 }));
 
 function newStrip() {
@@ -67,7 +67,7 @@ const page = `${head({
     <div class="max-w-5xl mx-auto px-margin pt-lg pb-md min-h-[168px] md:min-h-[200px] flex flex-col justify-end">
       <h1 id="news-title" class="text-3xl md:text-4xl font-extrabold text-white">소식</h1>
       <p class="text-white/90 text-[14px] mt-1">같은 사건 기사는 하나로 묶었어요. 제목을 누르면 원문 언론사로 이동해요.</p>
-      <p class="photo-credit !text-white/55 mt-sm"><span id="cat-credit">사진: ${esc(photo('kr-expressway-open').author)} · ${esc(photo('kr-expressway-open').license)} · 위키미디어 공용</span> · 분위기 사진</p>
+      <p class="photo-credit !text-white/55 mt-sm"><span id="cat-credit">${esc(creditText(photo('kr-expressway-open')))}</span> · 분위기 사진</p>
     </div>
   </section>
 

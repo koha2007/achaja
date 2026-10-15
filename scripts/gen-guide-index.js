@@ -8,9 +8,9 @@ const guides = require('../data/guides.json');
 
 const ROOT = path.resolve(__dirname, '..');
 const HUBS = [
-  ['buy', '살 때', '/buy/', '중고차 매물을 보러 가기 전에 확인할 것', 'kr-expressway-open'],
-  ['repair', '아플 때', '/repair/', '경고등·이상 소음·고장 대처', 'gauges'],
-  ['care', '관리', '/care/', '정비 주기·타이어·검사·보험', 'road-green-valley'],
+  ['buy', '살 때', '/buy/', '중고차 매물을 보러 가기 전에 확인할 것', 'u-hub-buy'],
+  ['repair', '아플 때', '/repair/', '경고등·이상 소음·고장 대처', 'u-hub-repair'],
+  ['care', '관리', '/care/', '정비 주기·타이어·검사·보험', 'u-hub-care'],
 ];
 
 function info(slug) {

@@ -23,7 +23,7 @@ const t = (ko, en) => { PAIRS.set(ko, en); return esc(ko); };
   ['콘텐츠', 'Content'], ['전체 가이드', 'All guides'], ['중고차 체크리스트', 'Used-car checklist'],
   ['엔진 경고등', 'Engine warning light'], ['자동차 정기검사', 'Vehicle inspection'], ['회사·정책', 'Company / policy'],
   ['소개', 'About'], ['이용약관', 'Terms'], ['개인정보처리방침', 'Privacy policy'], ['본문으로 건너뛰기', 'Skip to content'],
-  ['데이터 출처: 국토교통부 · 한국교통안전공단 · 보험개발원 카히스토리(외부 안내) · NHTSA vPIC · ISO 3779 · 사진: 위키미디어 공용',
+  ['데이터 출처: 국토교통부 · 한국교통안전공단 · 보험개발원 카히스토리(외부 안내) · NHTSA vPIC · ISO 3779 · 사진: Unsplash · 위키미디어 공용',
     'Data sources: MOLIT · KOTSA · KIDI Carhistory (external) · NHTSA vPIC · ISO 3779 · Photos: Wikimedia Commons'],
   ['상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com',
     'Company: Koha · CEO: Kim Yong-heon · Business reg. no.: 108-16-82025 · Address: 145 Haemilyedang 1-ro, Jinjeop-eup, Namyangju-si, Gyeonggi-do · Tel: 010-8947-1841 · Email: koha3d77@gmail.com'],
@@ -42,7 +42,7 @@ const HUB_LABEL = { buy: '살 때', repair: '아플 때', care: '관리' };
 
 // ── 구역 ────────────────────────────────────────────────────────
 function hero() {
-  const ph = 'trails-curve';
+  const ph = 'u-home-hero';
   return `  <!-- 히어로: 사진 + 한 문장 + 조회 한 칸 -->
   <section class="relative isolate overflow-hidden" aria-labelledby="hero-title">
     <div class="absolute inset-0 -z-10">${img(ph, { cls: 'w-full h-full object-cover', eager: true })}</div>

@@ -26,7 +26,7 @@ const HUBS = {
     h1: '살 때',
     lead: '중고차 매물을 보러 가기 전에 확인할 것을 한곳에 모았어요.',
     description: '중고차 살 때 필요한 무료 도구와 가이드. 매물 체크(VIN·리콜), 사고·침수 이력 확인법, 시세 계산, 사기 예방, 명의이전까지.',
-    hero: 'kr-expressway-open',
+    hero: 'u-hub-buy',
     tools: [
       { href: '/history', icon: 'fact_check', name: '매물 체크', desc: 'VIN·차량번호로 제조사·연식·리콜·용도 확인', tag: '무료' },
       { href: '/parts', icon: 'campaign', name: '리콜 조회', desc: '제조사·차명으로 리콜 대상인지 확인', tag: '무료' },
@@ -42,7 +42,7 @@ const HUBS = {
     h1: '아플 때',
     lead: '경고등이 켜지거나 소리가 이상할 때, 먼저 확인할 것들이에요.',
     description: '차에 이상이 생겼을 때 보는 무료 가이드. 엔진 경고등 의미, 이상 소음 자가 진단, 브레이크·배터리·에어컨 점검, 리콜 무상수리 확인.',
-    hero: 'gauges',
+    hero: 'u-hub-repair',
     tools: [
       { href: '/parts', icon: 'campaign', name: '리콜 조회', desc: '무상수리 대상인지 먼저 확인', tag: '무료' },
       { href: '/blog/engine-warning-light/', icon: 'warning', name: '경고등 가이드', desc: '색깔별 긴급도와 바로 할 일', tag: '무료' },
@@ -56,7 +56,7 @@ const HUBS = {
     h1: '관리',
     lead: '오래 잘 타려면 챙길 것들. 정비 주기부터 타이어, 검사, 보험까지.',
     description: '내 차 관리 무료 가이드. 엔진오일 교환 주기, 타이어 공기압·교체, 자동차 정기검사, 자동차세, 보험료 절약, 블랙박스.',
-    hero: 'road-green-valley',
+    hero: 'u-hub-care',
     tools: [
       { href: '/blog/vehicle-inspection-guide/', icon: 'event_available', name: '정기검사 가이드', desc: '주기·비용·미수검 과태료', tag: '무료' },
       { href: '/parts', icon: 'campaign', name: '리콜 조회', desc: '내 차 리콜이 새로 나왔는지 확인', tag: '무료' },
