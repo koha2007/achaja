@@ -1,0 +1,15 @@
+{
+  "name": "achaja",
+  "private": true,
+  "description": "ACHAJA static site + Cloudflare Worker",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i css/src/app.css -o css/app.css --minify",
+    "build:layout": "node scripts/build-layout.js",
+    "build": "npm run build:layout && npm run build:css"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.9",
+    "tailwindcss": "3.4.17"
+  }
+}

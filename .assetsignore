@@ -10,3 +10,7 @@ package-lock.json
 src
 docs
 scripts
+tailwind.config.js
+package.json
+css/src
+partials
