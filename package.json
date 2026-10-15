@@ -8,7 +8,8 @@
     "build:css": "tailwindcss -c tailwind.config.js -i css/src/app.css -o css/app.css --minify",
     "build:layout": "node scripts/build-layout.js",
     "build": "npm run build:pages && npm run build:guides && npm run build:css && npm run build:layout",
-    "check": "node scripts/build-layout.js --check"
+    "check": "node scripts/build-layout.js --check",
+    "indexnow": "node scripts/indexnow.js"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
