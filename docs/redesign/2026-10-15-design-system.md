@@ -94,3 +94,18 @@
 - Motor1 개편: https://www.motor1.com/news/738905/motor1-new-website-launch-2024/ , https://motorsportnetwork.com/press/motorsportcom-motor1-launches-new-website-to-enhance-user-experience
 - 토스 라이팅: https://toss.tech/article/8-writing-principles-of-toss , https://developers-apps-in-toss.toss.im/design/ux-writing.html , https://toss.tech/article/rethinking-design-system
 - Pretendard: https://github.com/orioncactus/pretendard , https://cdn.jsdelivr.net/npm/pretendard@1.3.9/docs/en/README.md
+
+---
+
+## 7. NEW + 소식 개편 (2026-10-15, 사용자 요청)
+
+- **NEW(/new/)**: 신차·부품·튜닝을 "사진 한 장 + 두 문장 + 핵심 숫자 3개 + 출처 링크"로. 기사처럼 쓰지 않는다.
+  - 데이터 `data/new.json`, 생성 `scripts/gen-new.js`. 홈·소식 상단에 NEW 사진 띠.
+  - 사실: 두 곳 이상 보도·공식 발표로 확인한 것만. 불확실하면 카드 안 ※로 표시(예: 포르쉐 쿠페 최종 가격).
+  - **사진 규칙(NEW 한정 확장)**: 위키미디어 공용 CC0·CC BY·**CC BY-SA**. CC BY-SA는 **원본 비율 그대로(잘라내지 않음)·크기만 줄여** 표시하고 라이선스 링크를 단다. 번호판은 CC0 사진만 가림 처리(CC BY-SA는 번호판 없는 사진을 고른다). 권한 있는 사진이 없으면 올리지 않는다(벤틀리 토르칼 대기).
+  - 첫 3건: 포르쉐 카이엔 일렉트릭·쿠페, 뷰익 엘렉트라 E7(번호판 가림), 제네시스 GV60 마그마.
+- **소식(/news/)**: `src/api/news.js` v2 — 카테고리 6개(신차·리콜·전기차·중고차·생활·제도·업계)마다 검색어 여러 개 + 제목 키워드 필터 + 주식·투자 기사 제외 + 같은 사건 묶기(매체 수 표시) + KV 10분 캐시.
+  - 이전 문제: '전체'가 '자동차' 한 단어 검색이라 임대주택·일자리박람회·물가 기사까지 섞였다.
+  - 화면: 카테고리 분위기 사진 띠(기사 사진 아님을 표기) → NEW 띠 → 주요 소식 3(48시간·카테고리당 1건·매체 수 순) → 날짜별 제목 목록.
+- **메뉴**: 데스크톱 NEW · 소식 · 살 때 · 아플 때 · 관리 + 내 차 / 모바일 탭 홈 · NEW · 소식 · 가이드 · 내 차 (`/blog/`를 가이드 첫 화면으로 재구성).
+- 다음: NEW 자동 수집(뉴스 '출시·공개' 감지 → 사진 후보 검색 → 운영자 승인), 부품·용품·튜닝 카드.

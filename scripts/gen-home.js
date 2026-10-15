@@ -16,6 +16,7 @@ const t = (ko, en) => { PAIRS.set(ko, en); return esc(ko); };
 
 // 공용 헤더·푸터·하단 탭 문구 (build-layout.js)
 [
+  ['가이드', 'Guides'], ['둘러보기', 'Explore'], ['NEW 새로 나온 차', 'NEW releases'],
   ['살 때', 'Buying'], ['아플 때', 'Repairs'], ['관리', 'Care'], ['소식', 'News'], ['내 차', 'My car'], ['홈', 'Home'],
   ['도구', 'Tools'], ['매물 체크(차량 조회)', 'Listing check (vehicle lookup)'], ['리콜 조회', 'Recall lookup'],
   ['공식기관 가이드', 'Official-agency guide'], ['상품안내', 'Plans'], ['상황별 가이드', 'Guides by situation'],
@@ -61,12 +62,34 @@ function hero() {
   </section>`;
 }
 
+function newStrip() {
+  const NEW = [...require('../data/new.json').items].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  if (!NEW.length) return '';
+  return `  <!-- NEW: 새로 나온 차·부품·튜닝 (사진 한 장 + 이름) -->
+  <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="new-title">
+    <div class="flex items-end justify-between">
+      <h2 id="new-title" class="text-xl font-bold flex items-center gap-2"><span class="text-[11px] font-black tracking-wider bg-amber-400 text-slate-900 px-2 py-0.5 rounded" data-noi18n>NEW</span>${t('새로 나왔어요', 'Just released')}</h2>
+      <a href="/new/" class="text-[13px] font-semibold text-primary-container dark:text-primary hover:underline">${t('모두 보기 →', 'See all →')}</a>
+    </div>
+    <div class="mt-md flex md:grid md:grid-cols-${Math.max(3, NEW.length)} gap-sm md:gap-md overflow-x-auto snap-x -mx-margin px-margin md:mx-0 md:px-0 pb-1 hide-scrollbar">
+${NEW.map((n) => `      <a href="/new/#${n.id}" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+        <div class="relative bg-surface-container-high" style="aspect-ratio:${n.photo.w}/${n.photo.h}"><img src="${n.photo.file800}" width="${n.photo.w}" height="${n.photo.h}" alt="${esc(n.name)}" class="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async"/></div>
+        <div class="p-md">
+          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>${esc(n.kind)} · ${esc(n.status)}</span>
+          <p class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4" data-noi18n>${esc(n.name)}</p>
+          <p class="mt-1 text-[12px] text-muted line-clamp-1" data-noi18n>${esc(n.facts[0][0])} ${esc(n.facts[0][1])}</p>
+        </div>
+      </a>`).join('\n')}
+    </div>
+  </section>`;
+}
+
 function situations() {
   const items = [
     ['/buy/', '살 때', 'Buying', '매물 보러 가기 전 확인할 것', 'What to check before viewing a car', 'kr-tollgate'],
     ['/repair/', '아플 때', 'Repairs', '경고등·이상 소음 대처', 'Warning lights and odd noises', 'gauges'],
     ['/care/', '관리', 'Care', '정비 주기·타이어·검사', 'Maintenance, tires, inspections', 'tire-stack'],
-    ['/news', '소식', 'News', '신차·리콜·업계 뉴스', 'New cars, recalls, industry news', 'trails-avenue'],
+    ['/news/', '소식', 'News', '신차·리콜·업계 뉴스', 'New cars, recalls, industry news', 'trails-avenue'],
   ];
   return `  <!-- 상황별 입구: 사진 카드 4개 -->
   <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="situ-title">
@@ -169,6 +192,8 @@ const faq = s.slice(faqStart, faqEnd)
 const main = `  <main id="main" class="pt-14">
 
 ${hero()}
+
+${newStrip()}
 
 ${situations()}
 

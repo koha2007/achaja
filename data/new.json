@@ -1,0 +1,150 @@
+{
+ "note": "NEW — 새로 나온 차·부품·튜닝을 사진 한 장 + 짧은 소개로. 사실은 2개 이상 보도·공식 발표로 확인한 것만, 사진은 이용 권한이 확인된 것만(위키미디어 공용 CC0·CC BY·CC BY-SA 원본 비율 그대로, 번호판은 CC0일 때만 가림 처리). 권한 있는 사진이 없으면 올리지 않는다(예: 벤틀리 토르칼 — 2026-10-15 기준 사진 없음).",
+ "kinds": [
+  "신차",
+  "부품·용품",
+  "튜닝"
+ ],
+ "items": [
+  {
+   "id": "buick-electra-e7",
+   "kind": "신차",
+   "status": "사전계약",
+   "date": "2026-09-30",
+   "brand": "뷰익",
+   "name": "뷰익 엘렉트라 E7",
+   "summary": "GM의 프리미엄 브랜드 뷰익이 한국에 들어오며 처음 내놓는 중형 플러그인 하이브리드(PHEV) SUV예요. 9월 30일 사전예약을 시작했고, 11월부터 판매해요.",
+   "facts": [
+    [
+     "가격",
+     "4300만원대부터 (보도 기준)"
+    ],
+    [
+     "구동",
+     "1.5L 엔진 + 전기모터 PHEV"
+    ],
+    [
+     "전기 주행",
+     "최대 126km (복합)"
+    ]
+   ],
+   "note": "최상위 트림 가격은 보도마다 5300만~5400만원대로 달라요. 트림별 가격은 판매 시점에 공개돼요.",
+   "sources": [
+    [
+     "SBS Biz",
+     "https://biz.sbs.co.kr/amp/article/20000337530"
+    ],
+    [
+     "위키트리",
+     "https://www.wikitree.co.kr/articles/1163082"
+    ],
+    [
+     "데일리안",
+     "https://www.dailian.co.kr/news/view/1696185"
+    ]
+   ],
+   "photo": {
+    "w": 1600,
+    "h": 1200,
+    "author": "Poprace",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Buick_Electra_E7_MY2026_IMG01.jpg",
+    "file": "/img/new/buick-electra-e7.webp",
+    "file800": "/img/new/buick-electra-e7-800.webp"
+   }
+  },
+  {
+   "id": "porsche-cayenne-coupe-electric",
+   "kind": "신차",
+   "status": "국내 판매",
+   "date": "2026-10-15",
+   "brand": "포르쉐",
+   "name": "포르쉐 카이엔 일렉트릭 · 쿠페 일렉트릭",
+   "summary": "포르쉐 카이엔이 순수 전기차로 나왔어요. SUV형은 국내 판매를 시작했고, 지붕선이 낮은 쿠페형(사진)은 카이엔·S·터보 3종으로 순차 투입돼요.",
+   "facts": [
+    [
+     "가격",
+     "카이엔 일렉트릭 1억4230만원부터"
+    ],
+    [
+     "터보",
+     "1억8960만원부터"
+    ],
+    [
+     "쿠페",
+     "카이엔 · S · 터보 3종"
+    ]
+   ],
+   "note": "쿠페형의 최종 국내 가격은 포르쉐코리아 공식 발표를 확인해 주세요.",
+   "sources": [
+    [
+     "위키트리",
+     "https://www.wikitree.co.kr/articles/1163105"
+    ],
+    [
+     "헤럴드경제",
+     "https://www.heraldk.com/article/2026042322022953875"
+    ],
+    [
+     "한경 머니",
+     "https://magazine.hankyung.com/money/article/202609305178c"
+    ]
+   ],
+   "photo": {
+    "w": 1600,
+    "h": 1191,
+    "author": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Porsche_Cayenne_Coup%C3%A9_Electric_Turbo_IMG_7070.jpg",
+    "file": "/img/new/porsche-cayenne-coupe-electric.webp",
+    "file800": "/img/new/porsche-cayenne-coupe-electric-800.webp"
+   }
+  },
+  {
+   "id": "genesis-gv60-magma",
+   "kind": "신차",
+   "status": "출시",
+   "date": "2026-01-13",
+   "brand": "제네시스",
+   "name": "제네시스 GV60 마그마",
+   "summary": "제네시스의 첫 고성능 모델이에요. 전기 SUV GV60을 바탕으로 출력과 달리는 맛을 끌어올렸어요.",
+   "facts": [
+    [
+     "가격",
+     "9657만원 (개소세 3.5% 기준)"
+    ],
+    [
+     "최고출력",
+     "609마력 · 부스트 650마력"
+    ],
+    [
+     "주행거리",
+     "346km (산업부 인증)"
+    ]
+   ],
+   "note": "",
+   "sources": [
+    [
+     "스마트투데이",
+     "https://www.smarttoday.co.kr/ko-kr/articles/100936"
+    ],
+    [
+     "뉴스토마토",
+     "https://newstomato.com/ReadNews.aspx?no=1287604"
+    ]
+   ],
+   "photo": {
+    "w": 1600,
+    "h": 1200,
+    "author": "Damian B Oh",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Genesis_GV60_Magma_JW1_Magma_Orange_(63).jpg",
+    "file": "/img/new/genesis-gv60-magma.webp",
+    "file800": "/img/new/genesis-gv60-magma-800.webp"
+   }
+  }
+ ]
+}

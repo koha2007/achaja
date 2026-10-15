@@ -20,18 +20,21 @@ const ROOT = path.resolve(__dirname, '..');
 
 // ── 메뉴 정의 (IA: 사용자 상황 기준) ─────────────────────────────
 const NAV = [
+  { key: 'new', href: '/new/', label: 'NEW', icon: 'fiber_new' },
+  { key: 'news', href: '/news/', label: '소식', icon: 'newspaper' },
   { key: 'buy', href: '/buy/', label: '살 때', icon: 'directions_car' },
   { key: 'repair', href: '/repair/', label: '아플 때', icon: 'car_repair' },
   { key: 'care', href: '/care/', label: '관리', icon: 'handyman' },
-  { key: 'news', href: '/news', label: '소식', icon: 'newspaper' },
 ];
+// 모바일 하단 탭: 매일 보는 것(NEW·소식) 우선, 상황별 가이드는 '가이드' 하나로 묶음
 const TABS = [
-  { key: 'buy', href: '/buy/', label: '살 때', icon: 'directions_car' },
-  { key: 'repair', href: '/repair/', label: '아플 때', icon: 'car_repair' },
   { key: 'home', href: '/', label: '홈', icon: 'home' },
-  { key: 'care', href: '/care/', label: '관리', icon: 'handyman' },
+  { key: 'new', href: '/new/', label: 'NEW', icon: 'fiber_new' },
+  { key: 'news', href: '/news/', label: '소식', icon: 'newspaper' },
+  { key: 'guide', href: '/blog/', label: '가이드', icon: 'menu_book' },
   { key: 'my', href: '/my', label: '내 차', icon: 'garage' },
 ];
+const TAB_OF = { buy: 'guide', repair: 'guide', care: 'guide' };
 
 function header({ active, lang }) {
   const links = NAV.map((n) => {
@@ -66,6 +69,7 @@ ${links}
 }
 
 function tabbar({ active }) {
+  active = TAB_OF[active] || active;
   const items = TABS.map((t) => {
     const on = t.key === active;
     return `      <a href="${t.href}"${on ? ' aria-current="page"' : ''} class="flex-1 flex flex-col items-center justify-center ${on ? 'text-primary-container dark:text-primary' : 'text-muted'}"><span class="material-symbols-outlined"${on ? ` style="font-variation-settings:'FILL' 1;"` : ''}>${t.icon}</span><span class="text-[10px] ${on ? 'font-bold' : 'font-medium'} mt-0.5">${t.label}</span></a>`;
@@ -87,7 +91,7 @@ ${links.map(([href, label]) => `          <li><a href="${href}" class="text-[12p
   return `<footer class="px-margin pt-xl pb-lg border-t border-app-border mt-xl">
     <nav aria-label="사이트맵" class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-5xl mx-auto mb-lg text-left">
 ${col('도구', [['/history', '매물 체크(차량 조회)'], ['/parts', '리콜 조회'], ['/sources/', '공식기관 가이드'], ['/pricing/', '상품안내']])}
-${col('상황별 가이드', [['/buy/', '살 때'], ['/repair/', '아플 때'], ['/care/', '관리'], ['/news', '소식']])}
+${col('둘러보기', [['/new/', 'NEW 새로 나온 차'], ['/news/', '소식'], ['/buy/', '살 때'], ['/repair/', '아플 때'], ['/care/', '관리']])}
 ${col('콘텐츠', [['/blog/', '전체 가이드'], ['/blog/used-car-checklist/', '중고차 체크리스트'], ['/blog/engine-warning-light/', '엔진 경고등'], ['/blog/vehicle-inspection-guide/', '자동차 정기검사']])}
 ${col('회사·정책', [['/about/', '소개'], ['/terms/', '이용약관'], ['/privacy/', '개인정보처리방침']])}
     </nav>
