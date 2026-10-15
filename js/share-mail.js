@@ -44,7 +44,7 @@
     sheet.innerHTML =
       '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;display:flex;align-items:flex-end;justify-content:center;" id="ach-share-backdrop">' +
         '<div style="background:rgb(var(--c-surface,255 255 255));border-radius:24px 24px 0 0;width:100%;max-width:500px;padding:24px 20px 32px;box-shadow:0 -4px 20px rgba(0,0,0,0.2);" onclick="event.stopPropagation()">' +
-          '<div style="text-align:center;margin-bottom:16px;"><div style="width:40px;height:4px;background:rgb(var(--c-outline-variant,200 200 200));border-radius:2px;margin:0 auto 12px;"></div><h3 style="font-family:Manrope,sans-serif;font-size:16px;font-weight:700;color:rgb(var(--c-on-surface,0 0 0));margin:0;">결과 공유하기</h3></div>' +
+          '<div style="text-align:center;margin-bottom:16px;"><div style="width:40px;height:4px;background:rgb(var(--c-outline-variant,200 200 200));border-radius:2px;margin:0 auto 12px;"></div><h3 style="font-family:inherit;font-size:16px;font-weight:700;color:rgb(var(--c-on-surface,0 0 0));margin:0;">결과 공유하기</h3></div>' +
           '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;">' +
             // KakaoTalk
             '<a href="javascript:void(0);" onclick="window.AchajaShare._kakao(' + JSON.stringify(ctx).replace(/"/g,'&quot;') + ');return false;" style="display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:rgb(var(--c-on-surface,0 0 0));">' +
@@ -135,7 +135,7 @@
           '<div style="background:rgb(var(--c-surface,255 255 255));border-radius:20px;width:100%;max-width:420px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2);" onclick="event.stopPropagation()">' +
             '<div style="text-align:center;margin-bottom:16px;">' +
               '<div style="width:56px;height:56px;border-radius:50%;background:rgb(var(--c-primary-container,13 71 161))/10;border:2px solid rgb(var(--c-primary-container,13 71 161));display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;">📧</div>' +
-              '<h3 style="font-family:Manrope,sans-serif;font-size:16px;font-weight:700;color:rgb(var(--c-on-surface,0 0 0));margin:0 0 4px;">결과를 이메일로 받기</h3>' +
+              '<h3 style="font-family:inherit;font-size:16px;font-weight:700;color:rgb(var(--c-on-surface,0 0 0));margin:0 0 4px;">결과를 이메일로 받기</h3>' +
               '<p style="font-size:12px;color:rgb(var(--c-muted,100 116 139));margin:0;">조회한 차량 이력 결과를 이메일로 발송해드립니다.</p>' +
             '</div>' +
             '<input id="ach-email-input" type="email" required placeholder="example@email.com" style="width:100%;padding:12px 14px;border:1px solid rgb(var(--c-outline-variant,200 200 200));border-radius:10px;font-size:14px;margin-bottom:8px;background:rgb(var(--c-surface,255 255 255));color:rgb(var(--c-on-surface,0 0 0));"/>' +
