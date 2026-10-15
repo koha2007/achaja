@@ -33,8 +33,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
-{"@type":"ListItem","position":2,"name":"리포트 미리보기","item":"https://achaja.net/preview/"},
-{"@type":"ListItem","position":3,"name":"무료 결과 미리보기","item":"https://achaja.net/preview/free/"}
+{"@type":"ListItem","position":2,"name":"무료 결과 미리보기","item":"https://achaja.net/preview/free/"}
 ]}
 </script>
 <script>(function(){var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&d))document.documentElement.classList.add('dark');})();</script>
@@ -53,6 +52,7 @@ body{min-height:100dvh;}
 .sample-watermark::before{content:'SAMPLE';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);font-family:Manrope,sans-serif;font-size:6rem;font-weight:800;color:rgba(13,71,161,0.05);pointer-events:none;z-index:0;letter-spacing:0.5rem;}
 html.dark .sample-watermark::before{color:rgba(176,198,255,0.06);}
 .sample-watermark > *{position:relative;z-index:1;}
+@media print{header,footer,nav.fixed{display:none!important}}
 </style>
 <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"rgb(var(--c-primary)/<alpha-value>)","primary-container":"rgb(var(--c-primary-container)/<alpha-value>)","on-primary":"rgb(var(--c-on-primary)/<alpha-value>)","background":"rgb(var(--c-background)/<alpha-value>)","surface":"rgb(var(--c-surface)/<alpha-value>)","surface-container":"rgb(var(--c-surface-container)/<alpha-value>)","surface-container-low":"rgb(var(--c-surface-container-low)/<alpha-value>)","surface-container-high":"rgb(var(--c-surface-container-high)/<alpha-value>)","on-surface":"rgb(var(--c-on-surface)/<alpha-value>)","on-surface-variant":"rgb(var(--c-on-surface-variant)/<alpha-value>)","outline":"rgb(var(--c-outline)/<alpha-value>)","outline-variant":"rgb(var(--c-outline-variant)/<alpha-value>)","header-bg":"rgb(var(--c-header-bg)/<alpha-value>)","nav-bg":"rgb(var(--c-nav-bg)/<alpha-value>)","app-border":"rgb(var(--c-app-border)/<alpha-value>)","muted":"rgb(var(--c-muted)/<alpha-value>)","muted-strong":"rgb(var(--c-muted-strong)/<alpha-value>)","active-bg":"rgb(var(--c-active-bg)/<alpha-value>)"},fontFamily:{"headline":["Manrope"],"body":["Inter"]},spacing:{"lg":"24px","xs":"4px","md":"16px","sm":"8px","xl":"32px","margin":"20px"}}}};</script>
 </head>
@@ -80,7 +80,7 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.06);}
 
 <!-- Breadcrumb + Hero -->
 <section class="py-lg">
-  <p class="text-[11px] text-muted mb-xs"><a href="/" class="hover:underline">홈</a> · <a href="/preview/" class="hover:underline">리포트 미리보기</a> · <span class="text-on-surface-variant">무료 결과</span></p>
+  <p class="text-[11px] text-muted mb-xs"><a href="/" class="hover:underline">홈</a> · <span class="text-on-surface-variant">무료 결과</span></p>
   <div class="flex items-start gap-2 flex-wrap">
     <h1 class="font-headline font-bold text-2xl text-on-surface">무료 조회 결과 미리보기</h1>
     <span class="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-full mt-1.5">SAMPLE</span>
@@ -321,7 +321,7 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.06);}
 </article>
 <!-- ▲▲▲ 무료 결과 미리보기 끝 ▲▲▲ -->
 
-<!-- 액션바: 무료 결과도 공유·메일 발송 가능 (PDF는 유료 전용) -->
+<!-- 액션바: 공유·메일·인쇄(PDF 저장) 모두 무료 -->
 <section class="mt-lg mb-lg bg-surface-container rounded-2xl p-md border border-outline-variant/20">
   <p class="text-[10px] uppercase tracking-wider text-muted font-bold text-center mb-sm">결과 활용</p>
   <div class="grid grid-cols-3 gap-sm">
@@ -335,29 +335,26 @@ html.dark .sample-watermark::before{color:rgba(176,198,255,0.06);}
       <span class="text-[11px] font-semibold text-on-surface">이메일로 받기</span>
       <span class="text-[9px] text-emerald-600 dark:text-emerald-400 font-bold">무료</span>
     </button>
-    <a href="/preview/" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low/50 rounded-xl border border-outline-variant/40 opacity-80 hover:opacity-100 transition">
-      <span class="material-symbols-outlined text-violet-500 text-xl">picture_as_pdf</span>
-      <span class="text-[11px] font-semibold text-muted">PDF 저장</span>
-      <span class="text-[9px] text-violet-600 dark:text-violet-400 font-bold">₩1,900 전용</span>
-    </a>
+    <button type="button" onclick="window.print()" class="flex flex-col items-center gap-1 py-2.5 px-2 bg-surface-container-low hover:bg-active-bg/30 dark:hover:bg-primary-container/20 rounded-xl border border-outline-variant/40 transition active:scale-95">
+      <span class="material-symbols-outlined text-primary-container dark:text-primary text-xl" style="font-variation-settings:'FILL' 1;">print</span>
+      <span class="text-[11px] font-semibold text-on-surface">인쇄·PDF 저장</span>
+      <span class="text-[9px] text-emerald-600 dark:text-emerald-400 font-bold">무료</span>
+    </button>
   </div>
-  <p class="text-[10px] text-muted text-center mt-sm">무료 결과도 공유·이메일 발송 가능 · PDF 영구 보관은 ₩1,900 종합 리포트에서</p>
+  <p class="text-[10px] text-muted text-center mt-sm">공유·이메일·인쇄 모두 무료 · 인쇄 창에서 "PDF로 저장"을 고르면 PDF로 보관할 수 있습니다</p>
 </section>
 
-<!-- 다음 단계 — 유료 종합 리포트 안내 -->
-<section class="mt-xl mb-lg p-lg bg-gradient-to-br from-violet-500/10 to-purple-600/10 dark:from-violet-500/15 dark:to-purple-600/15 border border-violet-500/30 rounded-3xl">
-  <div class="flex items-center gap-2 mb-sm">
-    <span class="material-symbols-outlined text-violet-600 dark:text-violet-400" style="font-variation-settings:'FILL' 1;">summarize</span>
+<!-- 다음 단계 — 준비 중인 회원 기능 -->
+<section class="mt-xl mb-lg p-lg bg-surface-container border border-outline-variant rounded-3xl">
+  <div class="flex items-center gap-2 mb-sm flex-wrap">
+    <span class="material-symbols-outlined text-primary-container dark:text-primary" style="font-variation-settings:'FILL' 1;">description</span>
     <h2 class="font-headline font-bold text-lg">더 깊이 들여다보고 싶다면</h2>
-    <span class="bg-violet-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">+₩1,900</span>
+    <span class="bg-primary-container/10 dark:bg-primary/15 text-primary-container dark:text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">회원 무료 · 준비 중</span>
   </div>
   <p class="text-on-surface-variant text-sm leading-relaxed mb-md">
-    위 4가지 무료 결과 + AI 5섹션 종합 리포트 + 카히스토리·자동차365 외부 조회 가이드를 <strong>1개의 PDF로 통합</strong>해 영구 보관·재활용할 수 있습니다.
+    회원 기능이 열리면 카히스토리 결과와 성능점검기록부를 올려 <strong>사고·침수·주행거리 위험 신호</strong>를 판독받을 수 있습니다(매물 서류 판독 베타).
   </p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
-    <a href="/preview/" class="bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 text-white text-sm font-bold py-3 rounded-xl text-center transition active:scale-95">유료 리포트 샘플 보기 →</a>
-    <a href="/pricing/" class="bg-surface text-on-surface border border-outline-variant text-sm font-bold py-3 rounded-xl text-center hover:bg-surface-container transition">상품 안내 보기</a>
-  </div>
+  <a href="/pricing/" class="block bg-surface text-on-surface border border-outline-variant text-sm font-bold py-3 rounded-xl text-center hover:bg-surface-container-low transition">상품 안내 보기</a>
 </section>
 
 <!-- 최종 CTA -->

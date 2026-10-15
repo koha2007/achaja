@@ -225,9 +225,9 @@ const posts = [
     category: '시세 분석',
     icon: 'monitoring',
     readTime: 4,
-    ctaTitle: 'ACHAJA 시세 정밀분석 (1,900원)',
-    ctaText: '동급 매물 실거래가와 3년 잔존가치까지 예측해 적정 구매가를 알려드립니다.',
-    ctaBtn: '시세 분석 바로가기',
+    ctaTitle: '시세 보기 전에 VIN부터 무료 확인',
+    ctaText: 'VIN으로 정확한 연식·제조사와 리콜 여부를 먼저 확인하면 시세 비교가 정확해집니다.',
+    ctaBtn: '무료 조회 바로가기',
     ctaHref: '/history',
     related: [
       { href: '/blog/used-car-checklist/', cat: '구매 체크리스트', title: '중고차 살 때 꼭 확인해야 할 10가지' },
