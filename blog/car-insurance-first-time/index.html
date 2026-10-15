@@ -37,7 +37,7 @@
 {"@type":"BlogPosting","headline":"자동차 보험 첫 가입 가이드 — 보장·특약·할인 전부 정리","description":"자동차 보험 첫 가입 시 꼭 알아야 할 의무·임의 보장, 자기차량손해, 자기신체사고, 마일리지·블랙박스 할인까지 실전 정리.","image":"https://achaja.net/og-image.png","author":{"@type":"Organization","name":"ACHAJA"},"publisher":{"@type":"Organization","name":"ACHAJA","logo":{"@type":"ImageObject","url":"https://achaja.net/og-image.png"}},"datePublished":"2026-04-23","dateModified":"2026-05-11","mainEntityOfPage":{"@type":"WebPage","@id":"https://achaja.net/blog/car-insurance-first-time/"},"inLanguage":"ko-KR"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"홈","item":"https://achaja.net/"},
-{"@type":"ListItem","position":2,"name":"블로그","item":"https://achaja.net/blog/"},
+{"@type":"ListItem","position":2,"name":"관리","item":"https://achaja.net/care/"},
 {"@type":"ListItem","position":3,"name":"자동차 보험 첫 가입 가이드 — 보장·특약·할인 전부 정리","item":"https://achaja.net/blog/car-insurance-first-time/"}
 ]},
 {"@type":"FAQPage","mainEntity":[
@@ -73,7 +73,7 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
 .prose th,.prose td{border:1px solid rgb(var(--c-outline-variant));padding:0.5rem;text-align:left;}
 .prose th{background:rgb(var(--c-surface-container));font-weight:600;}
 </style>
-<link rel="stylesheet" href="/css/app.css?v=d1d282ce52"/>
+<link rel="stylesheet" href="/css/app.css?v=80dcd2500c"/>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen pb-24">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
@@ -103,9 +103,11 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
 
 <main id="main" class="pt-14 max-w-3xl mx-auto px-margin">
 
+<!-- @guide-crumb -->
 <nav aria-label="breadcrumb" class="pt-lg text-xs text-muted">
-  <a href="/" class="hover:underline">홈</a> / <a href="/blog/" class="hover:underline">블로그</a> / <span class="text-on-surface">자동차 보험</span>
+  <a href="/" class="hover:underline">홈</a> / <a href="/care/" class="hover:underline">관리</a> / <span class="text-on-surface">자동차 보험</span>
 </nav>
+<!-- /@guide-crumb -->
 
 <article class="py-lg prose">
   <header class="mb-lg pb-md border-b border-outline-variant">
@@ -113,6 +115,13 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
     <h1 class="font-headline text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-sm">자동차 보험 첫 가입 가이드 — 보장·특약·할인 전부 정리</h1>
     <p class="text-xs text-muted">2026년 4월 23일 · 2026년 5월 11일 업데이트 · ACHAJA 에디터 · 약 10분 소요</p>
   </header>
+
+  <!-- @guide-cover -->
+<figure class="mb-lg -mx-margin md:mx-0">
+    <div class="photo-frame md:rounded-2xl"><img src="/img/photos/road-green-valley-800.webp" srcset="/img/photos/road-green-valley-800.webp 800w, /img/photos/road-green-valley.webp 1600w" sizes="(min-width:768px) 720px, 100vw" width="1600" height="1063" alt="초록 계곡을 지나는 도로" class="" fetchpriority="high" decoding="async"/></div>
+    <figcaption class="photo-credit px-margin md:px-0 mt-1.5">사진: <a href="https://commons.wikimedia.org/wiki/File:Snostskali_Valley,_Mountain_road,_Khevi,_Georgia.jpg" target="_blank" rel="noopener" class="hover:underline">Vyacheslav Argenberg</a> · CC BY 4.0 · 위키미디어 공용</figcaption>
+  </figure>
+<!-- /@guide-cover -->
 
   <p>처음 차를 사면 바로 마주치는 숙제가 <strong>자동차 보험</strong>입니다. 보험사 7~8곳이 비슷한 상품을 팔고, 특약만 수십 개라 처음 보면 무엇을 넣고 빼야 할지 막막합니다. 이 글은 자동차 보험의 기본 구조와 특약 선택, 실제로 효과 있는 할인까지 한 번에 정리합니다.</p>
 
@@ -229,25 +238,42 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
   </div>
 </article>
 
-<section class="pb-xl">
-    <h2 class="font-headline text-lg font-semibold mb-md">함께 보면 좋은 글</h2>
-    <div class="grid gap-md md:grid-cols-3">
-      <a href="/blog/insurance-discount-tips/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="text-xs text-muted mb-xs">보험</div>
-        <div class="font-headline font-semibold text-sm leading-snug">자동차보험료 할인 받는 10가지 방법</div>
+<!-- @guide-related -->
+<section class="pb-xl" aria-labelledby="related-title">
+    <h2 id="related-title" class="text-lg font-bold mb-md">함께 보면 좋은 글</h2>
+    <div class="grid gap-md sm:grid-cols-3">
+      <a href="/blog/insurance-discount-tips/" class="group block bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+        <div class="photo-frame"><img src="/img/photos/kr-expressway-open-800.webp" srcset="/img/photos/kr-expressway-open-800.webp 800w, /img/photos/kr-expressway-open.webp 1600w" sizes="(min-width:768px) 240px, 100vw" width="1600" height="891" alt="탁 트인 고속도로" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="p-md">
+          <div class="text-[11px] font-bold text-primary-container dark:text-primary">관리</div>
+          <div class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4">자동차보험료 할인 받는 10가지 방법</div>
+        </div>
       </a>
-      <a href="/blog/insurance-renewal-tips/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="text-xs text-muted mb-xs">보험</div>
-        <div class="font-headline font-semibold text-sm leading-snug">자동차 보험 갱신 시 절약하는 7가지</div>
+      <a href="/blog/insurance-renewal-tips/" class="group block bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+        <div class="photo-frame"><img src="/img/photos/road-autumn-800.webp" srcset="/img/photos/road-autumn-800.webp 800w, /img/photos/road-autumn.webp 1600w" sizes="(min-width:768px) 240px, 100vw" width="1600" height="1200" alt="낙엽 쌓인 가을 길" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="p-md">
+          <div class="text-[11px] font-bold text-primary-container dark:text-primary">관리</div>
+          <div class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4">자동차 보험 갱신 시 절약하는 7가지 방법</div>
+        </div>
       </a>
-      <a href="/blog/dashcam-buying-guide/" class="block bg-surface-container-low border border-outline-variant rounded-2xl p-md hover:border-primary-container dark:hover:border-primary transition-colors">
-        <div class="text-xs text-muted mb-xs">안전·악세서리</div>
-        <div class="font-headline font-semibold text-sm leading-snug">블랙박스 선택·설치 완벽 가이드</div>
+      <a href="/blog/dashcam-buying-guide/" class="group block bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+        <div class="photo-frame"><img src="/img/photos/kr-tunnel-800.webp" srcset="/img/photos/kr-tunnel-800.webp 800w, /img/photos/kr-tunnel.webp 1600w" sizes="(min-width:768px) 240px, 100vw" width="1600" height="892" alt="고속도로 터널" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="p-md">
+          <div class="text-[11px] font-bold text-primary-container dark:text-primary">관리</div>
+          <div class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4">블랙박스 선택·설치 완벽 가이드</div>
+        </div>
       </a>
     </div>
+    <a href="/care/" class="mt-md flex items-center justify-between gap-2 p-md rounded-2xl bg-surface-container border border-outline-variant/60 hover:border-primary-container dark:hover:border-primary transition">
+      <span class="text-[14px] font-semibold">관리 가이드 13편과 무료 도구 모두 보기</span>
+      <span class="material-symbols-outlined text-outline">chevron_right</span>
+    </a>
   </section>
+<!-- /@guide-related -->
 
-    <!-- @footer -->
+
+</main>
+  <!-- @footer -->
   <footer class="px-margin pt-xl pb-lg border-t border-app-border mt-xl">
     <nav aria-label="사이트맵" class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-5xl mx-auto mb-lg text-left">
       <div>
@@ -293,8 +319,6 @@ html.dark .prose strong{color:rgb(var(--c-primary));}
     </div>
   </footer>
   <!-- /@footer -->
-
-</main>
 
   <!-- @tabbar active=care -->
   <nav aria-label="하단 메뉴" class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">

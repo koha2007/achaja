@@ -1,26 +1,316 @@
 {
-  "note": "가이드(블로그) → 상황별 허브(buy 살 때 / repair 아플 때 / care 관리) 분류와 대표 사진(data/photos.json의 id). 허브·홈·레이아웃 빌드에 사용.",
-  "hubs": {
-    "buy": ["used-car-checklist","accident-history-check","flood-damaged-car","flood-car-records-check","mileage-fraud","used-car-scam-types","used-car-price-guide","used-car-price-comparison","used-car-where-to-buy","vin-lookup","carhistory-vs-insurance","first-car-buyer-guide","new-vs-used-car-tco","car-loan-vs-lease","car-rental-vs-lease","lease-early-termination","car-residual-value","car-title-transfer","car-tax-calculator","hybrid-vs-ev","ev-battery-life","business-vs-personal-car","car-warranty-guide"],
-    "repair": ["engine-warning-light","car-noise-diagnosis","brake-pad-replacement","car-battery-12v","car-ac-refrigerant","recall-check-guide","import-car-maintenance-cost"],
-    "care": ["engine-oil-interval","tire-pressure-guide","tire-replacement-guide","vehicle-inspection-guide","road-tax-payment","traffic-fine-lookup","car-insurance-cheaper","car-insurance-first-time","insurance-discount-tips","insurance-renewal-tips","dashcam-buying-guide","window-tinting-law","diesel-end-of-life"]
-  },
-  "photo": {
-    "used-car-checklist": "kr-expressway-open", "accident-history-check": "kr-expressway-junction", "flood-damaged-car": "road-fog-mountain",
-    "flood-car-records-check": "kr-tunnel", "mileage-fraud": "gauges", "used-car-scam-types": "trails-intersection",
-    "used-car-price-guide": "kr-sign-seoul", "used-car-price-comparison": "kr-expressway-clear", "used-car-where-to-buy": "kr-seoul-street",
-    "vin-lookup": "shifter", "carhistory-vs-insurance": "kr-tollgate-sign", "first-car-buyer-guide": "road-green-valley",
-    "new-vs-used-car-tco": "highway-city-day", "car-loan-vs-lease": "city-night-valley", "car-rental-vs-lease": "highway-city-night",
-    "lease-early-termination": "trails-avenue", "car-residual-value": "road-autumn", "car-title-transfer": "kr-tollgate",
-    "car-tax-calculator": "kr-expressway-signs", "hybrid-vs-ev": "ev-charging-bokeh", "ev-battery-life": "ev-plug",
-    "business-vs-personal-car": "kr-seoul-gate-night", "car-warranty-guide": "kr-expressway-hill",
-    "engine-warning-light": "gauges", "car-noise-diagnosis": "workshop-lift", "brake-pad-replacement": "tire-motion",
-    "car-battery-12v": "road-snow", "car-ac-refrigerant": "road-volcano", "recall-check-guide": "workshop-lift",
-    "import-car-maintenance-cost": "trails-highway",
-    "engine-oil-interval": "fuel-station-night", "tire-pressure-guide": "tire-motion", "tire-replacement-guide": "tire-stack",
-    "vehicle-inspection-guide": "workshop-lift", "road-tax-payment": "kr-sign-seoul", "traffic-fine-lookup": "kr-crosswalk-night",
-    "car-insurance-cheaper": "trails-curve", "car-insurance-first-time": "road-green-valley", "insurance-discount-tips": "kr-expressway-open",
-    "insurance-renewal-tips": "road-autumn", "dashcam-buying-guide": "kr-tunnel", "window-tinting-law": "tunnel-amber",
-    "diesel-end-of-life": "road-volcano"
-  }
+ "note": "가이드(블로그) → 상황별 허브(buy 살 때 / repair 아플 때 / care 관리) 분류와 대표 사진(data/photos.json의 id). 허브·홈·레이아웃 빌드에 사용.",
+ "hubs": {
+  "buy": [
+   "used-car-checklist",
+   "accident-history-check",
+   "flood-damaged-car",
+   "flood-car-records-check",
+   "mileage-fraud",
+   "used-car-scam-types",
+   "used-car-price-guide",
+   "used-car-price-comparison",
+   "used-car-where-to-buy",
+   "vin-lookup",
+   "carhistory-vs-insurance",
+   "first-car-buyer-guide",
+   "new-vs-used-car-tco",
+   "car-loan-vs-lease",
+   "car-rental-vs-lease",
+   "lease-early-termination",
+   "car-residual-value",
+   "car-title-transfer",
+   "car-tax-calculator",
+   "hybrid-vs-ev",
+   "ev-battery-life",
+   "business-vs-personal-car",
+   "car-warranty-guide"
+  ],
+  "repair": [
+   "engine-warning-light",
+   "car-noise-diagnosis",
+   "brake-pad-replacement",
+   "car-battery-12v",
+   "car-ac-refrigerant",
+   "recall-check-guide",
+   "import-car-maintenance-cost"
+  ],
+  "care": [
+   "engine-oil-interval",
+   "tire-pressure-guide",
+   "tire-replacement-guide",
+   "vehicle-inspection-guide",
+   "road-tax-payment",
+   "traffic-fine-lookup",
+   "car-insurance-cheaper",
+   "car-insurance-first-time",
+   "insurance-discount-tips",
+   "insurance-renewal-tips",
+   "dashcam-buying-guide",
+   "window-tinting-law",
+   "diesel-end-of-life"
+  ]
+ },
+ "photo": {
+  "used-car-checklist": "kr-expressway-open",
+  "accident-history-check": "kr-expressway-junction",
+  "flood-damaged-car": "road-fog-mountain",
+  "flood-car-records-check": "kr-tunnel",
+  "mileage-fraud": "gauges",
+  "used-car-scam-types": "trails-intersection",
+  "used-car-price-guide": "kr-sign-seoul",
+  "used-car-price-comparison": "kr-expressway-clear",
+  "used-car-where-to-buy": "kr-seoul-street",
+  "vin-lookup": "shifter",
+  "carhistory-vs-insurance": "kr-tollgate-sign",
+  "first-car-buyer-guide": "road-green-valley",
+  "new-vs-used-car-tco": "highway-city-day",
+  "car-loan-vs-lease": "city-night-valley",
+  "car-rental-vs-lease": "highway-city-night",
+  "lease-early-termination": "trails-avenue",
+  "car-residual-value": "road-autumn",
+  "car-title-transfer": "kr-tollgate",
+  "car-tax-calculator": "kr-expressway-signs",
+  "hybrid-vs-ev": "ev-charging-bokeh",
+  "ev-battery-life": "ev-plug",
+  "business-vs-personal-car": "kr-seoul-gate-night",
+  "car-warranty-guide": "kr-expressway-hill",
+  "engine-warning-light": "gauges",
+  "car-noise-diagnosis": "workshop-lift",
+  "brake-pad-replacement": "tire-motion",
+  "car-battery-12v": "road-snow",
+  "car-ac-refrigerant": "road-volcano",
+  "recall-check-guide": "workshop-lift",
+  "import-car-maintenance-cost": "trails-highway",
+  "engine-oil-interval": "fuel-station-night",
+  "tire-pressure-guide": "tire-motion",
+  "tire-replacement-guide": "tire-stack",
+  "vehicle-inspection-guide": "workshop-lift",
+  "road-tax-payment": "kr-sign-seoul",
+  "traffic-fine-lookup": "kr-crosswalk-night",
+  "car-insurance-cheaper": "trails-curve",
+  "car-insurance-first-time": "road-green-valley",
+  "insurance-discount-tips": "kr-expressway-open",
+  "insurance-renewal-tips": "road-autumn",
+  "dashcam-buying-guide": "kr-tunnel",
+  "window-tinting-law": "tunnel-amber",
+  "diesel-end-of-life": "road-volcano"
+ },
+ "related": {
+  "used-car-checklist": [
+   "flood-damaged-car",
+   "used-car-price-guide",
+   "used-car-scam-types"
+  ],
+  "accident-history-check": [
+   "carhistory-vs-insurance",
+   "car-residual-value",
+   "car-warranty-guide"
+  ],
+  "flood-damaged-car": [
+   "mileage-fraud",
+   "used-car-checklist",
+   "used-car-price-guide"
+  ],
+  "flood-car-records-check": [
+   "flood-damaged-car",
+   "carhistory-vs-insurance",
+   "used-car-checklist"
+  ],
+  "mileage-fraud": [
+   "flood-damaged-car",
+   "used-car-scam-types",
+   "accident-history-check"
+  ],
+  "used-car-scam-types": [
+   "flood-damaged-car",
+   "mileage-fraud",
+   "used-car-checklist"
+  ],
+  "used-car-price-guide": [
+   "car-residual-value",
+   "flood-damaged-car",
+   "used-car-checklist"
+  ],
+  "used-car-price-comparison": [
+   "used-car-price-guide",
+   "car-residual-value",
+   "used-car-checklist"
+  ],
+  "used-car-where-to-buy": [
+   "carhistory-vs-insurance",
+   "new-vs-used-car-tco",
+   "used-car-checklist"
+  ],
+  "vin-lookup": [
+   "accident-history-check",
+   "car-residual-value",
+   "car-warranty-guide"
+  ],
+  "carhistory-vs-insurance": [
+   "accident-history-check",
+   "new-vs-used-car-tco",
+   "used-car-where-to-buy"
+  ],
+  "first-car-buyer-guide": [
+   "accident-history-check",
+   "car-residual-value",
+   "car-warranty-guide"
+  ],
+  "new-vs-used-car-tco": [
+   "car-warranty-guide",
+   "carhistory-vs-insurance",
+   "used-car-where-to-buy"
+  ],
+  "car-loan-vs-lease": [
+   "car-rental-vs-lease",
+   "lease-early-termination",
+   "business-vs-personal-car"
+  ],
+  "car-rental-vs-lease": [
+   "car-loan-vs-lease",
+   "lease-early-termination",
+   "business-vs-personal-car"
+  ],
+  "lease-early-termination": [
+   "car-loan-vs-lease",
+   "car-rental-vs-lease",
+   "business-vs-personal-car"
+  ],
+  "car-residual-value": [
+   "used-car-price-guide",
+   "accident-history-check",
+   "car-warranty-guide"
+  ],
+  "car-title-transfer": [
+   "car-tax-calculator",
+   "road-tax-payment",
+   "traffic-fine-lookup"
+  ],
+  "car-tax-calculator": [
+   "car-title-transfer",
+   "road-tax-payment",
+   "traffic-fine-lookup"
+  ],
+  "hybrid-vs-ev": [
+   "ev-battery-life",
+   "diesel-end-of-life",
+   "car-loan-vs-lease"
+  ],
+  "ev-battery-life": [
+   "hybrid-vs-ev",
+   "diesel-end-of-life",
+   "car-battery-12v"
+  ],
+  "business-vs-personal-car": [
+   "car-loan-vs-lease",
+   "car-rental-vs-lease",
+   "lease-early-termination"
+  ],
+  "car-warranty-guide": [
+   "new-vs-used-car-tco",
+   "accident-history-check",
+   "car-residual-value"
+  ],
+  "engine-warning-light": [
+   "car-noise-diagnosis",
+   "brake-pad-replacement",
+   "car-ac-refrigerant"
+  ],
+  "car-noise-diagnosis": [
+   "engine-warning-light",
+   "brake-pad-replacement",
+   "car-ac-refrigerant"
+  ],
+  "brake-pad-replacement": [
+   "car-ac-refrigerant",
+   "import-car-maintenance-cost",
+   "car-battery-12v"
+  ],
+  "car-battery-12v": [
+   "brake-pad-replacement",
+   "car-ac-refrigerant",
+   "engine-oil-interval"
+  ],
+  "car-ac-refrigerant": [
+   "brake-pad-replacement",
+   "import-car-maintenance-cost",
+   "car-battery-12v"
+  ],
+  "recall-check-guide": [
+   "brake-pad-replacement",
+   "car-ac-refrigerant",
+   "car-battery-12v"
+  ],
+  "import-car-maintenance-cost": [
+   "brake-pad-replacement",
+   "car-ac-refrigerant",
+   "car-battery-12v"
+  ],
+  "engine-oil-interval": [
+   "car-battery-12v",
+   "tire-pressure-guide",
+   "tire-replacement-guide"
+  ],
+  "tire-pressure-guide": [
+   "tire-replacement-guide",
+   "car-battery-12v",
+   "engine-oil-interval"
+  ],
+  "tire-replacement-guide": [
+   "tire-pressure-guide",
+   "car-battery-12v",
+   "engine-oil-interval"
+  ],
+  "vehicle-inspection-guide": [
+   "window-tinting-law",
+   "traffic-fine-lookup",
+   "car-tax-calculator"
+  ],
+  "road-tax-payment": [
+   "car-tax-calculator",
+   "car-title-transfer",
+   "traffic-fine-lookup"
+  ],
+  "traffic-fine-lookup": [
+   "vehicle-inspection-guide",
+   "car-tax-calculator",
+   "car-title-transfer"
+  ],
+  "car-insurance-cheaper": [
+   "insurance-discount-tips",
+   "insurance-renewal-tips",
+   "car-insurance-first-time"
+  ],
+  "car-insurance-first-time": [
+   "insurance-discount-tips",
+   "insurance-renewal-tips",
+   "dashcam-buying-guide"
+  ],
+  "insurance-discount-tips": [
+   "car-insurance-first-time",
+   "insurance-renewal-tips",
+   "dashcam-buying-guide"
+  ],
+  "insurance-renewal-tips": [
+   "insurance-discount-tips",
+   "car-insurance-first-time",
+   "dashcam-buying-guide"
+  ],
+  "dashcam-buying-guide": [
+   "car-insurance-first-time",
+   "insurance-discount-tips",
+   "insurance-renewal-tips"
+  ],
+  "window-tinting-law": [
+   "vehicle-inspection-guide",
+   "car-tax-calculator",
+   "car-title-transfer"
+  ],
+  "diesel-end-of-life": [
+   "ev-battery-life",
+   "hybrid-vs-ev",
+   "accident-history-check"
+  ]
+ }
 }
