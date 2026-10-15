@@ -4,9 +4,10 @@
   "description": "ACHAJA static site + Cloudflare Worker",
   "scripts": {
     "build:hubs": "node scripts/gen-hubs.js",
+    "build:home": "node scripts/gen-home.js",
     "build:css": "tailwindcss -c tailwind.config.js -i css/src/app.css -o css/app.css --minify",
     "build:layout": "node scripts/build-layout.js",
-    "build": "npm run build:hubs && npm run build:css && npm run build:layout",
+    "build": "npm run build:hubs && npm run build:home && npm run build:css && npm run build:layout",
     "check": "node scripts/build-layout.js --check"
   },
   "devDependencies": {
