@@ -1,0 +1,9 @@
+# 정적 페이지 보안 헤더 — 정적 자산은 Worker(src/index.js)를 거치지 않으므로 여기서 부여.
+# CSP 값은 src/index.js의 CSP_DIRECTIVES와 동일하게 유지할 것.
+/*
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.googletagservices.com https://cdn.tailwindcss.com https://js.tosspayments.com https://*.tosspayments.com https://ajax.googleapis.com https://www.gstatic.com https://*.clarity.ms https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://api.tosspayments.com https://*.tosspayments.com https://vpic.nhtsa.dot.gov https://apis.data.go.kr https://api.brevo.com https://api.resend.com https://*.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://*.tosspayments.com https://*.toss.im; frame-ancestors 'self'; form-action 'self' https://*.tosspayments.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(self "https://*.tosspayments.com")
+  Strict-Transport-Security: max-age=15552000

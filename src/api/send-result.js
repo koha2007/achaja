@@ -32,6 +32,18 @@ function isValidEmail(s) {
     && s.length <= 254;
 }
 
+function sanitizeResultUrl(u) {
+  const fallback = 'https://achaja.net/';
+  if (typeof u !== 'string') return fallback;
+  return ALLOWED_ORIGINS.some((o) => u === o || u.startsWith(o + '/')) ? u : fallback;
+}
+
+function sanitizeSubject(s) {
+  let subject = String(s).replace(/[\r\n]+/g, ' ').trim();
+  if (!subject.startsWith('[ACHAJA]')) subject = '[ACHAJA] ' + subject;
+  return subject.slice(0, 100);
+}
+
 async function checkRateLimit(env, ip) {
   if (!env.ACHAJA_CACHE) return { ok: true }; // KV 미바인딩 시 우회
   const now = Date.now();
@@ -210,9 +222,9 @@ export async function onRequest({ request, env }) {
     return jsonResponse({ ok: false, error: 'method_not_allowed' }, 405);
   }
 
-  // Origin 검증 (CSRF)
+  // Origin 검증 (CSRF·외부 직접 호출 차단) — 브라우저는 POST fetch에 항상 Origin을 붙이므로 빈 값도 거부
   const origin = request.headers.get('Origin') || '';
-  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+  if (!ALLOWED_ORIGINS.includes(origin)) {
     return jsonResponse({ ok: false, error: 'origin_not_allowed' }, 403);
   }
 
@@ -247,6 +259,10 @@ export async function onRequest({ request, env }) {
   if (String(payload.body).length > 10000) {
     return jsonResponse({ ok: false, error: 'body_too_long' }, 400);
   }
+
+  // 피싱 악용 방지 — 버튼 링크는 자사 도메인만, 제목은 [ACHAJA] 접두·한 줄·100자 고정
+  payload.url = sanitizeResultUrl(payload.url);
+  payload.subject = sanitizeSubject(payload.subject);
 
   // Provider 선택 — env.EMAIL_PROVIDER로 전환 가능 (default: brevo)
   const provider = (env.EMAIL_PROVIDER || 'brevo').toLowerCase();
