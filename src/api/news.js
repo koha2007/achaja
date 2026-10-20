@@ -3,12 +3,8 @@
 // ③ 같은 사건을 다룬 기사들을 하나로 묶어(매체 수 표시) ④ 최신순으로 돌려준다.
 // 원문은 저장·복제하지 않는다 — 제목·발췌·링크·발행일만 사용 (기존 원칙 유지).
 
+// 신차 소식은 NEWCAR(/newcar/)에서 다루므로 NEW 소식에서는 뺀다 (2026-10-20)
 export const CATEGORIES = {
-  new: {
-    label: '신차',
-    queries: ['신차 출시', '신차 공개', '사전계약 신차'],
-    include: /출시|공개|사전계약|신차|시승|데뷔|론칭|런칭|첫선|선보/,
-  },
   recall: {
     label: '리콜',
     queries: ['자동차 리콜', '차량 무상수리'],
@@ -38,6 +34,8 @@ export const CATEGORIES = {
 
 // 주식·투자·인사 등 운전자에게 의미가 적은 기사
 const EXCLUDE = /특징주|종목|주가|증시|목표가|투자의견|매수|코스피|코스닥|상한가|하한가|ETF|공시|인사\]|부고|\[포토\]|게시판|게임|듀얼센스/;
+// 신차 출시·공개 기사 (다른 카테고리 검색어에 걸려 들어와도 뺀다)
+const NEWCAR = /신차|출시|사전계약|론칭|런칭|데뷔|첫선|시승|월드\s?프리미어/;
 // 자동차 맥락 확인 (카테고리 키워드가 넓은 경우 대비)
 const CAR = /차|EV|SUV|세단|모빌리티|운전|도로|주행|타이어|엔진|배터리|충전|현대|기아|제네시스|테슬라|BMW|벤츠|아우디|볼보|포르쉐|토요타|렉서스|KGM|르노|쉐보레|GM/;
 
@@ -99,7 +97,7 @@ export function curate(items, { limit = 30 } = {}) {
   const out = [];
   for (const it of items) {
     const cat = CATEGORIES[it.category];
-    if (!cat || !cat.include.test(it.title) || EXCLUDE.test(it.title) || !CAR.test(it.title)) continue;
+    if (!cat || !cat.include.test(it.title) || EXCLUDE.test(it.title) || NEWCAR.test(it.title) || !CAR.test(it.title)) continue;
     const g = grams(it.title);
     const k = keyTokens(it.title);
     const t = new Date(it.pubDate).getTime();
@@ -154,7 +152,7 @@ export async function onRequest({ request, env }) {
   }
 
   // KV 캐시 (검색어 여러 개를 쓰므로 호출량 절약) — 10분
-  const cacheKey = `news:v2:${key}`;
+  const cacheKey = `news:v3:${key}`;
   if (env.ACHAJA_CACHE) {
     const hit = await env.ACHAJA_CACHE.get(cacheKey, 'json').catch(() => null);
     if (hit) return json(hit);
