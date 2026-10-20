@@ -48,7 +48,7 @@ body{min-height:100dvh;}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
 .hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
 </style>
-<link rel="stylesheet" href="/css/app.css?v=debaaa9e08"/>
+<link rel="stylesheet" href="/css/app.css?v=296c526037"/>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen pb-24 md:pb-0">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">본문으로 건너뛰기</a>
@@ -79,12 +79,12 @@ body{min-height:100dvh;}
 <main id="main" class="pt-14">
   <!-- 카테고리 사진 띠 (분위기용 사진 — 기사 사진 아님) -->
   <section class="relative isolate overflow-hidden" aria-labelledby="news-title">
-    <div class="absolute inset-0 -z-10"><img id="cat-photo" src="/img/photos/kr-expressway-open-800.webp" srcset="/img/photos/kr-expressway-open-800.webp 800w, /img/photos/kr-expressway-open.webp 1600w" sizes="100vw" width="1600" height="891" alt="탁 트인 고속도로" class="w-full h-full object-cover" fetchpriority="high" decoding="async"/></div>
+    <div class="absolute inset-0 -z-10"><img id="cat-photo" src="/img/photos/u-news-all-800.webp" srcset="/img/photos/u-news-all-800.webp 800w, /img/photos/u-news-all.webp 1600w" sizes="100vw" width="1600" height="1011" alt="도시 야경과 고가도로" class="w-full h-full object-cover" fetchpriority="high" decoding="async"/></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
     <div class="max-w-5xl mx-auto px-margin pt-lg pb-md min-h-[168px] md:min-h-[200px] flex flex-col justify-end">
       <h1 id="news-title" class="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-2"><span class="text-[13px] font-black tracking-wider bg-amber-400 text-slate-900 px-2 py-0.5 rounded">NEW</span>오늘의 자동차 소식</h1>
       <p class="text-white/90 text-[14px] mt-1">같은 사건 기사는 하나로 묶었어요. 카드를 누르면 원문 언론사로 이동해요.</p>
-      <p class="photo-credit !text-white/55 mt-sm"><span id="cat-credit">사진: Hankook12 · CC0 · 위키미디어 공용</span> · 분위기 사진</p>
+      <p class="photo-credit !text-white/55 mt-sm"><span id="cat-credit">사진: Yiran Ding · Unsplash</span> · 분위기 사진</p>
     </div>
   </section>
 
@@ -185,7 +185,7 @@ body{min-height:100dvh;}
 <script>function toggleTheme(){var h=document.documentElement;h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');}</script>
 <script>
 (function(){
-  var PHOTOS={"all":{"src":"/img/photos/kr-expressway-open-800.webp","srcset":"/img/photos/kr-expressway-open-800.webp 800w, /img/photos/kr-expressway-open.webp 1600w","alt":"탁 트인 고속도로","credit":"사진: Hankook12 · CC0 · 위키미디어 공용","source":"https://commons.wikimedia.org/wiki/File:Highway_in_South_Korea_Expressway_(3).jpg"},"recall":{"src":"/img/photos/workshop-lift-800.webp","srcset":"/img/photos/workshop-lift-800.webp 800w, /img/photos/workshop-lift.webp 1600w","alt":"정비소 리프트","credit":"사진: Leotard · Public domain · 위키미디어 공용","source":"https://commons.wikimedia.org/wiki/File:Auto_workshop02.jpg"},"ev":{"src":"/img/photos/ev-charging-night-800.webp","srcset":"/img/photos/ev-charging-night-800.webp 800w, /img/photos/ev-charging-night.webp 1600w","alt":"밤의 전기차 충전소","credit":"사진: Ivan Radic · CC BY 2.0 · 위키미디어 공용","source":"https://commons.wikimedia.org/wiki/File:Electric_car_charging_(9213).jpg"},"used":{"src":"/img/photos/kr-expressway-clear-800.webp","srcset":"/img/photos/kr-expressway-clear-800.webp 800w, /img/photos/kr-expressway-clear.webp 1600w","alt":"맑은 날 고속도로","credit":"사진: Hankook12 · CC0 · 위키미디어 공용","source":"https://commons.wikimedia.org/wiki/File:Korea_Expressway_tollgate_ic.jpg"},"life":{"src":"/img/photos/kr-crosswalk-night-800.webp","srcset":"/img/photos/kr-crosswalk-night-800.webp 800w, /img/photos/kr-crosswalk-night.webp 1600w","alt":"밤의 횡단보도","credit":"사진: H. Y. Shin 000 · CC0 · 위키미디어 공용","source":"https://commons.wikimedia.org/wiki/File:(Apgujeong-Sinsa)_20190312_050439.jpg"},"industry":{"src":"/img/photos/highway-city-day-800.webp","srcset":"/img/photos/highway-city-day-800.webp 800w, /img/photos/highway-city-day.webp 1600w","alt":"도심 고속도로","credit":"사진: Qiw007 · CC BY 4.0 · 위키미디어 공용","source":"https://commons.wikimedia.org/wiki/File:Coastal_Road,_Mumbai,_November_2025.jpg"}};
+  var PHOTOS={"all":{"src":"/img/photos/u-news-all-800.webp","srcset":"/img/photos/u-news-all-800.webp 800w, /img/photos/u-news-all.webp 1600w","alt":"도시 야경과 고가도로","credit":"사진: Yiran Ding · Unsplash","source":"https://unsplash.com/photos/shanghai-city-skyline-at-night-JQRyYCC2OIM"},"recall":{"src":"/img/photos/u-news-recall-800.webp","srcset":"/img/photos/u-news-recall-800.webp 800w, /img/photos/u-news-recall.webp 1600w","alt":"엔진룸 배선 클로즈업","credit":"사진: Zanelle Lofty-Eaton · Unsplash","source":"https://unsplash.com/photos/close-up-of-a-car-engine-with-many-wires-VZcQi2ZS2TU"},"ev":{"src":"/img/photos/u-news-ev-800.webp","srcset":"/img/photos/u-news-ev-800.webp 800w, /img/photos/u-news-ev.webp 1600w","alt":"충전 중인 전기차","credit":"사진: smart-me AG · Unsplash","source":"https://unsplash.com/photos/white-electric-car-charging-at-a-station-WZz3bISfJa8"},"used":{"src":"/img/photos/u-news-used-800.webp","srcset":"/img/photos/u-news-used-800.webp 800w, /img/photos/u-news-used.webp 1600w","alt":"실내 전시장에 가득한 차","credit":"사진: Dextar Studio · Unsplash","source":"https://unsplash.com/photos/a-bunch-of-cars-are-parked-in-a-garage-ccgjEBvHTIU"},"life":{"src":"/img/photos/u-news-life-800.webp","srcset":"/img/photos/u-news-life-800.webp 800w, /img/photos/u-news-life.webp 1600w","alt":"도심 도로의 빛 궤적","credit":"사진: Marc-Olivier Jodoin · Unsplash","source":"https://unsplash.com/photos/long-exposure-photography-of-road-and-cars-NqOInJ-ttqM"},"industry":{"src":"/img/photos/u-news-industry-800.webp","srcset":"/img/photos/u-news-industry-800.webp 800w, /img/photos/u-news-industry.webp 1600w","alt":"로봇이 차체를 조립하는 공장","credit":"사진: Lilian Do Khac · Unsplash","source":"https://unsplash.com/photos/EyqUxJuOb1Q"}};
   var LABEL={recall:'리콜',ev:'전기차',used:'중고차',life:'생활·제도',industry:'업계'};
   var CHIP={recall:'badge-stop',ev:'badge-go',used:'badge-caution',life:'badge-caution',industry:''};
   var state={cat:'all',items:[],shown:0}, PAGE=12, cache={};

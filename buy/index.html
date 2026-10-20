@@ -50,7 +50,7 @@
 body{min-height:100dvh;}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
 </style>
-<link rel="stylesheet" href="/css/app.css?v=debaaa9e08"/>
+<link rel="stylesheet" href="/css/app.css?v=296c526037"/>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen pb-24 md:pb-0">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">본문으로 건너뛰기</a>
@@ -81,13 +81,13 @@ body{min-height:100dvh;}
 <main id="main" class="pt-14">
   <!-- 히어로: 사진 + 한 줄 -->
   <section class="relative isolate overflow-hidden" aria-labelledby="hub-title">
-    <div class="absolute inset-0 -z-10"><img src="/img/photos/u-hub-buy-800.webp" srcset="/img/photos/u-hub-buy-800.webp 800w, /img/photos/u-hub-buy.webp 1600w" sizes="100vw" width="1600" height="1067" alt="줄지어 주차된 차들" class="w-full h-full object-cover" fetchpriority="high" decoding="async"/></div>
+    <div class="absolute inset-0 -z-10"><img src="/img/photos/u-hub-buy-800.webp" srcset="/img/photos/u-hub-buy-800.webp 800w, /img/photos/u-hub-buy.webp 1600w" sizes="100vw" width="1600" height="1068" alt="쇼룸에 늘어선 차들" class="w-full h-full object-cover" fetchpriority="high" decoding="async"/></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/45 to-black/20"></div>
     <div class="max-w-5xl mx-auto px-margin pt-xl pb-lg min-h-[260px] md:min-h-[340px] flex flex-col justify-end">
       <nav aria-label="breadcrumb" class="text-[12px] text-white/80 mb-sm"><a href="/" class="hover:underline">홈</a> / <span class="text-white">살 때</span></nav>
       <h1 id="hub-title" class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">살 때</h1>
       <p class="text-white/90 text-[15px] md:text-base mt-sm max-w-xl leading-relaxed">중고차 매물을 보러 가기 전에 확인할 것을 한곳에 모았어요.</p>
-      <p class="photo-credit !text-white/60 mt-md">사진: <a href="https://unsplash.com/photos/cars-parked-on-parking-lot-during-daytime-9evmIoRN7aA" target="_blank" rel="noopener" class="hover:underline">Vitor Paladini</a> · Unsplash</p>
+      <p class="photo-credit !text-white/60 mt-md">사진: <a href="https://unsplash.com/photos/collection-of-luxury-cars-in-a-showroom-A-6ymDPGMbU" target="_blank" rel="noopener" class="hover:underline">Mubashir Shoukat</a> · Unsplash</p>
     </div>
   </section>
 
@@ -133,6 +133,32 @@ body{min-height:100dvh;}
             <span class="block text-[13px] text-on-surface-variant mt-0.5">차량가 + 취득세·공채·탁송 = 실제 내는 돈</span>
           </span>
         </div>
+    </div>
+  </section>
+
+
+  <!-- 이번 주 체크 (data/weekly.json, 주 2회 갱신) -->
+  <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="weekly-title">
+    <div class="flex items-end justify-between mb-md">
+      <h2 id="weekly-title" class="text-lg font-bold flex items-center gap-2"><span class="material-symbols-outlined text-amber-500" aria-hidden="true">event_upcoming</span>이번 주 체크</h2>
+      <time datetime="2026-10-20" class="text-[12px] text-muted">2026년 10월 20일 업데이트</time>
+    </div>
+    <div class="grid gap-sm md:grid-cols-3">
+        <a href="/blog/first-car-buyer-guide/" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">시기</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface group-hover:underline underline-offset-4">연말 재고 할인, 제작 연월부터 확인</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">11~12월에는 해가 바뀌기 전 재고 차량 할인이 많아져요. 할인 차는 제작된 지 오래됐을 수 있으니 계약 전에 제작 연월과 보관 기간을 꼭 물어보세요.</span>
+        </a>
+        <a href="/blog/flood-damaged-car/" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">주의</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface group-hover:underline underline-offset-4">여름 지나면 침수차가 매물로 나와요</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">장마·태풍 뒤 몇 달 사이 침수 이력을 숨긴 차가 중고 시장에 섞여 나와요. 보험 이력의 침수 기록과 실내 바닥·안전벨트 끝의 흙 자국을 같이 보세요.</span>
+        </a>
+        <a href="/history" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">체크</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface group-hover:underline underline-offset-4">보러 가기 전 리콜·용도 이력부터</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">VIN이나 차량번호만 있으면 리콜 대상인지, 렌터카·영업용 이력이 있는지 미리 볼 수 있어요. 현장에서 서두르지 않게 집에서 먼저 확인하세요.</span>
+        </a>
     </div>
   </section>
 
@@ -184,7 +210,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/used-car-scam-types/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-used-car-scam-types-800.webp" srcset="/img/photos/u-used-car-scam-types-800.webp 800w, /img/photos/u-used-car-scam-types.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="계약서 위의 악수" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-used-car-scam-types-800.webp" srcset="/img/photos/u-used-car-scam-types-800.webp 800w, /img/photos/u-used-car-scam-types.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1075" alt="어둠 속 헤드램프" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">중고차 사기 유형 7가지와 예방법</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">허위매물·침수차 은폐·대포차·미끼매물 등 중고차 사기 7대 유형과 차량번호 무료 조회로 예방하는 방법을 정리했습니다.</p>
@@ -192,7 +218,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/used-car-price-guide/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-used-car-price-guide-800.webp" srcset="/img/photos/u-used-car-price-guide-800.webp 800w, /img/photos/u-used-car-price-guide.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="계산기와 지폐" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-used-car-price-guide-800.webp" srcset="/img/photos/u-used-car-price-guide-800.webp 800w, /img/photos/u-used-car-price-guide.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="사막 길의 클래식카" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">중고차 시세 정확하게 계산하는 5가지 방법</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">중고차 시세 조회 사이트 비교, 감가 계산 공식, 실거래가 확인법. 합리적 구매가 책정을 위한 실전 가이드.</p>
@@ -208,7 +234,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/used-car-where-to-buy/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-used-car-where-to-buy-800.webp" srcset="/img/photos/u-used-car-where-to-buy-800.webp 800w, /img/photos/u-used-car-where-to-buy.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1205" alt="차가 가득한 주차장" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-used-car-where-to-buy-800.webp" srcset="/img/photos/u-used-car-where-to-buy-800.webp 800w, /img/photos/u-used-car-where-to-buy.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1200" alt="전시장의 보라색 세단" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">중고차 어디서 사야 하나</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">중고차 매매상사, 직거래(당근·번개), 자동차 경매장, 제조사 인증중고차 — 4가지 구매 채널의 가격·위험·보증을 비교했습니다.</p>
@@ -216,7 +242,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/vin-lookup/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-vin-lookup-800.webp" srcset="/img/photos/u-vin-lookup-800.webp 800w, /img/photos/u-vin-lookup.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1068" alt="서류에 기록하는 손" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-vin-lookup-800.webp" srcset="/img/photos/u-vin-lookup-800.webp 800w, /img/photos/u-vin-lookup.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="꽂혀 있는 차 열쇠" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">차량번호로 차대번호(VIN) 확인하는 방법</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">차대번호(VIN) 17자리 의미 해석과 확인하는 5가지 방법. 차량등록증, 엔진룸, 앞유리, 자동차365 조회법.</p>
@@ -232,7 +258,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/first-car-buyer-guide/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-first-car-buyer-guide-800.webp" srcset="/img/photos/u-first-car-buyer-guide-800.webp 800w, /img/photos/u-first-car-buyer-guide.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="차 키를 건네는 모습" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-first-car-buyer-guide-800.webp" srcset="/img/photos/u-first-car-buyer-guide-800.webp 800w, /img/photos/u-first-car-buyer-guide.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1066" alt="새 차 앞에서 든 스마트키" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">첫차 구매 완전 가이드</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">첫차 구매 시 예산 설정, 신차 vs 중고차, 추천 차종, 보험·유지비, 계약 체크리스트까지 20~30대 초년 운전자 실전 가이드.</p>
@@ -240,7 +266,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/new-vs-used-car-tco/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-new-vs-used-car-tco-800.webp" srcset="/img/photos/u-new-vs-used-car-tco-800.webp 800w, /img/photos/u-new-vs-used-car-tco.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="계산기와 지폐 더미" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-new-vs-used-car-tco-800.webp" srcset="/img/photos/u-new-vs-used-car-tco-800.webp 800w, /img/photos/u-new-vs-used-car-tco.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="896" alt="신차 전시장" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">신차 vs 중고차 5년 총비용 비교</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">신차와 3년 중고차의 5년 총 소유비용(TCO)을 차량가·세금·보험·정비·잔존가치까지 숫자로 비교했습니다.</p>
@@ -248,7 +274,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/car-loan-vs-lease/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-loan-vs-lease-800.webp" srcset="/img/photos/u-car-loan-vs-lease-800.webp 800w, /img/photos/u-car-loan-vs-lease.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1068" alt="서류에 서명하는 손" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-loan-vs-lease-800.webp" srcset="/img/photos/u-car-loan-vs-lease-800.webp 800w, /img/photos/u-car-loan-vs-lease.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="전시장에 나란히 선 새 차" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">자동차 할부 vs 리스 비교</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">자동차 할부와 리스(운용·금융) 차이, 세금 혜택, 총 비용 비교. 개인·법인별 최적 선택 가이드.</p>
@@ -256,7 +282,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/car-rental-vs-lease/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-rental-vs-lease-800.webp" srcset="/img/photos/u-car-rental-vs-lease-800.webp 800w, /img/photos/u-car-rental-vs-lease.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="900" alt="나무 탁자 위의 열쇠" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-rental-vs-lease-800.webp" srcset="/img/photos/u-car-rental-vs-lease-800.webp 800w, /img/photos/u-car-rental-vs-lease.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1098" alt="바다로 이어지는 해안 도로" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">렌트 vs 리스 vs 구매</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">장기렌트, 운용리스, 금융리스, 일시불 구매 4가지 비교. 세제혜택·잔존가치·월 비용 분석.</p>
@@ -264,7 +290,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/lease-early-termination/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-lease-early-termination-800.webp" srcset="/img/photos/u-lease-early-termination-800.webp 800w, /img/photos/u-lease-early-termination.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1200" alt="계약서에 서명하는 모습" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-lease-early-termination-800.webp" srcset="/img/photos/u-lease-early-termination-800.webp 800w, /img/photos/u-lease-early-termination.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1201" alt="해 질 녘 해안 도로를 달리는 차" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">자동차 리스 중도해지</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">운용리스·금융리스 중도해지 위약금 계산법, 승계·매입 옵션, 사고 후 처리 방법까지. 손해 최소화 전략.</p>
@@ -272,7 +298,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/car-residual-value/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-residual-value-800.webp" srcset="/img/photos/u-car-residual-value-800.webp 800w, /img/photos/u-car-residual-value.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="계산기와 수첩" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-residual-value-800.webp" srcset="/img/photos/u-car-residual-value-800.webp 800w, /img/photos/u-car-residual-value.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="숲속의 빨간 클래식카" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">중고차 잔존가치 계산법</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">중고차 잔존가치 공식, 브랜드별 감가율, 옵션·색상이 가격에 미치는 영향. 신차 구매 전 필수 계산.</p>
@@ -280,7 +306,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/car-title-transfer/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-title-transfer-800.webp" srcset="/img/photos/u-car-title-transfer-800.webp 800w, /img/photos/u-car-title-transfer.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="자동차 스마트키" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-title-transfer-800.webp" srcset="/img/photos/u-car-title-transfer-800.webp 800w, /img/photos/u-car-title-transfer.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="차 키를 건네받는 손" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">자동차 명의이전 절차 완전정리</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">자동차 매매 시 명의이전 필수 서류, 셀프 진행 절차, 대행 수수료, 시군구청·자동차등록사업소 차이까지 한 번에 정리했습니다.</p>
@@ -288,7 +314,7 @@ body{min-height:100dvh;}
         </div>
       </a>
       <a href="/blog/car-tax-calculator/" class="group flex md:block gap-3 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
-        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-tax-calculator-800.webp" srcset="/img/photos/u-car-tax-calculator-800.webp 800w, /img/photos/u-car-tax-calculator.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="계산기와 펜" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
+        <div class="photo-frame w-28 md:w-full flex-shrink-0 aspect-[4/3] md:aspect-video"><img src="/img/photos/u-car-tax-calculator-800.webp" srcset="/img/photos/u-car-tax-calculator-800.webp 800w, /img/photos/u-car-tax-calculator.webp 1600w" sizes="(min-width:768px) 33vw, 112px" width="1600" height="1067" alt="노을 진 바닷가 굽은 길" class="group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="py-3 pr-3 md:p-md min-w-0">
           <h3 class="text-[15px] font-bold text-on-surface leading-snug group-hover:underline underline-offset-4">자동차 취득세·등록세 계산법과 절세 팁</h3>
           <p class="hidden md:block text-[13px] text-on-surface-variant mt-1 leading-relaxed line-clamp-2">취득세 7% 기본, 하이브리드·전기차 감면, 등록세, 공채 매입까지. 중고차·신차 구매 시 실제 지출 미리 계산하는 법.</p>

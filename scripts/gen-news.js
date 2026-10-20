@@ -11,12 +11,12 @@ const ROOT = path.resolve(__dirname, '..');
 
 // 카테고리 → 대표 사진(분위기용, 기사 사진 아님)
 const CATS = [
-  ['all', '전체', 'kr-expressway-open'],
-  ['recall', '리콜', 'workshop-lift'],
-  ['ev', '전기차', 'ev-charging-night'],
-  ['used', '중고차', 'kr-expressway-clear'],
-  ['life', '생활·제도', 'kr-crosswalk-night'],
-  ['industry', '업계', 'highway-city-day'],
+  ['all', '전체', 'u-news-all'],
+  ['recall', '리콜', 'u-news-recall'],
+  ['ev', '전기차', 'u-news-ev'],
+  ['used', '중고차', 'u-news-used'],
+  ['life', '생활·제도', 'u-news-life'],
+  ['industry', '업계', 'u-news-industry'],
 ];
 const catPhotos = Object.fromEntries(CATS.map(([k, , id]) => {
   const p = photo(id);
@@ -40,12 +40,12 @@ const page = `${head({
 <main id="main" class="pt-14">
   <!-- 카테고리 사진 띠 (분위기용 사진 — 기사 사진 아님) -->
   <section class="relative isolate overflow-hidden" aria-labelledby="news-title">
-    <div class="absolute inset-0 -z-10">${img('kr-expressway-open', { cls: 'w-full h-full object-cover', eager: true }).replace('<img ', '<img id="cat-photo" ')}</div>
+    <div class="absolute inset-0 -z-10">${img('u-news-all', { cls: 'w-full h-full object-cover', eager: true }).replace('<img ', '<img id="cat-photo" ')}</div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
     <div class="max-w-5xl mx-auto px-margin pt-lg pb-md min-h-[168px] md:min-h-[200px] flex flex-col justify-end">
       <h1 id="news-title" class="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-2"><span class="text-[13px] font-black tracking-wider bg-amber-400 text-slate-900 px-2 py-0.5 rounded">NEW</span>오늘의 자동차 소식</h1>
       <p class="text-white/90 text-[14px] mt-1">같은 사건 기사는 하나로 묶었어요. 카드를 누르면 원문 언론사로 이동해요.</p>
-      <p class="photo-credit !text-white/55 mt-sm"><span id="cat-credit">${esc(creditText(photo('kr-expressway-open')))}</span> · 분위기 사진</p>
+      <p class="photo-credit !text-white/55 mt-sm"><span id="cat-credit">${esc(creditText(photo('u-news-all')))}</span> · 분위기 사진</p>
     </div>
   </section>
 

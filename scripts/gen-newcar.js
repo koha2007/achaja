@@ -10,7 +10,7 @@ const data = require('../data/newcar.json');
 const items = [...data.items].sort((a, b) => b.date.localeCompare(a.date));
 
 const fmtDate = (d) => { const [y, m, dd] = d.split('-').map(Number); return `${y}년 ${m}월 ${dd}일`; };
-const STATUS_CLS = { '사전계약': 'badge-caution', '출시': 'badge-go', '국내 판매': 'badge-go', '국내 공개': 'badge-caution', '출시 예정': 'badge-caution' };
+const STATUS_CLS = { '사전계약': 'badge-caution', '출시': 'badge-go', '국내 판매': 'badge-go', '국내 공개': 'badge-caution', '출시 예정': 'badge-caution', '연식변경': 'badge-go' };
 
 function card(n, i) {
   const p = n.photo;
@@ -49,7 +49,7 @@ ${n.design ? `              <h3 class="mt-md text-[12px] font-bold text-muted">�
           </details>` : ''}
           ${n.note ? `<p class="mt-sm text-[12px] text-muted leading-relaxed">※ ${esc(n.note)}</p>` : ''}
           <p class="mt-md text-[12px] text-muted">출처: ${n.sources.map(([name, url]) => `<a href="${esc(url)}" target="_blank" rel="noopener nofollow" class="underline hover:text-on-surface">${esc(name)}</a>`).join(' · ')}</p>
-          <p class="photo-credit mt-1">사진: <a href="${esc(p.source)}" target="_blank" rel="noopener" class="hover:underline">${esc(p.author)}</a> · <a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener license" class="hover:underline">${esc(p.license)}</a> · 위키미디어 공용${p.license === 'CC0' && n.id === 'buick-electra-e7' ? ' · 번호판 가림 처리' : ''}</p>
+          <p class="photo-credit mt-1">사진: <a href="${esc(p.source)}" target="_blank" rel="noopener" class="hover:underline">${esc(p.author)}</a> · <a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener license" class="hover:underline">${esc(p.license)}</a> · 위키미디어 공용${p.place ? ` · ${esc(p.place)}` : ''}</p>
         </div>
       </article>`;
 }

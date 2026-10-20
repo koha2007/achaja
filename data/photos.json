@@ -588,49 +588,49 @@
   },
   {
    "id": "u-hub-buy",
-   "title": "줄지어 주차된 차들",
+   "title": "쇼룸에 늘어선 차들",
    "tags": [
     "unsplash"
    ],
-   "author": "Vitor Paladini",
+   "author": "Mubashir Shoukat",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/cars-parked-on-parking-lot-during-daytime-9evmIoRN7aA",
+   "source": "https://unsplash.com/photos/collection-of-luxury-cars-in-a-showroom-A-6ymDPGMbU",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 1068,
    "file": "/img/photos/u-hub-buy.webp",
    "file800": "/img/photos/u-hub-buy-800.webp"
   },
   {
    "id": "u-hub-repair",
-   "title": "정비 공구",
+   "title": "차 밑을 정비하는 모습",
    "tags": [
     "unsplash"
    ],
-   "author": "Quilia",
+   "author": "Zanelle Lofty-Eaton",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/selective-focus-photography-of-mechanics-tool-lot-60krlMMeWxU",
+   "source": "https://unsplash.com/photos/a-black-and-white-photo-of-a-man-working-on-a-vehicle-Ffq4-mWzhmE",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 1200,
    "file": "/img/photos/u-hub-repair.webp",
    "file800": "/img/photos/u-hub-repair-800.webp"
   },
   {
    "id": "u-hub-care",
-   "title": "타이어를 점검하는 손",
+   "title": "광택기로 보닛을 닦는 손",
    "tags": [
     "unsplash"
    ],
-   "author": "Jimmy Nilsson Masth",
+   "author": "Luay Barani",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-man-working-on-a-tire-in-a-garage-9uHal2Dd9aE",
+   "source": "https://unsplash.com/photos/person-polishing-a-blue-cars-hood-with-an-orbital-buffer-iXpjQNP__EQ",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 698,
    "file": "/img/photos/u-hub-care.webp",
    "file800": "/img/photos/u-hub-care-800.webp"
   },
@@ -716,30 +716,30 @@
   },
   {
    "id": "u-used-car-scam-types",
-   "title": "계약서 위의 악수",
+   "title": "어둠 속 헤드램프",
    "tags": [
     "unsplash"
    ],
-   "author": "Amina Atar",
+   "author": "Jonathan Gallegos",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/two-people-shaking-hands-over-a-piece-of-paper-4mEyvORkbN0",
+   "source": "https://unsplash.com/photos/unpaired-headlight-with-black-background-zSJ5DiS9e7o",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 1075,
    "file": "/img/photos/u-used-car-scam-types.webp",
    "file800": "/img/photos/u-used-car-scam-types-800.webp"
   },
   {
    "id": "u-used-car-price-guide",
-   "title": "계산기와 지폐",
+   "title": "사막 길의 클래식카",
    "tags": [
     "unsplash"
    ],
-   "author": "Sasun Bughdaryan",
+   "author": "Wesley Tingey",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-calculator-pen-and-money-on-a-table-X4VwfPzy_2o",
+   "source": "https://unsplash.com/photos/vintage-cream-car-parked-on-a-desert-road-2fBqe0w7bx8",
    "site": "Unsplash",
    "w": 1600,
    "h": 1067,
@@ -764,33 +764,33 @@
   },
   {
    "id": "u-used-car-where-to-buy",
-   "title": "차가 가득한 주차장",
+   "title": "전시장의 보라색 세단",
    "tags": [
     "unsplash"
    ],
-   "author": "Nick Nice",
+   "author": "Myron Mott",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-parking-lot-filled-with-lots-of-parked-cars-I1GC6vQQ_S8",
+   "source": "https://unsplash.com/photos/a-sleek-purple-car-displayed-in-a-modern-showroom-jobECyr3Fg8",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1205,
+   "h": 1200,
    "file": "/img/photos/u-used-car-where-to-buy.webp",
    "file800": "/img/photos/u-used-car-where-to-buy-800.webp"
   },
   {
    "id": "u-vin-lookup",
-   "title": "서류에 기록하는 손",
+   "title": "꽂혀 있는 차 열쇠",
    "tags": [
     "unsplash"
    ],
-   "author": "Cytonn Photography",
+   "author": "Ivan Shemereko",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/person-writing-on-white-paper-GJao3ZTX9gU",
+   "source": "https://unsplash.com/photos/7mgR-BZ5Dm4",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1068,
+   "h": 1067,
    "file": "/img/photos/u-vin-lookup.webp",
    "file800": "/img/photos/u-vin-lookup-800.webp"
   },
@@ -812,94 +812,94 @@
   },
   {
    "id": "u-first-car-buyer-guide",
-   "title": "차 키를 건네는 모습",
+   "title": "새 차 앞에서 든 스마트키",
    "tags": [
     "unsplash"
    ],
-   "author": "Erik Mclean",
+   "author": "Swansway Motor Group",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/focus-photography-of-black-vehicle-key-dVEO6g0yej0",
+   "source": "https://unsplash.com/photos/tgUdTefRlSw",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 1066,
    "file": "/img/photos/u-first-car-buyer-guide.webp",
    "file800": "/img/photos/u-first-car-buyer-guide-800.webp"
   },
   {
    "id": "u-new-vs-used-car-tco",
-   "title": "계산기와 지폐 더미",
+   "title": "신차 전시장",
    "tags": [
     "unsplash"
    ],
-   "author": "Jakub Żerdzicki",
+   "author": "Kenjiro Yagi",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-calculator-sitting-on-top-of-a-pile-of-money-QgXJUf6-cv8",
+   "source": "https://unsplash.com/photos/a-car-showroom-filled-with-lots-of-cars-RVEdgp-dkYY",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 896,
    "file": "/img/photos/u-new-vs-used-car-tco.webp",
    "file800": "/img/photos/u-new-vs-used-car-tco-800.webp"
   },
   {
    "id": "u-car-loan-vs-lease",
-   "title": "서류에 서명하는 손",
+   "title": "전시장에 나란히 선 새 차",
    "tags": [
     "unsplash"
    ],
-   "author": "Scott Graham",
+   "author": "Portafolio fotográfico automotriz",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/man-writing-on-paper-OQMZwNd3ThU",
+   "source": "https://unsplash.com/photos/several-new-cars-parked-in-a-showroom-AmFj7Xn9x_k",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1068,
+   "h": 1067,
    "file": "/img/photos/u-car-loan-vs-lease.webp",
    "file800": "/img/photos/u-car-loan-vs-lease-800.webp"
   },
   {
    "id": "u-car-rental-vs-lease",
-   "title": "나무 탁자 위의 열쇠",
+   "title": "바다로 이어지는 해안 도로",
    "tags": [
     "unsplash"
    ],
-   "author": "Filip Szalbot",
+   "author": "Joshua Hibbert",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-bunch-of-keys-sitting-on-top-of-a-wooden-table-PxiAc1aElFQ",
+   "source": "https://unsplash.com/photos/curved-road-near-cliff-gwzj_ftMpWM",
    "site": "Unsplash",
    "w": 1600,
-   "h": 900,
+   "h": 1098,
    "file": "/img/photos/u-car-rental-vs-lease.webp",
    "file800": "/img/photos/u-car-rental-vs-lease-800.webp"
   },
   {
    "id": "u-lease-early-termination",
-   "title": "계약서에 서명하는 모습",
+   "title": "해 질 녘 해안 도로를 달리는 차",
    "tags": [
     "unsplash"
    ],
-   "author": "Romain Dancre",
+   "author": "Filip Fischer",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/person-in-orange-long-sleeve-shirt-writing-on-white-paper-doplSDELX7E",
+   "source": "https://unsplash.com/photos/dark-car-driving-on-a-coastal-road-at-dusk-83yrOkdDnN4",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1200,
+   "h": 1201,
    "file": "/img/photos/u-lease-early-termination.webp",
    "file800": "/img/photos/u-lease-early-termination-800.webp"
   },
   {
    "id": "u-car-residual-value",
-   "title": "계산기와 수첩",
+   "title": "숲속의 빨간 클래식카",
    "tags": [
     "unsplash"
    ],
-   "author": "Recha Oktaviani",
+   "author": "Jakob Owens",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/black-and-silver-calculator-beside-black-pen-h2aDKwigQeA",
+   "source": "https://unsplash.com/photos/red-vintage-ford-mustang-in-forest-U_2kP7bkFKw",
    "site": "Unsplash",
    "w": 1600,
    "h": 1067,
@@ -908,14 +908,14 @@
   },
   {
    "id": "u-car-title-transfer",
-   "title": "자동차 스마트키",
+   "title": "차 키를 건네받는 손",
    "tags": [
     "unsplash"
    ],
-   "author": "Barry A",
+   "author": "yahdi yasya",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-car-key-with-a-remote-control-attached-to-it-0A_Yx4qwSb8",
+   "source": "https://unsplash.com/photos/iDSsOlqFa8w",
    "site": "Unsplash",
    "w": 1600,
    "h": 1067,
@@ -924,14 +924,14 @@
   },
   {
    "id": "u-car-tax-calculator",
-   "title": "계산기와 펜",
+   "title": "노을 진 바닷가 굽은 길",
    "tags": [
     "unsplash"
    ],
-   "author": "Sasun Bughdaryan",
+   "author": "Will Truettner",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-teal-calculator-and-white-pen-on-a-white-surface-mQ4dmENW2sM",
+   "source": "https://unsplash.com/photos/a-winding-road-with-a-view-of-the-ocean-SKwMql8wenU",
    "site": "Unsplash",
    "w": 1600,
    "h": 1067,
@@ -1180,14 +1180,14 @@
   },
   {
    "id": "u-road-tax-payment",
-   "title": "서류 위의 계산기",
+   "title": "밤 고속도로의 빛 궤적",
    "tags": [
     "unsplash"
    ],
-   "author": "Joachim Schnürle",
+   "author": "kimi lee",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-calculator-sitting-on-top-of-a-piece-of-paper-6cRJM4UmSHk",
+   "source": "https://unsplash.com/photos/highway-at-night-M3RVFbqKGu4",
    "site": "Unsplash",
    "w": 1600,
    "h": 1067,
@@ -1212,17 +1212,17 @@
   },
   {
    "id": "u-car-insurance-cheaper",
-   "title": "돼지 저금통과 계산기",
+   "title": "언덕 굽은 길을 달리는 스포츠카",
    "tags": [
     "unsplash"
    ],
-   "author": "Sasun Bughdaryan",
+   "author": "Ben Grayland",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/a-piggy-bank-wearing-glasses-next-to-a-calculator-5AmcgCr8N1Y",
+   "source": "https://unsplash.com/photos/iIMoCtct6m4",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1067,
+   "h": 1200,
    "file": "/img/photos/u-car-insurance-cheaper.webp",
    "file800": "/img/photos/u-car-insurance-cheaper-800.webp"
   },
@@ -1260,17 +1260,17 @@
   },
   {
    "id": "u-insurance-renewal-tips",
-   "title": "서류에 서명하는 손",
+   "title": "굽은 밤 고속도로",
    "tags": [
     "unsplash"
    ],
-   "author": "Signature Pro",
+   "author": "Richard Horne",
    "license": "Unsplash License",
    "licenseUrl": "https://unsplash.com/license",
-   "source": "https://unsplash.com/photos/person-writing-on-white-paper-wB9iWZKwljw",
+   "source": "https://unsplash.com/photos/a-long-exposure-shot-of-a-highway-at-night-AwkDru_0tQw",
    "site": "Unsplash",
    "w": 1600,
-   "h": 1280,
+   "h": 876,
    "file": "/img/photos/u-insurance-renewal-tips.webp",
    "file800": "/img/photos/u-insurance-renewal-tips-800.webp"
   },
@@ -1321,6 +1321,102 @@
    "h": 1205,
    "file": "/img/photos/u-diesel-end-of-life.webp",
    "file800": "/img/photos/u-diesel-end-of-life-800.webp"
+  },
+  {
+   "id": "u-news-all",
+   "title": "도시 야경과 고가도로",
+   "tags": [
+    "unsplash"
+   ],
+   "author": "Yiran Ding",
+   "license": "Unsplash License",
+   "licenseUrl": "https://unsplash.com/license",
+   "source": "https://unsplash.com/photos/shanghai-city-skyline-at-night-JQRyYCC2OIM",
+   "site": "Unsplash",
+   "w": 1600,
+   "h": 1011,
+   "file": "/img/photos/u-news-all.webp",
+   "file800": "/img/photos/u-news-all-800.webp"
+  },
+  {
+   "id": "u-news-recall",
+   "title": "엔진룸 배선 클로즈업",
+   "tags": [
+    "unsplash"
+   ],
+   "author": "Zanelle Lofty-Eaton",
+   "license": "Unsplash License",
+   "licenseUrl": "https://unsplash.com/license",
+   "source": "https://unsplash.com/photos/close-up-of-a-car-engine-with-many-wires-VZcQi2ZS2TU",
+   "site": "Unsplash",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/u-news-recall.webp",
+   "file800": "/img/photos/u-news-recall-800.webp"
+  },
+  {
+   "id": "u-news-ev",
+   "title": "충전 중인 전기차",
+   "tags": [
+    "unsplash"
+   ],
+   "author": "smart-me AG",
+   "license": "Unsplash License",
+   "licenseUrl": "https://unsplash.com/license",
+   "source": "https://unsplash.com/photos/white-electric-car-charging-at-a-station-WZz3bISfJa8",
+   "site": "Unsplash",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/u-news-ev.webp",
+   "file800": "/img/photos/u-news-ev-800.webp"
+  },
+  {
+   "id": "u-news-used",
+   "title": "실내 전시장에 가득한 차",
+   "tags": [
+    "unsplash"
+   ],
+   "author": "Dextar Studio",
+   "license": "Unsplash License",
+   "licenseUrl": "https://unsplash.com/license",
+   "source": "https://unsplash.com/photos/a-bunch-of-cars-are-parked-in-a-garage-ccgjEBvHTIU",
+   "site": "Unsplash",
+   "w": 1600,
+   "h": 1067,
+   "file": "/img/photos/u-news-used.webp",
+   "file800": "/img/photos/u-news-used-800.webp"
+  },
+  {
+   "id": "u-news-life",
+   "title": "도심 도로의 빛 궤적",
+   "tags": [
+    "unsplash"
+   ],
+   "author": "Marc-Olivier Jodoin",
+   "license": "Unsplash License",
+   "licenseUrl": "https://unsplash.com/license",
+   "source": "https://unsplash.com/photos/long-exposure-photography-of-road-and-cars-NqOInJ-ttqM",
+   "site": "Unsplash",
+   "w": 1600,
+   "h": 900,
+   "file": "/img/photos/u-news-life.webp",
+   "file800": "/img/photos/u-news-life-800.webp"
+  },
+  {
+   "id": "u-news-industry",
+   "title": "로봇이 차체를 조립하는 공장",
+   "tags": [
+    "unsplash"
+   ],
+   "author": "Lilian Do Khac",
+   "license": "Unsplash License",
+   "licenseUrl": "https://unsplash.com/license",
+   "source": "https://unsplash.com/photos/EyqUxJuOb1Q",
+   "site": "Unsplash",
+   "w": 1600,
+   "h": 808,
+   "file": "/img/photos/u-news-industry.webp",
+   "file800": "/img/photos/u-news-industry-800.webp"
   }
  ]
 }

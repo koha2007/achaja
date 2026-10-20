@@ -1,10 +1,11 @@
 // 상황별 허브 페이지 생성: /buy/ (살 때), /repair/ (아플 때), /care/ (관리)
-// 데이터: data/guides.json(분류·사진), 각 블로그 페이지의 제목·설명
+// 데이터: data/guides.json(분류·사진), data/weekly.json(이번 주 체크 — 주 2회 갱신), 각 블로그 페이지의 제목·설명
 // 사용: node scripts/gen-hubs.js && node scripts/build-layout.js
 const fs = require('fs');
 const path = require('path');
 const { esc, img, credit, head, THEME_SCRIPT } = require('./lib/page');
 const guides = require('../data/guides.json');
+const weekly = require('../data/weekly.json');
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -79,6 +80,35 @@ function toolCard(t) {
     : `        <div class="flex items-center gap-3 p-md bg-surface-container-low border border-dashed border-outline-variant rounded-2xl" aria-disabled="true">${inner}\n        </div>`;
 }
 
+// 이번 주 체크: 태그 · 제목 · 두 문장, 누르면 관련 가이드·도구로
+function weeklySection(key) {
+  const list = weekly[key] || [];
+  if (!list.length) return '';
+  const [y, m, d] = weekly.updatedAt.split('-').map(Number);
+  const card = (w) => {
+    const inner = `
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">${esc(w.tag)}</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface${w.href ? ' group-hover:underline underline-offset-4' : ''}">${esc(w.title)}</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">${esc(w.body)}</span>${w.sources?.length ? `
+          <span class="block mt-2 text-[11px] text-muted">근거: ${w.sources.map(([n]) => esc(n)).join(' · ')}</span>` : ''}`;
+    return w.href
+      ? `        <a href="${esc(w.href)}" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">${inner}\n        </a>`
+      : `        <div class="p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60">${inner}\n        </div>`;
+  };
+  return `
+  <!-- 이번 주 체크 (data/weekly.json, 주 2회 갱신) -->
+  <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="weekly-title">
+    <div class="flex items-end justify-between mb-md">
+      <h2 id="weekly-title" class="text-lg font-bold flex items-center gap-2"><span class="material-symbols-outlined text-amber-500" aria-hidden="true">event_upcoming</span>이번 주 체크</h2>
+      <time datetime="${weekly.updatedAt}" class="text-[12px] text-muted">${y}년 ${m}월 ${d}일 업데이트</time>
+    </div>
+    <div class="grid gap-sm md:grid-cols-3">
+${list.map(card).join('\n')}
+    </div>
+  </section>
+`;
+}
+
 function featureCard(g) {
   return `      <a href="/blog/${g.slug}/" class="group flex flex-col md:col-span-2 md:row-span-2 bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-3xl overflow-hidden hover:shadow-card transition">
         <div class="photo-frame md:flex-1 md:aspect-auto md:min-h-[260px]">${img(g.photo, { cls: 'group-hover:scale-[1.02] transition-transform duration-500', sizes: '(min-width:768px) 66vw, 100vw' })}</div>
@@ -139,6 +169,7 @@ ${h.tools.map(toolCard).join('\n')}
     </div>
   </section>
 
+${weeklySection(key)}
   <!-- 가이드: 대표 1 + 나머지 (Motor1식 크기 다른 카드) -->
   <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="guides-title">
     <div class="flex items-end justify-between mb-md">

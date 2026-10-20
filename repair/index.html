@@ -50,7 +50,7 @@
 body{min-height:100dvh;}
 .pb-safe{padding-bottom:env(safe-area-inset-bottom);}
 </style>
-<link rel="stylesheet" href="/css/app.css?v=debaaa9e08"/>
+<link rel="stylesheet" href="/css/app.css?v=296c526037"/>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen pb-24 md:pb-0">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">본문으로 건너뛰기</a>
@@ -81,13 +81,13 @@ body{min-height:100dvh;}
 <main id="main" class="pt-14">
   <!-- 히어로: 사진 + 한 줄 -->
   <section class="relative isolate overflow-hidden" aria-labelledby="hub-title">
-    <div class="absolute inset-0 -z-10"><img src="/img/photos/u-hub-repair-800.webp" srcset="/img/photos/u-hub-repair-800.webp 800w, /img/photos/u-hub-repair.webp 1600w" sizes="100vw" width="1600" height="1067" alt="정비 공구" class="w-full h-full object-cover" fetchpriority="high" decoding="async"/></div>
+    <div class="absolute inset-0 -z-10"><img src="/img/photos/u-hub-repair-800.webp" srcset="/img/photos/u-hub-repair-800.webp 800w, /img/photos/u-hub-repair.webp 1600w" sizes="100vw" width="1600" height="1200" alt="차 밑을 정비하는 모습" class="w-full h-full object-cover" fetchpriority="high" decoding="async"/></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/45 to-black/20"></div>
     <div class="max-w-5xl mx-auto px-margin pt-xl pb-lg min-h-[260px] md:min-h-[340px] flex flex-col justify-end">
       <nav aria-label="breadcrumb" class="text-[12px] text-white/80 mb-sm"><a href="/" class="hover:underline">홈</a> / <span class="text-white">아플 때</span></nav>
       <h1 id="hub-title" class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">아플 때</h1>
       <p class="text-white/90 text-[15px] md:text-base mt-sm max-w-xl leading-relaxed">경고등이 켜지거나 소리가 이상할 때, 먼저 확인할 것들이에요.</p>
-      <p class="photo-credit !text-white/60 mt-md">사진: <a href="https://unsplash.com/photos/selective-focus-photography-of-mechanics-tool-lot-60krlMMeWxU" target="_blank" rel="noopener" class="hover:underline">Quilia</a> · Unsplash</p>
+      <p class="photo-credit !text-white/60 mt-md">사진: <a href="https://unsplash.com/photos/a-black-and-white-photo-of-a-man-working-on-a-vehicle-Ffq4-mWzhmE" target="_blank" rel="noopener" class="hover:underline">Zanelle Lofty-Eaton</a> · Unsplash</p>
     </div>
   </section>
 
@@ -118,6 +118,32 @@ body{min-height:100dvh;}
             <span class="block text-[13px] text-on-surface-variant mt-0.5">증상을 고르면 예상 원인·긴급도·수리비 범위</span>
           </span>
         </div>
+    </div>
+  </section>
+
+
+  <!-- 이번 주 체크 (data/weekly.json, 주 2회 갱신) -->
+  <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="weekly-title">
+    <div class="flex items-end justify-between mb-md">
+      <h2 id="weekly-title" class="text-lg font-bold flex items-center gap-2"><span class="material-symbols-outlined text-amber-500" aria-hidden="true">event_upcoming</span>이번 주 체크</h2>
+      <time datetime="2026-10-20" class="text-[12px] text-muted">2026년 10월 20일 업데이트</time>
+    </div>
+    <div class="grid gap-sm md:grid-cols-3">
+        <a href="/blog/tire-pressure-guide/" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">날씨</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface group-hover:underline underline-offset-4">추워지면 타이어 경고등이 잘 켜져요</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">기온이 내려가면 타이어 속 공기가 줄어 공기압 경고등이 켜지기 쉬워요. 고장이 아니라 공기압 부족인 경우가 많으니 먼저 공기압부터 맞춰 보세요.</span>
+        </a>
+        <a href="/blog/car-battery-12v/" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">점검</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface group-hover:underline underline-offset-4">아침 시동이 무겁다면 배터리 신호</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">추운 아침에 시동이 한 번에 안 걸리면 12V 배터리가 약해졌다는 신호일 수 있어요. 겨울 전에 배터리 상태를 점검받으면 길에서 서는 일을 막을 수 있어요.</span>
+        </a>
+        <a href="/parts" class="group block p-md rounded-2xl bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 hover:shadow-card transition">
+          <span class="text-[11px] font-bold text-amber-700 dark:text-amber-300">무상</span>
+          <span class="block mt-1 text-[15px] font-bold leading-snug text-on-surface group-hover:underline underline-offset-4">수리 맡기기 전에 리콜부터 조회</span>
+          <span class="block mt-1.5 text-[13px] text-on-surface-variant leading-relaxed">같은 증상이 리콜·무상수리 대상이면 돈을 내지 않고 고칠 수 있어요. 정비소에 가기 전에 내 차가 대상인지 1분만 확인해 보세요.</span>
+        </a>
     </div>
   </section>
 

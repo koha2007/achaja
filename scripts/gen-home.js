@@ -86,10 +86,10 @@ ${NEW.map((n) => `      <a href="/newcar/#${n.id}" class="group flex-shrink-0 w-
 
 function situations() {
   const items = [
-    ['/buy/', '살 때', 'Buying', '매물 보러 가기 전 확인할 것', 'What to check before viewing a car', 'kr-tollgate'],
-    ['/repair/', '아플 때', 'Repairs', '경고등·이상 소음 대처', 'Warning lights and odd noises', 'gauges'],
-    ['/care/', '관리', 'Care', '정비 주기·타이어·검사', 'Maintenance, tires, inspections', 'tire-stack'],
-    ['/news/', 'NEW 소식', 'NEW', '신차·리콜·업계 뉴스', 'New cars, recalls, industry news', 'trails-avenue'],
+    ['/buy/', '살 때', 'Buying', '매물 보러 가기 전 확인할 것', 'What to check before viewing a car', 'u-hub-buy'],
+    ['/repair/', '아플 때', 'Repairs', '경고등·이상 소음 대처', 'Warning lights and odd noises', 'u-hub-repair'],
+    ['/care/', '관리', 'Care', '정비 주기·타이어·검사', 'Maintenance, tires, inspections', 'u-hub-care'],
+    ['/news/', 'NEW 소식', 'NEW', '리콜·전기차·업계 뉴스', 'Recalls, EVs, industry news', 'u-news-all'],
   ];
   return `  <!-- 상황별 입구: 사진 카드 4개 -->
   <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="situ-title">
