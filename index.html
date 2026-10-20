@@ -71,7 +71,7 @@
   body{min-height:100dvh;}
   .pb-safe{padding-bottom:env(safe-area-inset-bottom);}                                                                                                                                                                                                  
   </style>                                                                                                                                                                                                                             
-  <link rel="stylesheet" href="/css/app.css?v=0b108cf911"/>
+  <link rel="stylesheet" href="/css/app.css?v=debaaa9e08"/>
 </head>                                                   
   <body class="bg-background text-on-surface font-body min-h-screen pb-24">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-container focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
@@ -84,8 +84,8 @@
         <span class="font-headline text-lg font-extrabold tracking-tight text-primary-container dark:text-primary">ACHAJA</span>
       </a>
       <nav aria-label="주요 메뉴" class="hidden md:flex items-center gap-1">
-        <a href="/new/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">NEW</a>
-        <a href="/news/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">소식</a>
+        <a href="/news/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">NEW</a>
+        <a href="/newcar/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">NEWCAR</a>
         <a href="/buy/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">살 때</a>
         <a href="/repair/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">아플 때</a>
         <a href="/care/" class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-semibold text-sm px-3 py-2 rounded-lg transition-colors">관리</a>
@@ -125,33 +125,33 @@
     </div>
   </section>
 
-  <!-- NEW: 새로 나온 차·부품·튜닝 (사진 한 장 + 이름) -->
+  <!-- NEWCAR: 새로 나온 차 (사진 한 장 + 이름) -->
   <section class="max-w-5xl mx-auto px-margin pt-xl" aria-labelledby="new-title">
     <div class="flex items-end justify-between">
-      <h2 id="new-title" class="text-xl font-bold flex items-center gap-2"><span class="text-[11px] font-black tracking-wider bg-amber-400 text-slate-900 px-2 py-0.5 rounded" data-noi18n>NEW</span>새로 나왔어요</h2>
-      <a href="/new/" class="text-[13px] font-semibold text-primary-container dark:text-primary hover:underline">모두 보기 →</a>
+      <h2 id="new-title" class="text-xl font-bold flex items-center gap-2"><span class="text-[11px] font-black tracking-wider bg-amber-400 text-slate-900 px-2 py-0.5 rounded" data-noi18n>NEWCAR</span>새로 나온 차</h2>
+      <a href="/newcar/" class="text-[13px] font-semibold text-primary-container dark:text-primary hover:underline">모두 보기 →</a>
     </div>
     <div class="mt-md flex md:grid md:grid-cols-3 gap-sm md:gap-md overflow-x-auto snap-x -mx-margin px-margin md:mx-0 md:px-0 pb-1 hide-scrollbar">
-      <a href="/new/#porsche-cayenne-coupe-electric" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+      <a href="/newcar/#porsche-cayenne-coupe-electric" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
         <div class="relative bg-surface-container-high" style="aspect-ratio:1600/1191"><img src="/img/new/porsche-cayenne-coupe-electric-800.webp" width="1600" height="1191" alt="포르쉐 카이엔 일렉트릭 · 쿠페 일렉트릭" class="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async"/></div>
         <div class="p-md">
-          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>신차 · 국내 판매</span>
+          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>포르쉐 · 국내 판매</span>
           <p class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4" data-noi18n>포르쉐 카이엔 일렉트릭 · 쿠페 일렉트릭</p>
           <p class="mt-1 text-[12px] text-muted line-clamp-1" data-noi18n>가격 카이엔 일렉트릭 1억4230만원부터</p>
         </div>
       </a>
-      <a href="/new/#buick-electra-e7" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+      <a href="/newcar/#buick-electra-e7" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
         <div class="relative bg-surface-container-high" style="aspect-ratio:1600/1200"><img src="/img/new/buick-electra-e7-800.webp" width="1600" height="1200" alt="뷰익 엘렉트라 E7" class="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async"/></div>
         <div class="p-md">
-          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>신차 · 사전계약</span>
+          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>뷰익 · 사전계약</span>
           <p class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4" data-noi18n>뷰익 엘렉트라 E7</p>
           <p class="mt-1 text-[12px] text-muted line-clamp-1" data-noi18n>가격 4300만원대부터 (보도 기준)</p>
         </div>
       </a>
-      <a href="/new/#genesis-gv60-magma" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
+      <a href="/newcar/#genesis-gv60-magma" class="group flex-shrink-0 w-[220px] md:w-auto snap-start bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/60 rounded-2xl overflow-hidden hover:shadow-card transition">
         <div class="relative bg-surface-container-high" style="aspect-ratio:1600/1200"><img src="/img/new/genesis-gv60-magma-800.webp" width="1600" height="1200" alt="제네시스 GV60 마그마" class="absolute inset-0 w-full h-full object-contain" loading="lazy" decoding="async"/></div>
         <div class="p-md">
-          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>신차 · 출시</span>
+          <span class="text-[11px] font-bold text-primary-container dark:text-primary" data-noi18n>제네시스 · 출시</span>
           <p class="mt-0.5 font-bold text-[15px] leading-snug group-hover:underline underline-offset-4" data-noi18n>제네시스 GV60 마그마</p>
           <p class="mt-1 text-[12px] text-muted line-clamp-1" data-noi18n>가격 9657만원 (개소세 3.5% 기준)</p>
         </div>
@@ -187,7 +187,7 @@
       <a href="/news/" class="group relative isolate overflow-hidden rounded-2xl aspect-[4/5] md:aspect-[3/4] flex flex-col justify-end p-md text-white shadow-card">
         <div class="absolute inset-0 -z-10"><img src="/img/photos/trails-avenue-800.webp" srcset="/img/photos/trails-avenue-800.webp 800w, /img/photos/trails-avenue.webp 1600w" sizes="(min-width:768px) 25vw, 50vw" width="1600" height="1067" alt="가로수 길의 빛 궤적" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async"/></div>
         <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-        <span class="text-xl md:text-2xl font-extrabold">소식</span>
+        <span class="text-xl md:text-2xl font-extrabold">NEW 소식</span>
         <span class="text-[12px] md:text-[13px] text-white/85 mt-0.5 leading-snug">신차·리콜·업계 뉴스</span>
         <span class="material-symbols-outlined absolute top-3 right-3 text-white/85 text-[20px]">arrow_outward</span>
       </a>
@@ -335,8 +335,8 @@
       <div>
         <p class="font-bold text-[11px] uppercase tracking-wider text-on-surface mb-sm">둘러보기</p>
         <ul class="space-y-1.5">
-          <li><a href="/new/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">NEW 새로 나온 차</a></li>
-          <li><a href="/news/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">소식</a></li>
+          <li><a href="/news/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">NEW 오늘의 소식</a></li>
+          <li><a href="/newcar/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">NEWCAR 새로 나온 차</a></li>
           <li><a href="/buy/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">살 때</a></li>
           <li><a href="/repair/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">아플 때</a></li>
           <li><a href="/care/" class="text-[12px] text-muted hover:text-primary-container dark:hover:text-primary hover:underline">관리</a></li>
@@ -373,8 +373,8 @@
   <nav aria-label="하단 메뉴" class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-nav-bg border-t border-app-border shadow-lg">
     <div class="max-w-2xl mx-auto flex justify-around items-stretch h-16 px-2 pb-safe">
       <a href="/" aria-current="page" class="flex-1 flex flex-col items-center justify-center text-primary-container dark:text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">home</span><span class="text-[10px] font-bold mt-0.5">홈</span></a>
-      <a href="/new/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">fiber_new</span><span class="text-[10px] font-medium mt-0.5">NEW</span></a>
-      <a href="/news/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">newspaper</span><span class="text-[10px] font-medium mt-0.5">소식</span></a>
+      <a href="/news/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">fiber_new</span><span class="text-[10px] font-medium mt-0.5">NEW</span></a>
+      <a href="/newcar/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">directions_car</span><span class="text-[10px] font-medium mt-0.5">NEWCAR</span></a>
       <a href="/blog/" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">menu_book</span><span class="text-[10px] font-medium mt-0.5">가이드</span></a>
       <a href="/my" class="flex-1 flex flex-col items-center justify-center text-muted"><span class="material-symbols-outlined">garage</span><span class="text-[10px] font-medium mt-0.5">내 차</span></a>
     </div>
@@ -464,11 +464,11 @@
       "관심 차종이 나오면 바로":"The moment a model you follow launches",
       "성능점검기록부·보험이력 위험 신호 (회원 무료)":"Red flags in inspection and insurance records (free for members)",
       "보고 있는 차 2~3대 나란히":"Put 2–3 cars side by side",
-      "새로 나왔어요":"Just released",
       "모두 보기 →":"See all →",
       "가이드":"Guides",
       "둘러보기":"Explore",
-      "NEW 새로 나온 차":"NEW releases",
+      "NEW 오늘의 소식":"NEW today",
+      "NEWCAR 새로 나온 차":"NEWCAR releases",
       "도구":"Tools",
       "매물 체크(차량 조회)":"Listing check (vehicle lookup)",
       "리콜 조회":"Recall lookup",
@@ -486,7 +486,9 @@
       "개인정보처리방침":"Privacy policy",
       "데이터 출처: 국토교통부 · 한국교통안전공단 · 보험개발원 카히스토리(외부 안내) · NHTSA vPIC · ISO 3779 · 사진: Unsplash · 위키미디어 공용":"Data sources: MOLIT · KOTSA · KIDI Carhistory (external) · NHTSA vPIC · ISO 3779 · Photos: Wikimedia Commons",
       "상호: 코하(Koha) · 대표: 김용헌 · 사업자등록번호: 108-16-82025 · 주소: 경기도 남양주시 진접읍 해밀예당1로 145 · 전화: 010-8947-1841 · 이메일: koha3d77@gmail.com":"Company: Koha · CEO: Kim Yong-heon · Business reg. no.: 108-16-82025 · Address: 145 Haemilyedang 1-ro, Jinjeop-eup, Namyangju-si, Gyeonggi-do · Tel: 010-8947-1841 · Email: koha3d77@gmail.com",
-      "© 2026 ACHAJA by 코하(Koha). All Rights Reserved.":"© 2026 ACHAJA by Koha. All Rights Reserved."
+      "© 2026 ACHAJA by 코하(Koha). All Rights Reserved.":"© 2026 ACHAJA by Koha. All Rights Reserved.",
+      "새로 나온 차":"New cars",
+      "NEW 소식":"NEW"
     };
     var PH = { "hero-q": "e.g. 12가3456 or a 17-digit VIN" };
     var nodes = null;

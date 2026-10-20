@@ -4,7 +4,7 @@
 //   <!-- @header active=buy lang --> ... <!-- /@header -->
 //   <!-- @tabbar active=buy -->      ... <!-- /@tabbar -->
 //   <!-- @footer -->                 ... <!-- /@footer -->
-// active 값: home | buy | repair | care | news | my | (없음)
+// active 값: home | news | newcar | buy | repair | care | my | (없음)
 // lang 플래그: 한국어/English 토글 버튼 표시 (홈만 사용)
 //
 // 또한 /css/app.css 링크에 내용 해시를 붙여 캐시를 갱신한다.
@@ -20,17 +20,17 @@ const ROOT = path.resolve(__dirname, '..');
 
 // ── 메뉴 정의 (IA: 사용자 상황 기준) ─────────────────────────────
 const NAV = [
-  { key: 'new', href: '/new/', label: 'NEW', icon: 'fiber_new' },
-  { key: 'news', href: '/news/', label: '소식', icon: 'newspaper' },
+  { key: 'news', href: '/news/', label: 'NEW', icon: 'fiber_new' },
+  { key: 'newcar', href: '/newcar/', label: 'NEWCAR', icon: 'directions_car' },
   { key: 'buy', href: '/buy/', label: '살 때', icon: 'directions_car' },
   { key: 'repair', href: '/repair/', label: '아플 때', icon: 'car_repair' },
   { key: 'care', href: '/care/', label: '관리', icon: 'handyman' },
 ];
-// 모바일 하단 탭: 매일 보는 것(NEW·소식) 우선, 상황별 가이드는 '가이드' 하나로 묶음
+// 모바일 하단 탭: 매일 보는 것(NEW 소식·NEWCAR 신차) 우선, 상황별 가이드는 '가이드' 하나로 묶음
 const TABS = [
   { key: 'home', href: '/', label: '홈', icon: 'home' },
-  { key: 'new', href: '/new/', label: 'NEW', icon: 'fiber_new' },
-  { key: 'news', href: '/news/', label: '소식', icon: 'newspaper' },
+  { key: 'news', href: '/news/', label: 'NEW', icon: 'fiber_new' },
+  { key: 'newcar', href: '/newcar/', label: 'NEWCAR', icon: 'directions_car' },
   { key: 'guide', href: '/blog/', label: '가이드', icon: 'menu_book' },
   { key: 'my', href: '/my', label: '내 차', icon: 'garage' },
 ];
@@ -91,7 +91,7 @@ ${links.map(([href, label]) => `          <li><a href="${href}" class="text-[12p
   return `<footer class="px-margin pt-xl pb-lg border-t border-app-border mt-xl">
     <nav aria-label="사이트맵" class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-5xl mx-auto mb-lg text-left">
 ${col('도구', [['/history', '매물 체크(차량 조회)'], ['/parts', '리콜 조회'], ['/sources/', '공식기관 가이드'], ['/pricing/', '상품안내']])}
-${col('둘러보기', [['/new/', 'NEW 새로 나온 차'], ['/news/', '소식'], ['/buy/', '살 때'], ['/repair/', '아플 때'], ['/care/', '관리']])}
+${col('둘러보기', [['/news/', 'NEW 오늘의 소식'], ['/newcar/', 'NEWCAR 새로 나온 차'], ['/buy/', '살 때'], ['/repair/', '아플 때'], ['/care/', '관리']])}
 ${col('콘텐츠', [['/blog/', '전체 가이드'], ['/blog/used-car-checklist/', '중고차 체크리스트'], ['/blog/engine-warning-light/', '엔진 경고등'], ['/blog/vehicle-inspection-guide/', '자동차 정기검사']])}
 ${col('회사·정책', [['/about/', '소개'], ['/terms/', '이용약관'], ['/privacy/', '개인정보처리방침']])}
     </nav>

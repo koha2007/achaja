@@ -52,6 +52,11 @@ export default {
       return Response.redirect(`https://achaja.net${url.pathname}${url.search}`, 301);
     }
 
+    // NEW(신차) → NEWCAR 이전 (2026-10-18). 소식이 NEW 이름을 이어받음
+    if (url.pathname === '/new' || url.pathname === '/new/') {
+      return Response.redirect(`https://achaja.net/newcar/${url.search}`, 301);
+    }
+
     let response;
     if (url.pathname === '/api/news') {
       response = await newsHandler({ request, env });

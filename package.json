@@ -3,7 +3,7 @@
   "private": true,
   "description": "ACHAJA static site + Cloudflare Worker",
   "scripts": {
-    "build:pages": "node scripts/gen-hubs.js && node scripts/gen-new.js && node scripts/gen-news.js && node scripts/gen-guide-index.js && node scripts/gen-home.js",
+    "build:pages": "node scripts/gen-hubs.js && node scripts/gen-newcar.js && node scripts/gen-news.js && node scripts/gen-guide-index.js && node scripts/gen-home.js",
     "build:guides": "node scripts/build-guides.js",
     "build:css": "tailwindcss -c tailwind.config.js -i css/src/app.css -o css/app.css --minify",
     "build:layout": "node scripts/build-layout.js",

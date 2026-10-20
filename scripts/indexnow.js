@@ -1,6 +1,6 @@
 // IndexNow로 네이버·빙에 사이트맵 URL 제출 (구글은 IndexNow 미지원 → Search Console에서 수동)
 // 사용: npm run indexnow            → sitemap.xml 전체
-//       npm run indexnow -- /new/ /news/  → 지정한 경로만
+//       npm run indexnow -- /newcar/ /news/  → 지정한 경로만
 // 배포(푸시) 후 실제 사이트에 반영된 다음 실행할 것.
 const fs = require('fs');
 const path = require('path');
