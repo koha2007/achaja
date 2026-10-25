@@ -1,136 +1,130 @@
 {
  "note": "살 때·아플 때·관리 허브의 '이번 주 체크' — 주 2회(월·목) 자동 갱신. 허브마다 3개, 계절·날씨·제도·시장 흐름에 맞춘 짧은 체크. 제목 한 줄 + 본문 두 문장 이내, 숫자는 공식 기관·2개 이상 보도로 확인된 것만. href는 사이트 안 가이드·도구(있을 때), sources는 외부 근거(선택).",
- "updatedAt": "2026-10-22",
+ "updatedAt": "2026-10-26",
  "buy": [
   {
-   "tag": "신차",
-   "title": "신형 투싼 계약 시작, 구형 재고와 비교해요",
-   "body": "6년 만에 바뀐 5세대 투싼이 10월 21일부터 계약을 받아요. 가솔린 3140만원·하이브리드 3615만원(세제 혜택 기준)부터라, 할인 붙은 구형 재고·중고 시세와 같이 비교해 보세요.",
-   "href": "/blog/new-vs-used-car-tco/",
-   "sources": [
-    [
-     "오토트리뷴",
-     "https://www.autotribune.co.kr/news/articleView.html?idxno=46621"
-    ],
-    [
-     "아시아경제",
-     "https://view.asiae.co.kr/article/2026102108411134598"
-    ],
-    [
-     "서울경제TV",
-     "https://www.sentv.co.kr/article/view/sentv202610210051"
-    ]
-   ]
-  },
-  {
-   "tag": "시세",
-   "title": "10월 중고 SUV·RV 시세는 살짝 내림세",
-   "body": "엔카 분석으로 10월 국산 중고차 시세는 평균 0.76% 내렸고, 팰리세이드(1.58%)·카니발(1.34%)도 떨어졌어요. 가을 성수기라 급하게 오를 걱정보다는 여러 매물을 차분히 비교할 때예요.",
-   "href": "/blog/used-car-price-guide/",
-   "sources": [
-    [
-     "테크월드",
-     "https://www.epnc.co.kr/news/articleView.html?idxno=408372"
-    ],
-    [
-     "오토타임즈",
-     "http://www.autotimes.co.kr/detail.php?number=689580&thread=27"
-    ]
-   ]
-  },
-  {
-   "tag": "세금",
-   "title": "하이브리드 개소세 감면, 올해 말까지예요",
-   "body": "하이브리드·전기차 개별소비세 감면은 2026년 12월 31일까지로 정해져 있어요(하이브리드 한도 70만원). 연말 출고가 늦어지면 혜택이 달라질 수 있으니 출고 예정일을 꼭 물어보세요.",
+   "tag": "보조금",
+   "title": "전기차 보조금, 우리 동네 남은 대수부터 봐요",
+   "body": "10월 들어 보조금이 바닥나 접수를 마감한 지자체가 생기고 있어요. 전기차 계약 전에 무공해차 통합누리집에서 우리 지역 남은 대수와 접수 기간을 꼭 확인하세요.",
    "href": "/blog/hybrid-vs-ev/",
    "sources": [
     [
-     "다나와 자동차",
-     "https://auto.danawa.com/news//?Tab=N1&p=&NewsGroup=M&Work=detail&no=5722861"
+     "무공해차 통합누리집",
+     "https://ev.or.kr"
+    ]
+   ]
+  },
+  {
+   "tag": "할인",
+   "title": "11월 판매조건, 월초에 확인하고 계약해요",
+   "body": "현대·기아 등 국산차는 보통 매달 초 새 할인 조건을 내놓아요. 이번 주에 서두르기보다 11월 조건이 나오면 생산월 할인까지 비교해 보세요.",
+   "href": "/blog/new-vs-used-car-tco/"
+  },
+  {
+   "tag": "중고차",
+   "title": "중고차 살 땐 리콜 수리했는지도 봐요",
+   "body": "리콜이 나온 지 1년 반이 지나도 수리를 안 받은 차가 81만 대나 된다는 국감 자료가 나왔어요. 사기 전에 차량번호로 자동차리콜센터에서 미조치 리콜이 있는지 조회해 보세요.",
+   "href": "/blog/vin-lookup/",
+   "sources": [
+    [
+     "스트레이트뉴스",
+     "https://www.straightnews.co.kr/news/articleView.html?idxno=312121"
     ],
     [
-     "한국세정신문",
-     "https://www.taxtimes.co.kr/news/article.html?no=272997"
+     "뉴스다",
+     "https://www.newsda.net/news/article.html?no=583771"
     ]
    ]
   }
  ],
  "repair": [
   {
-   "tag": "날씨",
-   "title": "일교차 15℃, 아침 시동 소리 들어 보세요",
-   "body": "22일 아침 일부 내륙은 영하권까지 내려가고 낮과 밤 기온 차가 15℃ 안팎이에요. 추운 아침 시동 직후 ‘끼익’ 소리가 나면 벨트가 굳거나 닳았다는 신호일 수 있어요.",
-   "href": "/blog/car-noise-diagnosis/",
+   "tag": "첫 추위",
+   "title": "태풍 지나고 수요일부터 아침 기온 뚝",
+   "body": "태풍 ‘참피’가 지나간 뒤 28일(수) 서울 아침이 2℃ 안팎까지 내려가고, 내륙엔 서리가 내릴 수 있어요. 시동이 힘없이 걸리거나 계기판이 깜빡이면 12V 배터리부터 점검하세요.",
+   "href": "/blog/car-battery-12v/",
    "sources": [
     [
-     "미디어파인",
-     "https://www.mediafine.co.kr/news/articleView.html?idxno=93201"
+     "재경일보",
+     "https://news.jkn.co.kr/post/1048934"
     ],
     [
-     "월요신문",
-     "https://www.wolyo.co.kr/news/articleView.html?idxno=319402"
+     "YTN",
+     "https://www.ytn.co.kr/_ln/0108_202610241454329290"
+    ],
+    [
+     "기상청 중기예보",
+     "https://www.weather.go.kr/w/repositary/xml/fct/rpt_wid_week_202610211800_108.pdf"
     ]
    ]
   },
   {
-   "tag": "무상수리",
-   "title": "EV6·캐스퍼 일렉트릭 무상수리 안내",
-   "body": "10월 중순 자동차리콜센터에 기아 EV6 냉각수 밸브, 캐스퍼 일렉트릭 전동식 워터펌프 관련 무상수리가 올라왔어요. 전기차 냉각 경고가 떴다면 내 차가 대상인지 먼저 조회해 보세요.",
-   "href": "/blog/recall-check-guide/",
-   "sources": [
-    [
-     "자동차리콜센터",
-     "https://www.car.go.kr/ri/grts/list.do"
-    ]
-   ]
+   "tag": "경고등",
+   "title": "추운 아침, 타이어 공기압 경고등이 켜졌다면",
+   "body": "기온이 확 떨어지면 타이어 속 공기가 줄어 경고등이 켜지기도 해요. 그냥 꺼지길 기다리지 말고 공기압을 재서 적정값으로 채워 주세요.",
+   "href": "/blog/tire-pressure-guide/"
   },
   {
    "tag": "리콜",
-   "title": "8월 대규모 리콜, 아직 안 받았다면",
-   "body": "8월에 투싼, 그랜저·아반떼 하이브리드, 카니발·K8 등 51만여 대 리콜이 발표됐어요. 연료가 샐 수 있는 결함도 있으니 안내 문자를 놓쳤다면 지금 조회하고 예약하세요.",
-   "href": "/parts",
+   "title": "제동장치 리콜, 아직 안 받은 차 많아요",
+   "body": "국감 자료로 수리 안 된 리콜 차 81만 대 가운데 35만 대가량이 브레이크 같은 제동장치 결함이에요. 안내 문자를 놓쳤다면 지금 내 차를 조회하고 예약하세요.",
+   "href": "/blog/recall-check-guide/",
    "sources": [
     [
-     "경기일보",
-     "https://www.kyeonggi.com/article/20260806580195"
+     "스트레이트뉴스",
+     "https://www.straightnews.co.kr/news/articleView.html?idxno=312121"
     ],
     [
-     "아시아투데이",
-     "https://www.asiatoday.co.kr/kn/view.php?key=20260806010002175"
+     "뉴스다",
+     "https://www.newsda.net/news/article.html?no=583771"
     ]
    ]
   }
  ],
  "care": [
   {
-   "tag": "첫 추위",
-   "title": "워셔액은 겨울용으로 바꿔 두세요",
-   "body": "이번 주 아침 기온이 영하권까지 내려가는 곳이 생겼어요. 여름용 워셔액은 얼 수 있으니 겨울용으로 바꾸고, 서리 낀 유리에 뜨거운 물은 붓지 마세요.",
-   "href": "/blog/engine-oil-interval/",
+   "tag": "타이어",
+   "title": "겨울 타이어, 지금 미리 알아봐요",
+   "body": "이번 주부터 아침 기온이 한 자릿수로 내려가는 날이 많아져요. 눈길을 자주 다닌다면 첫눈 전에 겨울용 타이어나 사계절 타이어 상태를 살펴보세요.",
+   "href": "/blog/tire-replacement-guide/",
    "sources": [
     [
-     "미디어파인",
-     "https://www.mediafine.co.kr/news/articleView.html?idxno=93201"
-    ]
-   ]
-  },
-  {
-   "tag": "세금",
-   "title": "12월 자동차세 2기분, 미리 챙겨요",
-   "body": "자동차세 2기분은 12월 16일부터 31일까지 내요. 이사했거나 차를 바꿨다면 고지서 주소와 금액을 위택스에서 미리 확인하세요.",
-   "href": "/blog/road-tax-payment/",
-   "sources": [
-    [
-     "위택스",
-     "https://www.wetax.go.kr"
+     "기상청 중기예보",
+     "https://www.weather.go.kr/w/repositary/xml/fct/rpt_wid_week_202610211800_108.pdf"
     ]
    ]
   },
   {
    "tag": "보험",
-   "title": "보험 갱신 전 특약부터 다시 보기",
-   "body": "겨울에 차를 덜 탄다면 주행거리 특약이 맞는지, 블랙박스 할인은 넣었는지 확인하세요. 갱신 한 달 전쯤 비교하면 고를 시간이 넉넉해요.",
-   "href": "/blog/insurance-renewal-tips/"
+   "title": "내년 자동차보험료, 오를 수 있다는 소식",
+   "body": "올해 상반기 자동차보험이 6년 만에 적자로 돌아서 내년 보험료가 또 오를 수 있다는 보도가 이어지고 있어요. 갱신이 다가오면 특약과 할인 항목을 꼼꼼히 다시 비교하세요.",
+   "href": "/blog/insurance-renewal-tips/",
+   "sources": [
+    [
+     "SBS Biz",
+     "https://biz.sbs.co.kr/amp/article/20000324644"
+    ],
+    [
+     "데일리안",
+     "https://www.dailian.co.kr/news/view/1671831/"
+    ],
+    [
+     "세계일보",
+     "https://www.segye.com/newsView/20260726505961"
+    ]
+   ]
+  },
+  {
+   "tag": "검사",
+   "title": "정기검사 기간, 연말 전에 확인해요",
+   "body": "자동차 정기검사는 정해진 기간 안에 받지 않으면 과태료가 붙어요. 내 차 검사 기간을 한국교통안전공단에서 조회하고 미리 예약해 두세요.",
+   "href": "/blog/vehicle-inspection-guide/",
+   "sources": [
+    [
+     "한국교통안전공단",
+     "https://www.kotsa.or.kr"
+    ]
+   ]
   }
  ]
 }
