@@ -1,128 +1,104 @@
 {
  "note": "살 때·아플 때·관리 허브의 '이번 주 체크' — 주 2회(월·목) 자동 갱신. 허브마다 3개, 계절·날씨·제도·시장 흐름에 맞춘 짧은 체크. 제목 한 줄 + 본문 두 문장 이내, 숫자는 공식 기관·2개 이상 보도로 확인된 것만. href는 사이트 안 가이드·도구(있을 때), sources는 외부 근거(선택).",
- "updatedAt": "2026-10-26",
+ "updatedAt": "2026-10-29",
  "buy": [
   {
-   "tag": "보조금",
-   "title": "전기차 보조금, 우리 동네 남은 대수부터 봐요",
-   "body": "10월 들어 보조금이 바닥나 접수를 마감한 지자체가 생기고 있어요. 전기차 계약 전에 무공해차 통합누리집에서 우리 지역 남은 대수와 접수 기간을 꼭 확인하세요.",
-   "href": "/blog/hybrid-vs-ev/",
+   "tag": "할인",
+   "title": "연말 할인 경쟁, 11월 조건 나오면 비교해요",
+   "body": "연말을 앞두고 르노코리아·현대차·기아 등이 할인 경쟁을 벌이고 있다는 보도가 나왔어요. 11월 1일 새 판매조건이 나오면 생산월 할인과 재고차 조건까지 견줘 보고 계약하세요.",
+   "href": "/blog/new-vs-used-car-tco/",
    "sources": [
     [
-     "무공해차 통합누리집",
-     "https://ev.or.kr"
+     "세계일보",
+     "https://www.segye.com/newsView/20261028506766"
     ]
    ]
-  },
-  {
-   "tag": "할인",
-   "title": "11월 판매조건, 월초에 확인하고 계약해요",
-   "body": "현대·기아 등 국산차는 보통 매달 초 새 할인 조건을 내놓아요. 이번 주에 서두르기보다 11월 조건이 나오면 생산월 할인까지 비교해 보세요.",
-   "href": "/blog/new-vs-used-car-tco/"
   },
   {
    "tag": "중고차",
-   "title": "중고차 살 땐 리콜 수리했는지도 봐요",
-   "body": "리콜이 나온 지 1년 반이 지나도 수리를 안 받은 차가 81만 대나 된다는 국감 자료가 나왔어요. 사기 전에 차량번호로 자동차리콜센터에서 미조치 리콜이 있는지 조회해 보세요.",
-   "href": "/blog/vin-lookup/",
-   "sources": [
-    [
-     "스트레이트뉴스",
-     "https://www.straightnews.co.kr/news/articleView.html?idxno=312121"
-    ],
-    [
-     "뉴스다",
-     "https://www.newsda.net/news/article.html?no=583771"
-    ]
-   ]
+   "title": "추워진 지금, 중고차는 히터·열선부터 켜 봐요",
+   "body": "날이 추워지면 히터와 열선, 김서림 제거 기능을 바로 써 보게 돼요. 중고차를 보러 가면 시동을 건 뒤 이런 기능이 제대로 작동하는지 꼭 확인하세요.",
+   "href": "/blog/used-car-checklist/"
+  },
+  {
+   "tag": "연식",
+   "title": "해가 바뀌면 중고차 값이 한 번 내려가요",
+   "body": "새해가 되면 같은 차도 한 해 더 오래된 차로 계산돼 시세가 떨어지는 게 보통이에요. 팔 계획이면 연내에, 살 계획이면 급하지 않을 때 새해 시세도 비교해 보세요.",
+   "href": "/blog/car-residual-value/"
   }
  ],
  "repair": [
   {
-   "tag": "첫 추위",
-   "title": "태풍 지나고 수요일부터 아침 기온 뚝",
-   "body": "태풍 ‘참피’가 지나간 뒤 28일(수) 서울 아침이 2℃ 안팎까지 내려가고, 내륙엔 서리가 내릴 수 있어요. 시동이 힘없이 걸리거나 계기판이 깜빡이면 12V 배터리부터 점검하세요.",
+   "tag": "한파",
+   "title": "올가을 첫 영하권, 아침 시동 소리 들어 봐요",
+   "body": "27일 밤 내륙 곳곳에 한파주의보가 내려지며 올가을 들어 가장 추운 아침이 찾아왔어요. 시동이 느리게 걸리거나 계기판이 깜빡이면 12V 배터리부터 점검하세요.",
    "href": "/blog/car-battery-12v/",
    "sources": [
     [
-     "재경일보",
-     "https://news.jkn.co.kr/post/1048934"
+     "한국일보",
+     "https://www.hankookilbo.com/news/article/A2026102713110002855"
     ],
     [
      "YTN",
-     "https://www.ytn.co.kr/_ln/0108_202610241454329290"
-    ],
-    [
-     "기상청 중기예보",
-     "https://www.weather.go.kr/w/repositary/xml/fct/rpt_wid_week_202610211800_108.pdf"
+     "https://ytn.co.kr/_ln/0108_202610281155367309"
     ]
    ]
   },
   {
-   "tag": "경고등",
-   "title": "추운 아침, 타이어 공기압 경고등이 켜졌다면",
-   "body": "기온이 확 떨어지면 타이어 속 공기가 줄어 경고등이 켜지기도 해요. 그냥 꺼지길 기다리지 말고 공기압을 재서 적정값으로 채워 주세요.",
-   "href": "/blog/tire-pressure-guide/"
+   "tag": "빗길",
+   "title": "비 오고 낙엽 깔린 길, 브레이크 확인해요",
+   "body": "29일과 11월 1일에 비 소식이 있어 젖은 낙엽 위에선 차가 쉽게 미끄러질 수 있어요. 밟을 때 끽 소리가 나거나 밀리는 느낌이 들면 패드부터 점검받으세요.",
+   "href": "/blog/brake-pad-replacement/",
+   "sources": [
+    [
+     "YTN",
+     "https://ytn.co.kr/_ln/0108_202610281155367309"
+    ],
+    [
+     "톱스타뉴스",
+     "https://www.topstarnews.net/news/articleView.html?idxno=16261290"
+    ]
+   ]
   },
   {
-   "tag": "리콜",
-   "title": "제동장치 리콜, 아직 안 받은 차 많아요",
-   "body": "국감 자료로 수리 안 된 리콜 차 81만 대 가운데 35만 대가량이 브레이크 같은 제동장치 결함이에요. 안내 문자를 놓쳤다면 지금 내 차를 조회하고 예약하세요.",
+   "tag": "무상수리",
+   "title": "EV6·캐스퍼 일렉트릭, 무상수리 공지 떴어요",
+   "body": "10월 중순 자동차리콜센터에 기아 EV6 냉각수 3웨이 밸브, 현대 캐스퍼 일렉트릭 전동식 워터펌프 무상수리가 올라왔어요. 내 차가 대상인지 차량번호로 조회해 보세요.",
    "href": "/blog/recall-check-guide/",
    "sources": [
     [
-     "스트레이트뉴스",
-     "https://www.straightnews.co.kr/news/articleView.html?idxno=312121"
-    ],
-    [
-     "뉴스다",
-     "https://www.newsda.net/news/article.html?no=583771"
+     "자동차리콜센터 무상수리 목록",
+     "https://www.car.go.kr/ri/grts/list.do"
     ]
    ]
   }
  ],
  "care": [
   {
-   "tag": "타이어",
-   "title": "겨울 타이어, 지금 미리 알아봐요",
-   "body": "이번 주부터 아침 기온이 한 자릿수로 내려가는 날이 많아져요. 눈길을 자주 다닌다면 첫눈 전에 겨울용 타이어나 사계절 타이어 상태를 살펴보세요.",
-   "href": "/blog/tire-replacement-guide/",
-   "sources": [
-    [
-     "기상청 중기예보",
-     "https://www.weather.go.kr/w/repositary/xml/fct/rpt_wid_week_202610211800_108.pdf"
-    ]
-   ]
+   "tag": "워셔액",
+   "title": "영하권 오기 전, 워셔액을 겨울용으로 바꿔요",
+   "body": "여름용 워셔액은 영하에서 얼어 분사가 안 되거나 노즐이 막힐 수 있어요. 남은 양을 거의 쓰고 겨울용으로 채워 두세요.",
+   "href": "/parts"
+  },
+  {
+   "tag": "전기차",
+   "title": "전기차는 출발 예약으로 배터리를 데워요",
+   "body": "추운 날엔 전기차 주행거리가 줄어들어요. 앱에서 출발 시간을 예약해 충전 중에 배터리와 실내를 미리 데우면 덜 줄어요.",
+   "href": "/blog/ev-battery-life/"
   },
   {
    "tag": "보험",
-   "title": "내년 자동차보험료, 오를 수 있다는 소식",
-   "body": "올해 상반기 자동차보험이 6년 만에 적자로 돌아서 내년 보험료가 또 오를 수 있다는 보도가 이어지고 있어요. 갱신이 다가오면 특약과 할인 항목을 꼼꼼히 다시 비교하세요.",
+   "title": "단풍 나들이 전, 긴급출동 특약 확인해요",
+   "body": "가을 행락철 사고가 늘면서 자동차보험 손해율이 다시 나빠질 수 있다는 보도가 나왔어요. 장거리 나들이 전에 긴급출동 횟수와 견인 거리를 확인해 두세요.",
    "href": "/blog/insurance-renewal-tips/",
    "sources": [
     [
-     "SBS Biz",
-     "https://biz.sbs.co.kr/amp/article/20000324644"
+     "서울신문",
+     "https://www.seoul.co.kr/news/economy/2026/10/23/20261023500109"
     ],
     [
-     "데일리안",
-     "https://www.dailian.co.kr/news/view/1671831/"
-    ],
-    [
-     "세계일보",
-     "https://www.segye.com/newsView/20260726505961"
-    ]
-   ]
-  },
-  {
-   "tag": "검사",
-   "title": "정기검사 기간, 연말 전에 확인해요",
-   "body": "자동차 정기검사는 정해진 기간 안에 받지 않으면 과태료가 붙어요. 내 차 검사 기간을 한국교통안전공단에서 조회하고 미리 예약해 두세요.",
-   "href": "/blog/vehicle-inspection-guide/",
-   "sources": [
-    [
-     "한국교통안전공단",
-     "https://www.kotsa.or.kr"
+     "koreancenter.or.kr 기사",
+     "https://www.koreancenter.or.kr/news/articleView.html?idxno=1428753"
     ]
    ]
   }
