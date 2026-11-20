@@ -5,18 +5,8 @@
   {
    "tag": "냉간시동",
    "title": "중고차는 추운 아침에 첫 시동을 걸어 봐요",
-   "body": "19일 아침 중부 내륙이 영하권으로 내려간다는 예보예요. 차를 보러 가면 엔진이 식은 상태에서 시동이 바로 걸리는지, 떨림이나 연기가 없는지 확인하세요.",
-   "href": "/blog/used-car-checklist/",
-   "sources": [
-    [
-     "파이낸셜뉴스",
-     "https://www.fnnews.com/news/202611141111348208"
-    ],
-    [
-     "SBS 뉴스",
-     "https://news.sbs.co.kr/news/voice.do?aid=A1000091617"
-    ]
-   ]
+   "body": "아침 기온이 영하로 내려가는 날이 늘고 있어요. 차를 보러 가면 엔진이 식은 상태에서 시동이 바로 걸리는지, 떨림이나 연기가 없는지 확인하세요.",
+   "href": "/blog/used-car-checklist/"
   },
   {
    "tag": "전기차",
@@ -36,33 +26,13 @@
    "tag": "시동",
    "title": "시동 걸 때 '딸깍' 소리만 나면 배터리부터 봐요",
    "body": "추운 아침에는 12V 배터리 힘이 약해져요. 계기판이 깜빡이거나 딸깍 소리만 나면 무리하게 여러 번 시도하지 말고 점검을 받으세요.",
-   "href": "/blog/car-battery-12v/",
-   "sources": [
-    [
-     "파이낸셜뉴스",
-     "https://www.fnnews.com/news/202611141111348208"
-    ],
-    [
-     "SBS 뉴스",
-     "https://news.sbs.co.kr/news/voice.do?aid=A1000091617"
-    ]
-   ]
+   "href": "/blog/car-battery-12v/"
   },
   {
    "tag": "살얼음",
    "title": "살얼음 길 뒤 경고등이 켜졌다면 미루지 마요",
-   "body": "영하권 아침에는 도로 살얼음이 생길 수 있다는 예보예요. 미끄러진 뒤 ABS나 미끄럼 방지 경고등이 계속 켜져 있으면 바로 정비소에서 확인하세요.",
-   "href": "/blog/engine-warning-light/",
-   "sources": [
-    [
-     "파이낸셜뉴스",
-     "https://www.fnnews.com/news/202611141111348208"
-    ],
-    [
-     "SBS 뉴스",
-     "https://news.sbs.co.kr/news/voice.do?aid=A1000091617"
-    ]
-   ]
+   "body": "영하권 아침에는 다리 위나 그늘진 길에 살얼음이 생기기 쉬워요. 미끄러진 뒤 ABS나 미끄럼 방지 경고등이 계속 켜져 있으면 바로 정비소에서 확인하세요.",
+   "href": "/blog/engine-warning-light/"
   },
   {
    "tag": "히터",
@@ -82,17 +52,7 @@
    "tag": "공기압",
    "title": "타이어 공기압은 추운 아침, 출발 전에 재요",
    "body": "기온이 떨어지면 공기압도 같이 낮아져요. 달리고 난 뒤가 아니라 출발 전에 재고, 운전석 문 옆 스티커의 적정값으로 맞추세요.",
-   "href": "/blog/tire-pressure-guide/",
-   "sources": [
-    [
-     "파이낸셜뉴스",
-     "https://www.fnnews.com/news/202611141111348208"
-    ],
-    [
-     "SBS 뉴스",
-     "https://news.sbs.co.kr/news/voice.do?aid=A1000091617"
-    ]
-   ]
+   "href": "/blog/tire-pressure-guide/"
   },
   {
    "tag": "연납",
